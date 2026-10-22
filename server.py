@@ -1,10 +1,11 @@
-"""Local static file server; no third-party packages required."""
-from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
+"""Local development server for Knight & Dragon (not required on static hosting)."""
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import os
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     os.chdir(Path(__file__).resolve().parent)
-    print('Computer: http://localhost:8000')
-    print('Phone on same Wi-Fi: http://YOUR_COMPUTER_LAN_IP:8000')
-    ThreadingHTTPServer(('0.0.0.0', 8000), SimpleHTTPRequestHandler).serve_forever()
+    host, port = "0.0.0.0", 8000
+    print(f"遊戲已啟動：http://localhost:{port}")
+    print("手機可在同一 Wi-Fi 開啟：http://<電腦區域網路IP>:8000")
+    ThreadingHTTPServer((host, port), SimpleHTTPRequestHandler).serve_forever()
