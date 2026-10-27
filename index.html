@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>騎士與龍 — 冒險復刻原型 v2.5</title><meta name="theme-color" content="#20162e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="騎士與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方騎士與龍像素風冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>騎士與龍 — 冒險復刻原型 v2.6</title><meta name="theme-color" content="#20162e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="騎士與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方騎士與龍像素風冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
 :root{--gold:#f9d980;--edge:#85512b;--ink:#190e27}*{box-sizing:border-box}body{margin:0;color:#fff1c8;background:radial-gradient(ellipse at 50% -10%,#59304f,#130e20 60%);font-family:system-ui,'Noto Sans TC',sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.44;cursor:not-allowed}.shell{max-width:540px;margin:auto;min-height:100vh}.heading{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 7px;gap:10px;background:linear-gradient(#27152f,#4b1727 60%,#180e20);border-bottom:3px solid #af783f}.brand{color:#ffcf62;font-weight:1000;letter-spacing:.05em;text-shadow:2px 3px #492119}.sub{font-size:10px;color:#d4c6c6}.nav{display:flex;gap:5px}.nav button{padding:7px;border-radius:7px;color:#f6e7cb;background:#4b344e;border:2px solid #936950;font-weight:800;font-size:12px}.nav .chosen{background:#a77336;color:#211525}.scene{position:relative;overflow:hidden;border:4px solid #ac7844;border-top:0;border-bottom-width:6px;box-shadow:0 5px 0 #3a1e2d;background:#140e27}.scene canvas{width:100%;height:auto;display:block;image-rendering:pixelated;aspect-ratio:480/380}.overlaytop{position:absolute;inset:0 0 auto 0;pointer-events:none}.scenehead{display:flex;align-items:start;justify-content:space-between;padding:5px}.round{background:linear-gradient(#4d2727,#16121d);border:3px ridge #c7a060;border-radius:9px;padding:2px 10px;color:#ffe684;font-weight:1000;text-align:center;text-shadow:2px 2px #5f2b1e;line-height:1.1}.round strong{font-size:22px}.waves{display:flex;gap:2px;margin-top:4px;background:#140e27a0;padding:4px;border-radius:5px}.wave{height:19px;width:21px;background:#604e54;border:2px solid #a99273;box-shadow:inset 0 -5px #392738}.wave.done{background:linear-gradient(#bdb6a2,#eed38e 52%,#70532a)}.wave.now{background:linear-gradient(#faf5df,#78b8f5 62%,#405c9a)}.combo{position:absolute;top:69px;left:7px;font-weight:1000;font-size:31px;color:#ffe13d;font-style:italic;text-shadow:3px 3px #10000b,-2px -2px #130b0b}.combo small{font-size:15px}.enemylabel{position:absolute;top:104px;right:10px;min-width:140px;padding:4px 8px;border:2px solid #977249;border-radius:8px;background:#25162bbf;text-align:right;font-size:12px}.enemylabel strong{color:#ffda8c}.danger{position:absolute;top:149px;left:0;right:0;text-align:center;font-size:20px;font-weight:1000;color:#fff774;text-shadow:2px 3px #7c2135;pointer-events:none}.toast{position:absolute;left:12%;right:12%;bottom:20px;text-align:center;padding:9px;background:#170f27cf;border:2px solid #bca06d;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}.hud{padding:7px 8px 12px;background:linear-gradient(110deg,#39202b,#8b542f 7%,#31202a 11%,#302032 89%,#9e6e3c 95%,#42202c);border:3px ridge #b68c4c;border-top:0}.healthline{display:flex;justify-content:space-between;gap:4px;font-size:13px;font-weight:900;margin:1px 2px 3px}.meter{background:#170d22;padding:2px;border:2px solid #ad7943;border-radius:7px;height:16px;box-shadow:inset 0 2px #06030b;margin-bottom:4px;overflow:hidden}.meter>span{display:block;height:100%;transition:width .2s}.hpfill{background:linear-gradient(#a4ff67,#32cb3e 60%,#248021)}.apfill{background:repeating-linear-gradient(90deg,#ee4535 0 16%,#f7b445 16% 18%,#822221 18% 20%)}.ppfill{background:linear-gradient(90deg,#9c57cb,#f2d0fe)}.weaponbar{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;margin-bottom:4px;border-radius:7px;background:#1a0d18;border:2px solid #865c3a}.weapon{position:relative;min-height:51px;border:2px solid #a57c48;border-radius:7px;background:linear-gradient(#673c3d,#2b1529);color:white}.weapon.active{border-color:#f8ea7f;background:linear-gradient(#775b32,#4c2722);box-shadow:inset 0 0 11px #eabc59}.weapon .sym{display:block;font-size:26px;line-height:27px;filter:drop-shadow(1px 2px #000)}.weapon .nm{font-size:10px;display:block}.weapon .elem{position:absolute;top:0;right:3px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.card{padding:3px 1px 4px;background:linear-gradient(#f3e9ce,#c8a77a);border:3px solid #9b623c;border-radius:13px;box-shadow:inset 0 0 0 2px #efe7be,0 3px 0 #190b15;color:#1a1428;position:relative;min-height:78px;transition:transform .1s}.card:active{transform:translateY(3px)}.card .art{height:37px;display:flex;justify-content:center;align-items:center;font-size:30px;filter:drop-shadow(2px 2px #6d506e)}.card .name{font-size:11px;font-weight:1000;white-space:nowrap;letter-spacing:-.5px}.cost{position:absolute;right:2px;top:0;background:linear-gradient(#ffebd7,#d75451);color:#261326;font-weight:1000;border:2px solid #5a2539;border-radius:50%;width:27px;height:25px;line-height:20px;font-size:16px}.card.dark{background:linear-gradient(#4a3e80,#15162c);color:#e7dbff;border-color:#4b477c;box-shadow:inset 0 0 0 2px #7e6eb5}.card.dark .cost{background:#3b344f;color:white}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}.ctl{border:3px solid #e2b785;border-radius:12px;min-height:48px;font-size:12px;font-weight:1000;color:#fff;text-shadow:1px 2px #1e1322;box-shadow:inset 0 2px 6px #ffffff70,0 3px #241525}.guard{background:linear-gradient(#91c2ff,#367bc5 65%,#144c84)}.meat{background:linear-gradient(#ffbaa7,#e56161 65%,#8f383f)}.advance{background:linear-gradient(#e8c56c,#916a23)}.pause{background:linear-gradient(#9d7eaf,#65416e)}.status{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:8px 0 0;font-size:11px;color:#f4d9aa}.message{padding:8px 12px;font-size:12px;min-height:44px;line-height:1.5;background:#180d21;border-top:2px solid #72472a}.screen{padding:14px;background:#261c32;min-height:610px}.screen h2{margin:0 0 12px;color:#ffe1a3}.screen .entry{padding:10px;margin:7px 0;background:#3d2c43;border:1px solid #997545;border-radius:9px}.screen button{background:#68476a;color:#fff2ce;border:2px solid #a9895b;padding:8px 10px;border-radius:8px;margin:4px}.screen button.active{background:#95723f}.muted{color:#c5aec3;font-size:12px}.small{font-size:12px}.footer{padding:12px;text-align:center;color:#a997a9;font-size:11px}.hidden{display:none!important}@media(min-width:620px){.shell{margin:20px auto;border:5px solid #281424;box-shadow:0 12px 45px #050307;border-radius:12px;overflow:hidden}}@media(max-width:380px){.wave{width:16px}.card .name{font-size:9px}.weapon .nm{font-size:9px}}
 
 /* v0.3: card queue, threat telegraph, expanded scene polish */
@@ -285,7 +285,7 @@ button:focus-visible{outline:3px solid #ffdb7f;outline-offset:2px}
 #battle .card:not(:disabled):active{transform:translateY(2px) scale(.97);filter:brightness(1.12)}
 #battle .card:focus-visible,#battle .weapon:focus-visible{outline:3px solid #fff2aa;outline-offset:1px}
 @media (prefers-reduced-motion: reduce){#battle .card,#battle .meter>span,#battle .apfill{transition:none!important}}
-</style></head><body><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 騎士與龍</div><div class="sub">非官方／像素冒險致敬原型 v2.5</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
+</style></head><body><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 騎士與龍</div><div class="sub">非官方／像素冒險致敬原型 v2.6</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
 <section id="titleScreen" class="frontscreen"><div class="title-art"><div class="moon"></div><div class="pixel-mount a"></div><div class="pixel-mount b"></div><div class="title-knight">⚔️</div><div class="title-dragon">🐉</div></div><div class="title-logo"><span>騎士與龍</span><small>騎士與龍 · 像素冒險復刻原型</small></div><div class="title-actions"><button class="bigbtn primary" onclick="beginAdventure()">▶ 開始冒險</button><button class="bigbtn" onclick="showPage('help')">📜 遊戲說明</button><div id="titleProgress" class="muted"></div></div><div class="legal">非官方玩家製作 · 原創替代圖像 · 本機自動存檔</div></section>
 <section id="home" class="screen hidden"><div class="village-hero"><div class="sky-sun">☀</div><div class="village-hills"></div><span class="house h1">🏠</span><span class="house h2">🏰</span><span class="house h3">🏡</span><span class="village-knight">🧑‍🦰⚔️</span></div><div class="home-banner"><strong>冒險者的城鎮</strong><span id="homeInfo"></span></div><div class="home-stats" id="homeStats"></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><h2>要前往哪裡？</h2><div class="menu-grid"><button onclick="showPage('adventure')"><span>🗺️</span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span>⚔️</span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span>🏪</span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span>📋</span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span>🏅</span><b>騎士資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span>📜</span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span>📚</span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span>💾</span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
 <section id="journal" class="screen hidden"><h2>📚 冒險圖鑑</h2><p class="muted">查看武器稀有度、18 種怪物討伐紀錄、BOSS 收藏及探索札記。未取得與未討伐的項目將顯示為未知。</p><div id="journalContents"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
@@ -551,36 +551,39 @@ function drawBackground(t){
  for(let i=0;i<18;i++){let x=(i*73+29)%480,y=(i*47+92)%277;if(Math.sin(t*.002+i)>0)box(x,y,zone===1?4:3,3,['#c4b6fc','#b4efb0','#ff9c59'][zone])}
  box(0,300,480,80,['#342a50','#3a4d33','#452b2c'][zone]);box(0,307,480,5,['#736099','#63865a','#b76344'][zone]);for(let i=0;i<15;i++)box(i*35,328+(i%3)*12,25,4,['#493765','#54613b','#68382d'][zone]);box(0,367,480,13,'#191522');
 }
-// v2.5 原創 16-bit 風格角色：以小像素色塊組合，不使用原作圖檔。
+// v2.6 原創像素角色優化：重整騎士比例、配色與持武器姿勢，不使用原作圖檔。
 function pixelParts(parts,ox=0,oy=0){for(const [x,y,w,h,c] of parts)box(ox+x,oy+y,w,h,c)}
 function drawnShield(x,y,style='wood'){
- const metal=style==='steel'?'#a3b9c4':style==='supply'?'#c98b5c':'#a7bac0';
- const face=style==='wood'?'#a47a51':style==='supply'?'#e2b06b':style==='steel'?'#627c97':'#6e9cb7';
- poly([[x-18,y-26],[x+17,y-26],[x+19,y+8],[x,y+31],[x-19,y+8]],'#2a2535');
- poly([[x-14,y-22],[x+13,y-22],[x+14,y+7],[x,y+25],[x-15,y+7]],metal);
- poly([[x-10,y-18],[x+9,y-18],[x+10,y+5],[x,y+19],[x-10,y+5]],face);
- box(x-2,y-20,4,35,'#e3d39f');box(x-11,y-3,22,4,'#e3d39f');box(x-3,y-5,6,7,'#fff3c4');
+ const outline='#261a25';
+ const rim=style==='steel'?'#b7c7d6':style==='supply'?'#f0bd7d':style==='round'?'#b6d7de':'#c29a6b';
+ const face=style==='wood'?'#87593d':style==='supply'?'#ba6a4f':style==='steel'?'#617995':'#567e96';
+ poly([[x-14,y-20],[x+14,y-20],[x+16,y+6],[x,y+24],[x-16,y+6]],outline);
+ poly([[x-12,y-18],[x+12,y-18],[x+13,y+5],[x,y+21],[x-13,y+5]],rim);
+ poly([[x-9,y-14],[x+9,y-14],[x+10,y+4],[x,y+16],[x-10,y+4]],face);
+ box(x-1,y-15,2,28,'#ecd59a');
+ if(style!=='wood')box(x-8,y-1,16,3,style==='supply'?'#ffe4a7':'#ddebf2');
+ box(x-3,y-4,6,6,'#fff7d5');
 }
 function drawnHeldWeapon(id){
- const glow=(ARSENAL[id]&&TYPES[ARSENAL[id].type]?.color)||'#ddd8b4';
- if(id===1||id===5){ // 長槍
-  box(-2,-67,5,90,'#75503d');box(-1,-65,2,76,'#e5bf85');
-  poly([[-8,-69],[1,-99],[10,-69],[3,-59]],id===5?'#cf9dff':'#fff4c7');
-  box(-8,-63,16,5,glow);
+ const swordEdge=id===6?'#d9ae63':id===4?'#ff8d51':'#edf6ff';
+ if(id===1||id===5){ // 長槍、月光槍
+  box(-1,-54,3,74,'#79553a');box(0,-50,1,65,'#dcb17a');
+  poly([[-7,-58],[0,-80],[7,-58],[2,-49]],id===5?'#cdb4ff':'#f6f7ee');
+  if(id===5){box(-6,-47,12,3,'#b891ff')}
  }else if(id===2){ // 魔杖
-  box(-2,-43,7,66,'#74513e');box(0,-49,3,62,'#e7b97f');
-  for(let j=0;j<4;j++)box(-8+(j%2)*12,-65+Math.floor(j/2)*11,11,11,j%2?'#b6a1ff':'#7ee4f5');
-  box(-2,-58,8,9,'#fff5dc');
+  box(-1,-38,4,53,'#74523d');box(0,-35,1,48,'#d5ab6f');
+  box(-5,-51,12,12,'#f2f4ff');box(-3,-49,8,8,'#92f1ff');box(-8,-48,4,4,'#d2a4ff');box(5,-48,4,4,'#d2a4ff');
  }else if(id===3){ // 戰斧
-  box(-2,-61,6,86,'#855c38');
-  poly([[4,-63],[24,-61],[30,-49],[23,-31],[4,-35]],'#c7dbe5');
-  box(8,-57,13,4,'#f5f6ef');box(8,-39,13,4,'#657987');
- }else{ // 木劍與鋼劍分開呈現
-  const wood=id===6;
-  poly([[-4,-30],[-5,-72],[1,-84],[7,-72],[6,-30]],wood?'#b77f45':id===4?'#ffb272':'#e3f6fa');
-  box(-2,-70,3,35,wood?'#e7bb73':id===4?'#ff6d35':'#fffbe7');
-  box(-15,-30,29,6,wood?'#8a5a34':'#d6aa4b');box(-3,-26,6,24,'#61452f');
-  if(id===0)box(-5,-48,12,6,'#fff6ac');
+  box(-1,-49,4,67,'#7a5b3c');
+  poly([[4,-45],[18,-50],[25,-42],[25,-28],[15,-20],[4,-24]],'#d9e5ef');
+  box(9,-41,9,3,'#f8fdff');box(9,-27,8,3,'#687d93');
+ }else{ // 木劍、聖劍、火焰劍
+  poly([[-3,-24],[-3,-58],[0,-69],[4,-58],[4,-24]],id===6?'#b78149':id===4?'#ff915a':'#dfeef6');
+  box(-1,-55,1,27,id===6?'#ebc177':id===4?'#ffd068':'#ffffff');
+  box(-10,-24,20,4,id===6?'#8a5a39':'#d7a64b');
+  box(-2,-20,4,16,'#664532');
+  if(id===0){box(-4,-40,8,4,'#fff5a3')}
+  if(id===4){for(let j=0;j<3;j++)box(-5+j*4,-50+j*8,4,3,'#ff5d33')}
  }
 }
 function drawKnight(t){
@@ -589,47 +592,63 @@ function drawKnight(t){
  const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  const weaponId=s.equipped?.[s.weapon]??6;
  const shieldMode=isShield(weaponId)||action==='guard';
- const frame=Math.floor(t/180)%2;
  const strikeProgress=attacking?Math.max(0,Math.min(1,(heroActionUntil-now)/370)):0;
- const lunge=attacking&&!reduced?(action==='thrust'?Math.sin((1-strikeProgress)*Math.PI)*31:Math.sin((1-strikeProgress)*Math.PI)*14):0;
- const x=Math.round(151+lunge),y=Math.round(259+(action==='hurt'?6:reduced?0:Math.sin(t*.004)*2));
+ const bob=reduced?0:Math.sin(t*.005)*2;
+ const lunge=attacking&&!reduced?(action==='thrust'?Math.sin((1-strikeProgress)*Math.PI)*24:Math.sin((1-strikeProgress)*Math.PI)*11):0;
+ const x=Math.round(150+lunge),y=Math.round(266+(action==='hurt'?4:bob));
+ const capeSwing=reduced?0:Math.sin(t*.01)*2;
  cx.save();cx.translate(x,y);
- if(action==='hurt'&&!reduced)cx.translate(Math.sin(t*.11)*3,0);
- // 腳部與投影
- cx.globalAlpha=.35;box(-37,60,75,7,'#080b20');cx.globalAlpha=1;
- pixelParts([[-23,33,17,22,'#26354d'],[6,33,17,22,'#26354d'],[-25,53,24,10,'#524252'],[4,53,24,10,'#524252'],[-23,34,7,15,'#7991a2'],[7,35,7,15,'#7991a2']]);
- // 斗篷與護甲：分層像素塊
- poly([[-24,-7],[-34,35],[0,48],[35,35],[23,-7]],'#6d394c');
- pixelParts([[-22,-5,45,38,'#303f60'],[-19,-5,38,6,'#8dc6d6'],[-17,0,34,29,'#5682a4'],[-13,5,25,15,'#628fb2'],[-20,30,43,7,'#d8a253'],[-2,27,7,11,'#f4df90']]);
- // 左右手及皮革腕甲
- pixelParts([[-29,5,12,25,'#d6a574'],[19,3,12,25,'#d6a574'],[-30,22,13,7,'#795840'],[20,20,13,8,'#795840'],[-24,-9,8,12,'#a8c9d1'],[16,-9,9,12,'#a8c9d1']]);
- // 頭部面容、頭髮、眼睛
- pixelParts([[-18,-44,37,34,'#d8aa7a'],[-23,-48,45,12,'#9e7044'],[-15,-57,28,14,'#b7854d'],[-21,-38,7,16,'#9f6946'],[15,-36,6,16,'#9f6946'],[-12,-28,5,5,'#242638'],[8,-28,5,5,'#242638'],[-3,-19,12,4,'#8b5a50'],[-19,-42,8,5,'#efcc96'],[12,-42,7,5,'#efcc96']]);
- // 頭盔頭帶與閃光邊緣
- box(-19,-45,39,5,'#e2d6a2');box(-2,-49,8,8,'#f2da84');box(-14,-57,3,10,'#d6a65c');
- // 預設左手小盾，施放盾技能時抬盾至身前
+ if(action==='hurt'&&!reduced)cx.translate(Math.sin(t*.09)*2,0);
+ // 投影
+ cx.globalAlpha=.3;box(-24,40,48,5,'#070811');cx.globalAlpha=1;
+ // 斗篷
+ poly([[-9,-1],[-22,19+capeSwing],[-18,33],[-1,25],[15,33],[21,19-capeSwing],[8,-3]],'#8a3043');
+ poly([[-5,0],[-14,17],[-8,25],[0,18],[8,24],[14,17],[5,0]],'#b84553');
+ // 腿與靴
+ pixelParts([[-10,14,8,16,'#3d5f8f'],[2,14,8,16,'#3d5f8f'],[-12,29,11,5,'#5a4438'],[1,29,11,5,'#5a4438'],[-9,12,3,13,'#7ca4cb'],[4,12,3,13,'#7ca4cb']]);
+ // 身體與腰帶
+ pixelParts([[-11,-5,22,22,'#416ea8'],[-9,-3,18,18,'#5f93cf'],[-8,-5,16,4,'#d8eef9'],[-10,16,20,4,'#d1a158'],[-2,14,4,7,'#f6e1a1']]);
+ // 頭部與頭髮
+ pixelParts([[-8,-25,16,15,'#f5c98c'],[-10,-31,20,7,'#e6ba55'],[-8,-35,16,5,'#f0d26e'],[-11,-24,3,8,'#d79c72'],[8,-24,3,8,'#d79c72'],[-5,-18,2,2,'#1f2434'],[3,-18,2,2,'#1f2434'],[-2,-14,4,2,'#8b5d5d']]);
+ // 頭帶與額前髮
+ box(-10,-28,20,3,'#e84c47');box(4,-33,4,3,'#fff3b2');box(-6,-33,5,2,'#fff0a2');
+ // 左臂持盾 / 右臂持武器
+ const armSkin='#efbe84',armShadow='#a16d4c';
+ // 左臂
+ pixelParts([[-17,-1,6,14,armSkin],[-17,10,7,3,armShadow]]);
+ // 右臂位置依動作調整
+ let handX=15,handY=0;
+ if(action==='thrust'){handX=18;handY=-2}
+ else if(action==='smash'){handX=12;handY=-8}
+ else if(action==='cast'){handX=13;handY=-4}
+ else if(action==='combo'){handX=16;handY=-1}
+ pixelParts([[9,-2,6,14,armSkin],[9,9,7,3,armShadow]]);
+ // 肩甲
+ pixelParts([[-14,-4,5,5,'#dfe9f5'],[9,-4,5,5,'#dfe9f5']]);
+ // 盾牌：只有裝備盾牌或施放防禦時高舉
  if(shieldMode){
-   const sy=action==='guard'?-5:15;
-   drawnShield(-22,sy,weaponId===10?'steel':weaponId===9?'supply':weaponId===8?'round':'wood');
- }else{
-   drawnShield(-32,15,'wood');
+   const sy=action==='guard'?-2:8;
+   const sx=action==='guard'?-8:-14;
+   drawnShield(sx,sy,weaponId===10?'steel':weaponId===9?'supply':weaponId===8?'round':'wood');
  }
+ // 武器
  if(!shieldMode){
-  cx.save();cx.translate(25,15);
-  const angle=action==='thrust'?-1.25:action==='smash'?-2.5+(1-strikeProgress)*2.8:action==='slash'||action==='combo'?-1.8+(1-strikeProgress)*1.7:action==='cast'?.18:-.20;
+  cx.save();cx.translate(handX,handY+10);
+  const angle=action==='thrust'?-1.15:action==='smash'?-2.35+(1-strikeProgress)*2.5:action==='slash'||action==='combo'?-1.7+(1-strikeProgress)*1.55:action==='cast'?.18:-.3;
   cx.rotate(angle);
   drawnHeldWeapon(weaponId);
   cx.restore();
  }else if(action==='guard'){
-  cx.strokeStyle='#b9e8ff';cx.lineWidth=4;cx.globalAlpha=.7;cx.beginPath();cx.arc(-7,5,51,-2.4,2.3);cx.stroke();cx.globalAlpha=1;
+  cx.strokeStyle='#b7ecff';cx.lineWidth=3;cx.globalAlpha=.75;cx.beginPath();cx.arc(-2,5,34,-2.45,2.35);cx.stroke();cx.globalAlpha=1;
  }
+ // 魔法光環
  if(action==='cast'){
-   const rad=13+(1-strikeProgress)*19;cx.strokeStyle='#c4a0ff';cx.lineWidth=4;cx.beginPath();cx.arc(53,-34,rad,0,Math.PI*2);cx.stroke();
+   const rad=10+(1-strikeProgress)*16;cx.strokeStyle='#be9dff';cx.lineWidth=3;cx.beginPath();cx.arc(39,-9,rad,0,Math.PI*2);cx.stroke();
  }
- if(action==='hurt'){
-   box(-22,-20,47,7,'#f1a099');
- }
- if(frame&&action==='idle'&&!reduced)box(-18,1,5,3,'#8cb4d0');
+ // 受傷提示
+ if(action==='hurt')box(-10,-9,20,4,'#f3b2a0');
+ // 待機呼吸高光
+ if(!reduced&&action==='idle'&&Math.floor(t/180)%2===0){box(-7,2,4,2,'#b1dbff');box(4,2,3,2,'#b1dbff')}
  cx.restore();
 }
 function drawMonster(t){
