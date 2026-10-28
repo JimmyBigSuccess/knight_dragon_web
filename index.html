@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>騎士與龍 — 8-bit 冒險原型 v5.5</title><meta name="theme-color" content="#1b1833"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="騎士與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方騎士與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>騎士與龍 — 8-bit 冒險原型 v6.1</title><meta name="theme-color" content="#1b1833"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="騎士與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方騎士與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
 :root{--gold:#f9d980;--edge:#85512b;--ink:#190e27}*{box-sizing:border-box}body{margin:0;color:#fff1c8;background:radial-gradient(ellipse at 50% -10%,#59304f,#130e20 60%);font-family:system-ui,'Noto Sans TC',sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.44;cursor:not-allowed}.shell{max-width:540px;margin:auto;min-height:100vh}.heading{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 7px;gap:10px;background:linear-gradient(#27152f,#4b1727 60%,#180e20);border-bottom:3px solid #af783f}.brand{color:#ffcf62;font-weight:1000;letter-spacing:.05em;text-shadow:2px 3px #492119}.sub{font-size:10px;color:#d4c6c6}.nav{display:flex;gap:5px}.nav button{padding:7px;border-radius:7px;color:#f6e7cb;background:#4b344e;border:2px solid #936950;font-weight:800;font-size:12px}.nav .chosen{background:#a77336;color:#211525}.scene{position:relative;overflow:hidden;border:4px solid #ac7844;border-top:0;border-bottom-width:6px;box-shadow:0 5px 0 #3a1e2d;background:#140e27}.scene canvas{width:100%;height:auto;display:block;image-rendering:pixelated;aspect-ratio:480/380}.overlaytop{position:absolute;inset:0 0 auto 0;pointer-events:none}.scenehead{display:flex;align-items:start;justify-content:space-between;padding:5px}.round{background:linear-gradient(#4d2727,#16121d);border:3px ridge #c7a060;border-radius:9px;padding:2px 10px;color:#ffe684;font-weight:1000;text-align:center;text-shadow:2px 2px #5f2b1e;line-height:1.1}.round strong{font-size:22px}.waves{display:flex;gap:2px;margin-top:4px;background:#140e27a0;padding:4px;border-radius:5px}.wave{height:19px;width:21px;background:#604e54;border:2px solid #a99273;box-shadow:inset 0 -5px #392738}.wave.done{background:linear-gradient(#bdb6a2,#eed38e 52%,#70532a)}.wave.now{background:linear-gradient(#faf5df,#78b8f5 62%,#405c9a)}.combo{position:absolute;top:69px;left:7px;font-weight:1000;font-size:31px;color:#ffe13d;font-style:italic;text-shadow:3px 3px #10000b,-2px -2px #130b0b}.combo small{font-size:15px}.enemylabel{position:absolute;top:104px;right:10px;min-width:140px;padding:4px 8px;border:2px solid #977249;border-radius:8px;background:#25162bbf;text-align:right;font-size:12px}.enemylabel strong{color:#ffda8c}.danger{position:absolute;top:149px;left:0;right:0;text-align:center;font-size:20px;font-weight:1000;color:#fff774;text-shadow:2px 3px #7c2135;pointer-events:none}.toast{position:absolute;left:12%;right:12%;bottom:20px;text-align:center;padding:9px;background:#170f27cf;border:2px solid #bca06d;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}.hud{padding:7px 8px 12px;background:linear-gradient(110deg,#39202b,#8b542f 7%,#31202a 11%,#302032 89%,#9e6e3c 95%,#42202c);border:3px ridge #b68c4c;border-top:0}.healthline{display:flex;justify-content:space-between;gap:4px;font-size:13px;font-weight:900;margin:1px 2px 3px}.meter{background:#170d22;padding:2px;border:2px solid #ad7943;border-radius:7px;height:16px;box-shadow:inset 0 2px #06030b;margin-bottom:4px;overflow:hidden}.meter>span{display:block;height:100%;transition:width .2s}.hpfill{background:linear-gradient(#a4ff67,#32cb3e 60%,#248021)}.apfill{background:repeating-linear-gradient(90deg,#ee4535 0 16%,#f7b445 16% 18%,#822221 18% 20%)}.ppfill{background:linear-gradient(90deg,#9c57cb,#f2d0fe)}.weaponbar{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;margin-bottom:4px;border-radius:7px;background:#1a0d18;border:2px solid #865c3a}.weapon{position:relative;min-height:51px;border:2px solid #a57c48;border-radius:7px;background:linear-gradient(#673c3d,#2b1529);color:white}.weapon.active{border-color:#f8ea7f;background:linear-gradient(#775b32,#4c2722);box-shadow:inset 0 0 11px #eabc59}.weapon .sym{display:block;font-size:26px;line-height:27px;filter:drop-shadow(1px 2px #000)}.weapon .nm{font-size:10px;display:block}.weapon .elem{position:absolute;top:0;right:3px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.card{padding:3px 1px 4px;background:linear-gradient(#f3e9ce,#c8a77a);border:3px solid #9b623c;border-radius:13px;box-shadow:inset 0 0 0 2px #efe7be,0 3px 0 #190b15;color:#1a1428;position:relative;min-height:78px;transition:transform .1s}.card:active{transform:translateY(3px)}.card .art{height:37px;display:flex;justify-content:center;align-items:center;font-size:30px;filter:drop-shadow(2px 2px #6d506e)}.card .name{font-size:11px;font-weight:1000;white-space:nowrap;letter-spacing:-.5px}.cost{position:absolute;right:2px;top:0;background:linear-gradient(#ffebd7,#d75451);color:#261326;font-weight:1000;border:2px solid #5a2539;border-radius:50%;width:27px;height:25px;line-height:20px;font-size:16px}.card.dark{background:linear-gradient(#4a3e80,#15162c);color:#e7dbff;border-color:#4b477c;box-shadow:inset 0 0 0 2px #7e6eb5}.card.dark .cost{background:#3b344f;color:white}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}.ctl{border:3px solid #e2b785;border-radius:12px;min-height:48px;font-size:12px;font-weight:1000;color:#fff;text-shadow:1px 2px #1e1322;box-shadow:inset 0 2px 6px #ffffff70,0 3px #241525}.guard{background:linear-gradient(#91c2ff,#367bc5 65%,#144c84)}.meat{background:linear-gradient(#ffbaa7,#e56161 65%,#8f383f)}.advance{background:linear-gradient(#e8c56c,#916a23)}.pause{background:linear-gradient(#9d7eaf,#65416e)}.status{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:8px 0 0;font-size:11px;color:#f4d9aa}.message{padding:8px 12px;font-size:12px;min-height:44px;line-height:1.5;background:#180d21;border-top:2px solid #72472a}.screen{padding:14px;background:#261c32;min-height:610px}.screen h2{margin:0 0 12px;color:#ffe1a3}.screen .entry{padding:10px;margin:7px 0;background:#3d2c43;border:1px solid #997545;border-radius:9px}.screen button{background:#68476a;color:#fff2ce;border:2px solid #a9895b;padding:8px 10px;border-radius:8px;margin:4px}.screen button.active{background:#95723f}.muted{color:#c5aec3;font-size:12px}.small{font-size:12px}.footer{padding:12px;text-align:center;color:#a997a9;font-size:11px}.hidden{display:none!important}@media(min-width:620px){.shell{margin:20px auto;border:5px solid #281424;box-shadow:0 12px 45px #050307;border-radius:12px;overflow:hidden}}@media(max-width:380px){.wave{width:16px}.card .name{font-size:9px}.weapon .nm{font-size:9px}}
 
 /* v0.3: card queue, threat telegraph, expanded scene polish */
@@ -351,7 +351,7 @@ button:focus-visible{outline:3px solid #ffdb7f;outline-offset:2px}
 #battle .danger{z-index:4}
 #battle .scene:has(.danger){isolation:isolate}
 
-/* v5.5 8-bit overhaul */
+/* v6.1 8-bit overhaul */
 :root{--gold:#f7d45a;--edge:#6b4c23;--ink:#141225;--panel:#2c2747;--panel2:#3f3765;--pixelShadow:#0b0914}
 body{font-family:"Courier New","Lucida Console",monospace;background:linear-gradient(#1b1833,#0f1021)!important;color:#f7f1d0;letter-spacing:.02em}
 button,input,textarea{font-family:"Courier New","Lucida Console",monospace}
@@ -392,17 +392,115 @@ button,input,textarea{font-family:"Courier New","Lucida Console",monospace}
 #resultDetails strong,#resultPreview strong{color:#fff0a3}
 canvas{image-rendering:pixelated}
 
-/* v5.5: consistent 16x16 icon pixels across gear, backpack, combat, loot. */
+/* v6.1: consistent 16x16 icon pixels across gear, backpack, combat, loot. */
 .equip-pixel-icon{image-rendering:pixelated;image-rendering:crisp-edges;filter:none!important}
 .loot-icon .equip-pixel-icon{display:block;width:64px;height:64px;margin:auto}
 
-/* v5.5: crisp equipment and battle silhouette consistency */
+/* v6.1: crisp equipment and battle silhouette consistency */
 .gear-paperdoll canvas,.equip-pixel-icon,.scene canvas{image-rendering:pixelated!important}
 .gear-paperdoll{border-color:#a48bdd!important}
 #battle .weapon .sym canvas,.gear-slot .slot-icon canvas,.bag-item canvas{image-rendering:pixelated!important}
-</style></head><body><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 騎士與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v5.5</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
+
+/* v6.1 — consistent 8-bit interface beyond battle */
+:root{--ui-cream:#fff0ba;--ui-gold:#f5ce5d;--ui-ink:#141329;--ui-violet:#3d335f;--ui-line:#967ad0}
+.screen .entry,.growth-card,.pioneer-panel,.pioneer-task,.encounter-panel,.area-card,.shop-list .entry,.gear-extras,.gear-equip-area,.gear-paperdoll,.gear-slot,.bag-item,.quest,.profile-portrait,.material-pill,.pioneer-task button,.menu-grid button,.area-list button,.progress-track,.quest-progress{border-radius:0!important;box-shadow:none!important}
+.screen h2,.screen h3,.pioneer-heading strong{color:var(--ui-gold)!important;text-shadow:2px 2px 0 #131225}
+.screen .entry,.growth-card,.pioneer-panel,.gear-equip-area,.gear-extras,.shop-list .entry{background:#282443!important;border:3px solid #7661aa!important}
+.menu-grid button{background:#39315e!important;border:3px solid #a48bd4!important;border-bottom:5px solid #5b498e!important;text-shadow:2px 2px 0 #15152b!important;min-width:0}
+.menu-grid button:active,.screen button:active,.area-card:active{transform:translateY(2px)}
+.menu-grid button span{filter:none!important;font-size:clamp(17px,5vw,26px)!important}
+.menu-grid button b{color:#fff0b4!important}.menu-grid button small{color:#d4c6f4!important}
+.area-card{background:#312951!important;border:3px solid #8471b4!important;border-left:7px solid #f5ce5d!important;padding:9px!important}
+.area-card:disabled,.area-card.locked{filter:grayscale(.75)}
+.area-card strong{color:#fff3bf!important}.area-card small{color:#d7c9ec!important}
+.shop-list .entry{border-left:6px solid #e5c76a!important;margin-bottom:10px!important}
+.shop-list strong{color:#f8e4a1!important}.shop-list button,.pioneer-task button,.gear-extras button,.screen .bigbtn{background:#494073!important;border:3px solid #b9a3ec!important;border-bottom:5px solid #7661aa!important;border-radius:0!important;color:#fff3d2!important;font-weight:900}
+.pioneer-task{border-bottom:3px dashed #706296!important}.pioneer-task.claimed{opacity:.8}
+.pioneer-state{color:#a3e497!important}
+.progress-track,.quest-progress{background:#17152a!important;border:2px solid #9d87cb!important;height:15px!important}
+.progress-track span,.quest-progress span{background:#80c878!important;transition:none!important}
+.material-pill{border:2px solid #a092c3!important;background:#332c51!important}
+.gear-filters button,.gear-slot,.bag-item{border-radius:0!important}
+.gear-paperdoll{background:#232443!important;border:3px solid #7162a2!important}
+.village-hero{position:relative;overflow:hidden;border:4px solid #bca064!important;border-radius:0!important;background:linear-gradient(to bottom,#6a91d5 0 65%,#8fba6d 65% 73%,#3e734f 73% 100%)!important}
+.village-hills{background:#4f8767!important;clip-path:polygon(0 90%,0 72%,16% 72%,16% 47%,27% 47%,27% 77%,42% 77%,42% 29%,55% 29%,55% 71%,72% 71%,72% 51%,88% 51%,88% 22%,100% 22%,100% 100%)!important}
+.sky-sun{font-size:0!important;top:13px!important;right:30px!important;width:22px;height:22px;background:#fff0a4;box-shadow:0 0 0 4px #eecb76}
+.pixel-house{position:absolute;bottom:8px;width:44px;height:27px;background:#f6e2a0;border:4px solid #3a395a;box-shadow:inset 0 -7px #ae805d}
+.pixel-house::before{content:"";position:absolute;left:-8px;right:-8px;top:-13px;height:11px;background:#bf685d;border:3px solid #423752}
+.pixel-house::after{content:"";position:absolute;bottom:0;left:15px;width:9px;height:15px;background:#654a4d}
+.ph-left{left:9%;transform:scale(.85);transform-origin:bottom}.ph-center{left:42%;width:55px;height:34px;background:#d9d4c8}.ph-center::before{background:#6f85b6}.ph-right{right:9%;transform:scale(.8);transform-origin:bottom}
+.pixel-town-knight{position:absolute;bottom:3px;left:31%;height:24px;width:14px;background:#548fcb;border:3px solid #2a3856;box-shadow:0 -10px 0 -2px #f7ca82,4px -13px 0 -3px #f0d572,8px 5px 0 -5px #d5c8a3}
+.menu-grid{flex:0 0 auto!important;height:min(38dvh,295px)!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;min-height:0!important}
+.menu-grid button{height:100%;min-height:56px!important}
+/* Preserve mobile one-screen navigation without reducing touch targets. */
+@media(max-width:620px){.menu-grid button{min-height:44px!important}.screen button{touch-action:manipulation}.shop-list .entry{padding:8px!important}.village-hero{min-height:64px}}
+
+
+/* === v6.1 mobile-game button polish + scene transition === */
+button,.area-card,.menu-grid button,.bigbtn,.nav button,.screen button{position:relative;overflow:hidden;isolation:isolate}
+button::before,.area-card::before{content:"";position:absolute;left:3px;right:3px;top:3px;height:42%;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,0));pointer-events:none;z-index:0}
+button::after,.area-card::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,245,210,.16), inset 0 -2px 0 rgba(37,18,32,.44);pointer-events:none;z-index:0}
+button>*,.area-card>*{position:relative;z-index:1}
+.nav button{padding:9px 11px;border-radius:11px;border:2px solid #e7c07c;background:linear-gradient(180deg,#86615f 0%,#66435d 48%,#45263a 49%,#311726 100%);box-shadow:0 4px 0 #1b0e18,0 7px 14px rgba(0,0,0,.28);transition:transform .08s,filter .14s,box-shadow .12s}
+.nav .chosen{background:linear-gradient(180deg,#ffd982 0%,#d5963f 52%,#9f5d22 53%,#7d4117 100%);border-color:#ffe5a7;color:#2c1320;box-shadow:0 4px 0 #432113,0 8px 16px rgba(0,0,0,.3)}
+.bigbtn,.screen button,.menu-grid button,.backbtn,.danger-button,.pioneer-task button,.growth-card button,.quest button,.entry button{border-width:2px;border-style:solid;border-color:#f0c985 #915327 #70391e #d7a765;border-radius:14px;background:linear-gradient(180deg,#846778 0%,#6d4d69 45%,#46243e 46%,#2d1424 100%);box-shadow:0 4px 0 #190b15,0 7px 18px rgba(0,0,0,.28);transition:transform .08s,filter .14s,box-shadow .12s}
+.bigbtn.primary,.screen button.active,.quest button:not(:disabled),.pioneer-task button:not(:disabled),.growth-card button:not(:disabled){background:linear-gradient(180deg,#fff0aa 0%,#f2bf67 48%,#cf7d2f 49%,#94471d 100%);border-color:#fff1b9 #9b5425 #7f3d19 #f4c572;color:#29131e;text-shadow:none;box-shadow:0 4px 0 #552710,0 9px 20px rgba(0,0,0,.28)}
+.bigbtn{min-height:52px}
+.screen button,.entry button{padding:10px 14px;font-weight:900;letter-spacing:.02em}
+.menu-grid button{min-height:112px;background:linear-gradient(180deg,#8a6f8b 0%,#664d71 48%,#4a2d51 49%,#301a36 100%)}
+.menu-grid button span{filter:drop-shadow(0 3px 0 rgba(30,14,28,.45))}
+.area-card{border-width:3px;border-style:solid;border-color:#efcf93 #865125 #6a361b #dcaf6e;background:linear-gradient(180deg,#7b6a91 0%,#5b4c74 48%,#403253 49%,#251d34 100%);box-shadow:0 4px 0 #170d20,0 9px 18px rgba(0,0,0,.25);transition:transform .08s,filter .14s,box-shadow .12s}
+button:hover,.area-card:hover{filter:brightness(1.03)}
+button:active,.area-card:active{transform:translateY(3px);box-shadow:0 1px 0 #140913,0 3px 8px rgba(0,0,0,.26)}
+button:disabled{filter:grayscale(.18);box-shadow:0 3px 0 #24141d}
+.danger-button{background:linear-gradient(180deg,#ffbbb2 0%,#f57871 47%,#cf4744 48%,#85292f 100%);border-color:#ffd1ca #8f2d2d #6d1e21 #ff9f8f;color:#fff3ee}
+.scene-transition{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:3000;opacity:0;transition:opacity .16s ease}
+.scene-transition.show{opacity:1}
+.scene-transition.hidden{display:none!important}
+.scene-transition .wipe-panel{position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,#100818 0%,#201227 35%,#3c2344 52%,#201227 67%,#100818 100%);border-right:3px solid #f0c67b;border-left:3px solid #8e5729}
+.scene-transition.show .wipe-panel{animation:sceneWipe .52s cubic-bezier(.2,.7,.2,1) forwards}
+.scene-transition .wipe-panel.mid{animation-delay:.05s;opacity:.88}
+.scene-transition .wipe-panel.late{animation-delay:.1s;opacity:.72}
+.scene-transition-label{position:relative;padding:12px 22px;border:3px solid #f0ca88;border-radius:16px;background:linear-gradient(180deg,#ffe9ab,#d58a3e 52%,#8c411f);box-shadow:0 6px 0 #512513,0 10px 24px rgba(0,0,0,.34);color:#291320;font-weight:1000;letter-spacing:.12em;text-shadow:0 1px rgba(255,255,255,.35);transform:scale(.92);opacity:0}
+.scene-transition.show .scene-transition-label{animation:sceneLabel .52s ease forwards}
+@keyframes sceneWipe{0%{transform:translateX(-102%)}40%{transform:translateX(0%)}60%{transform:translateX(0%)}100%{transform:translateX(102%)}}
+@keyframes sceneLabel{0%,12%{opacity:0;transform:scale(.88)}22%,72%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.03)}}
+.page-enter{animation:pageFade .24s ease}
+@keyframes pageFade{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+
+
+/* v6.1 pixel icon system and tailored transition variants */
+.menu-grid button span{height:38px;display:grid;place-items:center;}
+.menu-grid .menu-pixel-icon{display:block;width:36px;height:36px;image-rendering:pixelated;filter:drop-shadow(2px 3px 0 #181022)}
+.scene-transition[data-scene="adventure"] .wipe-panel{background:repeating-linear-gradient(90deg,#111326 0 28px,#293c5e 28px 56px,#426a79 56px 84px);border-right:6px solid #f8dc83}
+.scene-transition[data-scene="shop"] .wipe-panel{background:repeating-linear-gradient(90deg,#311a25 0 18px,#684328 18px 36px,#a77643 36px 54px);border-right:6px solid #ffe08e}
+.scene-transition[data-scene="gear"] .wipe-panel{background:repeating-linear-gradient(90deg,#161b2b 0 20px,#3d5775 20px 40px,#6487a3 40px 60px);border-right:6px solid #dbeeff}
+.scene-transition[data-scene="quests"] .wipe-panel{background:repeating-linear-gradient(90deg,#2b1c48 0 24px,#685080 24px 48px);border-right:6px solid #ffd878}
+.scene-transition[data-scene="adventure"] .scene-transition-label{background:linear-gradient(#bde9fc,#5f9fb7 55%,#31526c);color:#12293e;border-color:#daf4ff}
+.scene-transition[data-scene="shop"] .scene-transition-label{background:linear-gradient(#fff1ba,#cb904e 55%,#7a4925);color:#351b14}
+.scene-transition[data-scene="gear"] .scene-transition-label{background:linear-gradient(#f5faff,#aac5e7 55%,#6681ab);color:#1d2948;border-color:#e8f5ff}
+@media (prefers-reduced-motion:reduce){.scene-transition .wipe-panel,.scene-transition.show .wipe-panel,.scene-transition.show .scene-transition-label{animation:none!important}.scene-transition{transition:none!important}}
+
+/* v6.1 mobile navigation audit */
+button{min-width:0;-webkit-tap-highlight-color:transparent}
+button:focus-visible,.area-card:focus-visible{outline:3px solid #f8e6a0;outline-offset:2px}
+.menu-grid button b,.menu-grid button small{max-width:100%;overflow-wrap:anywhere;text-wrap:balance}
+.menu-grid button{padding:8px 5px!important;gap:3px!important;min-height:91px!important}
+.menu-grid .menu-pixel-icon{width:32px!important;height:32px!important}
+.menu-grid button span{height:32px!important}
+.menu-grid button b{font-size:clamp(12px,3.9vw,16px)!important;line-height:1.2}
+.menu-grid button small{font-size:clamp(9px,2.7vw,11px)!important;line-height:1.24}
+.nav button{min-width:45px;white-space:nowrap}
+#home{padding-bottom:max(12px,env(safe-area-inset-bottom))}
+#home .home-banner,#home .home-stats{min-width:0;flex-wrap:wrap}
+#home .home-banner strong{font-size:clamp(13px,4vw,16px)}
+.scene-transition{contain:paint}
+@media(max-width:360px){.menu-grid{gap:6px!important}.menu-grid button{min-height:82px!important}.menu-grid .menu-pixel-icon{width:28px!important;height:28px!important}.menu-grid button span{height:28px!important}.menu-grid button small{font-size:9px!important}.heading .brand{font-size:13px!important}.nav{gap:3px}.nav button{padding:6px!important}}
+@media(max-height:720px){#home .village-hero{height:110px!important}.menu-grid button{min-height:77px!important}.menu-grid .menu-pixel-icon{width:27px!important;height:27px!important}.menu-grid button span{height:27px!important}}
+@media(prefers-reduced-motion:reduce){.page-enter{animation:none!important}button,.area-card{transition:none!important}}
+</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 騎士與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v6.1</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
 <section id="titleScreen" class="frontscreen"><div class="title-art"><div class="moon"></div><div class="pixel-mount a"></div><div class="pixel-mount b"></div><div class="title-knight">⚔️</div><div class="title-dragon">🐉</div></div><div class="title-logo"><span>騎士與龍</span><small>騎士與龍 · 像素冒險復刻原型</small></div><div class="title-actions"><button class="bigbtn primary" onclick="beginAdventure()">▶ 開始冒險</button><button class="bigbtn" onclick="showPage('help')">📜 遊戲說明</button><div id="titleProgress" class="muted"></div></div><div class="legal">非官方玩家製作 · 原創替代圖像 · 本機自動存檔</div></section>
-<section id="home" class="screen hidden"><div class="village-hero"><div class="sky-sun">☀</div><div class="village-hills"></div><span class="house h1">🏠</span><span class="house h2">🏰</span><span class="house h3">🏡</span><span class="village-knight">🧑‍🦰⚔️</span></div><div class="home-banner"><strong>冒險者的城鎮</strong><span id="homeInfo"></span></div><div class="home-stats" id="homeStats"></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><h2>要前往哪裡？</h2><div class="menu-grid"><button onclick="showPage('adventure')"><span>🗺️</span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span>⚔️</span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span>🏪</span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span>📋</span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span>🏅</span><b>騎士資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span>📜</span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span>📚</span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span>💾</span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
+<section id="home" class="screen hidden"><div class="village-hero"><div class="sky-sun">☀</div><div class="village-hills"></div><span class="pixel-house ph-left" aria-hidden="true"></span><span class="pixel-house ph-center" aria-hidden="true"></span><span class="pixel-house ph-right" aria-hidden="true"></span><span class="pixel-town-knight" aria-hidden="true"></span></div><div class="home-banner"><strong>冒險者的城鎮</strong><span id="homeInfo"></span></div><div class="home-stats" id="homeStats"></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><h2>要前往哪裡？</h2><div class="menu-grid"><button onclick="showPage('adventure')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="adventure" aria-hidden="true"></canvas></span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="gear" aria-hidden="true"></canvas></span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="shop" aria-hidden="true"></canvas></span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="quests" aria-hidden="true"></canvas></span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="profile" aria-hidden="true"></canvas></span><b>騎士資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="help" aria-hidden="true"></canvas></span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="journal" aria-hidden="true"></canvas></span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="settings" aria-hidden="true"></canvas></span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
 <section id="journal" class="screen hidden"><h2>📚 冒險圖鑑</h2><p class="muted">查看武器稀有度、18 種怪物討伐紀錄、BOSS 收藏及探索札記。未取得與未討伐的項目將顯示為未知。</p><div id="journalContents"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
 <section id="adventure" class="screen hidden"><h2>🗺️ 冒險地圖</h2><p class="muted">選擇目的地進入六回合連續戰鬥。最後一波將遇到 BOSS。每個地區的探索事件可以選擇金幣或補給，獎勵僅能領取一次。</p><div id="areaList" class="area-list"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
 <section id="shop" class="screen hidden"><h2>🏪 城鎮商店</h2><p id="shopMoney" class="goldtext"></p><div class="shop-list"><div class="entry"><strong>🍖 冒險補給 × 1</strong><p class="muted">裝備補給盾後可施放補給技能，恢復 HP 與 AP。</p><button onclick="purchasePotion()">20 G 購買</button></div><div class="entry"><strong>🎁 裝備寶箱</strong><p class="muted">隨機獲得尚未擁有的武器或盾牌。</p><button onclick="buyWeapon();refreshShop()">80 G 購買</button></div><div class="entry"><strong>🛏️ 旅店休息</strong><p class="muted">恢復 HP 與 AP。</p><button onclick="rest();refreshShop()">30 G 休息</button></div></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
@@ -932,7 +1030,7 @@ function drawKnight(t){
  cx.save();cx.translate(Math.round(149+dx),Math.round(264+dy));cx.rotate(lean*.78);
  if(action==='hurt'&&!reduce)cx.translate(Math.sin(t*.09)*2,0);
  const handXPos=handX, handYPos=handY;
- // v5.5: single pixel grid for the entire hero. One logical pixel is 3 Canvas pixels.
+ // v6.1: single pixel grid for the entire hero. One logical pixel is 3 Canvas pixels.
  // The hero remains bareheaded and faces right in both battle and paper doll.
  const pix=(x,y,w,h,color)=>box(x*3,y*3,w*3,h*3,color);
  const D='#25243b', H='#e9bc63', HL='#fff0a2', SK='#efb98b', SD='#b77c62';
@@ -984,7 +1082,7 @@ function drawKnight(t){
  const elbow=[snap(18+(grip[0]-18)*.46),snap(0+(grip[1])*.45)];
  segment(frontShoulder,elbow,[D,BL]);segment(elbow,grip,[BL,BH]);
  // Equipment is drawn directly from the EXACT 16x16 sprites used in the backpack.
- // v5.5: 8-bit equipment keeps a consistent apparent size against the hero.
+ // v6.1: 8-bit equipment keeps a consistent apparent size against the hero.
  // Long weapons use 2px tiles; shields retain 2px tiles while held close to the arm.
  const drawEquip=(id,x,y,tile=2)=>{
   const sprite=EQUIP_8BIT_SPRITES[id];if(!sprite)return;
@@ -1018,7 +1116,7 @@ function drawKnight(t){
 
  cx.restore();
 }
-// v5.5: eleven hand-authored, 16x16 equipment sprites. Each icon uses 4px hard pixels
+// v6.1: eleven hand-authored, 16x16 equipment sprites. Each icon uses 4px hard pixels
 // on its 64x64 Canvas. No emoji, gradients, antialiasing or shared generic shield art.
 const EQUIP_ICON_PALETTE={
   K:'#20213a', W:'#f5f0dd', S:'#c5d5df', B:'#6f8da7', G:'#efd77c',
@@ -1178,7 +1276,7 @@ function drawBossDefeatEffect(t){
  }
 }
 
-// v5.5: distinct, hand-authored 8-bit silhouettes for the first two waves of each region.
+// v6.1: distinct, hand-authored 8-bit silhouettes for the first two waves of each region.
 // All coordinates are deliberately snapped to a four-pixel grid. No external sprites.
 function drawStarterMonster(zone,kind,t){
  const step=Math.floor(t/220)%2, blink=Math.floor(t/1700)%7===0;
@@ -1242,6 +1340,112 @@ function drawStarterMonster(zone,kind,t){
  }
 }
 
+
+// v6.1 nine unique mid-game monsters. Pixel blocks deliberately use a compact palette.
+function drawMidMonster(zone,kind,t){
+ const bob=Math.round(Math.sin(t*.007+kind)*2);
+ const B=(x,y,w,h,c)=>box(x,y+bob,w,h,c);
+ const P=(arr,c)=>poly(arr.map(([x,y])=>[x,y+bob]),c);
+ const ink='#201b31',white='#fff1ce',eye='#28213b';
+ // Wave 3: shadow spider / goblin / horned ember beast.
+ if(kind===2 && zone===0){
+  for(let i=0;i<4;i++){let y=-14+i*13;B(-54,y,25,5,ink);B(29,y,25,5,ink);B(-57,y+5,8,15,'#554385');B(49,y+5,8,15,'#554385')}
+  P([[-30,-24],[-15,-38],[17,-38],[32,-24],[35,19],[22,30],[-22,30],[-35,19]],ink);
+  B(-26,-24,52,48,'#6751aa');B(-20,-18,40,30,'#8c77d5');B(-16,-12,10,10,white);B(7,-12,10,10,white);
+  B(-12,-9,5,6,eye);B(10,-9,5,6,eye);B(-4,8,8,4,'#493469');
+  B(-24,-31,10,8,'#ae9bea');B(14,-31,10,8,'#ae9bea');
+ }else if(kind===2 && zone===1){
+  B(-26,-46,50,66,ink);B(-20,-40,40,56,'#83bc5c');
+  P([[-28,-43],[-40,-58],[-17,-54],[-6,-43]],'#529546');P([[16,-43],[40,-57],[30,-34]],'#529546');
+  B(-18,-21,36,34,'#b4d674');B(-18,-17,11,9,white);B(8,-17,11,9,white);
+  B(-12,-14,5,5,eye);B(12,-14,5,5,eye);B(-5,4,10,4,'#5e6035');
+  B(-36,-22,13,31,'#568d49');B(25,-22,13,31,'#568d49');B(-19,18,14,22,'#634f43');B(6,18,14,22,'#634f43');
+  B(-15,-46,30,8,'#c9e68e');
+ }else if(kind===2 && zone===2){
+  P([[-31,-18],[-40,-52],[-17,-40],[0,-48],[22,-40],[41,-53],[31,-18]],ink);
+  B(-30,-28,60,52,'#9d4a36');B(-25,-18,50,35,'#ec8550');
+  B(-19,-13,12,11,white);B(8,-13,12,11,white);B(-13,-9,6,6,eye);B(12,-9,6,6,eye);
+  B(-4,7,8,4,'#753932');B(-35,21,21,18,'#6b3634');B(14,21,21,18,'#6b3634');
+  B(-20,-39,13,12,'#ffb466');B(7,-39,13,12,'#ffb466');
+ // Wave 4: crystal beast / forest ranger / volcanic giant.
+ }else if(kind===3 && zone===0){
+  for(let i=0;i<5;i++){let x=-41+i*20;P([[x,-35],[x+9,-61-(i%2)*8],[x+17,-35]],i%2?'#9a94fa':'#76d6ed')}
+  B(-37,-33,74,59,ink);B(-30,-27,60,46,'#6a68a8');B(-20,-17,40,31,'#a5a4f0');
+  B(-17,-11,12,11,white);B(7,-11,12,11,white);B(-11,-8,5,6,eye);B(12,-8,5,6,eye);
+  B(-45,0,15,33,'#4b5089');B(30,0,15,33,'#4b5089');B(-26,22,19,22,'#3b3c6a');B(8,22,19,22,'#3b3c6a');
+ }else if(kind===3 && zone===1){
+  P([[-35,-34],[-53,-66],[-8,-48],[27,-45],[48,-66],[33,-31]],ink);
+  B(-31,-34,62,57,'#6b8146');B(-25,-28,50,47,'#9ec46e');
+  B(-20,-8,13,12,white);B(8,-8,13,12,white);B(-14,-5,6,6,eye);B(13,-5,6,6,eye);
+  B(-45,-26,14,44,'#58764b');B(31,-26,14,44,'#58764b');B(-26,20,18,23,'#745637');B(8,20,18,23,'#745637');
+  B(-12,-38,24,8,'#d8f59c');B(-6,10,13,5,'#36563f');
+ }else if(kind===3 && zone===2){
+  B(-38,-54,76,76,ink);B(-32,-48,64,66,'#8e4235');B(-27,-40,54,49,'#d06942');
+  B(-17,-22,13,11,'#ffdc82');B(7,-22,13,11,'#ffdc82');B(-12,-18,6,7,eye);B(12,-18,6,7,eye);
+  B(-43,0,18,46,'#613a34');B(25,0,18,46,'#613a34');B(-28,19,20,28,'#63372e');B(8,19,20,28,'#63372e');
+  for(let i=0;i<4;i++)B(-23+i*15,-53+(i%2)*5,9,11,'#ffac50');
+ // Wave 5: dark knight / thorn giant / blaze guard.
+ }else if(kind===4 && zone===0){
+  B(-31,-64,62,47,ink);B(-25,-58,50,35,'#54518a');B(-18,-46,36,12,'#ada8ed');
+  B(-16,-30,32,12,'#1a192c');B(-11,-28,8,5,'#ffb26b');B(5,-28,8,5,'#ffb26b');
+  B(-32,-16,64,51,ink);B(-25,-10,50,38,'#716ba8');B(-7,-8,14,32,'#b2a6ec');
+  B(-46,-8,17,43,'#47436c');B(29,-8,17,43,'#47436c');B(-23,32,20,23,ink);B(3,32,20,23,ink);
+  B(41,-44,7,95,'#cbc4f2');B(34,-38,22,8,'#f4d07f');
+ }else if(kind===4 && zone===1){
+  B(-31,-58,62,55,ink);B(-22,-52,44,48,'#865b3a');
+  P([[-43,-44],[-65,-78],[-27,-59]],'#47783d');P([[30,-59],[66,-78],[45,-36]],'#47783d');
+  B(-45,-17,90,56,'#324a32');B(-35,-12,70,43,'#668b4b');
+  B(-23,-4,13,10,'#ffde8d');B(10,-4,13,10,'#ffde8d');B(-18,-1,6,6,eye);B(15,-1,6,6,eye);
+  B(-50,20,18,35,'#705038');B(32,20,18,35,'#705038');B(-21,31,18,25,'#59412f');B(4,31,18,25,'#59412f');
+  for(let i=0;i<5;i++)B(-42+i*18,-24+(i%2)*6,10,10,'#a2c767');
+ }else if(kind===4 && zone===2){
+  B(-33,-58,66,45,ink);B(-27,-52,54,39,'#aa4b31');
+  P([[-27,-54],[-15,-83],[-1,-55],[10,-81],[28,-52]],'#ffae46');
+  B(-20,-29,40,19,'#44232a');B(-15,-25,10,9,'#ffe1a1');B(7,-25,10,9,'#ffe1a1');
+  B(-35,-9,70,50,ink);B(-29,-3,58,38,'#c1653b');B(-9,-2,18,35,'#ffd17a');
+  B(-47,0,14,47,'#9c4d34');B(33,0,14,47,'#9c4d34');B(-25,38,20,19,'#5a2a2b');B(5,38,20,19,'#5a2a2b');
+  B(43,-53,7,107,'#755246');B(38,-66,17,20,'#ffc063');
+ }
+}
+// v6.1 — original 8-bit region bosses, using bold pixel silhouettes.
+function drawRegionBoss(zone,t,phaseTwo){
+ const B=(x,y,w,h,c)=>box(x,y,w,h,c),P=(a,c)=>poly(a,c);
+ const bounce=Math.floor(t/260)%2*3;
+ if(zone===0){ // 雙首魔龍: two separate heads / symmetrical tails / sapphire armor
+  const ink='#191a43',main=phaseTwo?'#7446b5':'#4967b8',hi=phaseTwo?'#e39bff':'#8dcfff';
+  P([[-34,-12],[-91,-79-bounce],[-81,1],[-47,24]],ink);P([[34,-12],[88,-79+bounce],[80,3],[44,26]],main);
+  P([[-40,-10],[-81,-58],[-67,8],[-37,20]],main);P([[40,-10],[80,-57],[66,11],[36,18]],hi);
+  B(-43,-24,86,72,ink);B(-36,-30,72,67,main);B(-24,11,49,23,hi);
+  // Two head columns and two expressive snouts, visible even at small resolution
+  for(const h of [-1,1]){const x=h*33;
+   B(x-18,-65,36,38,ink);B(x-14,-69,28,35,main);B(x-13,-44,34,16,main);
+   B(x-8,-56,8,8,phaseTwo?'#ffeb75':'#fff1aa');B(x-5,-54,4,4,ink);
+   B(x+8,-38,10,6,hi);P([[x-14,-65],[x-14,-88],[x-2,-69]],hi);
+  }
+  B(-38,38,27,27,ink);B(12,38,27,27,ink);B(-31,42,16,18,main);B(17,42,16,18,main);
+  if(phaseTwo){for(let i=0;i<5;i++)B(-70+i*32,-96+(i%2)*13,10,10,'#e9a9ff')}
+ }else if(zone===1){ // 古樹龍: trunk body, antlers, leaf canopy, rooted legs
+  const ink='#233b2a',wood='#7f5739',leaf=phaseTwo?'#b44f75':'#5ebc63',leafHi=phaseTwo?'#f29caa':'#a3e78a';
+  P([[-24,-28],[-91,-77],[-65,-14],[-43,20]],ink);P([[28,-29],[92,-74],[69,-12],[44,20]],leaf);
+  B(-32,-45,66,98,ink);B(-25,-40,52,82,wood);B(-18,-29,40,44,'#a5784d');
+  B(-48,-80,95,39,ink);B(-43,-87,85,40,leaf);B(-32,-96,65,23,leafHi);
+  P([[-20,-77],[-54,-111],[-41,-76],[-31,-73]],wood);P([[21,-77],[58,-110],[47,-72],[31,-73]],wood);
+  B(-23,-20,13,12,'#ffdf91');B(10,-20,13,12,'#ffdf91');B(-19,-17,6,6,ink);B(13,-17,6,6,ink);
+  B(-11,5,23,8,ink);B(-43,34,27,31,wood);B(17,34,27,31,wood);
+  for(let j=0;j<5;j++)B(-44+j*19,-83+(j%2)*7,12,9,leafHi);
+  if(phaseTwo){for(let j=0;j<4;j++)B(-52+j*31,5+(j%2)*14,8,17,'#ff99ba')}
+ }else{ // 赤焰龍: lava-red dragon, broad jaw, volcanic back-spikes and flame crest
+  const ink='#451f32',body=phaseTwo?'#a7313a':'#c45638',hot=phaseTwo?'#fff09c':'#ffb15a';
+  P([[-35,-13],[-89,-73],[-69,9],[-41,17]],ink);P([[37,-13],[92,-75],[66,5],[44,21]],body);
+  P([[-35,-14],[-74,-53],[-63,6],[-34,18]],body);P([[37,-12],[76,-53],[63,8],[33,18]],hot);
+  B(-42,-47,84,94,ink);B(-36,-40,73,81,body);B(-24,-4,49,33,'#e67d40');
+  B(-31,-74,64,36,ink);B(-26,-73,53,34,body);B(-17,-57,34,14,'#e98b53');
+  B(-23,-56,11,11,hot);B(12,-56,11,11,hot);B(-20,-53,5,5,ink);B(15,-53,5,5,ink);
+  P([[-29,-73],[-20,-101],[-7,-78],[0,-111],[12,-74],[24,-94],[30,-69]],hot);
+  B(-31,36,24,28,ink);B(8,36,24,28,ink);B(-22,39,13,18,body);B(13,39,13,18,body);
+  if(phaseTwo){for(let i=0;i<6;i++)B(-47+i*18,-88-(i%3)*10,9,15,'#ffdf76')}
+ }
+}
 function drawMonster(t){
  const zone=s.zone%3,boss=s.round===6,kind=s.round-1;
  const now=performance.now(),hit=now<monsterHitUntil,attacking=now<monsterAttackUntil;
@@ -1269,57 +1473,10 @@ function drawMonster(t){
  if(!boss && kind<=1){
   drawStarterMonster(zone,kind,t);
  }else if(boss){
-  cx.scale(1.1,1.1);
-  pixelParts([
-   [-40,-44,80,52,dark[0]],[-30,-58,60,18,bright[0]],[-24,-20,16,10,eye], [8,-20,16,10,eye],
-   [-48,-18,20,44,dark[1]],[28,-18,20,44,dark[1]],[-24,24,18,34,dark[2]],[8,24,18,34,dark[2]],
-   [-20,2,40,10,'#1d1525']
-  ]);
-  poly([[-22,-52],[-36,-84],[-2,-62]],bright[1]);poly([[4,-62],[36,-84],[24,-48]],bright[1]);
-  poly([[-42,-18],[-92,-68],[-72,-10],[-38,6]],dark[2]);poly([[40,-18],[90,-66],[74,-8],[38,6]],dark[1]);
-  poly([[-12,-62],[0,-96],[14,-62]],'#ffe38a');
-  if(zone===1){for(let j=0;j<4;j++)box(-42+j*24,-76+(j%2)*10,16,12,'#c1f17b')}
-  if(zone===2){for(let j=0;j<5;j++)box(-40+j*20,12+(j%2)*4,10,8,'#ff8648')}
- }else if(kind===0){
-  const flap=Math.round(Math.sin(t*.012)*6);
-  pixelParts([
-   [-18,-12,36,28,bright[0]],[-14,-16,28,12,bright[1]],[-10,-2,8,10,eye],[2,-2,8,10,eye],[-6,10,12,4,eye]
-  ]);
-  poly([[-12,-4],[-60,-26-flap],[-46,8],[-20,8]],dark[0]);
-  poly([[12,-4],[60,-26-flap],[46,8],[20,8]],dark[0]);
-  box(-8,16,6,6,bright[2]);box(2,16,6,6,bright[2]);
- }else if(kind===1){
-  pixelParts([
-   [-28,-8,56,34,bright[1]],[-20,-18,40,14,bright[0]],[-18,-2,10,10,eye],[8,-2,10,10,eye],[-8,14,16,4,eye],
-   [-30,20,60,10,dark[0]]
-  ]);
-  box(-22,26,10,8,dark[0]);box(-6,28,12,6,dark[0]);box(12,26,10,8,dark[0]);
-  if(zone===1){box(-10,-26,8,8,'#ffd58c');box(2,-26,8,8,'#ffd58c')}
- }
- else if(kind===2){
-  pixelParts([
-   [-34,-20,68,44,dark[0]],[-26,-30,52,14,bright[0]],[-18,-6,10,10,eye],[8,-6,10,10,eye],[-10,16,20,6,eye],
-   [-36,16,16,22,dark[1]],[20,16,16,22,dark[1]]
-  ]);
-  if(zone===1){box(-36,-12,12,10,'#fff0ad');box(24,-12,12,10,'#fff0ad')}
- }
- else if(kind===3){
-  pixelParts([
-   [-30,-26,60,50,dark[0]],[-22,-34,44,16,bright[0]],[-18,-12,10,10,eye],[8,-12,10,10,eye],[-10,14,20,4,eye]
-  ]);
-  for(let j=0;j<4;j++){box(-40+j*26,20+(j%2)*4,10,24,dark[1])}
- }
- else if(kind===4){
-  pixelParts([
-   [-38,-40,76,60,dark[0]],[-30,-50,60,18,bright[0]],[-22,-18,12,12,eye],[10,-18,12,12,eye],[-12,8,24,8,eye],
-   [-46,-6,16,44,dark[1]],[30,-6,16,44,dark[1]],[-24,18,16,34,dark[2]],[8,18,16,34,dark[2]]
-  ]);
- }
- else{
-  pixelParts([
-   [-34,-34,68,56,dark[0]],[-26,-44,52,16,bright[0]],[-18,-14,10,10,eye],[8,-14,10,10,eye],[-12,10,24,6,eye],
-   [-42,-10,18,18,dark[1]],[24,-10,18,18,dark[1]]
-  ]);
+  cx.scale(1.07,1.07);
+  drawRegionBoss(zone,t,enemy.bossPhase===2);
+ }else if(kind>=2 && kind<=4){
+  drawMidMonster(zone,kind,t);
  }
  cx.filter='none';cx.restore();
  if(boss&&!bossDefeat.active){
@@ -1424,10 +1581,9 @@ function materialGain(zone,boss){const type=['crystal','wood','ember'][zone]||'o
 function forgePrice(id){const lv=s.forgeLevels[id]||0;return {gold:35+lv*25,ore:1+Math.floor(lv/3),special:lv>=3?1:0,type:(['crystal','crystal','wood','crystal','ember','wood'][id]||'crystal')}}
 function materialSummary(){return Object.entries(MATERIALS).map(([k,m])=>`<span class="material-pill">${m.icon} ${m.name} ×${s.materials[k]||0}</span>`).join('')}
 const TASKS=[{label:'初次勝利',key:'wins',need:1,reward:30},{label:'擊敗十隻怪物',key:'wins',need:10,reward:85},{label:'成功施展三次奇蹟格擋',key:'guardCount',need:3,reward:60},{label:'通過十八波冒險',key:'wins',need:18,reward:130}];
-function showPage(page){
- if(page==='title')page='titleScreen';
- if(page==='gear'&&['battle','results'].includes(currentPage)){say('請在出發前於主城編成裝備。');return;}
- if(!PAGES.includes(page))return;
+let sceneTransitionBusy=false,sceneTransitionTimer=0;
+const PAGE_LABELS={titleScreen:'標題畫面',home:'主城',adventure:'冒險地圖',shop:'城鎮商店',quests:'任務',profile:'騎士資料',journal:'冒險圖鑑',gear:'裝備編成',settings:'存檔管理',help:'玩法說明',battle:'戰鬥開始',results:'戰鬥結果'};
+function applyPageState(page){
  currentPage=page;paused=page!=='battle';
  $('mobileHome')?.classList.toggle('hidden',['titleScreen','home','battle','results'].includes(page));
  PAGES.forEach(id=>$(id).classList.toggle('hidden',id!==page));
@@ -1444,12 +1600,59 @@ function showPage(page){
  if(page==='titleScreen')$('titleProgress').textContent=`Lv.${s.level} ／ 已勝利 ${s.wins} 場 ／ 自動存檔`;
  $('pauseBtn').textContent=paused?'▶':'Ⅱ';
  if(page==='battle'){last=performance.now();render();}else $('battlePauseGate')?.classList.add('hidden');
- if($(page))$(page).scrollTop=0;
+ const pageEl=$(page); if(pageEl){pageEl.scrollTop=0; pageEl.classList.remove('page-enter'); void pageEl.offsetWidth; pageEl.classList.add('page-enter');}
  window.scrollTo?.(0,0);
+}
+function shouldSceneTransition(from,to){
+ if(!from||from===to)return false;
+ if(['battle','results'].includes(from)||['battle','results'].includes(to))return false;
+ return true;
+}
+let transitionCleanups=[];
+function runSceneTransition(label,cb,page='home'){
+ const gate=$('sceneTransition'),txt=$('sceneTransitionLabel');if(!gate){cb();return}
+ transitionCleanups.forEach(clearTimeout);transitionCleanups=[];sceneTransitionBusy=true;
+ const style=['adventure','battle'].includes(page)?'adventure':page==='shop'?'shop':page==='gear'?'gear':page==='quests'?'quests':'general';
+ gate.dataset.scene=style;txt.textContent=label||'場景切換';gate.classList.remove('hidden','show');
+ void gate.offsetWidth;gate.classList.add('show');
+ transitionCleanups.push(setTimeout(()=>cb?.(),250));
+ transitionCleanups.push(setTimeout(()=>gate.classList.remove('show'),560));
+ transitionCleanups.push(setTimeout(()=>{gate.classList.add('hidden');sceneTransitionBusy=false;transitionCleanups=[];},730));
+}
+
+function showPage(page,instant=false){
+ if(page==='title')page='titleScreen';
+ if(page==='gear'&&['battle','results'].includes(currentPage)){say('請在出發前於主城編成裝備。');return;}
+ if(!PAGES.includes(page))return;
+ if(sceneTransitionBusy && !instant)return;
+ if(instant&&sceneTransitionBusy){transitionCleanups.forEach(clearTimeout);transitionCleanups=[];sceneTransitionBusy=false;$('sceneTransition')?.classList.remove('show');$('sceneTransition')?.classList.add('hidden');}
+ const doApply=()=>applyPageState(page);
+ if(!instant && shouldSceneTransition(currentPage,page))runSceneTransition(PAGE_LABELS[page]||'場景切換',doApply,page);
+ else doApply();
 }
 function switchTab(tab){showPage(tab)}
 function beginAdventure(){showPage('home')}
-function refreshHome(){const zone=ZONES[s.zone];$('pioneerHome').innerHTML=pioneerHTML(true);$('growthHome').innerHTML=growthHTML();$('homeInfo').textContent=`騎士 Lv.${s.level}`;$('homeStats').innerHTML=`<span>❤️ ${s.hp}/${s.maxHp}</span><span>💰 ${s.gold} G</span><span>🍖 ${s.potions}</span>`;let box=$('homeCoach');if(!box){box=document.createElement('div');box.id='homeCoach';box.className='coach-strip';$('pioneerHome').insertAdjacentElement('beforebegin',box)}let tips=s.wins===0?['⚔️ 初次冒險','先用訓練木劍挑戰洞窟，擊敗 3 隻怪物後領取長槍。','adventure']:s.pioneerRewards.includes('third')&&!s.equipped.includes(1)?['🔱 新裝備到手','你已經有長槍！到裝備頁換上新武器，戰鬥中可以切換技能。','gear']:s.wins<3?['🌱 拓荒進行中','累積 3 場勝利，便可固定領取第一把長槍。','adventure']:s.wins<6?['🏆 第一個大目標','持續挑戰水晶洞窟，擊敗第 6 波的雙首魔龍。','adventure']:['✨ 挑戰下一個目標','查看拓荒手札、領取獎勵，或換上新武器再出發。','quests'];box.innerHTML=`<strong>${tips[0]}</strong><div>${tips[1]}</div><button onclick="showPage('${tips[2]}')">前往${tips[2]==='adventure'?'冒險':tips[2]==='gear'?'裝備':'任務'} →</button>`}
+
+// v6.1: tiny original 16x16 icon silhouettes. One source for every home menu icon.
+const HOME_ICON_PIXELS={
+ adventure:['....BBBB........','...BCCCCB.......','..BCCCCCCB......','..BCCCCCCB......','..BCCCWCCB......','..BCCCCCCB......','...BCCCCB.......','....BBBB........','......DD........','.....DDDD.......','....DDDDDD......','...DDDDDDDD.....','..DDDDDDDDDD....','..DDDDDDDDDD....','...DDDDDDDD.....','................'],
+ gear:['.......SS.......','......SSSS......','.......SS.......','.......SS.......','.......SS.......','.......SS.......','.......SS.......','.....GGSSGG.....','......GSSG......','.......SS.......','.......WW.......','......WGGW......','.....WGGGGW.....','......WWWW......','................','................'],
+ shop:['................','.....GGGGGG.....','....GYYYYYG.....','...GYYYYYYYG....','..GYYYYYYYYYG...','..DDDDDDDDDDDD..','..DBBBDBBBDBBD..','..DBBBDBBBDBBD..','..DBBBDBBBDBBD..','..DDDDDDDDDDDD..','..DWWWWWWWWWWD..','..DWWWWWWWWWWD..','..DWWDDDDWWWWD..','..DDDDDDDDDDDD..','................','................'],
+ quests:['....DDDDDDDD....','...DWWWWWWWWD...','...DWWWWWWWWD...','...DWGGWGGWWD...','...DWGGWGGWWD...','...DWWWWWWWWD...','...DWGGWGGWWD...','...DWGGWGGWWD...','...DWWWWWWWWD...','...DWGGWGGWWD...','...DWGGWGGWWD...','...DWWWWWWWWD...','...DWWWWWWWWD...','....DDDDDDDD....','................','................'],
+ profile:['......YYYY......','.....YWWWWY.....','....YWYYYYWY....','....YWYYYYWY....','....YWYYYYWY....','.....YWWWWY.....','......YYYY......','......DDDD......','....DDGGGGDD....','...DDGGGGGGDD...','...DGGGGGGGGD...','...DGGGGGGGGD...','....DDGGGGDD....','......DDDD......','................','................'],
+ help:['...DDDDDDDDDD...','..DWWWWWWWWWWD..','..DWYYYYYYYYWD..','..DWYYYYYYYYWD..','..DWWWWWWWWWWD..','..DWYYYYYYYYWD..','..DWYYYYYYYYWD..','..DWWWWWWWWWWD..','..DWYYYYYYYYWD..','..DWYYYYYYYYWD..','..DWWWWWWWWWWD..','..DWYYYYYYYYWD..','..DWWWWWWWWWWD..','...DDDDDDDDDD...','................','................'],
+ journal:['................','..DDDDDDDDDDDD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DWWWWWDDWWWD..','..DDDDDDDDDDDD..','................','................'],
+ settings:['................','.....DDDDDD.....','....DWWWWWWD....','...DWWWWWWWWD...','...DWDDDDDDWD...','...DWDGGGGDWD...','...DWDGGGGDWD...','...DWDGGGGDWD...','...DWDGGGGDWD...','...DWWWWWWWWD...','...DWWWWWWWWD...','...DWWDDDDWWD...','...DWWDDDDWWD...','....DDDDDDDD....','................','................']
+};
+function drawHomeIcons(){
+ const colors={B:'#1b1b38',C:'#7cc4e8',D:'#302742',G:'#e6ae59',S:'#dbe8ed',W:'#f5f0ce',Y:'#ebc455'};
+ document.querySelectorAll('canvas.menu-pixel-icon').forEach(canvas=>{
+  const rows=HOME_ICON_PIXELS[canvas.dataset.icon];if(!rows)return;
+  const ctx=canvas.getContext('2d');ctx.clearRect(0,0,16,16);ctx.imageSmoothingEnabled=false;
+  rows.forEach((row,y)=>[...row].forEach((ch,x)=>{if(colors[ch]){ctx.fillStyle=colors[ch];ctx.fillRect(x,y,1,1)}}));
+ });
+}
+function refreshHome(){drawHomeIcons();const zone=ZONES[s.zone];$('pioneerHome').innerHTML=pioneerHTML(true);$('growthHome').innerHTML=growthHTML();$('homeInfo').textContent=`騎士 Lv.${s.level}`;$('homeStats').innerHTML=`<span>❤️ ${s.hp}/${s.maxHp}</span><span>💰 ${s.gold} G</span><span>🍖 ${s.potions}</span>`;let box=$('homeCoach');if(!box){box=document.createElement('div');box.id='homeCoach';box.className='coach-strip';$('pioneerHome').insertAdjacentElement('beforebegin',box)}let tips=s.wins===0?['⚔️ 初次冒險','先用訓練木劍挑戰洞窟，擊敗 3 隻怪物後領取長槍。','adventure']:s.pioneerRewards.includes('third')&&!s.equipped.includes(1)?['🔱 新裝備到手','你已經有長槍！到裝備頁換上新武器，戰鬥中可以切換技能。','gear']:s.wins<3?['🌱 拓荒進行中','累積 3 場勝利，便可固定領取第一把長槍。','adventure']:s.wins<6?['🏆 第一個大目標','持續挑戰水晶洞窟，擊敗第 6 波的雙首魔龍。','adventure']:['✨ 挑戰下一個目標','查看拓荒手札、領取獎勵，或換上新武器再出發。','quests'];box.innerHTML=`<strong>${tips[0]}</strong><div>${tips[1]}</div><button onclick="showPage('${tips[2]}')">前往${tips[2]==='adventure'?'冒險':tips[2]==='gear'?'裝備':'任務'} →</button>`}
 function refreshAreas(){$('areaList').innerHTML=ZONES.map((z,i)=>{const available=i<=Math.min(2,s.unlockedZone||0);return `<button class="area-card ${available?'':'locked'}" ${available?`onclick="enterArea(${i})"`:'disabled'}><span class="area-icon">${AREA_ICONS[i]}</span><span><strong>${z.name} ${available?'':'🔒'}</strong><small>${available?`六波挑戰／${z.enemies[5]} BOSS`:'通過上一區域後解鎖'}</small><small>${available?'▶ 點擊進入關卡':'尚未開放'}</small></span></button>`}).join('')+`<div class="entry"><strong>🧭 探索事件</strong><p class="small">首次探索各區域可找到旅人留下的物資，每個區域只能領一次。</p>${ZONES.map((z,i)=>{const done=s.explorationFlags.includes(i),open=i<=(s.unlockedZone||0);return `<button ${!open||done?'disabled':''} onclick="exploreArea(${i})">${AREA_ICONS[i]} ${z.name} ${done?'✓ 已探索':open?'探索':'🔒'}</button>`}).join('')}</div>`}
 function enterArea(i){
  if(i>(s.unlockedZone||0))return;
@@ -1596,6 +1799,7 @@ function skipGuide(){closeGuide()}
 // v2.4: explicit, two-step irreversible local save reset; does not delete exported backups.
 
 function resetGameInstant(){
+ if(typeof transitionCleanups!=='undefined'){transitionCleanups.forEach(clearTimeout);transitionCleanups=[];sceneTransitionBusy=false;$('sceneTransition')?.classList.add('hidden');}
   try{localStorage.removeItem('knight-dragon-v2')}catch(e){alert('無法清除瀏覽器存檔：'+e.message);return}
   s=init();lastNewWeapon=null;s.unlockedZone=0;chainTypes=[];chainWindow=0;cardQueue=[];particles=[];floating=[];
   heroActionUntil=0;monsterHitUntil=0;monsterAttackUntil=0;guardCooldown=0;guardUntil=0;enemyPatternIndex=0;
@@ -1650,5 +1854,5 @@ function importSave(){
 document.addEventListener('visibilitychange',()=>{if(document.hidden){window.mobileAutoPause=(!paused && phase==='battle');if(window.mobileAutoPause){paused=true;const b=$('pauseBtn');if(b)b.textContent='▶';syncBattlePauseUI();}}else{last=performance.now();if(window.mobileAutoPause){paused=true;window.mobileAutoPause=false;const b=$('pauseBtn');if(b)b.textContent='▶';say('已暫停，點選「繼續戰鬥」恢復。');syncBattlePauseUI();}}});
 window.addEventListener('pageshow',()=>{last=performance.now()});
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-startRound();showPage('titleScreen');requestAnimationFrame(draw);
+startRound();showPage('titleScreen',true);requestAnimationFrame(draw);
 </script></body></html>
