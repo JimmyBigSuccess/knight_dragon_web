@@ -1,12 +1,20 @@
 {
-  "name": "騎士與龍 — 冒險復刻原型 v2.7",
+  "name": "騎士與龍 — 冒險復刻原型 v4.7",
   "short_name": "騎士與龍",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#140e27",
   "theme_color": "#20162e",
   "icons": [
-    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
-    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
