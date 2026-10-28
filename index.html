@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>騎士與龍 — 8-bit 冒險原型 v6.1</title><meta name="theme-color" content="#1b1833"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="騎士與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方騎士與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>騎士與龍 — 8-bit 冒險原型 v6.6</title><meta name="theme-color" content="#1b1833"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="騎士與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方騎士與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
 :root{--gold:#f9d980;--edge:#85512b;--ink:#190e27}*{box-sizing:border-box}body{margin:0;color:#fff1c8;background:radial-gradient(ellipse at 50% -10%,#59304f,#130e20 60%);font-family:system-ui,'Noto Sans TC',sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.44;cursor:not-allowed}.shell{max-width:540px;margin:auto;min-height:100vh}.heading{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 7px;gap:10px;background:linear-gradient(#27152f,#4b1727 60%,#180e20);border-bottom:3px solid #af783f}.brand{color:#ffcf62;font-weight:1000;letter-spacing:.05em;text-shadow:2px 3px #492119}.sub{font-size:10px;color:#d4c6c6}.nav{display:flex;gap:5px}.nav button{padding:7px;border-radius:7px;color:#f6e7cb;background:#4b344e;border:2px solid #936950;font-weight:800;font-size:12px}.nav .chosen{background:#a77336;color:#211525}.scene{position:relative;overflow:hidden;border:4px solid #ac7844;border-top:0;border-bottom-width:6px;box-shadow:0 5px 0 #3a1e2d;background:#140e27}.scene canvas{width:100%;height:auto;display:block;image-rendering:pixelated;aspect-ratio:480/380}.overlaytop{position:absolute;inset:0 0 auto 0;pointer-events:none}.scenehead{display:flex;align-items:start;justify-content:space-between;padding:5px}.round{background:linear-gradient(#4d2727,#16121d);border:3px ridge #c7a060;border-radius:9px;padding:2px 10px;color:#ffe684;font-weight:1000;text-align:center;text-shadow:2px 2px #5f2b1e;line-height:1.1}.round strong{font-size:22px}.waves{display:flex;gap:2px;margin-top:4px;background:#140e27a0;padding:4px;border-radius:5px}.wave{height:19px;width:21px;background:#604e54;border:2px solid #a99273;box-shadow:inset 0 -5px #392738}.wave.done{background:linear-gradient(#bdb6a2,#eed38e 52%,#70532a)}.wave.now{background:linear-gradient(#faf5df,#78b8f5 62%,#405c9a)}.combo{position:absolute;top:69px;left:7px;font-weight:1000;font-size:31px;color:#ffe13d;font-style:italic;text-shadow:3px 3px #10000b,-2px -2px #130b0b}.combo small{font-size:15px}.enemylabel{position:absolute;top:104px;right:10px;min-width:140px;padding:4px 8px;border:2px solid #977249;border-radius:8px;background:#25162bbf;text-align:right;font-size:12px}.enemylabel strong{color:#ffda8c}.danger{position:absolute;top:149px;left:0;right:0;text-align:center;font-size:20px;font-weight:1000;color:#fff774;text-shadow:2px 3px #7c2135;pointer-events:none}.toast{position:absolute;left:12%;right:12%;bottom:20px;text-align:center;padding:9px;background:#170f27cf;border:2px solid #bca06d;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}.hud{padding:7px 8px 12px;background:linear-gradient(110deg,#39202b,#8b542f 7%,#31202a 11%,#302032 89%,#9e6e3c 95%,#42202c);border:3px ridge #b68c4c;border-top:0}.healthline{display:flex;justify-content:space-between;gap:4px;font-size:13px;font-weight:900;margin:1px 2px 3px}.meter{background:#170d22;padding:2px;border:2px solid #ad7943;border-radius:7px;height:16px;box-shadow:inset 0 2px #06030b;margin-bottom:4px;overflow:hidden}.meter>span{display:block;height:100%;transition:width .2s}.hpfill{background:linear-gradient(#a4ff67,#32cb3e 60%,#248021)}.apfill{background:repeating-linear-gradient(90deg,#ee4535 0 16%,#f7b445 16% 18%,#822221 18% 20%)}.ppfill{background:linear-gradient(90deg,#9c57cb,#f2d0fe)}.weaponbar{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;margin-bottom:4px;border-radius:7px;background:#1a0d18;border:2px solid #865c3a}.weapon{position:relative;min-height:51px;border:2px solid #a57c48;border-radius:7px;background:linear-gradient(#673c3d,#2b1529);color:white}.weapon.active{border-color:#f8ea7f;background:linear-gradient(#775b32,#4c2722);box-shadow:inset 0 0 11px #eabc59}.weapon .sym{display:block;font-size:26px;line-height:27px;filter:drop-shadow(1px 2px #000)}.weapon .nm{font-size:10px;display:block}.weapon .elem{position:absolute;top:0;right:3px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.card{padding:3px 1px 4px;background:linear-gradient(#f3e9ce,#c8a77a);border:3px solid #9b623c;border-radius:13px;box-shadow:inset 0 0 0 2px #efe7be,0 3px 0 #190b15;color:#1a1428;position:relative;min-height:78px;transition:transform .1s}.card:active{transform:translateY(3px)}.card .art{height:37px;display:flex;justify-content:center;align-items:center;font-size:30px;filter:drop-shadow(2px 2px #6d506e)}.card .name{font-size:11px;font-weight:1000;white-space:nowrap;letter-spacing:-.5px}.cost{position:absolute;right:2px;top:0;background:linear-gradient(#ffebd7,#d75451);color:#261326;font-weight:1000;border:2px solid #5a2539;border-radius:50%;width:27px;height:25px;line-height:20px;font-size:16px}.card.dark{background:linear-gradient(#4a3e80,#15162c);color:#e7dbff;border-color:#4b477c;box-shadow:inset 0 0 0 2px #7e6eb5}.card.dark .cost{background:#3b344f;color:white}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}.ctl{border:3px solid #e2b785;border-radius:12px;min-height:48px;font-size:12px;font-weight:1000;color:#fff;text-shadow:1px 2px #1e1322;box-shadow:inset 0 2px 6px #ffffff70,0 3px #241525}.guard{background:linear-gradient(#91c2ff,#367bc5 65%,#144c84)}.meat{background:linear-gradient(#ffbaa7,#e56161 65%,#8f383f)}.advance{background:linear-gradient(#e8c56c,#916a23)}.pause{background:linear-gradient(#9d7eaf,#65416e)}.status{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:8px 0 0;font-size:11px;color:#f4d9aa}.message{padding:8px 12px;font-size:12px;min-height:44px;line-height:1.5;background:#180d21;border-top:2px solid #72472a}.screen{padding:14px;background:#261c32;min-height:610px}.screen h2{margin:0 0 12px;color:#ffe1a3}.screen .entry{padding:10px;margin:7px 0;background:#3d2c43;border:1px solid #997545;border-radius:9px}.screen button{background:#68476a;color:#fff2ce;border:2px solid #a9895b;padding:8px 10px;border-radius:8px;margin:4px}.screen button.active{background:#95723f}.muted{color:#c5aec3;font-size:12px}.small{font-size:12px}.footer{padding:12px;text-align:center;color:#a997a9;font-size:11px}.hidden{display:none!important}@media(min-width:620px){.shell{margin:20px auto;border:5px solid #281424;box-shadow:0 12px 45px #050307;border-radius:12px;overflow:hidden}}@media(max-width:380px){.wave{width:16px}.card .name{font-size:9px}.weapon .nm{font-size:9px}}
 
 /* v0.3: card queue, threat telegraph, expanded scene polish */
@@ -351,7 +351,7 @@ button:focus-visible{outline:3px solid #ffdb7f;outline-offset:2px}
 #battle .danger{z-index:4}
 #battle .scene:has(.danger){isolation:isolate}
 
-/* v6.1 8-bit overhaul */
+/* v6.2 8-bit overhaul */
 :root{--gold:#f7d45a;--edge:#6b4c23;--ink:#141225;--panel:#2c2747;--panel2:#3f3765;--pixelShadow:#0b0914}
 body{font-family:"Courier New","Lucida Console",monospace;background:linear-gradient(#1b1833,#0f1021)!important;color:#f7f1d0;letter-spacing:.02em}
 button,input,textarea{font-family:"Courier New","Lucida Console",monospace}
@@ -392,16 +392,16 @@ button,input,textarea{font-family:"Courier New","Lucida Console",monospace}
 #resultDetails strong,#resultPreview strong{color:#fff0a3}
 canvas{image-rendering:pixelated}
 
-/* v6.1: consistent 16x16 icon pixels across gear, backpack, combat, loot. */
+/* v6.2: consistent 16x16 icon pixels across gear, backpack, combat, loot. */
 .equip-pixel-icon{image-rendering:pixelated;image-rendering:crisp-edges;filter:none!important}
 .loot-icon .equip-pixel-icon{display:block;width:64px;height:64px;margin:auto}
 
-/* v6.1: crisp equipment and battle silhouette consistency */
+/* v6.2: crisp equipment and battle silhouette consistency */
 .gear-paperdoll canvas,.equip-pixel-icon,.scene canvas{image-rendering:pixelated!important}
 .gear-paperdoll{border-color:#a48bdd!important}
 #battle .weapon .sym canvas,.gear-slot .slot-icon canvas,.bag-item canvas{image-rendering:pixelated!important}
 
-/* v6.1 — consistent 8-bit interface beyond battle */
+/* v6.2 — consistent 8-bit interface beyond battle */
 :root{--ui-cream:#fff0ba;--ui-gold:#f5ce5d;--ui-ink:#141329;--ui-violet:#3d335f;--ui-line:#967ad0}
 .screen .entry,.growth-card,.pioneer-panel,.pioneer-task,.encounter-panel,.area-card,.shop-list .entry,.gear-extras,.gear-equip-area,.gear-paperdoll,.gear-slot,.bag-item,.quest,.profile-portrait,.material-pill,.pioneer-task button,.menu-grid button,.area-list button,.progress-track,.quest-progress{border-radius:0!important;box-shadow:none!important}
 .screen h2,.screen h3,.pioneer-heading strong{color:var(--ui-gold)!important;text-shadow:2px 2px 0 #131225}
@@ -436,7 +436,7 @@ canvas{image-rendering:pixelated}
 @media(max-width:620px){.menu-grid button{min-height:44px!important}.screen button{touch-action:manipulation}.shop-list .entry{padding:8px!important}.village-hero{min-height:64px}}
 
 
-/* === v6.1 mobile-game button polish + scene transition === */
+/* === v6.2 mobile-game button polish + scene transition === */
 button,.area-card,.menu-grid button,.bigbtn,.nav button,.screen button{position:relative;overflow:hidden;isolation:isolate}
 button::before,.area-card::before{content:"";position:absolute;left:3px;right:3px;top:3px;height:42%;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,0));pointer-events:none;z-index:0}
 button::after,.area-card::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,245,210,.16), inset 0 -2px 0 rgba(37,18,32,.44);pointer-events:none;z-index:0}
@@ -469,7 +469,7 @@ button:disabled{filter:grayscale(.18);box-shadow:0 3px 0 #24141d}
 @keyframes pageFade{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
 
 
-/* v6.1 pixel icon system and tailored transition variants */
+/* v6.2 pixel icon system and tailored transition variants */
 .menu-grid button span{height:38px;display:grid;place-items:center;}
 .menu-grid .menu-pixel-icon{display:block;width:36px;height:36px;image-rendering:pixelated;filter:drop-shadow(2px 3px 0 #181022)}
 .scene-transition[data-scene="adventure"] .wipe-panel{background:repeating-linear-gradient(90deg,#111326 0 28px,#293c5e 28px 56px,#426a79 56px 84px);border-right:6px solid #f8dc83}
@@ -481,7 +481,7 @@ button:disabled{filter:grayscale(.18);box-shadow:0 3px 0 #24141d}
 .scene-transition[data-scene="gear"] .scene-transition-label{background:linear-gradient(#f5faff,#aac5e7 55%,#6681ab);color:#1d2948;border-color:#e8f5ff}
 @media (prefers-reduced-motion:reduce){.scene-transition .wipe-panel,.scene-transition.show .wipe-panel,.scene-transition.show .scene-transition-label{animation:none!important}.scene-transition{transition:none!important}}
 
-/* v6.1 mobile navigation audit */
+/* v6.2 mobile navigation audit */
 button{min-width:0;-webkit-tap-highlight-color:transparent}
 button:focus-visible,.area-card:focus-visible{outline:3px solid #f8e6a0;outline-offset:2px}
 .menu-grid button b,.menu-grid button small{max-width:100%;overflow-wrap:anywhere;text-wrap:balance}
@@ -498,7 +498,21 @@ button:focus-visible,.area-card:focus-visible{outline:3px solid #f8e6a0;outline-
 @media(max-width:360px){.menu-grid{gap:6px!important}.menu-grid button{min-height:82px!important}.menu-grid .menu-pixel-icon{width:28px!important;height:28px!important}.menu-grid button span{height:28px!important}.menu-grid button small{font-size:9px!important}.heading .brand{font-size:13px!important}.nav{gap:3px}.nav button{padding:6px!important}}
 @media(max-height:720px){#home .village-hero{height:110px!important}.menu-grid button{min-height:77px!important}.menu-grid .menu-pixel-icon{width:27px!important;height:27px!important}.menu-grid button span{height:27px!important}}
 @media(prefers-reduced-motion:reduce){.page-enter{animation:none!important}button,.area-card{transition:none!important}}
-</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 騎士與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v6.1</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
+
+/* v6.2 戰鬥技能卡：8-bit裝備圖像、立體觸控與AP需求提示 */
+#battle .cards .card{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:3px solid #b18a44!important;border-bottom:5px solid #795022!important;border-radius:9px!important;background:linear-gradient(180deg,#fff1c5 0%,#eacb83 50%,#c99a55 51%,#a26e3c 100%)!important;box-shadow:inset 1px 2px #fff9d8,0 3px 0 #281b26!important;color:#23192d!important;padding:4px 2px 5px;min-height:76px;touch-action:manipulation;transition:filter .12s,transform .08s}
+#battle .cards .card .art{height:34px;display:flex;justify-content:center;align-items:center;filter:none;font-size:18px}
+#battle .cards .card .skill-equip-icon{width:34px;height:34px;image-rendering:pixelated;display:block}
+#battle .cards .card .name{font-size:10px;line-height:1.08;font-weight:900;min-height:20px;display:flex;align-items:center;justify-content:center;overflow-wrap:anywhere}
+#battle .cards .card .cost{z-index:2;right:1px;top:1px;width:auto;min-width:23px;height:21px;line-height:17px;padding:0 2px;background:#cd593d!important;border:2px solid #663224!important;color:#fff7dc!important;border-radius:5px!important;font-size:12px}
+#battle .cards .card .skill-ready{font-size:8px;font-weight:900;line-height:1.05;white-space:nowrap;color:#2d603e}
+#battle .cards .card.ap-short{border-color:#6c6985!important;background:linear-gradient(#57576e,#34344d)!important;color:#d0cce1!important;box-shadow:inset 1px 2px #9691aa,0 3px #181324!important}
+#battle .cards .card.ap-short .skill-ready{color:#ffc378}
+#battle .cards .card.card-locked{filter:grayscale(.4);opacity:.78}
+#battle .cards .card:not(:disabled):active{transform:translateY(3px) scale(.97);box-shadow:inset 0 2px #a87a42,0 1px #231626!important;filter:brightness(1.17)}
+#battle .cards .card:focus-visible{outline:3px solid #ffe67d;outline-offset:2px}
+@media(max-width:370px){#battle .cards .card{min-height:64px;padding:2px 1px 3px}#battle .cards .card .art{height:25px}#battle .cards .card .skill-equip-icon{width:26px;height:26px}#battle .cards .card .name{font-size:9px;min-height:16px}#battle .cards .card .skill-ready{font-size:7px}}
+</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 騎士與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v6.2</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
 <section id="titleScreen" class="frontscreen"><div class="title-art"><div class="moon"></div><div class="pixel-mount a"></div><div class="pixel-mount b"></div><div class="title-knight">⚔️</div><div class="title-dragon">🐉</div></div><div class="title-logo"><span>騎士與龍</span><small>騎士與龍 · 像素冒險復刻原型</small></div><div class="title-actions"><button class="bigbtn primary" onclick="beginAdventure()">▶ 開始冒險</button><button class="bigbtn" onclick="showPage('help')">📜 遊戲說明</button><div id="titleProgress" class="muted"></div></div><div class="legal">非官方玩家製作 · 原創替代圖像 · 本機自動存檔</div></section>
 <section id="home" class="screen hidden"><div class="village-hero"><div class="sky-sun">☀</div><div class="village-hills"></div><span class="pixel-house ph-left" aria-hidden="true"></span><span class="pixel-house ph-center" aria-hidden="true"></span><span class="pixel-house ph-right" aria-hidden="true"></span><span class="pixel-town-knight" aria-hidden="true"></span></div><div class="home-banner"><strong>冒險者的城鎮</strong><span id="homeInfo"></span></div><div class="home-stats" id="homeStats"></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><h2>要前往哪裡？</h2><div class="menu-grid"><button onclick="showPage('adventure')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="adventure" aria-hidden="true"></canvas></span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="gear" aria-hidden="true"></canvas></span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="shop" aria-hidden="true"></canvas></span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="quests" aria-hidden="true"></canvas></span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="profile" aria-hidden="true"></canvas></span><b>騎士資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="help" aria-hidden="true"></canvas></span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="journal" aria-hidden="true"></canvas></span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="settings" aria-hidden="true"></canvas></span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
 <section id="journal" class="screen hidden"><h2>📚 冒險圖鑑</h2><p class="muted">查看武器稀有度、18 種怪物討伐紀錄、BOSS 收藏及探索札記。未取得與未討伐的項目將顯示為未知。</p><div id="journalContents"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
@@ -581,12 +595,19 @@ function ensureEquipmentState(){
    s.weapon=Math.max(0,s.equipped.findIndex(id=>id!==null));
  }
 }
+let lastSkillActivation=[-Infinity,-Infinity,-Infinity,-Infinity];
 function useEquipmentSkill(slot){
+ if(!Number.isInteger(slot)||slot<0||slot>3)return;
  if(phase!=='battle'||paused)return;
+ const nowSkill=performance.now();
+ if(nowSkill-lastSkillActivation[slot]<110)return;
  const id=s.equipped[slot],cursor=s.skillCursor[slot]||0,skill=equipmentSkill(id,cursor);
  if(!skill){say('此欄尚未裝備。請回主城配置。');return}
  if(s.ap<skill.cost*10){say('AP 不足，請留意技能消耗。');return}
  if(skill.action==='supply'&&s.potions<=0){say('沒有剩餘補給品。');return}
+ if(skill.action==='guard'&&enemy.stunned){say('敵人暈眩中，暫時沒有攻擊可格擋。');return}
+ if(skill.action==='guard'&&nowSkill<guardCooldown){say('盾牌技能冷卻中。');return}
+ lastSkillActivation[slot]=nowSkill;
  s.weapon=slot;
  if(skill.action==='guard'){
    if(performance.now()<guardCooldown){say('盾牌技能冷卻中。');return}
@@ -646,7 +667,7 @@ let enemy,phase='battle',paused=false,anim=0,flash=0,shake=0,particles=[],floati
 function save(){try{localStorage.setItem('knight-dragon-v2',JSON.stringify(s))}catch(e){console.warn('無法存檔：',e)}}function rng(a,b){return a+Math.random()*(b-a)}function cap(x,min,max){return Math.max(min,Math.min(max,x))}function say(t){$('message').textContent=t;const el=$('toast');el.textContent=t;el.classList.add('show');toastUntil=performance.now()+1400}function float(t,x,y,color='#fff3b4'){floating.push({t,x,y,life:850,color})}function sparks(x,y,color,n=14){for(let i=0;i<n;i++)particles.push({x,y,vx:rng(-.16,.16),vy:rng(-.19,.02),life:rng(300,800),color,size:rng(2,5)})}function weapon(){return ARSENAL[s.equipped[s.weapon]]||ARSENAL[s.equipped.find(id=>id!==null)]||ARSENAL[6]}function newDeck(){let w=weapon();s.deck=[...w.skills].sort(()=>Math.random()-.5);cardQueue=Array.from({length:8},()=>w.skills[Math.floor(Math.random()*w.skills.length)])}
 function nextCard(){if(!cardQueue.length)cardQueue=Array.from({length:8},()=>weapon().skills[Math.floor(Math.random()*weapon().skills.length)]);return cardQueue.shift()}
 function previewQueue(){return cardQueue.slice(0,4)}
-function startRound(){bossDefeat={active:false,start:0,duration:2000,settled:false};visualImpact={start:0,end:0,pauseMs:0,kind:'slash',strong:false};let z=ZONES[s.zone%ZONES.length],boss=s.round===6;enemy={name:z.enemies[s.round-1],maxHp:Math.round((boss?260:55)+s.zone*75+s.round*28+s.level*6),hp:0,weak:boss?'light':z.weak,attack:boss?34:9+s.round*3+s.zone*4,stunned:false,bossPhase:1};enemy.hp=enemy.maxHp;enemyClock=0;enemyPatternIndex=0;planEnemyAttack();guardCooldown=0;combatShield=0;guardUntil=0;stunUntil=0;phase='battle';s.pp=0;chainTypes=[];chainWindow=0;lastMeat=0;newDeck();say((boss?'⚠ BOSS 出現：':'遭遇 ') +enemy.name+'！');render()}
+function startRound(){lastSkillActivation=[-Infinity,-Infinity,-Infinity,-Infinity];bossDefeat={active:false,start:0,duration:2000,settled:false};visualImpact={start:0,end:0,pauseMs:0,kind:'slash',strong:false};let z=ZONES[s.zone%ZONES.length],boss=s.round===6;enemy={name:z.enemies[s.round-1],maxHp:Math.round((boss?260:55)+s.zone*75+s.round*28+s.level*6),hp:0,weak:boss?'light':z.weak,attack:boss?34:9+s.round*3+s.zone*4,stunned:false,bossPhase:1};enemy.hp=enemy.maxHp;enemyClock=0;enemyPatternIndex=0;planEnemyAttack();guardCooldown=0;combatShield=0;guardUntil=0;stunUntil=0;phase='battle';s.pp=0;chainTypes=[];chainWindow=0;lastMeat=0;newDeck();say((boss?'⚠ BOSS 出現：':'遭遇 ') +enemy.name+'！');render()}
 function attack(i){if(phase!=='battle'||paused)return;let skill=SKILLS[i],w=weapon(),cost=skill.cost*10;if(s.ap<cost){say('AP 不足，稍候會自動恢復。');return}s.ap-=cost;let weak=w.type===enemy.weak,crit=enemy.stunned;let hit=skill.hits||1;let now=performance.now();if(now>chainWindow)chainTypes=[];chainTypes.push(w.type);chainTypes=chainTypes.slice(-3);chainWindow=now+4500;let chainBonus=chainTypes.length>=3&&new Set(chainTypes).size>=2;let powerBonus=chainBonus?1.35:1;const weaponId=s.equipped[s.weapon];if(weaponId===2&&enemy.stunned)powerBonus*=1.25;if(weaponId===3&&enemy.intent?.kind==='heavy')powerBonus*=1.3;let damage=Math.floor((w.base+(s.forgeLevels[s.equipped[s.weapon]]||0)*5+s.level*3)*skill.power*powerBonus*(weak?1.45:1)*(crit?1.8:1)*rng(.88,1.14));if(chainBonus){float('連鎖爆發!',215,145,'#ffe887');sparks(300,200,'#f9d981',32);chainTypes=[];s.ap=cap(s.ap+12,0,100)}enemy.hp=Math.max(0,enemy.hp-damage);if(s.round===6&&enemy.hp>0&&enemy.hp<=enemy.maxHp*.5&&enemy.bossPhase===1){enemy.bossPhase=2;enemy.attack=Math.ceil(enemy.attack*1.18);enemyClock=0;enemyPatternIndex=0;planEnemyAttack();float("第二階段！",310,125,"#ffd38b"); document.getElementById('battle').classList.add('boss-enraged');sparks(350,225,"#ffb05d",42);say("⚠ "+enemy.name+"進入第二階段！攻擊更猛烈，留意預警。");}s.combo+=hit;s.bestCombo=Math.max(s.bestCombo||0,s.combo);s.pp=cap(s.pp+skill.pp+(weaponId===5?8:0),0,100);if(weaponId===0&&weak)s.ap=cap(s.ap+5,0,100);if(weaponId===4)s.hp=cap(s.hp+2,0,s.maxHp);heroActionUntil=now+370;heroActionType=weaponId===1||weaponId===5?'thrust':weaponId===3?'smash':skill.hits?'combo':w.type==='dark'?'cast':'slash';
  if(skill.skillId===2||skill.power>=2)heroActionType='smash';
  if(skill.skillId===5||skill.skillId===6)heroActionType='cast';
@@ -660,13 +681,13 @@ function attack(i){if(phase!=='battle'||paused)return;let skill=SKILLS[i],w=weap
  heroActionUntil+=visualImpact.pauseMs;
  monsterHitUntil=now+contactDelay+240;
 }
-skillVisual={kind:heroActionType,color:TYPES[w.type].color,until:now+490,started:now};flash=450;shake=weak?10:4;sparks(350,235,TYPES[w.type].color,weak?30:15);float('-'+damage,315,225,weak?'#ffff70':'#fff');if(weak)float('弱點!',315,165,'#fffa48');if(s.pp>=100&&!enemy.stunned){enemy.stunned=true;stunUntil=performance.now()+2300;s.pp=0;float('暈眩!',320,140,'#e99bff');say('敵人暈眩！趁機連擊！')}else say(skill.name+'：'+damage+' 傷害'+(weak?'，屬性弱點！':''));const idx=s.deck.indexOf(i);if(idx>=0)s.deck.splice(idx,1);s.deck.push(nextCard());if(enemy.hp<=0){if(s.round===6)beginBossDefeat();else win()}render()}
+skillVisual={kind:heroActionType,color:TYPES[w.type].color,until:now+490,started:now};flash=450;shake=weak?10:4;sparks(350,235,TYPES[w.type].color,weak?30:15);float('-'+damage,315,225,weak?'#ffff70':'#fff');if(weak)float('弱點!',315,165,'#fffa48');if(s.pp>=100&&!enemy.stunned){enemy.stunned=true;stunUntil=performance.now()+2300;s.pp=0;refreshSkillReadiness();float('暈眩!',320,140,'#e99bff');say('敵人暈眩！趁機連擊！')}else say(skill.name+'：'+damage+' 傷害'+(weak?'，屬性弱點！':''));const idx=s.deck.indexOf(i);if(idx>=0)s.deck.splice(idx,1);s.deck.push(nextCard());if(enemy.hp<=0){if(s.round===6)beginBossDefeat();else win()}render()}
 function win(){phase='won';let gain=15+s.round*7+s.zone*11;s.gold+=gain;s.wins++;s.bestCombo=Math.max(s.bestCombo||0,s.combo);if(s.round===6&&!s.firstBosses.includes(s.zone))s.firstBosses.push(s.zone);if(s.wins%3===0)s.potions++;enemyClock=0;s.ap=cap(s.ap+22,0,100);say('勝利！獲得 '+gain+' 金幣。按「下一波」繼續。');if(Math.random()<.3){let id=Math.floor(Math.random()*ARSENAL.length);if(!s.owned.includes(id)){s.owned.push(id);say('戰利品：'+ARSENAL[id].name+'！')}}save()}
 function advance(){if(pendingRoadEvent()){renderRoadEvent();return}if(phase==='lost'){s.hp=s.maxHp;s.ap=100;s.combo=0;startRound();return}if(phase!=='won'){say('擊敗敵人後才能前進。');return}if(s.round<6)s.round++;else{s.round=1;s.zone=Math.min(s.zone+1,ZONES.length-1);s.level++;s.maxHp+=12;s.hp=Math.min(s.maxHp,s.hp+65);s.combo=0;s.ap=100}startRound();save()}
 function selectWeapon(n){if(paused||s.equipped[n]===null)return;s.weapon=n;render();say('已選擇裝備欄 '+(n+1)+'：'+weapon().name+'。四張技能卡可直接點擊施放。')}
 function guard(){
  if(phase!=='battle'||paused)return;
- const now=performance.now();if(now<guardCooldown){say('盾牌尚未準備好，觀察下一次敵方攻擊！');return}
+ const now=performance.now();if(enemy.stunned){say('敵人暈眩中，無法進行格擋。');return}if(now<guardCooldown){say('盾牌尚未準備好，觀察下一次敵方攻擊！');return}
  const remaining=enemyAttackAt-enemyClock;
  if(remaining<=650&&remaining>0){
   guardUntil=0;guardCooldown=now+650;s.ap=cap(s.ap+32+(s.equipped[s.weapon]===1?8:0),0,100);
@@ -761,16 +782,30 @@ function setAPGauge(value){
  if(!bar)return;
  bar.style.transform='scaleX('+Math.max(0,Math.min(100,Number(value)||0))/100+')';
 }
+function skillUnavailableReason(sk){
+ if(!sk)return '空欄';
+ if(phase!=='battle'||paused)return '待機';
+ if(sk.action==='supply'&&s.potions<=0)return '無補給';
+ if(sk.action==='guard'&&enemy.stunned)return '敵人暈眩';
+ if(sk.action==='guard'&&performance.now()<guardCooldown)return '冷卻中';
+ const deficit=Math.max(0,Math.ceil(sk.cost*10-s.ap));
+ return deficit?'差 '+deficit+' AP':'可使用';
+}
 function refreshSkillReadiness(){
  const buttons=$('cards')?.querySelectorAll('button.card');
  if(!buttons)return;
  buttons.forEach((btn,i)=>{
   const id=s.equipped[i],sk=equipmentSkill(id,s.skillCursor[i]||0);
-  const unavailable=!sk||phase!=='battle'||paused||s.ap<sk.cost*10||(sk.action==='supply'&&s.potions<=0);
+  const reason=skillUnavailableReason(sk),unavailable=reason!=='可使用';
+  if(btn.dataset.readiness===reason && btn.disabled===unavailable)return;
+  btn.dataset.readiness=reason;
   btn.disabled=unavailable;
   btn.classList.toggle('dark',unavailable);
+  btn.classList.toggle('ap-short',reason.startsWith('差 '));
+  btn.classList.toggle('card-locked',unavailable&&!reason.startsWith('差 '));
   btn.setAttribute('aria-disabled',String(unavailable));
-  if(sk)btn.setAttribute('aria-label',sk.name+'，消耗 '+sk.cost*10+' AP'+(unavailable?'，目前不可使用':''));
+  if(sk)btn.setAttribute('aria-label',sk.name+'，消耗 '+sk.cost*10+' AP，'+reason);
+  const status=btn.querySelector('.skill-ready');if(status)status.textContent=reason;
  });
 }
 function render(){let z=ZONES[s.zone%ZONES.length];
@@ -790,7 +825,13 @@ function render(){let z=ZONES[s.zone%ZONES.length];
 document.getElementById('battle').classList.toggle('boss-enraged',s.round===6&&enemy?.bossPhase===2&&phase==='battle');$('round').textContent=s.round+' / 6';$('waves').innerHTML=Array.from({length:6},(_,i)=>`<span class="wave ${i<s.round-1?'done':i===s.round-1?'now':''}"></span>`).join('');$('combo').innerHTML=s.combo+' <small>連擊</small>';$('guardCount').textContent=s.guardCount;$('chainLabel').textContent=chainTypes.length?chainTypes.map(x=>TYPES[x].symbol).join(' ➜ '):'三次技能中混合屬性';$('intentLabel').textContent='⚠ '+(enemy.intent?.name||'敵人攻擊');const ci=$('combatInsight');if(ci){ci.textContent='⚠ '+(enemy.intent?.hint||'留意攻擊時機');ci.className='combat-insight '+(enemyClock>enemyAttackAt-700?'warn':enemy.stunned?'safe':'')}$('enemyName').textContent=enemy.name+(s.round===6?(enemy.bossPhase===2?' 🔥第二階段':' 🐉第一階段'):'');$('enemyHP').textContent='HP '+enemy.hp+' / '+enemy.maxHp+'　弱點 '+TYPES[enemy.weak].symbol;$('enemyHP').style.setProperty('--remaining',Math.max(0,100*enemy.hp/enemy.maxHp)+'%');$('hpVal').textContent=s.hp+' / '+s.maxHp;$('hpBar').style.width=(100*s.hp/s.maxHp)+'%';$('apVal').textContent=Math.floor(s.ap)+' / 100  (+8／秒)';setAPGauge(s.ap);$('apBar').parentElement.setAttribute('aria-valuenow',Math.floor(s.ap));$('ppVal').textContent='PP '+s.pp+'/100';$('ppBar').style.width=s.pp+'%';$('goldVal').textContent=s.gold+' G';$('location').textContent=z.name+' ／ 騎士 Lv.'+s.level;$('weapons').innerHTML=s.equipped.map((w,i)=>`<button class="weapon ${i===s.weapon?'active':''}" onclick="selectWeapon(${i})" ${w===null?'disabled':''}><span class="sym">${w===null?'＋':`<canvas class="equip-pixel-icon" data-equip-id="${w}" width="64" height="64" aria-label="${ARSENAL[w].name}"></canvas>`}</span><span class="nm">${w===null?'空欄':ARSENAL[w].name}</span></button>`).join('');
 paintEquipmentIcons();
 $('nextQueue').innerHTML=s.equipped.map((id,i)=>{const next=equipmentSkill(id,1-(s.skillCursor[i]||0));return `<div class="nextcard"><span>${next?'下招':'空欄'}</span>${next?next.icon+' '+next.name:'—'}</div>`}).join('');
-$('cards').innerHTML=s.equipped.map((id,i)=>{const sk=equipmentSkill(id,s.skillCursor[i]||0);const unavailable=!sk||phase!=='battle'||paused||s.ap<sk.cost*10||(sk.action==='supply'&&s.potions<=0);return `<button class="card ${isShield(id)?'shield-card':''} ${unavailable?'dark':''}" onclick="useEquipmentSkill(${i})" ${unavailable?'disabled':''}><span class="cost" aria-label="${sk?'消耗 '+sk.cost*10+' AP':'未裝備'}">${sk?sk.cost:'—'}</span><span class="art">${sk?sk.icon:'＋'}</span><span class="name">${sk?sk.name:'空欄'}</span></button>`}).join('');
+$('cards').innerHTML=s.equipped.map((id,i)=>{
+ const sk=equipmentSkill(id,s.skillCursor[i]||0);const reason=skillUnavailableReason(sk),unavailable=reason!=='可使用';
+ return `<button class="card ${isShield(id)?'shield-card':''} ${unavailable?'dark':''} ${reason.startsWith('差 ')?'ap-short':''} ${unavailable&&!reason.startsWith('差 ')?'card-locked':''}" onclick="useEquipmentSkill(${i})" ${unavailable?'disabled':''} aria-label="${sk?sk.name+'，消耗 '+sk.cost*10+' AP，'+reason:'空裝備欄'}">
+ <span class="cost">${sk?sk.cost:'—'}</span><span class="art">${id!==null?`<canvas class="equip-pixel-icon skill-equip-icon" data-equip-id="${id}" width="64" height="64" aria-hidden="true"></canvas>`:'＋'}</span>
+ <span class="name">${sk?sk.name:'空欄'}</span><span class="skill-ready">${reason}</span></button>`;
+}).join('');
+paintEquipmentIcons();
 $('advanceBtn').disabled=phase==='battle'||phase==='ready';$('advanceBtn').hidden=phase==='battle'||phase==='ready';$('advanceBtn').innerHTML=phase==='lost'?'↻<br>重新挑戰':'➜<br>下一波';syncBattlePauseUI();save()}
 // Original, procedural low-resolution scenery and characters. No extracted copyrighted sprites.
 function box(x,y,w,h,color){cx.fillStyle=color;cx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}function poly(points,color){cx.fillStyle=color;cx.beginPath();cx.moveTo(...points[0]);points.slice(1).forEach(p=>cx.lineTo(...p));cx.closePath();cx.fill()}
@@ -1030,7 +1071,7 @@ function drawKnight(t){
  cx.save();cx.translate(Math.round(149+dx),Math.round(264+dy));cx.rotate(lean*.78);
  if(action==='hurt'&&!reduce)cx.translate(Math.sin(t*.09)*2,0);
  const handXPos=handX, handYPos=handY;
- // v6.1: single pixel grid for the entire hero. One logical pixel is 3 Canvas pixels.
+ // v6.2: single pixel grid for the entire hero. One logical pixel is 3 Canvas pixels.
  // The hero remains bareheaded and faces right in both battle and paper doll.
  const pix=(x,y,w,h,color)=>box(x*3,y*3,w*3,h*3,color);
  const D='#25243b', H='#e9bc63', HL='#fff0a2', SK='#efb98b', SD='#b77c62';
@@ -1082,7 +1123,7 @@ function drawKnight(t){
  const elbow=[snap(18+(grip[0]-18)*.46),snap(0+(grip[1])*.45)];
  segment(frontShoulder,elbow,[D,BL]);segment(elbow,grip,[BL,BH]);
  // Equipment is drawn directly from the EXACT 16x16 sprites used in the backpack.
- // v6.1: 8-bit equipment keeps a consistent apparent size against the hero.
+ // v6.2: 8-bit equipment keeps a consistent apparent size against the hero.
  // Long weapons use 2px tiles; shields retain 2px tiles while held close to the arm.
  const drawEquip=(id,x,y,tile=2)=>{
   const sprite=EQUIP_8BIT_SPRITES[id];if(!sprite)return;
@@ -1116,7 +1157,7 @@ function drawKnight(t){
 
  cx.restore();
 }
-// v6.1: eleven hand-authored, 16x16 equipment sprites. Each icon uses 4px hard pixels
+// v6.2: eleven hand-authored, 16x16 equipment sprites. Each icon uses 4px hard pixels
 // on its 64x64 Canvas. No emoji, gradients, antialiasing or shared generic shield art.
 const EQUIP_ICON_PALETTE={
   K:'#20213a', W:'#f5f0dd', S:'#c5d5df', B:'#6f8da7', G:'#efd77c',
@@ -1276,7 +1317,7 @@ function drawBossDefeatEffect(t){
  }
 }
 
-// v6.1: distinct, hand-authored 8-bit silhouettes for the first two waves of each region.
+// v6.2: distinct, hand-authored 8-bit silhouettes for the first two waves of each region.
 // All coordinates are deliberately snapped to a four-pixel grid. No external sprites.
 function drawStarterMonster(zone,kind,t){
  const step=Math.floor(t/220)%2, blink=Math.floor(t/1700)%7===0;
@@ -1341,7 +1382,7 @@ function drawStarterMonster(zone,kind,t){
 }
 
 
-// v6.1 nine unique mid-game monsters. Pixel blocks deliberately use a compact palette.
+// v6.2 nine unique mid-game monsters. Pixel blocks deliberately use a compact palette.
 function drawMidMonster(zone,kind,t){
  const bob=Math.round(Math.sin(t*.007+kind)*2);
  const B=(x,y,w,h,c)=>box(x,y+bob,w,h,c);
@@ -1407,7 +1448,7 @@ function drawMidMonster(zone,kind,t){
   B(43,-53,7,107,'#755246');B(38,-66,17,20,'#ffc063');
  }
 }
-// v6.1 — original 8-bit region bosses, using bold pixel silhouettes.
+// v6.2 — original 8-bit region bosses, using bold pixel silhouettes.
 function drawRegionBoss(zone,t,phaseTwo){
  const B=(x,y,w,h,c)=>box(x,y,w,h,c),P=(a,c)=>poly(a,c);
  const bounce=Math.floor(t/260)%2*3;
@@ -1545,7 +1586,7 @@ function drawCombatEffects(t){
  }
 }
 function floatStar(x,y){box(x,y,7,7,'#ffff67');box(x-5,y+3,17,3,'#fff087');box(x+2,y-5,3,17,'#fff087')}
-const AP_REGEN_PER_SECOND=8;let apUiLast=0;
+const AP_REGEN_PER_SECOND=8;let apUiLast=0,skillUiLast=0;
 function draw(ts){let dt=Math.min(50,ts-last);last=ts;if(!paused&&phase==='battle'&&currentPage==='battle'){
  if(s.ap<100){
    const before=s.ap; s.ap=Math.min(100,s.ap+AP_REGEN_PER_SECOND*dt/1000);
@@ -1554,7 +1595,7 @@ function draw(ts){let dt=Math.min(50,ts-last);last=ts;if(!paused&&phase==='battl
    // Refresh skill availability on the exact frame AP crosses a skill cost.
    if(s.equipped.some((id,i)=>{const sk=equipmentSkill(id,s.skillCursor[i]||0);return sk&&before<sk.cost*10&&s.ap>=sk.cost*10;}))refreshSkillReadiness();
    if(ts-apUiLast>=160){apUiLast=ts;$('apVal').textContent=Math.floor(s.ap)+' / 100  (+8／秒)';$('apBar').parentElement.setAttribute('aria-valuenow',Math.floor(s.ap));}
- }if(enemy.stunned){if(ts>stunUntil){enemy.stunned=false;enemyClock=0;say('敵人恢復行動！')}}else{enemyClock+=dt;if(enemyClock>=enemyAttackAt)enemyStrike(ts)}}drawBackground(ts);cx.save();if(shake>0){cx.translate(Math.sin(ts*.071)*shake*.38,Math.sin(ts*.097+1.4)*shake*.24);shake*=.83;if(shake<.45)shake=0}drawKnight(ts);drawMonster(ts);drawCombatEffects(ts);drawBossDefeatEffect(ts);cx.restore();if(flash>0)flash-=dt;for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.0002*dt;p.life-=dt;box(p.x,p.y,p.size,p.size,p.color);if(p.life<=0)particles.splice(i,1)}cx.textAlign='center';cx.font='bold 22px monospace';for(let i=floating.length-1;i>=0;i--){let f=floating[i];f.y-=dt*.045;f.life-=dt;cx.shadowColor='#16091d';cx.shadowBlur=4;cx.fillStyle=f.color;cx.fillText(f.t,f.x,f.y);cx.shadowBlur=0;if(f.life<=0)floating.splice(i,1)}$('threatSeconds').textContent=phase==='battle'&&!enemy.stunned?(Math.max(0,enemyAttackAt-enemyClock)/1000).toFixed(1)+'s':enemy.stunned?'暈眩':'--';$('threatFill').parentElement.parentElement.classList.toggle('is-imminent',phase==='battle'&&!enemy.stunned&&enemyAttackAt-enemyClock<850);$('threatFill').style.width=phase==='battle'&&!enemy.stunned?Math.min(100,enemyClock/enemyAttackAt*100)+'%':'0%';$('danger').textContent=phase==='cinematic'?'🏆 BOSS 討伐成功！':phase==='won'?'✨ 勝利！':phase==='lost'?'💀 戰敗':paused?'Ⅱ 暫停':phase==='ready'?'等待開始':enemy.stunned?'★ 暈眩 ★':phase==='battle'&&enemyClock>enemyAttackAt-650?'⚠ 防禦！':' ';if(ts>toastUntil)$('toast').classList.remove('show');requestAnimationFrame(draw)}
+ }if(ts-skillUiLast>=120){skillUiLast=ts;refreshSkillReadiness()}if(enemy.stunned){if(ts>stunUntil){enemy.stunned=false;enemyClock=0;refreshSkillReadiness();say('敵人恢復行動！')}}else{enemyClock+=dt;if(enemyClock>=enemyAttackAt)enemyStrike(ts)}}drawBackground(ts);cx.save();if(shake>0){cx.translate(Math.sin(ts*.071)*shake*.38,Math.sin(ts*.097+1.4)*shake*.24);shake*=.83;if(shake<.45)shake=0}drawKnight(ts);drawMonster(ts);drawCombatEffects(ts);drawBossDefeatEffect(ts);cx.restore();if(flash>0)flash-=dt;for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.0002*dt;p.life-=dt;box(p.x,p.y,p.size,p.size,p.color);if(p.life<=0)particles.splice(i,1)}cx.textAlign='center';cx.font='bold 22px monospace';for(let i=floating.length-1;i>=0;i--){let f=floating[i];f.y-=dt*.045;f.life-=dt;cx.shadowColor='#16091d';cx.shadowBlur=4;cx.fillStyle=f.color;cx.fillText(f.t,f.x,f.y);cx.shadowBlur=0;if(f.life<=0)floating.splice(i,1)}$('threatSeconds').textContent=phase==='battle'&&!enemy.stunned?(Math.max(0,enemyAttackAt-enemyClock)/1000).toFixed(1)+'s':enemy.stunned?'暈眩':'--';$('threatFill').parentElement.parentElement.classList.toggle('is-imminent',phase==='battle'&&!enemy.stunned&&enemyAttackAt-enemyClock<850);$('threatFill').style.width=phase==='battle'&&!enemy.stunned?Math.min(100,enemyClock/enemyAttackAt*100)+'%':'0%';$('danger').textContent=phase==='cinematic'?'🏆 BOSS 討伐成功！':phase==='won'?'✨ 勝利！':phase==='lost'?'💀 戰敗':paused?'Ⅱ 暫停':phase==='ready'?'等待開始':enemy.stunned?'★ 暈眩 ★':phase==='battle'&&enemyClock>enemyAttackAt-650?'⚠ 防禦！':' ';if(ts>toastUntil)$('toast').classList.remove('show');requestAnimationFrame(draw)}
 s.unlockedZone ??= Math.min(s.zone,2);
 // v0.4 navigation: explicit pages; battle timer is frozen off-screen.
 let currentPage='title', lastReward=0, rewardDrop='';
@@ -1633,7 +1674,7 @@ function showPage(page,instant=false){
 function switchTab(tab){showPage(tab)}
 function beginAdventure(){showPage('home')}
 
-// v6.1: tiny original 16x16 icon silhouettes. One source for every home menu icon.
+// v6.2: tiny original 16x16 icon silhouettes. One source for every home menu icon.
 const HOME_ICON_PIXELS={
  adventure:['....BBBB........','...BCCCCB.......','..BCCCCCCB......','..BCCCCCCB......','..BCCCWCCB......','..BCCCCCCB......','...BCCCCB.......','....BBBB........','......DD........','.....DDDD.......','....DDDDDD......','...DDDDDDDD.....','..DDDDDDDDDD....','..DDDDDDDDDD....','...DDDDDDDD.....','................'],
  gear:['.......SS.......','......SSSS......','.......SS.......','.......SS.......','.......SS.......','.......SS.......','.......SS.......','.....GGSSGG.....','......GSSG......','.......SS.......','.......WW.......','......WGGW......','.....WGGGGW.....','......WWWW......','................','................'],
@@ -1767,7 +1808,7 @@ function showResult(victory){
  $('resultLoot').innerHTML=victory?resultLootHTML():'';paintEquipmentIcons();
  showPage('results');renderRoadEvent();
 }
-function win(){phase='won';lastNewWeapon=null;lastReward=15+s.round*7+s.zone*11;s.gold+=lastReward;s.wins++;s.monsterKills ||= {};s.monsterKills[enemy.name]=(s.monsterKills[enemy.name]||0)+1;if(s.round===6&&enemy.bossPhase===2&&!s.bossSecondPhases.includes(s.zone))s.bossSecondPhases.push(s.zone);const firstBoss=s.round===6&&!s.firstBosses.includes(s.zone);if(firstBoss)s.firstBosses.push(s.zone);lastBossFirstClear=firstBoss;if(s.wins%3===0)s.potions++;enemyClock=0;s.ap=cap(s.ap+22,0,100);rewardDrop='戰利素材：'+materialGain(s.zone,s.round===6);if(s.round===6)rewardDrop+='；首次及重複擊敗 BOSS 均有素材獎勵。';if(s.wins>5){let candidates=ARSENAL.map((_,i)=>i).filter(i=>!s.owned.includes(i)&&i!==6&&(s.firstBosses.includes(0)||i!==0));if(candidates.length){s.weaponPity=(s.weaponPity||0)+1;if(Math.random()<.23||s.weaponPity>=5){let id=candidates[Math.floor(Math.random()*candidates.length)];s.owned.push(id);lastNewWeapon=id;s.weaponPity=0;s.rareDrops=(s.rareDrops||0)+1;rewardDrop+='；🎉 新武器發現：'+ARSENAL[id].name+'（'+rarityLabel(id).name+'）！'}else rewardDrop+='；武器探索進度 '+s.weaponPity+'/5';}else s.weaponPity=0;}if(s.round===6)s.unlockedZone=Math.max(s.unlockedZone||0,Math.min(ZONES.length-1,s.zone+1));save();showResult(true);if(firstBoss)showGuide('boss',s.zone);else if(s.wins===1&&!s.firstVictoryCelebrated){s.firstVictoryCelebrated=true;save();showGuide('firstVictory')} }
+function win(){if(phase!=='battle'&&phase!=='cinematic')return;phase='won';lastNewWeapon=null;lastReward=15+s.round*7+s.zone*11;s.gold+=lastReward;s.wins++;s.monsterKills ||= {};s.monsterKills[enemy.name]=(s.monsterKills[enemy.name]||0)+1;if(s.round===6&&enemy.bossPhase===2&&!s.bossSecondPhases.includes(s.zone))s.bossSecondPhases.push(s.zone);const firstBoss=s.round===6&&!s.firstBosses.includes(s.zone);if(firstBoss)s.firstBosses.push(s.zone);lastBossFirstClear=firstBoss;if(s.wins%3===0)s.potions++;enemyClock=0;s.ap=cap(s.ap+22,0,100);rewardDrop='戰利素材：'+materialGain(s.zone,s.round===6);if(s.round===6)rewardDrop+='；首次及重複擊敗 BOSS 均有素材獎勵。';if(s.wins>5){let candidates=ARSENAL.map((_,i)=>i).filter(i=>!s.owned.includes(i)&&i!==6&&(s.firstBosses.includes(0)||i!==0));if(candidates.length){s.weaponPity=(s.weaponPity||0)+1;if(Math.random()<.23||s.weaponPity>=5){let id=candidates[Math.floor(Math.random()*candidates.length)];s.owned.push(id);lastNewWeapon=id;s.weaponPity=0;s.rareDrops=(s.rareDrops||0)+1;rewardDrop+='；🎉 新武器發現：'+ARSENAL[id].name+'（'+rarityLabel(id).name+'）！'}else rewardDrop+='；武器探索進度 '+s.weaponPity+'/5';}else s.weaponPity=0;}if(s.round===6)s.unlockedZone=Math.max(s.unlockedZone||0,Math.min(ZONES.length-1,s.zone+1));save();showResult(true);if(firstBoss)showGuide('boss',s.zone);else if(s.wins===1&&!s.firstVictoryCelebrated){s.firstVictoryCelebrated=true;save();showGuide('firstVictory')} }
 function advance(){if(pendingRoadEvent()){renderRoadEvent();return}if(phase==='lost'){s.hp=s.maxHp;s.ap=100;s.combo=0;startRound();phase='ready';showPage('battle');return}if(phase!=='won')return;if(s.round<6)s.round++;else{s.round=1;s.zone=(s.zone+1)%ZONES.length;s.level++;s.maxHp+=12;s.hp=Math.min(s.maxHp,s.hp+65);s.combo=0;s.ap=100}startRound();phase='ready';enemyClock=0;paused=false;showPage('battle');render();save()}
 function enemyStrike(now){
  const intent=enemy.intent||INTENTS[0],guarded=guardUntil>now;
