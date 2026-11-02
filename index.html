@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>勇者與龍 — 8-bit 冒險原型 v8.0</title><meta name="theme-color" content="#1b1833"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="勇者與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方勇者與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>勇者與龍 — 8-bit 冒險原型 v8.3</title><meta name="theme-color" content="#f3e9dd"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="勇者與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方勇者與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
 :root{--gold:#f9d980;--edge:#85512b;--ink:#190e27}*{box-sizing:border-box}body{margin:0;color:#fff1c8;background:radial-gradient(ellipse at 50% -10%,#59304f,#130e20 60%);font-family:system-ui,'Noto Sans TC',sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.44;cursor:not-allowed}.shell{max-width:540px;margin:auto;min-height:100vh}.heading{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 7px;gap:10px;background:linear-gradient(#27152f,#4b1727 60%,#180e20);border-bottom:3px solid #af783f}.brand{color:#ffcf62;font-weight:1000;letter-spacing:.05em;text-shadow:2px 3px #492119}.sub{font-size:10px;color:#d4c6c6}.nav{display:flex;gap:5px}.nav button{padding:7px;border-radius:7px;color:#f6e7cb;background:#4b344e;border:2px solid #936950;font-weight:800;font-size:12px}.nav .chosen{background:#a77336;color:#211525}.scene{position:relative;overflow:hidden;border:4px solid #ac7844;border-top:0;border-bottom-width:6px;box-shadow:0 5px 0 #3a1e2d;background:#140e27}.scene canvas{width:100%;height:auto;display:block;image-rendering:pixelated;aspect-ratio:480/380}.overlaytop{position:absolute;inset:0 0 auto 0;pointer-events:none}.scenehead{display:flex;align-items:start;justify-content:space-between;padding:5px}.round{background:linear-gradient(#4d2727,#16121d);border:3px ridge #c7a060;border-radius:9px;padding:2px 10px;color:#ffe684;font-weight:1000;text-align:center;text-shadow:2px 2px #5f2b1e;line-height:1.1}.round strong{font-size:22px}.waves{display:flex;gap:2px;margin-top:4px;background:#140e27a0;padding:4px;border-radius:5px}.wave{height:19px;width:21px;background:#604e54;border:2px solid #a99273;box-shadow:inset 0 -5px #392738}.wave.done{background:linear-gradient(#bdb6a2,#eed38e 52%,#70532a)}.wave.now{background:linear-gradient(#faf5df,#78b8f5 62%,#405c9a)}.combo{position:absolute;top:69px;left:7px;font-weight:1000;font-size:31px;color:#ffe13d;font-style:italic;text-shadow:3px 3px #10000b,-2px -2px #130b0b}.combo small{font-size:15px}.enemylabel{position:absolute;top:104px;right:10px;min-width:140px;padding:4px 8px;border:2px solid #977249;border-radius:8px;background:#25162bbf;text-align:right;font-size:12px}.enemylabel strong{color:#ffda8c}.danger{position:absolute;top:149px;left:0;right:0;text-align:center;font-size:20px;font-weight:1000;color:#fff774;text-shadow:2px 3px #7c2135;pointer-events:none}.toast{position:absolute;left:12%;right:12%;bottom:20px;text-align:center;padding:9px;background:#170f27cf;border:2px solid #bca06d;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}.hud{padding:7px 8px 12px;background:linear-gradient(110deg,#39202b,#8b542f 7%,#31202a 11%,#302032 89%,#9e6e3c 95%,#42202c);border:3px ridge #b68c4c;border-top:0}.healthline{display:flex;justify-content:space-between;gap:4px;font-size:13px;font-weight:900;margin:1px 2px 3px}.meter{background:#170d22;padding:2px;border:2px solid #ad7943;border-radius:7px;height:16px;box-shadow:inset 0 2px #06030b;margin-bottom:4px;overflow:hidden}.meter>span{display:block;height:100%;transition:width .2s}.hpfill{background:linear-gradient(#a4ff67,#32cb3e 60%,#248021)}.apfill{background:repeating-linear-gradient(90deg,#ee4535 0 16%,#f7b445 16% 18%,#822221 18% 20%)}.ppfill{background:linear-gradient(90deg,#9c57cb,#f2d0fe)}.weaponbar{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;margin-bottom:4px;border-radius:7px;background:#1a0d18;border:2px solid #865c3a}.weapon{position:relative;min-height:51px;border:2px solid #a57c48;border-radius:7px;background:linear-gradient(#673c3d,#2b1529);color:white}.weapon.active{border-color:#f8ea7f;background:linear-gradient(#775b32,#4c2722);box-shadow:inset 0 0 11px #eabc59}.weapon .sym{display:block;font-size:26px;line-height:27px;filter:drop-shadow(1px 2px #000)}.weapon .nm{font-size:10px;display:block}.weapon .elem{position:absolute;top:0;right:3px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.card{padding:3px 1px 4px;background:linear-gradient(#f3e9ce,#c8a77a);border:3px solid #9b623c;border-radius:13px;box-shadow:inset 0 0 0 2px #efe7be,0 3px 0 #190b15;color:#1a1428;position:relative;min-height:78px;transition:transform .1s}.card:active{transform:translateY(3px)}.card .art{height:37px;display:flex;justify-content:center;align-items:center;font-size:30px;filter:drop-shadow(2px 2px #6d506e)}.card .name{font-size:11px;font-weight:1000;white-space:nowrap;letter-spacing:-.5px}.cost{position:absolute;right:2px;top:0;background:linear-gradient(#ffebd7,#d75451);color:#261326;font-weight:1000;border:2px solid #5a2539;border-radius:50%;width:27px;height:25px;line-height:20px;font-size:16px}.card.dark{background:linear-gradient(#4a3e80,#15162c);color:#e7dbff;border-color:#4b477c;box-shadow:inset 0 0 0 2px #7e6eb5}.card.dark .cost{background:#3b344f;color:white}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}.ctl{border:3px solid #e2b785;border-radius:12px;min-height:48px;font-size:12px;font-weight:1000;color:#fff;text-shadow:1px 2px #1e1322;box-shadow:inset 0 2px 6px #ffffff70,0 3px #241525}.guard{background:linear-gradient(#91c2ff,#367bc5 65%,#144c84)}.meat{background:linear-gradient(#ffbaa7,#e56161 65%,#8f383f)}.advance{background:linear-gradient(#e8c56c,#916a23)}.pause{background:linear-gradient(#9d7eaf,#65416e)}.status{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:8px 0 0;font-size:11px;color:#f4d9aa}.message{padding:8px 12px;font-size:12px;min-height:44px;line-height:1.5;background:#180d21;border-top:2px solid #72472a}.screen{padding:14px;background:#261c32;min-height:610px}.screen h2{margin:0 0 12px;color:#ffe1a3}.screen .entry{padding:10px;margin:7px 0;background:#3d2c43;border:1px solid #997545;border-radius:9px}.screen button{background:#68476a;color:#fff2ce;border:2px solid #a9895b;padding:8px 10px;border-radius:8px;margin:4px}.screen button.active{background:#95723f}.muted{color:#c5aec3;font-size:12px}.small{font-size:12px}.footer{padding:12px;text-align:center;color:#a997a9;font-size:11px}.hidden{display:none!important}@media(min-width:620px){.shell{margin:20px auto;border:5px solid #281424;box-shadow:0 12px 45px #050307;border-radius:12px;overflow:hidden}}@media(max-width:380px){.wave{width:16px}.card .name{font-size:9px}.weapon .nm{font-size:9px}}
 
 /* v0.3: card queue, threat telegraph, expanded scene polish */
@@ -802,7 +802,346 @@ button::after,.area-card::after{border-radius:inherit!important}
   .map-node{min-width:64px!important}
 }
 
-</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 勇者與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v8.0</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
+
+/* v8.1: 8-bit arcade emblems, light town labels and chapter medallions */
+#topHeader,.heading{display:none!important}
+#home .menu-grid{gap:7px!important;margin:6px 0 9px!important}
+#home .menu-grid button{border-radius:17px!important;clip-path:none!important;min-height:64px!important;box-shadow:0 3px 0 #1d1525,0 6px 12px #09081666!important}
+#home .menu-grid button::after{content:'✦';display:grid;place-items:center;position:absolute;right:5px;bottom:4px;width:11px;height:11px;border-radius:50%;font:800 8px monospace;color:#38243d;background:linear-gradient(#fff0c6,#c6a15d);box-shadow:0 0 0 1px #482c26!important;pointer-events:none}
+#home .menu-grid button>span{height:29px!important;flex-shrink:0;position:relative;overflow:visible}
+#home .menu-grid .menu-pixel-icon{width:28px!important;height:28px!important;image-rendering:pixelated!important;filter:drop-shadow(0 2px 0 #0e1222) drop-shadow(0 0 3px #e2c6ff60)}
+#home .menu-grid button b{font-weight:900!important;letter-spacing:.03em!important;font-size:12px!important}
+#home .menu-grid button small{font-size:8px!important;color:#e6d8ea!important;line-height:1.15!important}
+#home .menu-grid button:nth-child(1),#home .menu-grid button:nth-child(2),#home .menu-grid button:nth-child(3),#home .menu-grid button:nth-child(4){border-color:#f0c978!important}
+#home .menu-grid button:focus-visible,.town-hotspot:focus-visible,.map-node:focus-visible{outline:3px solid #fff6bd!important;outline-offset:3px!important}
+/* Labels float over the buildings rather than covering the entire facades */
+.town-hotspot{display:flex!important;gap:4px!important;align-items:center!important;justify-content:center!important;min-width:50px!important;min-height:29px!important;padding:3px 7px!important;border:1.5px solid #f8d8a0!important;background:linear-gradient(180deg,#59404aee,#251c31f2)!important;border-radius:999px!important;box-shadow:0 2px 0 #241521,0 4px 9px #100a1b88!important;font-weight:800!important;letter-spacing:0!important;text-shadow:0 1px #18101b!important;white-space:nowrap}
+.town-hotspot::before{height:26%!important;top:2px!important;opacity:.7}
+.town-hotspot::after{display:none!important}
+.town-hotspot--shop,.town-hotspot--forge,.town-hotspot--quests,.town-hotspot--adventure{padding-left:8px!important}
+.town-hotspot .hotspot-stamp{display:inline-grid;place-items:center;flex:0 0 17px;width:17px;height:17px;line-height:17px;font-size:11px;color:#fff0bd;background:linear-gradient(#927153,#543b42);border:1px solid #e5b773;border-radius:5px;box-shadow:inset 0 1px #ffffff66,0 1px 0 #1d1221}
+.town-hotspot--adventure{min-width:103px!important;min-height:34px!important;background:linear-gradient(#f4d48e,#af703c)!important;border-color:#ffedb8!important;color:#2a1921!important;text-shadow:none!important;bottom:7px!important}
+.town-hotspot--adventure .hotspot-stamp{background:linear-gradient(#6a4b62,#302538);border-color:#81533d;color:#ffe7a4}
+/* Map nodes are compact chapter medallions with emblems above the label */
+.map-node{width:78px!important;min-width:78px!important;min-height:65px!important;max-width:82px!important;gap:1px!important;padding:4px 5px!important;border:2px solid #f9d79f!important;border-radius:20px!important;clip-path:none!important;transform:translate(-50%,-50%)!important;box-shadow:0 3px 0 #211329,0 6px 13px #100d1da0!important}
+.map-node::before{top:3px!important;height:30%!important;border-radius:16px!important}
+.map-node .map-node-emblem{display:grid!important;place-items:center;flex:0 0 auto;width:25px;height:25px;line-height:1;font-size:17px;font-weight:1000;color:#e3f8ff;background:#3b3263;border:2px solid #c7b4f2;border-radius:50%;box-shadow:inset 0 2px 0 #ffffff54,0 2px 0 #1b142b;text-shadow:0 1px #2a1a39}
+.map-node--forest .map-node-emblem{background:#315e41;border-color:#a7d99e;color:#e1ffc8}
+.map-node--volcano .map-node-emblem{background:#733746;border-color:#f6b089;color:#ffe2a6}
+.map-node.locked .map-node-emblem{background:#36333d;border-color:#97909e;color:#aaa6b2}
+.map-node strong{font-size:10px!important;line-height:1.15!important}
+.map-node span:last-child{font-size:8px!important;line-height:1.1!important;white-space:nowrap}
+.map-node:active{transform:translate(-50%,calc(-50% + 2px))!important;box-shadow:0 1px 0 #24172c!important}
+.map-node.locked{opacity:.77!important}
+.map-route-dot{opacity:.75}
+.map-board-tip{border:1px solid #b99e72;border-radius:10px;padding:3px 7px;font-size:9px}
+@media(max-width:620px){
+  #home .menu-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:5px!important;flex:1 1 auto!important;min-height:0!important}
+  #home .menu-grid button{min-height:61px!important;height:100%!important;padding:4px 2px!important;gap:1px!important}
+  #home .menu-grid button small{display:none!important}
+  #home .menu-grid button>span{height:25px!important}
+  #home .menu-grid .menu-pixel-icon{width:24px!important;height:24px!important}
+  #home .menu-grid button b{font-size:clamp(10px,2.7vw,12px)!important}
+  #home .menu-grid button::after{width:8px;height:8px;font-size:6px;right:2px;bottom:2px}
+  #home .village-hero.town-interactive{height:clamp(153px,25dvh,206px)!important;min-height:153px!important}
+  .map-node{width:72px!important;min-width:72px!important;min-height:60px!important}
+  .map-node .map-node-emblem{height:21px;width:21px;font-size:15px}
+}
+@media(max-width:350px){
+  .town-hotspot{font-size:9px!important;min-width:44px!important;padding:3px 5px!important}
+  .town-hotspot .hotspot-stamp{width:14px;height:14px;font-size:9px;flex-basis:14px}
+  .map-node{width:68px!important;min-width:68px!important;min-height:58px!important}
+}
+@media(prefers-reduced-motion:reduce){.town-hotspot,.map-node,#home .menu-grid button{transition:none!important}}
+
+
+/* v8.1 layout hotfix: prevent older flex rules stretching every menu card */
+@media(max-width:620px){
+ #home .menu-grid{flex:0 0 auto!important;grid-auto-rows:72px!important;grid-template-rows:repeat(2,72px)!important;align-content:start!important;height:auto!important;min-height:0!important}
+ #home .menu-grid button{height:72px!important;min-height:0!important;max-height:72px!important}
+ #home .village-hero.town-interactive{height:clamp(175px,27dvh,224px)!important;min-height:175px!important}
+ #home{gap:3px!important}
+}
+@media(max-width:350px){#home .menu-grid{grid-auto-rows:68px!important;grid-template-rows:repeat(2,68px)!important}#home .menu-grid button{height:68px!important;max-height:68px!important}}
+.map-board-tip{left:auto!important;right:5px!important;bottom:4px!important}
+
+
+/* v8.2: animated pixel adventurer and living town center */
+#home .village-hero.town-interactive{position:relative;isolation:isolate;background-position:center center!important}
+.town-interactive .town-hero{position:absolute;left:49%;top:70%;width:38px;height:57px;transform:translate(-50%,-50%);z-index:3;pointer-events:none;transition:left .54s steps(10,end),top .54s steps(10,end);filter:drop-shadow(0 3px 1px #1c1326a6)}
+.town-hero canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+.town-hero.walking canvas{animation:town-hero-hop .22s steps(2,end) infinite alternate}
+.town-hero.arrived canvas{animation:town-hero-arrive .18s steps(2,end) 2 alternate}
+@keyframes town-hero-hop{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+@keyframes town-hero-arrive{from{transform:translateY(-3px)}to{transform:translateY(0)}}
+.town-walking-hint{position:absolute;left:50%;bottom:49px;transform:translateX(-50%);z-index:3;padding:4px 9px;border:1px solid #f1dba5;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;color:#fff3ce;background:#231b32e9;opacity:0;pointer-events:none;transition:opacity .12s}
+.town-walking-hint.visible{opacity:1}
+.town-interactive .town-lamppost{position:absolute;top:61%;height:37px;width:5px;background:#382335;border-left:1px solid #916349;z-index:1;pointer-events:none}
+.town-interactive .town-lamppost:before{content:'';position:absolute;top:-8px;left:-6px;width:18px;height:12px;background:linear-gradient(#ffedab,#e9ac57);border:3px solid #543748;box-shadow:0 0 14px #f7bb5794;clip-path:polygon(17% 0,83% 0,100% 37%,91% 100%,9% 100%,0 37%)}
+.town-lamppost--left{left:11%}.town-lamppost--right{right:12%}
+@media(max-width:620px){.town-interactive .town-hero{width:34px;height:51px}.town-walking-hint{bottom:45px}}
+@media(prefers-reduced-motion:reduce){.town-hero,.town-hero canvas,.town-walking-hint{animation:none!important;transition:none!important}}
+
+
+
+/* v8.3: RO-inspired bright cute palette overhaul */
+:root{
+  --ro-sky:#c9ecff;
+  --ro-sky-2:#eef8ff;
+  --ro-cream:#fff8ef;
+  --ro-panel:#fffdf7;
+  --ro-panel-2:#f9f1df;
+  --ro-gold:#e2be7c;
+  --ro-gold-deep:#b98746;
+  --ro-brown:#785337;
+  --ro-ink:#5b4637;
+  --ro-pink:#f4cadf;
+  --ro-lilac:#d8d0ff;
+  --ro-blue:#7abbe9;
+  --ro-green:#95d7a7;
+  --ro-peach:#f4c392;
+}
+body{
+  color:var(--ro-ink)!important;
+  background:
+    radial-gradient(circle at 50% -20%, #ffffff 0%, rgba(255,255,255,.92) 12%, rgba(255,255,255,0) 32%),
+    linear-gradient(180deg,var(--ro-sky) 0%, #dbf4ff 28%, #fef9f0 58%, #f7ecde 100%)!important;
+}
+.shell{
+  background:rgba(255,251,244,.72);
+}
+.frontscreen,
+.screen{
+  color:var(--ro-ink)!important;
+}
+.frontscreen{
+  background:linear-gradient(180deg,#d7efff 0%,#f9f6ff 38%,#fff6e7 100%)!important;
+}
+.screen{
+  background:linear-gradient(180deg,#edf8ff 0%, #fffaf1 100%)!important;
+}
+.screen h2,
+.home-banner strong,
+.section-subtag,
+.cover-tag,
+.brand{
+  color:#76502b!important;
+  text-shadow:none!important;
+}
+.muted,.sub,.footer,#titleProgress,#titleScreen.hero-cover .legal,.screen .entry,.map-subtitle{
+  color:#8f725f!important;
+}
+#titleScreen.hero-cover{background:linear-gradient(180deg,#d7f0ff 0%,#fdfcff 55%,#fff4e4 100%)!important}
+.hero-cover-art{background:#d8f2ff!important}
+.hero-cover-art:after{background:linear-gradient(transparent,#f7eddc)!important}
+.hero-cover-actions{background:linear-gradient(180deg,#fffdf7,#f8edd9)!important;border-top:1px solid #ecd6aa}
+#titleScreen.hero-cover .legal{background:#f5e8d1!important;border-top:1px solid #e3cc9e}
+
+.home-banner,.home-stats,.growth-card,.quest,.pioneer-panel,.screen .entry,.gear-extras,.area-card,.map-board-tip,.message{
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(247,239,223,.96))!important;
+  border:2px solid #e0c58f!important;
+  box-shadow:0 4px 0 rgba(186,145,87,.22), inset 0 1px 0 #ffffff!important;
+  color:var(--ro-ink)!important;
+}
+.growth-card strong,.quest strong,.boss-warning,.home-banner strong{color:#805329!important}
+.material-pill{
+  background:#eef8ff!important;
+  border:1px solid #b8d7ec!important;
+  color:#637080!important;
+}
+.progress-track{background:#e8d8bd!important;border:1px solid #d7b67f}
+.progress-track span{background:linear-gradient(90deg,#8fd8a3,#ffdb94)!important}
+
+.bigbtn,
+.screen button,
+.backbtn,
+#home .menu-grid button,
+.town-hotspot,
+.map-node,
+.area-card,
+.nav button,
+.ctl,
+.weapon,
+.card,
+.nextcard{
+  color:var(--ro-ink)!important;
+  text-shadow:none!important;
+}
+.bigbtn,
+.screen button,
+.backbtn{
+  border:2px solid #dcb579!important;
+  background:linear-gradient(180deg,#fffaf5 0%,#f8ecda 48%,#eed8b6 49%,#e3c089 100%)!important;
+  box-shadow:0 4px 0 #d1ae77,0 10px 18px rgba(164,131,85,.18)!important;
+}
+.bigbtn.primary{
+  background:linear-gradient(180deg,#fffef9 0%,#dff1ff 38%,#a9d7ff 64%,#83bfe9 100%)!important;
+  border-color:#8ab7df!important;
+  box-shadow:0 4px 0 #7ba7ca,0 10px 18px rgba(88,133,173,.2)!important;
+  color:#3f5872!important;
+}
+.bigbtn:active,.screen button:active,.backbtn:active{transform:translateY(2px)!important;box-shadow:0 2px 0 #cda05f!important}
+
+#home{background:linear-gradient(180deg,#e8f6ff 0%,#fffaf0 100%)!important}
+#home .village-hero{
+  border:3px solid #e2c48d!important;
+  box-shadow:0 4px 0 rgba(196,150,93,.28)!important;
+}
+.town-scene-caption{color:#6e5635!important;text-shadow:0 1px 0 #fff7da!important}
+.town-walking-hint{
+  color:#735439!important;
+  background:#fff8eeeb!important;
+  border:1px solid #dbbd85!important;
+}
+#home .menu-grid button{
+  border:2px solid #e4c690!important;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255,255,255,.78), transparent 38%),
+    linear-gradient(180deg,#fffaf9 0%,#fcecf7 34%,#efe6ff 35%,#d7eefc 66%,#bedff5 100%)!important;
+  box-shadow:0 4px 0 #cba973,0 10px 16px rgba(177,145,99,.16)!important;
+}
+#home .menu-grid button small{color:#7d6f86!important;opacity:1!important}
+#home .menu-grid button b{color:#6f5435!important}
+#home .menu-grid button:focus-visible,.town-hotspot:focus-visible,.map-node:focus-visible{outline:3px solid #8ccdf2!important}
+
+.town-hotspot{
+  border:2px solid #dfc08a!important;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255,255,255,.76), transparent 38%),
+    linear-gradient(180deg,#fff9f2 0%,#ffe9d4 47%,#f4d9b8 48%,#e6bf86 100%)!important;
+  box-shadow:0 3px 0 #cb9e63,0 8px 14px rgba(132,99,63,.18)!important;
+}
+.town-hotspot .hotspot-stamp{
+  background:#fff6ea!important;
+  color:#d18e57!important;
+  border-color:#e3c08d!important;
+}
+.town-hotspot--adventure{
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255,255,255,.75), transparent 36%),
+    linear-gradient(180deg,#fdfdfc 0%,#e9f8ff 35%,#bae3ff 65%,#90cdef 100%)!important;
+  border-color:#88bfe4!important;
+  color:#44647a!important;
+  box-shadow:0 3px 0 #78a9ca,0 8px 14px rgba(106,143,171,.2)!important;
+}
+
+#adventure{
+  background-color:#eff8ff!important;
+  background-image:linear-gradient(180deg,rgba(255,255,255,.05) 0%,rgba(255,250,241,.5) 38%,#fff8ef 72%),url('map-pixel.png')!important;
+}
+.map-explore-board{
+  border:3px solid #dfc089!important;
+  background:#9fd2ed url('map-pixel.png') center/100% 100% no-repeat!important;
+  box-shadow:0 4px 0 rgba(185,142,86,.25), inset 0 0 0 2px #fff8ef!important;
+}
+.map-explore-board:before{background:linear-gradient(rgba(255,255,255,.08),rgba(255,246,230,.2))!important}
+.map-node{
+  border:2px solid #e1c692!important;
+  background:
+    radial-gradient(circle at 50% 23%, rgba(255,255,255,.78), transparent 37%),
+    linear-gradient(180deg,#fffdf9 0%,#f2ecff 35%,#dfedf9 63%,#c3dff2 100%)!important;
+  box-shadow:0 3px 0 #c3a16d,0 8px 13px rgba(161,129,87,.18)!important;
+}
+.map-node::before{background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,0))!important}
+.map-node .map-node-emblem{background:#f4efff!important;border-color:#cdb8ef!important;color:#7d65a0!important;box-shadow:inset 0 2px 0 #ffffff,0 2px 0 #b59574!important}
+.map-node--forest{background:radial-gradient(circle at 50% 23%, rgba(255,255,255,.72), transparent 37%),linear-gradient(180deg,#fffdf8 0%,#eefbe9 34%,#d9f1cf 63%,#b7dda9 100%)!important}
+.map-node--forest .map-node-emblem{background:#eefbe9!important;border-color:#a9d79e!important;color:#679068!important}
+.map-node--volcano{background:radial-gradient(circle at 50% 23%, rgba(255,255,255,.72), transparent 37%),linear-gradient(180deg,#fffdf8 0%,#fff0e8 34%,#ffd7bd 63%,#f4ba8e 100%)!important}
+.map-node--volcano .map-node-emblem{background:#fff1e8!important;border-color:#efba93!important;color:#b66d55!important}
+.map-node.locked{background:linear-gradient(180deg,#f4f0ea 0%,#e7e0d8 100%)!important;border-color:#c7b9aa!important;opacity:.88!important}
+.map-route-dot{background:#fff5df!important;border-color:#c59e66!important}
+.map-board-tip{background:#fff7eecc!important;color:#8b6b4e!important}
+.area-card{
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(247,240,228,.96))!important;
+  border:2px solid #e2c590!important;
+  border-left:6px solid #82c8a0!important;
+  color:#644a36!important;
+}
+#adventure .area-card:nth-child(1){border-left-color:#a5c3ff!important}
+#adventure .area-card:nth-child(2){border-left-color:#9ad7a4!important}
+#adventure .area-card:nth-child(3){border-left-color:#f0b283!important}
+
+#gear{
+  background-color:#f1f8ff!important;
+  background-image:linear-gradient(180deg,rgba(255,255,255,.25),rgba(255,248,237,.72) 46%,#fff6eb 74%),url('forge-pixel.png')!important;
+}
+#gear .gear-head{
+  background:rgba(255,250,243,.88)!important;
+  border-bottom:2px solid #e0c38b!important;
+}
+#gear .gear-paperdoll,#gear .gear-equip-area,#gear .gear-bag,#gear .gear-extras{
+  background:rgba(255,252,246,.92)!important;
+  border-color:#e0c38b!important;
+  color:#674b38!important;
+}
+#gear .gear-paperdoll canvas{background:#edf8ff!important;border:2px solid #bfd9eb!important}
+.gear-slot{
+  border:2px solid #dec48d!important;
+  background:linear-gradient(180deg,#fffdf9 0%,#f4eeff 38%,#e5f3fb 100%)!important;
+  color:#694e3a!important;
+  box-shadow:0 3px 0 rgba(193,160,108,.28)!important;
+}
+.gear-slot.selected{border-color:#8fc8eb!important;background:linear-gradient(180deg,#fffefc 0%,#eaf8ff 40%,#d7eefb 100%)!important;box-shadow:0 0 0 2px rgba(143,200,235,.18),0 3px 0 rgba(114,164,199,.26)!important}
+.gear-slot .slot-no{color:#9c7a5a!important}
+.gear-slot .slot-level{color:#6a8d7a!important}
+.bag-item{
+  border:1px solid #dec792!important;
+  background:linear-gradient(180deg,#fffefb 0%,#f9f0e4 45%,#f2e4ce 100%)!important;
+  color:#6c503c!important;
+  box-shadow:0 3px 0 rgba(202,168,113,.22)!important;
+}
+.bag-item .bag-stats,.bag-item .bag-skills{color:#8a6e58!important}
+.bag-item .bag-usage{color:#6ca07a!important}
+.bag-item.equipped{border-color:#8ec3e4!important}
+
+#battle{
+  color:#5f4632!important;
+}
+#battle .scene{
+  box-shadow:inset 0 0 0 2px #9fc2d6,0 5px 0 #cba36d!important;
+}
+#battle .hud{
+  background:linear-gradient(90deg,#f5dfbf,#fff7ed 3%,#f7ecde 97%,#e8c28d)!important;
+  box-shadow:inset 0 3px #fff, inset 0 0 0 2px #ddb47a!important;
+}
+#battle .healthline,
+#battle .healthline #hpVal,
+#battle .healthline #apVal,
+#battle .status,
+#battle .tech,
+#battle .nextcard,
+#battle .enemylabel,
+#battle .threat,
+#battle .message{color:#654936!important;text-shadow:none!important}
+#battle .round{
+  background:linear-gradient(130deg,#f4d498,#fff7e6 32%,#f7eee2 74%,#e7c189)!important;
+  border-color:#d9b178!important;
+  text-shadow:none!important;
+}
+#battle .round strong{color:#7c592f!important}
+#battle .waves{background:linear-gradient(#faebcf,#f4dbb2 18%,#f2e8d8 82%,#e7c189)!important;border-top-color:#dfbd89!important;border-bottom-color:#d8b179!important}
+#battle .wave{border-color:#cbab7a!important;background:linear-gradient(90deg,#f3ead8 14%,#dfc9ae 15%,#dfc9ae 82%,#f3ead8 83%)!important;box-shadow:inset 0 -5px #d7c2a6,0 1px #fff!important}
+#battle .wave.done{background:linear-gradient(#fffdf7 0 28%,#90d6a2 28% 75%,#6da986 75%)!important}
+#battle .wave.now{background:linear-gradient(#fffdf7 0 25%,#96d5ff 25% 73%,#6eaee0 73%)!important}
+#battle .enemylabel,#battle .threat,#battle .message{background:#fff8eedd!important;border-color:#deb982!important;box-shadow:none!important}
+#battle .meter{border-color:#d8b37b!important;background:#fffdf8!important;box-shadow:inset 0 1px 2px rgba(146,113,68,.28)!important}
+#battle .weaponbar,#battle .cards,#battle .queue{background:#f6ebdb!important;border-color:#d8b37b!important}
+#battle .weapon{background:linear-gradient(180deg,#fffdf9 0%,#f0efff 36%,#dfedf9 100%)!important;border-color:#d7bc85!important;box-shadow:inset 0 -4px rgba(193,169,131,.35)!important}
+#battle .weapon.active{background:linear-gradient(180deg,#fffefc 0%,#fff2c8 30%,#ffe0a5 100%)!important;border-color:#e4be7d!important}
+#battle .card{background:linear-gradient(180deg,#fffefb 0%,#fff0f6 38%,#f2e7d7 100%)!important;border-color:#d9ba87!important;box-shadow:inset 0 0 0 1px #fff,0 2px #d5b07a!important}
+#battle .card.dark{background:linear-gradient(180deg,#f6f1ff,#ddeaff)!important;border-color:#b8b9ea!important;box-shadow:inset 0 0 0 1px #fff!important}
+#battle .card .cost{background:linear-gradient(#fffaf4,#ffc3b7)!important;border-color:#d38f84!important;color:#7b4c42!important}
+#battle .nextcard{background:linear-gradient(180deg,#faf8ff,#ececff)!important;border-color:#c3b8e8!important}
+.guard{background:linear-gradient(180deg,#f7fcff,#bfe7ff 60%,#91cdef)!important}
+.meat{background:linear-gradient(180deg,#fff8f3,#ffd5bd 60%,#f2af8b)!important}
+.advance{background:linear-gradient(180deg,#fffdf3,#ffe9ae 60%,#f3c77f)!important}
+.pause{background:linear-gradient(180deg,#fbf7ff,#ddd0ff 60%,#baa9ea)!important}
+
+@media(max-width:620px){
+  .screen,.frontscreen{padding-top:12px!important}
+}
+
+</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 勇者與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v8.3</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
 <section id="titleScreen" class="frontscreen hero-cover">
  <div class="hero-cover-art"><img src="title-art.webp" alt="8-bit 像素風封面：左下方金髮皮裝勇者拔劍面對右上方威猛的巨龍，背景是赤月與魔城" decoding="async"></div>
  <div class="hero-cover-actions"><div class="cover-tag">勇者與龍 · 像素冒險</div><button class="bigbtn primary" onclick="beginAdventure()">▶ 開始冒險</button><button class="bigbtn" onclick="showPage('help')">▣ 遊戲說明</button><div id="titleProgress" class="muted"></div></div>
@@ -810,10 +1149,13 @@ button::after,.area-card::after{border-radius:inherit!important}
  </section>
 <section id="home" class="screen hidden"><div class="village-hero town-interactive" role="group" aria-label="可點選的主城建築">
  <div class="town-scene-caption">✦ 勇者的城鎮 ✦</div>
- <button type="button" class="town-hotspot town-hotspot--shop" onclick="showPage('shop')" aria-label="進入城鎮商店">🏪 商店</button>
- <button type="button" class="town-hotspot town-hotspot--forge" onclick="showPage('gear')" aria-label="前往鍛造與裝備編成">⚒ 鍛造</button>
- <button type="button" class="town-hotspot town-hotspot--quests" onclick="showPage('quests')" aria-label="查看冒險者任務">📜 任務</button>
- <button type="button" class="town-hotspot town-hotspot--adventure" onclick="showPage('adventure')">⚔ 出發冒險</button>
+ <div class="town-lamppost town-lamppost--left" aria-hidden="true"></div><div class="town-lamppost town-lamppost--right" aria-hidden="true"></div>
+ <div id="townHero" class="town-hero" aria-hidden="true"><canvas id="townHeroCanvas" width="20" height="30"></canvas></div>
+ <div id="townWalkingHint" class="town-walking-hint" aria-live="polite">勇者正在前往目的地…</div>
+ <button type="button" class="town-hotspot town-hotspot--shop" onclick="walkToTownPlace('shop')" aria-label="進入城鎮商店"><span class="hotspot-stamp" aria-hidden="true">◆</span>商店</button>
+ <button type="button" class="town-hotspot town-hotspot--forge" onclick="walkToTownPlace('gear')" aria-label="前往鍛造與裝備編成"><span class="hotspot-stamp" aria-hidden="true">✦</span>鍛造</button>
+ <button type="button" class="town-hotspot town-hotspot--quests" onclick="walkToTownPlace('quests')" aria-label="查看冒險者任務"><span class="hotspot-stamp" aria-hidden="true">▣</span>任務</button>
+ <button type="button" class="town-hotspot town-hotspot--adventure" onclick="walkToTownPlace('adventure')"><span class="hotspot-stamp" aria-hidden="true">⚔</span>出發冒險</button>
 </div><div class="home-banner"><strong>冒險者的城鎮</strong><span id="homeInfo"></span></div><div class="home-stats" id="homeStats"></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><h2>選擇行動</h2><div class="section-subtag">從主城前往功能頁面或直接出發冒險</div><div class="menu-grid"><button onclick="showPage('adventure')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="adventure" aria-hidden="true"></canvas></span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="gear" aria-hidden="true"></canvas></span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="shop" aria-hidden="true"></canvas></span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="quests" aria-hidden="true"></canvas></span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="profile" aria-hidden="true"></canvas></span><b>勇者資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="help" aria-hidden="true"></canvas></span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="journal" aria-hidden="true"></canvas></span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="settings" aria-hidden="true"></canvas></span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
 <section id="journal" class="screen hidden"><h2>📚 冒險圖鑑</h2><p class="muted">查看武器稀有度、18 種怪物討伐紀錄、BOSS 收藏及探索札記。未取得與未討伐的項目將顯示為未知。</p><div id="journalContents"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
 <section id="adventure" class="screen hidden"><h2>🗺️ 冒險地圖</h2><div class="section-subtag">選擇據點，挑戰下一段旅程</div><p class="muted">選擇目的地進入六回合連續戰鬥。最後一波將遇到 BOSS。每個地區的探索事件可以選擇金幣或補給，獎勵僅能領取一次。</p><div id="regionMap" class="map-explore-board" role="group" aria-label="冒險區域地圖"></div><p class="map-subtitle">選擇地圖上的據點開始六波挑戰，也可使用下方區域列表。</p><div id="areaList" class="area-list"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
@@ -2235,6 +2577,7 @@ function runSceneTransition(label,cb,page='home'){
 }
 
 function showPage(page,instant=false){
+ if(page!=='home' && townWalkTarget && !['shop','gear','quests','adventure'].includes(page))cancelTownWalk();
  if(page==='title')page='titleScreen';
  if(page==='gear'&&['battle','results'].includes(currentPage)){say('請在出發前於主城編成裝備。');return;}
  if(!PAGES.includes(page))return;
@@ -2273,8 +2616,9 @@ function renderRegionMap(){
  const keys=['cave','forest','volcano'];
  map.innerHTML='<span class="map-route-dot"></span>'.repeat(6)+labels.map((label,i)=>{
   const available=i<=Math.min(2,s.unlockedZone||0);
-  const text=available?'▶ 點擊挑戰':'🔒 尚未解鎖';
-  return `<button type="button" class="map-node map-node--${keys[i]} ${available?'':'locked'}" ${available?`onclick="enterArea(${i})"`:'disabled'} aria-label="${label}，${available?'進入戰鬥':'尚未解鎖'}"><strong>${label}</strong><span>${text}</span></button>`;
+  const text=available?'點擊挑戰':'尚未解鎖';
+  const emblem=['◆','♣','▲'][i];
+  return `<button type="button" class="map-node map-node--${keys[i]} ${available?'':'locked'}" ${available?`onclick="enterArea(${i})"`:'disabled'} aria-label="${label}，${available?'進入戰鬥':'尚未解鎖'}"><span class="map-node-emblem" aria-hidden="true">${available?emblem:'×'}</span><strong>${label}</strong><span>${text}</span></button>`;
  }).join('')+'<div class="map-board-tip">點擊發光據點前進</div>';
 }
 function refreshAreas(){renderRegionMap();$('areaList').innerHTML=ZONES.map((z,i)=>{const available=i<=Math.min(2,s.unlockedZone||0);return `<button class="area-card ${available?'':'locked'}" ${available?`onclick="enterArea(${i})"`:'disabled'}><span class="area-icon">${AREA_ICONS[i]}</span><span><strong>${z.name} ${available?'':'🔒'}</strong><small>${available?`六波挑戰／${z.enemies[5]} BOSS`:'通過上一區域後解鎖'}</small><small>${available?'▶ 點擊進入關卡':'尚未開放'}</small></span></button>`}).join('')+`<div class="entry"><strong>🧭 探索事件</strong><p class="small">首次探索各區域可找到旅人留下的物資，每個區域只能領一次。</p>${ZONES.map((z,i)=>{const done=s.explorationFlags.includes(i),open=i<=(s.unlockedZone||0);return `<button ${!open||done?'disabled':''} onclick="exploreArea(${i})">${AREA_ICONS[i]} ${z.name} ${done?'✓ 已探索':open?'探索':'🔒'}</button>`}).join('')}</div>`}
@@ -2479,5 +2823,74 @@ function importSave(){
 document.addEventListener('visibilitychange',()=>{if(document.hidden){window.mobileAutoPause=(!paused && phase==='battle');if(window.mobileAutoPause){paused=true;const b=$('pauseBtn');if(b)b.textContent='▶';syncBattlePauseUI();}}else{last=performance.now();if(window.mobileAutoPause){paused=true;window.mobileAutoPause=false;const b=$('pauseBtn');if(b)b.textContent='▶';say('已暫停，點選「繼續戰鬥」恢復。');syncBattlePauseUI();}}});
 window.addEventListener('pageshow',()=>{last=performance.now()});
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+
+// v8.2: Canvas pixel-hero, matching the cover's leather clothes and red scarf.
+const TOWN_HERO_PIXELS=[
+ '....................',
+ '.......HHHHH........',
+ '.....HHLLLLLHH......',
+ '....HHLLLLLLLHH.....',
+ '....HDSSSSSSSHH.....',
+ '....DSSSSSSSSSD.....',
+ '....DSSSSSSSSSE.....',
+ '....DSSSSSSSSDE.....',
+ '.....DDSSSSDD.......',
+ '......RRRRRR........',
+ '.....RRBBBBRR.......',
+ '....DRBBBBBBD.......',
+ '....DBMBBBBMD.......',
+ '...DDBMBBBBMDD......',
+ '...DDBMBBBBMDD......',
+ '....DBBBBBBBD.......',
+ '....DDBGGBDD........',
+ '.....DGGGGD.........',
+ '.....DDBBDD.........',
+ '.....DD..DD.........',
+ '.....DD..DD.........',
+ '.....DD..DD.........',
+ '.....KK..KK.........',
+ '....DKK..KKD........',
+ '....DKK..KKD........',
+ '....DKK..KKD........',
+ '....DDDDDDDD........',
+ '....................',
+ '....................',
+ '....................'
+];
+function drawTownHero(){
+ const canvas=document.getElementById('townHeroCanvas');if(!canvas)return;
+ const ctx=canvas.getContext('2d');ctx.clearRect(0,0,20,30);ctx.imageSmoothingEnabled=false;
+ const colors={H:'#ebc75b',L:'#ffe399',D:'#302332',S:'#e9b68e',E:'#b7775f',R:'#c84d4d',B:'#8f6242',M:'#cd8e5d',G:'#ecc76e',K:'#67402e'};
+ TOWN_HERO_PIXELS.forEach((row,y)=>[...row].forEach((ch,x)=>{if(colors[ch]){ctx.fillStyle=colors[ch];ctx.fillRect(x,y,1,1)}}));
+ // small travelling sword at hero's right side
+ ctx.fillStyle='#e6e4e0';ctx.fillRect(17,11,1,11);ctx.fillStyle='#edbf63';ctx.fillRect(15,19,5,1);ctx.fillStyle='#795331';ctx.fillRect(17,20,1,4);
+}
+const TOWN_DESTINATIONS={shop:{x:21,y:45},gear:{x:51,y:38},quests:{x:80,y:45},adventure:{x:50,y:70}};
+let townWalkTimer=null,townWalkTarget=null;
+function cancelTownWalk(){
+ if(townWalkTimer!==null){clearTimeout(townWalkTimer);townWalkTimer=null}
+ townWalkTarget=null;
+ document.getElementById('townHero')?.classList.remove('walking','arrived');
+ document.getElementById('townWalkingHint')?.classList.remove('visible');
+}
+function walkToTownPlace(page){
+ if(!['shop','gear','quests','adventure'].includes(page))return;
+ if(townWalkTarget)return;
+ if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){showPage(page);return}
+ const hero=document.getElementById('townHero'),hint=document.getElementById('townWalkingHint');
+ if(!hero){showPage(page);return}
+ townWalkTarget=page;
+ const target=TOWN_DESTINATIONS[page];hero.classList.remove('arrived');hero.classList.add('walking');
+ hero.style.left=target.x+'%';hero.style.top=target.y+'%';hint?.classList.add('visible');
+ townWalkTimer=setTimeout(()=>{
+  if(townWalkTarget!==page)return;
+  hero.classList.remove('walking');hero.classList.add('arrived');
+  townWalkTimer=null;townWalkTarget=null;hint?.classList.remove('visible');
+  showPage(page);
+  townWalkTimer=setTimeout(()=>{hero.style.left='49%';hero.style.top='70%';hero.classList.remove('arrived');townWalkTimer=null},750);
+ },570);
+}
+
+drawTownHero();
 startRound();showPage('titleScreen',true);requestAnimationFrame(draw);
 </script></body></html>
