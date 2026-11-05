@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>勇者與龍 — 8-bit 冒險原型 v9.0</title><meta name="theme-color" content="#f3e9dd"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="勇者與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方勇者與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>勇者與龍 — 8-bit 冒險原型 v9.1</title><meta name="theme-color" content="#f3e9dd"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="勇者與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方勇者與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
 :root{--gold:#f9d980;--edge:#85512b;--ink:#190e27}*{box-sizing:border-box}body{margin:0;color:#fff1c8;background:radial-gradient(ellipse at 50% -10%,#59304f,#130e20 60%);font-family:system-ui,'Noto Sans TC',sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.44;cursor:not-allowed}.shell{max-width:540px;margin:auto;min-height:100vh}.heading{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 7px;gap:10px;background:linear-gradient(#27152f,#4b1727 60%,#180e20);border-bottom:3px solid #af783f}.brand{color:#ffcf62;font-weight:1000;letter-spacing:.05em;text-shadow:2px 3px #492119}.sub{font-size:10px;color:#d4c6c6}.nav{display:flex;gap:5px}.nav button{padding:7px;border-radius:7px;color:#f6e7cb;background:#4b344e;border:2px solid #936950;font-weight:800;font-size:12px}.nav .chosen{background:#a77336;color:#211525}.scene{position:relative;overflow:hidden;border:4px solid #ac7844;border-top:0;border-bottom-width:6px;box-shadow:0 5px 0 #3a1e2d;background:#140e27}.scene canvas{width:100%;height:auto;display:block;image-rendering:pixelated;aspect-ratio:480/380}.overlaytop{position:absolute;inset:0 0 auto 0;pointer-events:none}.scenehead{display:flex;align-items:start;justify-content:space-between;padding:5px}.round{background:linear-gradient(#4d2727,#16121d);border:3px ridge #c7a060;border-radius:9px;padding:2px 10px;color:#ffe684;font-weight:1000;text-align:center;text-shadow:2px 2px #5f2b1e;line-height:1.1}.round strong{font-size:22px}.waves{display:flex;gap:2px;margin-top:4px;background:#140e27a0;padding:4px;border-radius:5px}.wave{height:19px;width:21px;background:#604e54;border:2px solid #a99273;box-shadow:inset 0 -5px #392738}.wave.done{background:linear-gradient(#bdb6a2,#eed38e 52%,#70532a)}.wave.now{background:linear-gradient(#faf5df,#78b8f5 62%,#405c9a)}.combo{position:absolute;top:69px;left:7px;font-weight:1000;font-size:31px;color:#ffe13d;font-style:italic;text-shadow:3px 3px #10000b,-2px -2px #130b0b}.combo small{font-size:15px}.enemylabel{position:absolute;top:104px;right:10px;min-width:140px;padding:4px 8px;border:2px solid #977249;border-radius:8px;background:#25162bbf;text-align:right;font-size:12px}.enemylabel strong{color:#ffda8c}.danger{position:absolute;top:149px;left:0;right:0;text-align:center;font-size:20px;font-weight:1000;color:#fff774;text-shadow:2px 3px #7c2135;pointer-events:none}.toast{position:absolute;left:12%;right:12%;bottom:20px;text-align:center;padding:9px;background:#170f27cf;border:2px solid #bca06d;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}.hud{padding:7px 8px 12px;background:linear-gradient(110deg,#39202b,#8b542f 7%,#31202a 11%,#302032 89%,#9e6e3c 95%,#42202c);border:3px ridge #b68c4c;border-top:0}.healthline{display:flex;justify-content:space-between;gap:4px;font-size:13px;font-weight:900;margin:1px 2px 3px}.meter{background:#170d22;padding:2px;border:2px solid #ad7943;border-radius:7px;height:16px;box-shadow:inset 0 2px #06030b;margin-bottom:4px;overflow:hidden}.meter>span{display:block;height:100%;transition:width .2s}.hpfill{background:linear-gradient(#a4ff67,#32cb3e 60%,#248021)}.apfill{background:repeating-linear-gradient(90deg,#ee4535 0 16%,#f7b445 16% 18%,#822221 18% 20%)}.ppfill{background:linear-gradient(90deg,#9c57cb,#f2d0fe)}.weaponbar{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;margin-bottom:4px;border-radius:7px;background:#1a0d18;border:2px solid #865c3a}.weapon{position:relative;min-height:51px;border:2px solid #a57c48;border-radius:7px;background:linear-gradient(#673c3d,#2b1529);color:white}.weapon.active{border-color:#f8ea7f;background:linear-gradient(#775b32,#4c2722);box-shadow:inset 0 0 11px #eabc59}.weapon .sym{display:block;font-size:26px;line-height:27px;filter:drop-shadow(1px 2px #000)}.weapon .nm{font-size:10px;display:block}.weapon .elem{position:absolute;top:0;right:3px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.card{padding:3px 1px 4px;background:linear-gradient(#f3e9ce,#c8a77a);border:3px solid #9b623c;border-radius:13px;box-shadow:inset 0 0 0 2px #efe7be,0 3px 0 #190b15;color:#1a1428;position:relative;min-height:78px;transition:transform .1s}.card:active{transform:translateY(3px)}.card .art{height:37px;display:flex;justify-content:center;align-items:center;font-size:30px;filter:drop-shadow(2px 2px #6d506e)}.card .name{font-size:11px;font-weight:1000;white-space:nowrap;letter-spacing:-.5px}.cost{position:absolute;right:2px;top:0;background:linear-gradient(#ffebd7,#d75451);color:#261326;font-weight:1000;border:2px solid #5a2539;border-radius:50%;width:27px;height:25px;line-height:20px;font-size:16px}.card.dark{background:linear-gradient(#4a3e80,#15162c);color:#e7dbff;border-color:#4b477c;box-shadow:inset 0 0 0 2px #7e6eb5}.card.dark .cost{background:#3b344f;color:white}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}.ctl{border:3px solid #e2b785;border-radius:12px;min-height:48px;font-size:12px;font-weight:1000;color:#fff;text-shadow:1px 2px #1e1322;box-shadow:inset 0 2px 6px #ffffff70,0 3px #241525}.guard{background:linear-gradient(#91c2ff,#367bc5 65%,#144c84)}.meat{background:linear-gradient(#ffbaa7,#e56161 65%,#8f383f)}.advance{background:linear-gradient(#e8c56c,#916a23)}.pause{background:linear-gradient(#9d7eaf,#65416e)}.status{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:8px 0 0;font-size:11px;color:#f4d9aa}.message{padding:8px 12px;font-size:12px;min-height:44px;line-height:1.5;background:#180d21;border-top:2px solid #72472a}.screen{padding:14px;background:#261c32;min-height:610px}.screen h2{margin:0 0 12px;color:#ffe1a3}.screen .entry{padding:10px;margin:7px 0;background:#3d2c43;border:1px solid #997545;border-radius:9px}.screen button{background:#68476a;color:#fff2ce;border:2px solid #a9895b;padding:8px 10px;border-radius:8px;margin:4px}.screen button.active{background:#95723f}.muted{color:#c5aec3;font-size:12px}.small{font-size:12px}.footer{padding:12px;text-align:center;color:#a997a9;font-size:11px}.hidden{display:none!important}@media(min-width:620px){.shell{margin:20px auto;border:5px solid #281424;box-shadow:0 12px 45px #050307;border-radius:12px;overflow:hidden}}@media(max-width:380px){.wave{width:16px}.card .name{font-size:9px}.weapon .nm{font-size:9px}}
 
 /* v0.3: card queue, threat telegraph, expanded scene polish */
@@ -1756,7 +1756,7 @@ body{
 @media(max-width:620px){#gear .gear-slot .slot-level{font-size:10px!important;line-height:1.16!important;overflow-wrap:anywhere!important}}
 
 
-/* v9.0 — battle readability and information hierarchy (visual-only changes). */
+/* v9.1 — battle readability and information hierarchy (visual-only changes). */
 #battle .scene{isolation:isolate}
 /* Enemy status in sky rather than overlapping the ground-level battle toast. */
 #battle .enemylabel{
@@ -1877,7 +1877,7 @@ body{
 }
 
 
-/* v9.0 final mobile legibility: keep the monster visible on 320px screens. */
+/* v9.1 final mobile legibility: keep the monster visible on 320px screens. */
 #battle .vital-ap .apmeter::after{display:none!important}
 #battle .toast{
   left:11%!important;right:11%!important;bottom:12px!important;
@@ -1902,11 +1902,11 @@ body{
  #battle .threat-tag{margin-top:2px!important;font-size:8px!important;line-height:1!important}
  #battle .toast{left:12%!important;right:12%!important;padding:4px 6px!important;font-size:10px!important}
 }
-</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 勇者與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v9.0</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
+</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 勇者與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v9.1</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
 <section id="titleScreen" class="frontscreen hero-cover">
  <div class="hero-cover-art"><img src="title-art.webp" alt="8-bit 像素風封面：左下方金髮皮裝勇者拔劍面對右上方威猛的巨龍，背景是赤月與魔城" decoding="async"></div>
  <div class="hero-cover-actions"><div class="cover-tag">勇者與龍 · 像素冒險</div><button class="bigbtn primary" onclick="beginAdventure()">▶ 開始冒險</button><button class="bigbtn" onclick="showPage('help')">▣ 遊戲說明</button><div id="titleProgress" class="muted"></div></div>
- <div class="legal">非官方玩家製作 · 原創替代圖像 · 本機自動存檔 · v9.0</div>
+ <div class="legal">非官方玩家製作 · 原創替代圖像 · 本機自動存檔 · v9.1</div>
  </section>
 <section id="home" class="screen hidden"><div class="home-menu-stage"><div class="home-hero-banner" role="img" aria-label="冒險者公會主選單主視覺：明亮可愛的冒險者公會廣場，與下方功能按鈕整合為同一個首頁畫面"><img src="home-menu-art.webp" alt="冒險者公會主選單主視覺" decoding="async"><div class="hero-banner-copy"><div class="hero-banner-ribbon">Main Menu</div><strong>冒險者公會大廳</strong><span>整理裝備、挑選任務，從這裡展開新的旅程。</span></div></div><div class="home-menu-header"><strong>主選單</strong><span id="homeInfo"></span></div><div class="home-menu-sub">從公會大廳出發，選擇你的下一步行動。</div><div class="home-stats" id="homeStats"></div><div class="menu-grid"><button onclick="showPage('adventure')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="adventure" aria-hidden="true"></canvas></span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="gear" aria-hidden="true"></canvas></span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="shop" aria-hidden="true"></canvas></span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="quests" aria-hidden="true"></canvas></span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="profile" aria-hidden="true"></canvas></span><b>勇者資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="help" aria-hidden="true"></canvas></span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="journal" aria-hidden="true"></canvas></span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="settings" aria-hidden="true"></canvas></span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
 <section id="journal" class="screen hidden rpg-interior journal-page">
@@ -2453,31 +2453,136 @@ $('advanceBtn').disabled=phase==='battle'||phase==='ready';$('advanceBtn').hidde
 // Original, procedural low-resolution scenery and characters. No extracted copyrighted sprites.
 function box(x,y,w,h,color){cx.fillStyle=color;cx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}function poly(points,color){cx.fillStyle=color;cx.beginPath();cx.moveTo(...points[0]);points.slice(1).forEach(p=>cx.lineTo(...p));cx.closePath();cx.fill()}
 
+// v9.1: three layered, 8-bit battle backgrounds. All geometry snaps to the pixel grid.
+// Preserve the 480 x 380 world coordinate system used by every skill and guard animation.
+function pixelCloud(x,y,c='#f5f9ed'){
+ box(x+12,y,28,8,c);box(x+4,y+8,52,12,c);box(x,y+16,64,8,c);
+}
+function pixelPine(x,y,scale=1){
+ const u=8*scale;
+ box(x-u/2,y-6*u,u,6*u,'#7b5c49');
+ box(x-2*u,y-5*u,4*u,u,'#376f62');
+ box(x-3*u,y-4*u,6*u,u,'#44846a');
+ box(x-4*u,y-3*u,8*u,u,'#568f70');
+ box(x-3*u,y-2*u,6*u,u,'#397760');
+ box(x-2*u,y-7*u,4*u,u,'#77b88d');
+}
+function pixelCrystal(x,y,h,shade='#7ac6f2',shine='#d9f6ff'){
+ // Row-by-row stepped silhouette avoids antialiased diagonals.
+ for(let iy=0;iy<h;iy+=8){
+  const row=Math.floor(iy/8),spread=Math.min(3,Math.floor(row/2)+1);
+  box(x-spread*4,y-h+iy,spread*8+8,8,'#375987');
+  box(x-spread*4+4,y-h+iy,spread*8,8,shade);
+  box(x-spread*4+8,y-h+iy,4,8,shine);
+ }
+ box(x-4,y-h-8,12,8,shine);
+}
 function drawBackground(t){
  const zone=s.zone%3;
- const bob=Math.sin(t*.002)*2;
- const skyTop=['#232a6e','#2a6b4f','#6a2c2c'][zone];
- const skyBottom=['#4854b8','#64b77f','#d06f38'][zone];
- const ground=['#2c2450','#2b5a36','#5b2b1f'][zone];
- const trim=['#6d67c2','#9de28a','#ffb160'][zone];
- for(let y=0;y<300;y+=8){
-  const ratio=y/300;box(0,y,480,8,ratio<.5?skyTop:skyBottom);
- }
+ const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const drift=reduce?0:Math.round(Math.sin(t*.0007)*4/4)*4;
+ const bands=[
+  ['#353e79','#485c9b','#657eb7','#8da5ca','#c0ccde'],
+  ['#78b4c5','#99cfc7','#b8dfc4','#dbedc8','#e7eecb'],
+  ['#60425d','#875268','#af7467','#d49774','#e8bf92']
+ ][zone];
+ for(let y=0;y<296;y+=8)box(0,y,480,8,bands[Math.min(4,Math.floor(y/60))]);
  if(zone===0){
-  for(let i=0;i<8;i++){const x=i*62;poly([[x,300],[x+18,180+(i%3)*12+bob],[x+42,300]],'#30386f');poly([[x+12,300],[x+28,210+(i%2)*14],[x+50,300]],'#5667cc');}
-  for(let i=0;i<14;i++){const x=(i*34+11)%470,y=60+(i%5)*32;box(x,y,8,8,'#fff4a3');if(i%2)box(x+2,y+2,4,4,'#b7f7ff')}
-  for(let i=0;i<9;i++){const x=i*54+6,y=192+(i%2)*16;box(x,y,10,38,'#71c7f0');box(x-4,y+8,18,10,'#caf5ff');box(x+3,y-6,4,8,'#caf5ff')}
+  // Crystal cave: near stalactites, deep layered cliffs, glowing stepping stones.
+  for(let i=0;i<9;i++){
+   let x=i*64-20, h=48+(i%3)*16;
+   box(x,0,24,h,'#29305c');box(x+8,h,8,16,'#333e70');
+   box(x+17,0,7,Math.max(18,h-12),'#505b93');
+  }
+  for(let i=0;i<11;i++){
+   let x=i*48-12, bottom=247+(i%3)*8, h=70+(i%4)*18;
+   for(let row=0;row<h;row+=8){let spread=Math.min(4,Math.floor(row/12)+1);
+    box(x-spread*4,bottom-h+row,spread*8+28,8,'#475887');
+    box(x+11,bottom-h+row,8,8,'#6574a7');
+   }
+  }
+  // Side pillars frame the fighters while keeping the centre clear.
+  for(const x of [0,456]){box(x,128,24,164,'#343e74');box(x+7,142,7,128,'#5669a4');box(x,182,24,9,'#7b82bf')}
+  for(const [x,y,h] of [[36,274,64],[92,271,38],[424,277,55],[458,286,31]])pixelCrystal(x,y,h,'#69bee2','#bdeef6');
+  for(let i=0;i<7;i++){const x=(i*71+37)%480,y=91+(i%3)*24;box(x,y,6,6,'#d7e8ef');box(x+2,y-6,2,6,'#a9d5ef')}
  }else if(zone===1){
-  for(let i=0;i<8;i++){const x=i*58+10;box(x,132+(i%2)*10,14,98,'#5c3a25');box(x-12,108+(i%2)*10,38,18,'#84d56c');box(x-18,124+(i%3)*6,50,16,'#62b55a');}
-  for(let i=0;i<15;i++){const x=(i*31+5)%470,y=246+(i%3)*14;box(x,y,6,16,'#aad96d');box(x-2,y+16,10,6,'#7ab94f')}
-  for(let i=0;i<7;i++){box(i*70+20,76+(i%2)*10,24,8,'#dcfff3');box(i*70+28,84+(i%2)*10,10,8,'#dcfff3')}
+  // Maple-like forest: cheerful sunlit hills, distant canopy and bright flora.
+  box(58+drift,42,40,40,'#fff4bb');box(66+drift,35,24,8,'#fff4bb');
+  pixelCloud(240+drift,52,'#f7fbec');pixelCloud(48-drift,92,'#f8ffeb');
+  for(let i=0;i<10;i++){
+   const x=i*55-16, y=190+(i%3)*7;
+   box(x+12,y-58,20,78,'#7fa193');
+   box(x,y-64,50,20,'#74ae95');box(x+8,y-86,38,24,'#8cbfa0');
+  }
+  for(let i=0;i<8;i++)pixelPine(i*69-12,282+(i%2)*8,i%3===0?1.3:1);
+  for(let i=0;i<15;i++){
+   const x=(i*37+12)%480,y=276+(i%3)*8;
+   box(x,y-7,4,7,'#658e69');box(x-5,y-10,7,6,i%3?'#fff0b8':'#ffc6c9');
+   box(x+3,y-7,5,5,'#ffe6a7');
+  }
  }else{
-  for(let i=0;i<7;i++){const x=i*68;poly([[x,300],[x+24,200+(i%2)*18],[x+52,300]],'#552225');poly([[x+15,300],[x+32,228+(i%3)*10],[x+58,300]],'#8e3b2d');}
-  for(let i=0;i<12;i++){const x=i*39+3;box(x,238+(i%2)*10,16,26,'#ff8b43');box(x+4,232+(i%3)*8,8,8,'#ffd26a');}
-  for(let i=0;i<10;i++){const x=(i*44+17)%470,y=86+(i%4)*28;box(x,y,8,8,'#ffd36b');if(i%2)box(x+2,y-6,4,6,'#fff0b0')}
+  // Volcanic highlands: evening sky, distant peaks, cooling basalt and orange seams.
+  box(80+drift,44,48,40,'#ffdb9d');box(72+drift,51,64,24,'#ffeab1');
+  for(let i=0;i<6;i++){
+   const x=i*98-26, top=158+(i%3)*16;
+   for(let row=0;row<110;row+=8){const spread=Math.floor(row/16)+1;
+    box(x-spread*7,top+row,36+spread*14,8,'#754d63');
+    box(x+16,top+row,7,8,'#966270');
+   }
+  }
+  // No smooth glow: hot fissures and embers are all hard-edged pixels.
+  for(let i=0;i<9;i++){
+   const x=i*62-6,y=267+(i%3)*7;
+   box(x,y,28,8,'#4b394d');box(x+8,y-8,12,8,'#6b4951');
+   box(x+4,y+3,13,5,'#ee915f');box(x+9,y+3,6,5,'#ffd494');
+  }
+  for(let i=0;i<10;i++){const x=(i*47+18)%480,y=74+(i%4)*38;
+   box(x,y,4,5,i%2?'#f5b57c':'#ffe3a7');
+  }
  }
- box(0,300,480,52,ground);box(0,300,480,6,trim);box(0,352,480,15,'#111325');
- for(let i=0;i<16;i++)box(i*32,320+(i%2)*10,20,6,['#4a407d','#43734a','#7a4432'][zone]);
+ // All three zones share one perspective ground plane and the same foot baseline.
+ const ground=[['#64749c','#42466f','#77799b','#a4b6cb'],
+               ['#99bd82','#6b9c78','#b0c88e','#d1dba4'],
+               ['#856052','#604653','#a57c69','#c99774']][zone];
+ for(let y=294;y<380;y+=8){const row=Math.floor((y-294)/8);
+  box(0,y,480,8,row<2?ground[0]:row<6?ground[1]:ground[0]);
+ }
+ box(0,291,480,5,ground[3]);box(0,297,480,5,ground[2]);
+ // Back-to-front stone / grass tiles get wider lower in the scene.
+ for(let row=0;row<4;row++){
+  const y=310+row*18,width=28+row*8,offset=(row%2)*21;
+  for(let x=-24+offset;x<480;x+=width+12){
+   box(x,y,width,4,row%2?ground[2]:ground[3]);
+   box(x+7,y+5,Math.max(6,width-14),4,ground[0]);
+  }
+ }
+ // Soft edge of the stage, still expressed exclusively as square pixels.
+ box(0,370,480,10,ground[1]);box(0,373,480,5,ground[0]);
+}
+function drawBattleGrounding(t){
+ // 8-bit stepped contact shadows anchor the player and enemy on the same floor.
+ const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const zone=s.zone%3,boss=s.round===6;
+ const shadow=['#3b4267','#547966','#4e3844'][zone];
+ const highlights=['#98a6d1','#c8db9b','#c4947e'][zone];
+ function shadowAt(x,y,r){
+  cx.save();cx.globalAlpha=.48;
+  box(x-r+12,y-4,r*2-24,8,shadow);
+  box(x-r+24,y-8,r*2-48,4,shadow);
+  box(x-r+24,y+4,r*2-48,4,shadow);
+  cx.globalAlpha=.56;
+  box(x-r+12,y-7,12,4,highlights);box(x+r-24,y-7,12,4,highlights);
+  cx.restore();
+ }
+ shadowAt(148,316,58);
+ shadowAt(347,324,boss?84:s.round<3?56:66);
+ if(!reduced&&phase==='battle'){
+  const pulse=Math.floor(t/260)%4;
+  for(let i=0;i<2;i++){
+   const x=218+i*32,y=306+(i%2)*7;
+   if(pulse===i)box(x,y,4,4,highlights);
+  }
+ }
 }
 
 // v2.9 第二輪角色動作精修：改善待機站姿與揮武器動作，不使用原作圖檔。
@@ -3177,7 +3282,15 @@ function drawMonster(t){
  cx.filter='none';cx.restore();
  if(boss&&!bossDefeat.active){
   const aura=.18+Math.abs(Math.sin(t*.0028))*.35;
-  cx.save();cx.globalAlpha=aura;cx.strokeStyle=enemy.bossPhase===2?'#ff9058':'#8cf0ff';cx.lineWidth=4;cx.beginPath();cx.ellipse(x,y-25,94,112,0,0,Math.PI*2);cx.stroke();cx.restore();
+  cx.save();cx.globalAlpha=aura;
+  const ringColor=enemy.bossPhase===2?'#ffd58d':s.zone%3===0?'#b5eaff':s.zone%3===1?'#cdf3ad':'#ffb18a';
+  // Pixelated magic aura, without an antialiased Canvas ellipse.
+  for(let i=0;i<32;i++){
+   const a=i*Math.PI/16,px=Math.round((x+91*Math.cos(a))/6)*6,py=Math.round((y-25+108*Math.sin(a))/6)*6;
+   box(px,py,6,6,ringColor);
+   if(enemy.bossPhase===2&&i%4===0)box(px-3,py-3,12,4,'#fff0bd');
+  }
+  cx.restore();
  }
  if(attacking){const c=monsterAttackKind==='drain'?'#c186ff':monsterAttackKind==='heavy'?'#ffbe6b':'#f9f0b2';for(let j=0;j<4;j++)box(x-62-j*23,214+j%2*13,15,7,c)}
  if(enemy.stunned)for(let j=0;j<4;j++)floatStar(x-39+j*27,139+Math.sin(t*.004+j)*6);
@@ -3291,7 +3404,7 @@ function draw(ts){let dt=Math.min(50,ts-last);last=ts;if(!paused&&phase==='battl
    // Refresh skill availability on the exact frame AP crosses a skill cost.
    if(s.equipped.some((id,i)=>{const sk=equipmentSkill(id,s.skillCursor[i]||0);return sk&&before<sk.cost*10&&s.ap>=sk.cost*10;}))refreshSkillReadiness();
    if(ts-apUiLast>=160){apUiLast=ts;$('apVal').textContent=Math.floor(s.ap)+' / 100';$('apBar').parentElement.setAttribute('aria-valuenow',Math.floor(s.ap));}
- }if(ts-skillUiLast>=120){skillUiLast=ts;refreshSkillReadiness()}if(enemy.stunned){if(ts>stunUntil){enemy.stunned=false;enemyClock=0;refreshSkillReadiness();say('敵人恢復行動！')}}else{enemyClock+=dt;if(enemyClock>=enemyAttackAt)enemyStrike(ts)}}drawBackground(ts);cx.save();if(shake>0){cx.translate(Math.sin(ts*.071)*shake*.38,Math.sin(ts*.097+1.4)*shake*.24);shake*=.83;if(shake<.45)shake=0}drawKnight(ts);drawMonster(ts);drawEnemyTelegraph(ts);drawCombatEffects(ts);drawDefenseFx(ts);drawWeaponFx(ts);drawElementalImpacts(ts);drawBossDefeatEffect(ts);cx.restore();if(flash>0)flash-=dt;for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.0002*dt;p.life-=dt;box(p.x,p.y,p.size,p.size,p.color);if(p.life<=0)particles.splice(i,1)}cx.textAlign='center';cx.font='bold 22px monospace';for(let i=floating.length-1;i>=0;i--){let f=floating[i];f.y-=dt*.045;f.life-=dt;cx.shadowColor='#16091d';cx.shadowBlur=4;cx.fillStyle=f.color;cx.fillText(f.t,f.x,f.y);cx.shadowBlur=0;if(f.life<=0)floating.splice(i,1)}updateEnemyCueText();$('threatSeconds').textContent=phase==='battle'&&!enemy.stunned?(Math.max(0,enemyAttackAt-enemyClock)/1000).toFixed(1)+'s':enemy.stunned?'暈眩':'--';const threatBox=$('threatFill').parentElement.parentElement;const remainingMs=enemyAttackAt-enemyClock;const threatActive=phase==='battle'&&!paused&&!enemy.stunned;const perfectWindow=threatActive&&remainingMs>0&&remainingMs<=650;const imminent=threatActive&&remainingMs<1100;const threatState=enemy.stunned?'stun':paused?'pause':phase==='ready'?'waiting':perfectWindow?'perfect':imminent?'warning':threatActive?'preparing':'waiting';if(threatBox.dataset.state!==threatState){threatBox.dataset.state=threatState;const tag=$('threatTag');tag.textContent={stun:'★ 暈眩中',pause:'Ⅱ 暫停',waiting:'等待開戰',perfect:'✦ 精準格擋！',warning:'⚠ 即將命中',preparing:'注意倒數'}[threatState]||'準備戰鬥'}threatBox.classList.toggle('is-imminent',imminent);threatBox.classList.toggle('is-perfect',perfectWindow);$('threatFill').style.width=phase==='battle'&&!enemy.stunned?Math.min(100,enemyClock/enemyAttackAt*100)+'%':'0%';$('danger').textContent=phase==='cinematic'?'🏆 BOSS 討伐成功！':phase==='won'?'✨ 勝利！':phase==='lost'?'💀 戰敗':paused?'Ⅱ 暫停':phase==='ready'?'等待開始':enemy.stunned?'★ 暈眩 ★':phase==='battle'&&enemyClock>enemyAttackAt-650?'⚠ 防禦！':' ';if(ts>toastUntil)$('toast').classList.remove('show');requestAnimationFrame(draw)}
+ }if(ts-skillUiLast>=120){skillUiLast=ts;refreshSkillReadiness()}if(enemy.stunned){if(ts>stunUntil){enemy.stunned=false;enemyClock=0;refreshSkillReadiness();say('敵人恢復行動！')}}else{enemyClock+=dt;if(enemyClock>=enemyAttackAt)enemyStrike(ts)}}drawBackground(ts);drawBattleGrounding(ts);cx.save();if(shake>0){cx.translate(Math.sin(ts*.071)*shake*.38,Math.sin(ts*.097+1.4)*shake*.24);shake*=.83;if(shake<.45)shake=0}drawKnight(ts);drawMonster(ts);drawEnemyTelegraph(ts);drawCombatEffects(ts);drawDefenseFx(ts);drawWeaponFx(ts);drawElementalImpacts(ts);drawBossDefeatEffect(ts);cx.restore();if(flash>0)flash-=dt;for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.0002*dt;p.life-=dt;box(p.x,p.y,p.size,p.size,p.color);if(p.life<=0)particles.splice(i,1)}cx.textAlign='center';cx.font='bold 22px monospace';for(let i=floating.length-1;i>=0;i--){let f=floating[i];f.y-=dt*.045;f.life-=dt;cx.shadowColor='#16091d';cx.shadowBlur=4;cx.fillStyle=f.color;cx.fillText(f.t,f.x,f.y);cx.shadowBlur=0;if(f.life<=0)floating.splice(i,1)}updateEnemyCueText();$('threatSeconds').textContent=phase==='battle'&&!enemy.stunned?(Math.max(0,enemyAttackAt-enemyClock)/1000).toFixed(1)+'s':enemy.stunned?'暈眩':'--';const threatBox=$('threatFill').parentElement.parentElement;const remainingMs=enemyAttackAt-enemyClock;const threatActive=phase==='battle'&&!paused&&!enemy.stunned;const perfectWindow=threatActive&&remainingMs>0&&remainingMs<=650;const imminent=threatActive&&remainingMs<1100;const threatState=enemy.stunned?'stun':paused?'pause':phase==='ready'?'waiting':perfectWindow?'perfect':imminent?'warning':threatActive?'preparing':'waiting';if(threatBox.dataset.state!==threatState){threatBox.dataset.state=threatState;const tag=$('threatTag');tag.textContent={stun:'★ 暈眩中',pause:'Ⅱ 暫停',waiting:'等待開戰',perfect:'✦ 精準格擋！',warning:'⚠ 即將命中',preparing:'注意倒數'}[threatState]||'準備戰鬥'}threatBox.classList.toggle('is-imminent',imminent);threatBox.classList.toggle('is-perfect',perfectWindow);$('threatFill').style.width=phase==='battle'&&!enemy.stunned?Math.min(100,enemyClock/enemyAttackAt*100)+'%':'0%';$('danger').textContent=phase==='cinematic'?'🏆 BOSS 討伐成功！':phase==='won'?'✨ 勝利！':phase==='lost'?'💀 戰敗':paused?'Ⅱ 暫停':phase==='ready'?'等待開始':enemy.stunned?'★ 暈眩 ★':phase==='battle'&&enemyClock>enemyAttackAt-650?'⚠ 防禦！':' ';if(ts>toastUntil)$('toast').classList.remove('show');requestAnimationFrame(draw)}
 s.unlockedZone ??= Math.min(s.zone,2);
 // v0.4 navigation: explicit pages; battle timer is frozen off-screen.
 let currentPage='title', lastReward=0, rewardDrop='';
