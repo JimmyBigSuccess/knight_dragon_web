@@ -1,10 +1,11 @@
 {
-  "name": "騎士與龍 8-bit版 — 冒險復刻原型 v6.8",
-  "short_name": "騎士與龍 8-bit版",
+  "name": "勇者與龍",
+  "short_name": "勇者與龍",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#140e27",
-  "theme_color": "#20162e",
+  "background_color": "#fdf5e8",
+  "theme_color": "#c5e8f7",
   "icons": [
     {
       "src": "icon-192.png",

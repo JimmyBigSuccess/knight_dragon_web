@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>勇者與龍 — 8-bit 冒險原型 v8.3</title><meta name="theme-color" content="#f3e9dd"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="勇者與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方勇者與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>勇者與龍 — 8-bit 冒險原型 v9.0</title><meta name="theme-color" content="#f3e9dd"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="勇者與龍"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="非官方勇者與龍 8-bit 風格冒險網頁原型"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><style>
 :root{--gold:#f9d980;--edge:#85512b;--ink:#190e27}*{box-sizing:border-box}body{margin:0;color:#fff1c8;background:radial-gradient(ellipse at 50% -10%,#59304f,#130e20 60%);font-family:system-ui,'Noto Sans TC',sans-serif}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{opacity:.44;cursor:not-allowed}.shell{max-width:540px;margin:auto;min-height:100vh}.heading{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 7px;gap:10px;background:linear-gradient(#27152f,#4b1727 60%,#180e20);border-bottom:3px solid #af783f}.brand{color:#ffcf62;font-weight:1000;letter-spacing:.05em;text-shadow:2px 3px #492119}.sub{font-size:10px;color:#d4c6c6}.nav{display:flex;gap:5px}.nav button{padding:7px;border-radius:7px;color:#f6e7cb;background:#4b344e;border:2px solid #936950;font-weight:800;font-size:12px}.nav .chosen{background:#a77336;color:#211525}.scene{position:relative;overflow:hidden;border:4px solid #ac7844;border-top:0;border-bottom-width:6px;box-shadow:0 5px 0 #3a1e2d;background:#140e27}.scene canvas{width:100%;height:auto;display:block;image-rendering:pixelated;aspect-ratio:480/380}.overlaytop{position:absolute;inset:0 0 auto 0;pointer-events:none}.scenehead{display:flex;align-items:start;justify-content:space-between;padding:5px}.round{background:linear-gradient(#4d2727,#16121d);border:3px ridge #c7a060;border-radius:9px;padding:2px 10px;color:#ffe684;font-weight:1000;text-align:center;text-shadow:2px 2px #5f2b1e;line-height:1.1}.round strong{font-size:22px}.waves{display:flex;gap:2px;margin-top:4px;background:#140e27a0;padding:4px;border-radius:5px}.wave{height:19px;width:21px;background:#604e54;border:2px solid #a99273;box-shadow:inset 0 -5px #392738}.wave.done{background:linear-gradient(#bdb6a2,#eed38e 52%,#70532a)}.wave.now{background:linear-gradient(#faf5df,#78b8f5 62%,#405c9a)}.combo{position:absolute;top:69px;left:7px;font-weight:1000;font-size:31px;color:#ffe13d;font-style:italic;text-shadow:3px 3px #10000b,-2px -2px #130b0b}.combo small{font-size:15px}.enemylabel{position:absolute;top:104px;right:10px;min-width:140px;padding:4px 8px;border:2px solid #977249;border-radius:8px;background:#25162bbf;text-align:right;font-size:12px}.enemylabel strong{color:#ffda8c}.danger{position:absolute;top:149px;left:0;right:0;text-align:center;font-size:20px;font-weight:1000;color:#fff774;text-shadow:2px 3px #7c2135;pointer-events:none}.toast{position:absolute;left:12%;right:12%;bottom:20px;text-align:center;padding:9px;background:#170f27cf;border:2px solid #bca06d;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s}.toast.show{opacity:1}.hud{padding:7px 8px 12px;background:linear-gradient(110deg,#39202b,#8b542f 7%,#31202a 11%,#302032 89%,#9e6e3c 95%,#42202c);border:3px ridge #b68c4c;border-top:0}.healthline{display:flex;justify-content:space-between;gap:4px;font-size:13px;font-weight:900;margin:1px 2px 3px}.meter{background:#170d22;padding:2px;border:2px solid #ad7943;border-radius:7px;height:16px;box-shadow:inset 0 2px #06030b;margin-bottom:4px;overflow:hidden}.meter>span{display:block;height:100%;transition:width .2s}.hpfill{background:linear-gradient(#a4ff67,#32cb3e 60%,#248021)}.apfill{background:repeating-linear-gradient(90deg,#ee4535 0 16%,#f7b445 16% 18%,#822221 18% 20%)}.ppfill{background:linear-gradient(90deg,#9c57cb,#f2d0fe)}.weaponbar{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;margin-bottom:4px;border-radius:7px;background:#1a0d18;border:2px solid #865c3a}.weapon{position:relative;min-height:51px;border:2px solid #a57c48;border-radius:7px;background:linear-gradient(#673c3d,#2b1529);color:white}.weapon.active{border-color:#f8ea7f;background:linear-gradient(#775b32,#4c2722);box-shadow:inset 0 0 11px #eabc59}.weapon .sym{display:block;font-size:26px;line-height:27px;filter:drop-shadow(1px 2px #000)}.weapon .nm{font-size:10px;display:block}.weapon .elem{position:absolute;top:0;right:3px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.card{padding:3px 1px 4px;background:linear-gradient(#f3e9ce,#c8a77a);border:3px solid #9b623c;border-radius:13px;box-shadow:inset 0 0 0 2px #efe7be,0 3px 0 #190b15;color:#1a1428;position:relative;min-height:78px;transition:transform .1s}.card:active{transform:translateY(3px)}.card .art{height:37px;display:flex;justify-content:center;align-items:center;font-size:30px;filter:drop-shadow(2px 2px #6d506e)}.card .name{font-size:11px;font-weight:1000;white-space:nowrap;letter-spacing:-.5px}.cost{position:absolute;right:2px;top:0;background:linear-gradient(#ffebd7,#d75451);color:#261326;font-weight:1000;border:2px solid #5a2539;border-radius:50%;width:27px;height:25px;line-height:20px;font-size:16px}.card.dark{background:linear-gradient(#4a3e80,#15162c);color:#e7dbff;border-color:#4b477c;box-shadow:inset 0 0 0 2px #7e6eb5}.card.dark .cost{background:#3b344f;color:white}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}.ctl{border:3px solid #e2b785;border-radius:12px;min-height:48px;font-size:12px;font-weight:1000;color:#fff;text-shadow:1px 2px #1e1322;box-shadow:inset 0 2px 6px #ffffff70,0 3px #241525}.guard{background:linear-gradient(#91c2ff,#367bc5 65%,#144c84)}.meat{background:linear-gradient(#ffbaa7,#e56161 65%,#8f383f)}.advance{background:linear-gradient(#e8c56c,#916a23)}.pause{background:linear-gradient(#9d7eaf,#65416e)}.status{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:8px 0 0;font-size:11px;color:#f4d9aa}.message{padding:8px 12px;font-size:12px;min-height:44px;line-height:1.5;background:#180d21;border-top:2px solid #72472a}.screen{padding:14px;background:#261c32;min-height:610px}.screen h2{margin:0 0 12px;color:#ffe1a3}.screen .entry{padding:10px;margin:7px 0;background:#3d2c43;border:1px solid #997545;border-radius:9px}.screen button{background:#68476a;color:#fff2ce;border:2px solid #a9895b;padding:8px 10px;border-radius:8px;margin:4px}.screen button.active{background:#95723f}.muted{color:#c5aec3;font-size:12px}.small{font-size:12px}.footer{padding:12px;text-align:center;color:#a997a9;font-size:11px}.hidden{display:none!important}@media(min-width:620px){.shell{margin:20px auto;border:5px solid #281424;box-shadow:0 12px 45px #050307;border-radius:12px;overflow:hidden}}@media(max-width:380px){.wave{width:16px}.card .name{font-size:9px}.weapon .nm{font-size:9px}}
 
 /* v0.3: card queue, threat telegraph, expanded scene polish */
@@ -1141,30 +1141,811 @@ body{
   .screen,.frontscreen{padding-top:12px!important}
 }
 
-</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 勇者與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v8.3</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
+
+
+/* v8.4: MapleStory-inspired palette + cleaner title/home structure */
+:root{
+  --maple-sky:#bfe8ff;
+  --maple-cloud:#fefbf4;
+  --maple-panel:#fff9ef;
+  --maple-panel-2:#f8eddc;
+  --maple-wood:#b67d4b;
+  --maple-wood-deep:#8b5e39;
+  --maple-brown:#6f4d36;
+  --maple-green:#87c47c;
+  --maple-green-deep:#5f9e58;
+  --maple-orange:#f7bc74;
+  --maple-orange-deep:#dd9151;
+  --maple-blue:#7fc6ee;
+  --maple-pink:#ffd9db;
+  --maple-leaf:#f6a55d;
+}
+body{
+  color:var(--maple-brown)!important;
+  background:
+    radial-gradient(circle at 50% -20%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.88) 12%, rgba(255,255,255,0) 35%),
+    linear-gradient(180deg,#aee0ff 0%, #e9f7ff 24%, #fff8ef 64%, #f7ead4 100%)!important;
+}
+.shell{background:rgba(255,252,246,.78)!important}
+.frontscreen,.screen{color:var(--maple-brown)!important}
+.frontscreen{background:linear-gradient(180deg,#caedff 0%,#f0faff 35%,#fff7ea 100%)!important}
+.screen{background:linear-gradient(180deg,#eef9ff 0%,#fff8ee 100%)!important}
+#titleScreen.hero-cover{padding:0 0 12px!important;overflow:hidden;background:linear-gradient(180deg,#ccefff 0%,#fff4e5 100%)!important}
+.hero-cover-art{background:linear-gradient(180deg,#d4efff,#f5fbff)!important;border-bottom:3px solid #e4bd7b;min-height:420px}
+.hero-cover-art img{object-fit:cover!important;object-position:center top!important;image-rendering:auto!important}
+.hero-cover-art:after{height:86px!important;background:linear-gradient(transparent,rgba(255,246,230,.95))!important}
+.hero-cover-actions{position:relative;z-index:2;margin:-10px 14px 0!important;padding:14px!important;border:3px solid #dfb77a!important;border-radius:24px!important;background:linear-gradient(180deg,rgba(255,252,245,.97),rgba(248,236,214,.98))!important;box-shadow:0 6px 0 rgba(189,137,74,.22)!important}
+.cover-tag{display:inline-flex;justify-content:center;align-items:center;padding:6px 14px;border-radius:999px;background:linear-gradient(180deg,#ffe1b3,#f5b56e)!important;border:2px solid #cc8c4f;color:#70472d!important;font-weight:900;letter-spacing:.05em}
+#titleProgress{color:#8b6a54!important}
+.legal,#titleScreen.hero-cover .legal{margin:10px 14px 0!important;padding:0 8px 2px;background:none!important;border:none!important;color:#8b735e!important}
+
+.bigbtn,.screen button,.backbtn,.nav button,.ctl,#home .menu-grid button,.area-card,.map-node,.weapon,.card,.nextcard{
+  text-shadow:none!important;color:var(--maple-brown)!important;border-radius:18px!important;
+}
+.bigbtn,.screen button,.backbtn,.nav button,.ctl{
+  border:2px solid var(--maple-wood)!important;
+  background:linear-gradient(180deg,#fffefa 0%,#fff0d8 42%,#f4d39b 43%,#ebb86d 100%)!important;
+  box-shadow:0 4px 0 var(--maple-wood-deep),0 10px 18px rgba(143,94,57,.16)!important;
+}
+.bigbtn.primary{
+  background:linear-gradient(180deg,#fffef9 0%,#ecfbff 30%,#bce6ff 58%,#8ecbea 100%)!important;
+  border-color:#79b2d3!important;
+  box-shadow:0 4px 0 #679aba,0 10px 18px rgba(92,144,177,.16)!important;
+  color:#4b5f69!important;
+}
+.bigbtn:active,.screen button:active,.backbtn:active,.nav button:active,.ctl:active{transform:translateY(2px)!important;box-shadow:0 2px 0 var(--maple-wood-deep)!important}
+
+.home-banner,.home-stats,.growth-card,.quest,.pioneer-panel,.screen .entry,.gear-extras,.area-card,.map-board-tip,.message,.shop-list .entry,.profile-portrait,.profile-stats div,.gear-paperdoll,.gear-equip-area,.gear-bag,.gear-slot,.bag-item,.gear-head,.gear-filters button,.result-summary div{
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(248,238,219,.98))!important;
+  border:2px solid #dfbb85!important;
+  box-shadow:0 4px 0 rgba(193,147,88,.18), inset 0 1px 0 #fff!important;
+  color:var(--maple-brown)!important;
+}
+.screen h2,.brand,.home-banner strong,.section-subtag,.cover-tag{color:#7a5333!important;text-shadow:none!important}
+.muted,.sub,.footer,#titleProgress,.screen .entry,.map-subtitle,.home-banner span{color:#8f725d!important}
+
+#home{background:linear-gradient(180deg,#e8f7ff 0%,#fffaf1 100%)!important;padding-top:8px!important}
+#home .village-hero,#home .town-hotspot,.town-lamppost{display:none!important}
+.home-hero-banner{position:relative;min-height:170px;border:3px solid #dcb679;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#d7f1ff,#fff0d8);box-shadow:0 6px 0 rgba(191,144,86,.24), 0 18px 24px rgba(103,77,54,.12);margin:2px 0 12px}
+.home-hero-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;image-rendering:pixelated;filter:saturate(1.08)}
+.home-hero-banner::after{content:'';position:absolute;inset:auto 0 0;height:54%;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,247,233,.1) 14%,rgba(255,245,228,.92) 82%,rgba(255,243,223,.98) 100%)}
+.hero-banner-copy{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;display:grid;gap:4px;max-width:64%}
+.hero-banner-ribbon{display:inline-flex;align-items:center;width:max-content;max-width:100%;padding:5px 12px;border-radius:999px;background:linear-gradient(180deg,#ffd79d,#f1aa61);border:2px solid #bf7d41;color:#71462f;font-size:11px;font-weight:900;letter-spacing:.04em;box-shadow:0 2px 0 rgba(128,81,46,.28)}
+.hero-banner-copy strong{font-size:clamp(18px,4.8vw,26px);font-weight:1000;color:#69452f;line-height:1.1;text-shadow:0 1px 0 rgba(255,255,255,.65)}
+.hero-banner-copy span{font-size:12px;line-height:1.35;color:#7c644f;text-wrap:balance}
+#home .home-banner{padding:6px 2px 4px!important}
+#home .home-stats{border-block:none!important;gap:8px;flex-wrap:wrap}
+#home .home-stats>*{flex:1 1 40%;min-width:0}
+#home .menu-grid{gap:10px!important;margin:8px 0 12px!important}
+#home .menu-grid button{position:relative;min-height:72px!important;padding:10px 7px!important;gap:3px!important;border:2px solid #d3a36c!important;border-radius:19px!important;box-shadow:0 4px 0 rgba(153,98,53,.9),0 8px 16px rgba(134,106,70,.18)!important}
+#home .menu-grid button::before{content:'';position:absolute;left:10px;right:10px;top:7px;height:36%;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,0));pointer-events:none}
+#home .menu-grid button:nth-child(1){background:linear-gradient(180deg,#fffdf8 0%,#e7f9ff 32%,#c7ebff 58%,#8fd1f1 100%)!important}
+#home .menu-grid button:nth-child(2){background:linear-gradient(180deg,#fffdf8 0%,#f2f8ff 30%,#dfe8ff 58%,#c1cff6 100%)!important}
+#home .menu-grid button:nth-child(3){background:linear-gradient(180deg,#fffdf8 0%,#fff4e7 30%,#ffd8a8 58%,#f3b576 100%)!important}
+#home .menu-grid button:nth-child(4){background:linear-gradient(180deg,#fffdf8 0%,#fff0f2 30%,#ffd6dc 58%,#f6b1bb 100%)!important}
+#home .menu-grid button:nth-child(5){background:linear-gradient(180deg,#fffdf8 0%,#eefbe7 30%,#d2efc0 58%,#9ed388 100%)!important}
+#home .menu-grid button:nth-child(6){background:linear-gradient(180deg,#fffdf8 0%,#fff8e8 30%,#ffe8b1 58%,#f6ca7a 100%)!important}
+#home .menu-grid button:nth-child(7){background:linear-gradient(180deg,#fffdf8 0%,#f4f0ff 30%,#e3d9ff 58%,#c4b5ef 100%)!important}
+#home .menu-grid button:nth-child(8){background:linear-gradient(180deg,#fffdf8 0%,#f1f6ff 30%,#dbe5f8 58%,#b8c7e2 100%)!important}
+#home .menu-grid button b{color:#6f4d36!important;font-size:13px!important;letter-spacing:.03em}
+#home .menu-grid button small{color:#866d5d!important;font-size:9px!important;line-height:1.18!important;opacity:1!important}
+#home .menu-grid .menu-pixel-icon{filter:drop-shadow(0 2px 0 rgba(79,61,45,.32))!important}
+
+#adventure{background-color:#eaf8ff!important;background-image:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,247,231,.72) 40%,#fff7e8 76%),url('map-pixel.png')!important}
+.map-explore-board{border:3px solid #d7af74!important;background:#a9d7ef url('map-pixel.png') center/100% 100% no-repeat!important;box-shadow:0 5px 0 rgba(172,125,64,.24), inset 0 0 0 2px rgba(255,247,232,.92)!important;border-radius:22px!important}
+.map-node{border:2px solid #d7aa6f!important;border-radius:18px!important;box-shadow:0 3px 0 rgba(164,112,64,.8),0 8px 12px rgba(133,110,77,.16)!important;color:#644c39!important}
+.map-node{background:linear-gradient(180deg,#fffefb 0%,#edf9ff 34%,#d9f0ff 60%,#b9def5 100%)!important}
+.map-node--forest{background:linear-gradient(180deg,#fffefb 0%,#f3fce8 34%,#ddf2cb 60%,#b8dc9a 100%)!important}
+.map-node--volcano{background:linear-gradient(180deg,#fffefb 0%,#fff2e7 34%,#ffd9bf 60%,#f0b585 100%)!important}
+.map-node.locked{background:linear-gradient(180deg,#f3eee7,#ddd3c5)!important}
+.area-card{border-left:8px solid #88c77c!important;border-radius:20px!important;background:linear-gradient(180deg,#fffefb 0%,#f9f0df 100%)!important}
+
+#gear{background-color:#edf8ff!important;background-image:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,247,234,.76) 42%,#fff7ea 76%),url('forge-pixel.png')!important}
+#gear .gear-paperdoll canvas{background:#eff8ff!important;border:2px solid #b9daea!important;border-radius:16px!important}
+.gear-slot.selected{border-color:#82bce0!important;box-shadow:0 0 0 3px rgba(130,188,224,.18), 0 3px 0 rgba(162,119,69,.2)!important;background:linear-gradient(180deg,#fffefb,#e9f7ff)!important}
+.bag-item{border-radius:16px!important}
+
+#battle .hud{background:linear-gradient(90deg,#efc98f,#fffaf1 3%,#f9efe1 97%,#e2ba7c)!important;box-shadow:inset 0 2px #fff, inset 0 0 0 2px #d8b075!important}
+#battle .scene{box-shadow:inset 0 0 0 2px #9fc5d9,0 5px 0 #caa069!important}
+#battle .round,#battle .wave,#battle .weapon,#battle .card,#battle .nextcard,#battle .enemylabel,#battle .threat,#battle .message,#battle .weaponbar,#battle .cards,#battle .queue{color:#634733!important;text-shadow:none!important}
+#battle .weapon{background:linear-gradient(180deg,#fffefb 0%,#eef7ff 34%,#d6ecfc 100%)!important;border-color:#d5b37b!important}
+#battle .weapon.active{background:linear-gradient(180deg,#fffdf5 0%,#fff0bc 34%,#ffd78d 100%)!important;border-color:#e0b26d!important}
+#battle .card{background:linear-gradient(180deg,#fffefb 0%,#fff2f6 36%,#f5e8d8 100%)!important;border-color:#d7b682!important}
+#battle .card.dark{background:linear-gradient(180deg,#f8f4ff,#ddeaff)!important;border-color:#bdbce8!important}
+
+.home-banner,.home-stats,.growth-card,.pioneer-panel,.quest,.screen .entry,.shop-list .entry,.gear-extras,.area-card,.profile-portrait,.message,.map-board-tip{border-radius:20px!important}
+.hero-cover-actions .bigbtn,.screen button,.bigbtn,.backbtn{font-weight:900!important}
+@media(max-width:620px){
+  .hero-cover-art{min-height:370px!important}
+  .hero-banner-copy{max-width:72%;left:12px;right:12px;bottom:10px}
+  .hero-banner-ribbon{font-size:10px;padding:4px 10px}
+  .hero-banner-copy strong{font-size:19px}
+  .hero-banner-copy span{font-size:11px}
+  #home .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;gap:8px!important}
+  #home .menu-grid button{min-height:70px!important}
+}
+
+
+
+/* v8.5: custom hero menu art + non-distorted title art */
+#titleScreen.hero-cover{padding:0 0 14px!important;display:flex;flex-direction:column;min-height:100svh;background:linear-gradient(180deg,#c9ebff 0%,#eff8ff 28%,#fff5e6 100%)!important}
+.hero-cover-art{flex:1 1 auto;min-height:min(66svh,760px)!important;max-height:none!important;display:flex!important;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 18%, rgba(255,255,255,.95), rgba(255,255,255,.25) 26%, rgba(255,255,255,0) 42%),linear-gradient(180deg,#d8efff 0%,#f7fcff 45%,#fff4df 100%)!important;border-bottom:0!important;padding:14px 14px 0!important}
+.hero-cover-art img{position:static!important;display:block;width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;image-rendering:auto!important;filter:drop-shadow(0 12px 24px rgba(59,55,72,.18))}
+.hero-cover-art::after{display:none!important}
+.hero-cover-actions{margin:-8px 12px 0!important;padding:14px 14px 12px!important}
+@media(max-width:620px){.hero-cover-art{min-height:58svh!important;padding:10px 10px 0!important}}
+
+#home{padding-top:10px!important}
+.home-menu-stage{background:linear-gradient(180deg,rgba(255,252,244,.98),rgba(247,237,216,.98))!important;border:3px solid #ddb77b!important;border-radius:28px!important;box-shadow:0 7px 0 rgba(186,136,77,.34),0 18px 28px rgba(93,68,45,.14)!important;overflow:hidden;position:relative;padding:0 0 12px;margin-bottom:14px}
+.home-menu-stage::before{content:'';position:absolute;inset:0 0 auto 0;height:86px;background:linear-gradient(180deg,rgba(255,255,255,.44),rgba(255,255,255,0));pointer-events:none}
+.home-hero-banner{min-height:228px!important;margin:0!important;border:none!important;border-radius:0!important;box-shadow:none!important;background:#d6f2ff!important;overflow:hidden}
+.home-hero-banner img{object-fit:cover!important;object-position:center center!important;filter:saturate(1.04) contrast(1.01)!important}
+.home-hero-banner::after{height:46%!important;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,249,239,.08) 18%,rgba(255,244,223,.92) 82%,rgba(252,241,221,.98) 100%)!important}
+.hero-banner-copy{left:16px!important;right:16px!important;bottom:14px!important;max-width:70%!important}
+.hero-banner-ribbon{background:linear-gradient(180deg,#ffd89d,#f0a95f)!important;border-color:#b9763e!important;color:#6a4130!important;box-shadow:0 2px 0 rgba(140,89,49,.22)!important}
+.hero-banner-copy strong{color:#68432f!important;text-shadow:0 2px 0 rgba(255,255,255,.46)!important}
+.hero-banner-copy span{color:#806450!important}
+.home-menu-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px 5px;color:#714d35}
+.home-menu-header strong{font-size:18px;font-weight:1000;letter-spacing:.04em}
+.home-menu-header span{font-size:11px;color:#8a715d}
+.home-menu-sub{padding:0 14px 10px;color:#907160;font-size:12px;line-height:1.35}
+#home .home-stats{margin:0 12px 12px!important;padding:10px 8px!important;border-radius:18px!important;background:linear-gradient(180deg,#fffbf2,#f8ecd7)!important;border:2px solid #e1c28e!important;box-shadow:inset 0 1px 0 #fff,0 3px 0 rgba(188,148,91,.18)!important}
+#home .menu-grid{padding:0 12px 2px!important;gap:10px!important;margin:0!important}
+#home .menu-grid button{min-height:78px!important;border-radius:20px!important;border:2px solid #d9a86b!important;box-shadow:0 4px 0 rgba(151,99,55,.78),0 10px 18px rgba(133,109,78,.14)!important}
+#home .menu-grid button::before{left:11px!important;right:11px!important;top:8px!important;height:34%!important}
+#home .menu-grid button b{font-size:13px!important}
+#home .menu-grid button small{font-size:9px!important;color:#846c59!important}
+#home .menu-grid .menu-pixel-icon{filter:drop-shadow(0 2px 0 rgba(79,61,45,.3))!important}
+@media(max-width:620px){
+  .home-menu-stage{border-radius:24px!important}
+  .home-hero-banner{min-height:196px!important}
+  .hero-banner-copy{max-width:76%!important;left:12px!important;right:12px!important;bottom:10px!important}
+  #home .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;gap:8px!important}
+  #home .menu-grid button{min-height:74px!important;padding:9px 6px!important}
+}
+@media(max-width:360px){
+  .home-hero-banner{min-height:182px!important}
+  #home .menu-grid button{min-height:70px!important}
+}
+
+
+
+/* v8.6: richer mobile-game style home buttons */
+#home .menu-grid{
+  gap:10px!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+#home .menu-grid button{
+  min-height:82px!important;
+  padding:8px 8px 8px 74px!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  text-align:left!important;
+  position:relative!important;
+  overflow:hidden!important;
+  border-radius:22px!important;
+  border:2px solid #d8ae78!important;
+  box-shadow:0 4px 0 rgba(156,101,55,.85),0 12px 18px rgba(99,73,49,.18)!important;
+}
+#home .menu-grid button::before{
+  content:''!important;
+  position:absolute!important;
+  left:10px!important; top:50%!important;
+  width:50px!important; height:50px!important;
+  transform:translateY(-50%)!important;
+  border-radius:16px!important;
+  border:2px solid rgba(118,84,49,.45)!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,245,223,.78))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 2px 0 rgba(140,99,61,.28)!important;
+  pointer-events:none!important;
+}
+#home .menu-grid button::after{
+  content:''!important;
+  position:absolute!important;
+  right:-18px!important; top:-16px!important;
+  width:68px!important; height:68px!important;
+  border-radius:999px!important;
+  background:radial-gradient(circle, rgba(255,255,255,.42) 0%, rgba(255,255,255,.1) 45%, rgba(255,255,255,0) 70%)!important;
+  pointer-events:none!important;
+}
+#home .menu-grid button > span{
+  position:absolute!important;
+  left:20px!important; top:50%!important;
+  width:32px!important; height:32px!important;
+  transform:translateY(-50%)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  z-index:1!important;
+}
+#home .menu-grid .menu-pixel-icon{
+  width:30px!important;
+  height:30px!important;
+  filter:drop-shadow(0 2px 0 rgba(71,55,40,.26))!important;
+}
+#home .menu-grid button b{
+  display:block!important;
+  font-size:14px!important;
+  line-height:1.15!important;
+  color:#6b4d37!important;
+  letter-spacing:.03em!important;
+  margin:0 0 2px 0!important;
+  position:relative!important;
+  z-index:1!important;
+}
+#home .menu-grid button small{
+  display:block!important;
+  font-size:9px!important;
+  line-height:1.24!important;
+  color:#866f60!important;
+  opacity:1!important;
+  position:relative!important;
+  z-index:1!important;
+  max-width:none!important;
+  margin:0!important;
+}
+#home .menu-grid button:hover{filter:brightness(1.03)!important}
+#home .menu-grid button:active{transform:translateY(2px)!important;box-shadow:0 2px 0 rgba(156,101,55,.85),0 6px 10px rgba(99,73,49,.16)!important}
+#home .menu-grid button:nth-child(1){background:linear-gradient(180deg,#fffdfa 0%,#e9fbff 28%,#cbeeff 58%,#a7ddf8 100%)!important}
+#home .menu-grid button:nth-child(2){background:linear-gradient(180deg,#fffdfa 0%,#f3f7ff 28%,#e0e9ff 58%,#c9d5fb 100%)!important}
+#home .menu-grid button:nth-child(3){background:linear-gradient(180deg,#fffdfa 0%,#fff7ee 28%,#ffe2bf 58%,#f7c993 100%)!important}
+#home .menu-grid button:nth-child(4){background:linear-gradient(180deg,#fffdfa 0%,#fff0f5 28%,#ffd8e5 58%,#f7b9ca 100%)!important}
+#home .menu-grid button:nth-child(5){background:linear-gradient(180deg,#fffdfa 0%,#f2fdec 28%,#d8f2c9 58%,#b6e098 100%)!important}
+#home .menu-grid button:nth-child(6){background:linear-gradient(180deg,#fffdfa 0%,#fffbe9 28%,#fff0b9 58%,#f5d77e 100%)!important}
+#home .menu-grid button:nth-child(7){background:linear-gradient(180deg,#fffdfa 0%,#f6f1ff 28%,#e7dbff 58%,#cfbdf5 100%)!important}
+#home .menu-grid button:nth-child(8){background:linear-gradient(180deg,#fffdfa 0%,#f0f7ff 28%,#dce7f7 58%,#bfd0e8 100%)!important}
+#home .menu-grid button:nth-child(1)::before{background:linear-gradient(180deg,#ffffff,#eefbff)!important}
+#home .menu-grid button:nth-child(2)::before{background:linear-gradient(180deg,#ffffff,#f0f5ff)!important}
+#home .menu-grid button:nth-child(3)::before{background:linear-gradient(180deg,#ffffff,#fff2de)!important}
+#home .menu-grid button:nth-child(4)::before{background:linear-gradient(180deg,#ffffff,#ffeaf0)!important}
+#home .menu-grid button:nth-child(5)::before{background:linear-gradient(180deg,#ffffff,#effbe8)!important}
+#home .menu-grid button:nth-child(6)::before{background:linear-gradient(180deg,#ffffff,#fff8de)!important}
+#home .menu-grid button:nth-child(7)::before{background:linear-gradient(180deg,#ffffff,#f3ecff)!important}
+#home .menu-grid button:nth-child(8)::before{background:linear-gradient(180deg,#ffffff,#edf4ff)!important}
+
+@media(max-width:620px){
+  #home .menu-grid{gap:8px!important}
+  #home .menu-grid button{min-height:78px!important;padding:8px 8px 8px 68px!important;border-radius:20px!important}
+  #home .menu-grid button::before{left:9px!important;width:46px!important;height:46px!important;border-radius:14px!important}
+  #home .menu-grid button>span{left:17px!important;width:28px!important;height:28px!important}
+  #home .menu-grid .menu-pixel-icon{width:28px!important;height:28px!important}
+  #home .menu-grid button b{font-size:13px!important}
+  #home .menu-grid button small{font-size:8px!important}
+}
+@media(max-width:360px){
+  #home .menu-grid button{min-height:72px!important;padding:7px 7px 7px 62px!important}
+  #home .menu-grid button::before{left:8px!important;width:42px!important;height:42px!important}
+  #home .menu-grid button>span{left:15px!important}
+  #home .menu-grid .menu-pixel-icon{width:24px!important;height:24px!important}
+  #home .menu-grid button b{font-size:12px!important}
+  #home .menu-grid button small{font-size:8px!important;line-height:1.15!important}
+}
+
+
+
+/* v8.8: unify battle + gear UI with bright mobile-RPG style */
+#battle{background:linear-gradient(180deg,#e8f7ff 0%,#fffaf1 100%)!important;padding:10px 10px calc(12px + env(safe-area-inset-bottom))!important}
+#battle .scene{border:3px solid #ddb77b!important;border-radius:26px!important;overflow:hidden!important;background:linear-gradient(180deg,#d8f2ff 0%,#fdf5e6 100%)!important;box-shadow:0 6px 0 rgba(185,133,74,.34),0 16px 24px rgba(95,73,50,.12)!important}
+#battle .hud{margin-top:10px!important;border:3px solid #ddb77b!important;border-radius:24px!important;padding:10px 10px 8px!important;background:linear-gradient(180deg,#fffdf8 0%,#fff4df 100%)!important;box-shadow:0 6px 0 rgba(185,133,74,.34),0 16px 24px rgba(95,73,50,.12)!important}
+#battle .meter{background:rgba(221,195,155,.45)!important;border:1px solid #d7b57c!important;border-radius:999px!important;overflow:hidden!important}
+#battle .healthline,#battle .status{color:#76553d!important;font-weight:800!important}
+#battle .weaponbar{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;margin-top:8px!important}
+#battle .weapon{min-height:72px!important;border:2px solid #d9b37b!important;border-radius:18px!important;background:linear-gradient(180deg,#fffefb 0%,#eef8ff 38%,#d6eefc 100%)!important;box-shadow:0 4px 0 rgba(182,129,70,.28)!important;position:relative!important;overflow:hidden!important}
+#battle .weapon::before,#battle .card::before,#battle .nextcard::before{content:''!important;position:absolute!important;left:10px!important;right:10px!important;top:6px!important;height:34%!important;border-radius:999px!important;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0))!important;pointer-events:none!important}
+#battle .weapon.active{background:linear-gradient(180deg,#fffdf6 0%,#fff1bd 36%,#ffd989 100%)!important;border-color:#ddab63!important;box-shadow:0 4px 0 rgba(184,129,62,.34),0 0 0 3px rgba(255,225,148,.24)!important}
+#battle .weapon .nm{color:#6a4d39!important;font-weight:900!important}
+#battle .weapon .sym{filter:drop-shadow(0 2px 0 rgba(102,75,49,.22))!important}
+#battle .cards{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin-top:8px!important}
+#battle .card{min-height:92px!important;border:2px solid #d7b681!important;border-radius:18px!important;background:linear-gradient(180deg,#fffefb 0%,#fff4f7 34%,#f8ead9 100%)!important;box-shadow:0 4px 0 rgba(181,130,74,.24)!important;position:relative!important;overflow:hidden!important}
+#battle .card.dark{background:linear-gradient(180deg,#fffefd 0%,#f0efff 34%,#dce5ff 100%)!important;border-color:#bcbce7!important}
+#battle .card .name{color:#6f513d!important;font-weight:900!important}
+#battle .cost{border:2px solid rgba(164,110,56,.35)!important;box-shadow:0 2px 0 rgba(164,110,56,.18)!important}
+#battle .queue{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important;margin-top:8px!important}
+#battle .nextcard{min-height:48px!important;border:2px solid #d8b77f!important;border-radius:16px!important;background:linear-gradient(180deg,#fffefb 0%,#edf8ff 40%,#dceff9 100%)!important;box-shadow:0 3px 0 rgba(177,127,73,.2)!important;position:relative!important;color:#6f513d!important}
+#battle .combat-insight,#battle .tech,#battle .message{border:2px solid #d9b57b!important;border-radius:18px!important;background:linear-gradient(180deg,#fffefb 0%,#fff4e0 100%)!important;color:#77553d!important;box-shadow:0 3px 0 rgba(181,131,77,.16)!important}
+#battle .combat-insight{padding:8px 10px!important;white-space:normal!important;min-height:42px!important;margin-top:8px!important}
+#battle .tech{padding:7px 10px!important;display:flex!important;justify-content:space-between!important;flex-wrap:wrap!important;gap:6px!important;margin-top:8px!important}
+#battle .tech b{color:#b36a34!important}
+#battle .compact-actions{margin-top:8px!important}
+#battle .compact-actions .ctl{min-height:54px!important;border:2px solid #c78e57!important;border-radius:18px!important;background:linear-gradient(180deg,#ffe3a9 0%,#f2b264 100%)!important;color:#70422f!important;box-shadow:0 4px 0 rgba(156,97,46,.34)!important;font-weight:900!important}
+#battle .message{margin-top:10px!important;padding:10px 12px!important;min-height:48px!important}
+#battle .enemylabel,#battle .threat{border-radius:18px!important;backdrop-filter:blur(2px)}
+#battle .enemylabel{background:rgba(255,250,241,.88)!important;border:2px solid #dab77f!important;color:#6b4f39!important}
+#battle .threat{background:rgba(255,244,228,.88)!important;border:2px solid #d9b57b!important;color:#6b4f39!important}
+#battle .battle-start-panel,#battle .battle-pause-panel{border:3px solid #ddb77b!important;border-radius:24px!important;background:linear-gradient(180deg,#fffefb 0%,#fff3df 100%)!important;box-shadow:0 8px 0 rgba(183,131,72,.34),0 18px 26px rgba(93,69,46,.18)!important;color:#6f503b!important}
+#battle .battle-start-panel button,#battle .battle-pause-panel button{border-radius:18px!important;border:2px solid #c78e57!important;background:linear-gradient(180deg,#ffe3a9 0%,#f2b264 100%)!important;color:#6f4330!important;box-shadow:0 4px 0 rgba(156,97,46,.28)!important}
+
+#gear{background:linear-gradient(180deg,#e8f7ff 0%,#fffaf1 100%)!important;padding:10px!important}
+#gear .gear-head{padding:10px 12px!important;border:3px solid #ddb77b!important;border-radius:22px!important;background:linear-gradient(180deg,#fffdf8 0%,#fff4df 100%)!important;box-shadow:0 5px 0 rgba(185,133,74,.3),0 14px 22px rgba(95,73,50,.1)!important}
+#gear .gear-head strong{color:#6f4f39!important}
+#gear .gear-head small{color:#8a6c58!important}
+#gear .gear-head .backbtn{border-radius:16px!important;border:2px solid #cf9b66!important;background:linear-gradient(180deg,#ffe1a8 0%,#f3bb77 100%)!important;color:#6f4330!important;box-shadow:0 3px 0 rgba(163,104,51,.26)!important}
+#gear .gear-paperdoll,#gear .gear-equip-area,#gear .gear-bag,#gear .gear-extras{border:3px solid #ddb77b!important;border-radius:22px!important;background:linear-gradient(180deg,rgba(255,253,248,.98) 0%,rgba(255,244,223,.98) 100%)!important;box-shadow:0 5px 0 rgba(185,133,74,.26),0 14px 22px rgba(95,73,50,.1)!important}
+#gear .gear-paperdoll canvas{background:linear-gradient(180deg,#f8fdff 0%,#e6f5ff 100%)!important;border:2px solid #bcd9ea!important;border-radius:18px!important}
+#gear .paperdoll-details strong,#gear .gear-section-heading strong,#gear .gear-bag-heading strong{color:#6f4f39!important}
+#gear .paperdoll-details span,#gear .paperdoll-details small,#gear .gear-section-heading small,#gear .gear-bag-heading span,#gear .gear-selection{color:#8a6c58!important}
+#gear .gear-slots{gap:8px!important}
+#gear .gear-slot{min-height:116px!important;border:2px solid #d9b37b!important;border-radius:18px!important;background:linear-gradient(180deg,#fffefb 0%,#eef8ff 40%,#d9eefb 100%)!important;box-shadow:0 4px 0 rgba(182,129,70,.22)!important;color:#6a4d39!important;position:relative!important;overflow:hidden!important}
+#gear .gear-slot::before,#gear .bag-item::before{content:''!important;position:absolute!important;left:10px!important;right:10px!important;top:6px!important;height:30%!important;border-radius:999px!important;background:linear-gradient(180deg,rgba(255,255,255,.58),rgba(255,255,255,0))!important;pointer-events:none!important}
+#gear .gear-slot.selected{border-color:#8ec3e4!important;background:linear-gradient(180deg,#fffefc 0%,#f8f2ff 24%,#e5f4ff 60%,#d0e9fa 100%)!important;box-shadow:0 4px 0 rgba(114,164,199,.26),0 0 0 3px rgba(143,200,235,.18)!important}
+#gear .gear-slot .slot-no{color:#9c7a5a!important}
+#gear .gear-slot .slot-name{font-weight:900!important;color:#6f4f39!important}
+#gear .gear-slot .slot-level{color:#7d8167!important}
+#gear .gear-bag-heading{margin-top:2px!important}
+#gear .gear-filters{gap:8px!important}
+#gear .gear-filters button{min-height:40px!important;border:2px solid #d8b178!important;border-radius:999px!important;background:linear-gradient(180deg,#fffefb 0%,#f6fbff 50%,#ddecfb 100%)!important;color:#6d513d!important;box-shadow:0 3px 0 rgba(182,129,70,.2)!important;font-weight:900!important}
+#gear .gear-filters button.selected{background:linear-gradient(180deg,#ffe8b2 0%,#f7c97b 100%)!important;border-color:#d5995d!important;color:#70432f!important}
+#gear .gear-bag{padding:8px!important;gap:8px!important}
+#gear .bag-item{min-height:116px!important;border:2px solid #d9b37b!important;border-radius:18px!important;background:linear-gradient(180deg,#fffefb 0%,#fff4e8 32%,#f8e4cf 100%)!important;box-shadow:0 4px 0 rgba(182,129,70,.2)!important;color:#6f4f39!important;position:relative!important;overflow:hidden!important}
+#gear .bag-item .bag-name{color:#6e4f39!important;font-weight:900!important}
+#gear .bag-item .bag-stats,#gear .bag-item .bag-skills{color:#8a6e58!important}
+#gear .bag-item .bag-usage{color:#6ca07a!important;font-weight:800!important}
+#gear .bag-item.equipped{border-color:#8ec3e4!important;background:linear-gradient(180deg,#fffefb 0%,#eef8ff 34%,#dceff9 100%)!important}
+#gear #unequipBtn,#gear details button{border-radius:16px!important;border:2px solid #cf9b66!important;background:linear-gradient(180deg,#ffe3aa 0%,#f3bb75 100%)!important;color:#6f4330!important;box-shadow:0 4px 0 rgba(163,104,51,.24)!important;font-weight:900!important}
+#gear summary{color:#6f4f39!important;font-weight:900!important}
+#gear #materialsInfo{background:linear-gradient(180deg,#fffefb 0%,#f7fbff 100%)!important;border:2px solid #dcb67a!important;border-radius:18px!important}
+
+@media(max-width:620px){
+  #battle{padding:8px 8px calc(10px + env(safe-area-inset-bottom))!important}
+  #battle .scene{border-radius:22px!important}
+  #battle .hud{border-radius:20px!important;padding:8px!important}
+  #battle .weaponbar{gap:6px!important}
+  #battle .weapon{min-height:64px!important;border-radius:16px!important}
+  #battle .cards{gap:6px!important}
+  #battle .card{min-height:84px!important;border-radius:16px!important}
+  #battle .queue{gap:5px!important}
+  #battle .nextcard{min-height:42px!important;border-radius:14px!important}
+  #battle .combat-insight,#battle .tech,#battle .message{border-radius:16px!important}
+  #gear{padding:8px!important}
+  #gear .gear-head,#gear .gear-paperdoll,#gear .gear-equip-area,#gear .gear-bag,#gear .gear-extras{border-radius:18px!important}
+  #gear .gear-slot,#gear .bag-item{border-radius:16px!important;min-height:102px!important}
+}
+
+
+/* v8.8 · single visual language for shop, quests & journal */
+#shop,#quests,#journal{background:linear-gradient(180deg,#e5f5ff 0%,#f5fbff 26%,#fff8ed 75%,#f8eddb 100%)!important;color:#704e38!important;padding:14px 13px 20px!important;overflow-y:auto!important}
+.rpg-page-head{display:flex;align-items:center;gap:12px;padding:14px;border:3px solid #d9ae72;border-radius:24px;background:linear-gradient(140deg,#fffdf8 0%,#effaff 52%,#fcebd1 100%);box-shadow:0 5px 0 #d3ae7c66,0 12px 23px #97704922;position:relative;overflow:hidden;margin-bottom:15px}
+.rpg-page-head::before{content:'';position:absolute;inset:0 auto auto 0;width:100%;height:42%;background:linear-gradient(180deg,#ffffffb5,#ffffff00);pointer-events:none}
+.rpg-page-emblem{width:60px;height:60px;flex:0 0 60px;border:3px solid #d9aa70;border-radius:18px;display:grid;place-items:center;background:linear-gradient(180deg,#fffefa,#ffe1ad);font-size:32px;box-shadow:0 4px 0 #b27d4666;position:relative}
+.rpg-page-heading{position:relative;min-width:0}
+.rpg-page-heading small{font-size:9px;letter-spacing:.13em;font-weight:900;color:#b87a4c}
+.rpg-page-heading h2{font-size:20px!important;color:#754b34!important;margin:3px 0!important;line-height:1.2!important}
+.rpg-page-heading p{font-size:11px;line-height:1.5;color:#8c705c;margin:3px 0 0}
+.shop-head .rpg-page-emblem{background:linear-gradient(#fffaf1,#ffe1aa)}
+.quest-head .rpg-page-emblem{background:linear-gradient(#fff4f7,#ffd9df)}
+.journal-head .rpg-page-emblem{background:linear-gradient(#f2f8ff,#d7eafd)}
+.rpg-wallet,.rpg-mini-summary{display:flex;align-items:stretch;justify-content:space-around;gap:8px;background:linear-gradient(180deg,#fffdfa,#f9ebd7)!important;border:2px solid #ddbb83!important;border-radius:18px!important;box-shadow:0 3px 0 #d6b38060!important;padding:10px;margin:0 0 15px}
+.rpg-wallet>span,.rpg-mini-summary>span{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#73533d;font-size:12px;font-weight:800;text-align:center}
+.rpg-wallet>span+span,.rpg-mini-summary>span+span{border-left:1px solid #dfccac}
+.rpg-wallet b,.rpg-mini-summary b{font-size:17px;color:#a86a38}
+.rpg-wallet small{font-size:10px;color:#92745d;font-weight:700}
+#shop .shop-list{display:grid;gap:12px;margin:0 0 15px}
+#shop .shop-product{display:flex!important;gap:12px!important;align-items:flex-start!important;margin:0!important;padding:14px!important;border:2px solid #dfbb81!important;border-radius:22px!important;background:linear-gradient(145deg,#fffefb 0%,#fff8ec 55%,#fce8cf 100%)!important;box-shadow:0 4px 0 #cba16a55,0 10px 17px #ac825028!important;position:relative;overflow:hidden}
+#shop .shop-product::before{content:'';position:absolute;inset:0 0 auto;height:33%;background:linear-gradient(#ffffffaa,#ffffff00);pointer-events:none}
+.shop-product-icon{width:62px;height:62px;flex:0 0 62px;display:grid;place-items:center;font-size:34px;border:2px solid #d7b485;border-radius:19px;background:linear-gradient(#fffefa,#f9e6c9);box-shadow:inset 0 1px #fff,0 3px 0 #c79c6866}
+#shop .shop-product[data-product="chest"] .shop-product-icon{background:linear-gradient(#fffefb,#e9e1ff)}
+#shop .shop-product[data-product="inn"] .shop-product-icon{background:linear-gradient(#fffefb,#ddf1ff)}
+.shop-product-detail{flex:1;min-width:0;z-index:1}
+.shop-product-tag{display:inline-block;padding:3px 8px;border-radius:999px;background:#def1dc;color:#668864;font-weight:900;font-size:10px;border:1px solid #bcdbaf;margin-bottom:5px}
+#shop .shop-product[data-product="chest"] .shop-product-tag{background:#eee6ff;color:#826aae;border-color:#d6c3f7}
+#shop .shop-product[data-product="inn"] .shop-product-tag{background:#dff2ff;color:#648fb1;border-color:#b8dcea}
+.shop-product-detail strong{display:block;font-size:15px!important;color:#704d38!important;line-height:1.25}
+.shop-product-detail strong small{font-size:11px;color:#987353}
+#shop .shop-product p{font-size:11px!important;line-height:1.5!important;margin:6px 0 10px!important;color:#8d715c!important}
+.shop-product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.shop-price{white-space:nowrap;font-size:13px;font-weight:950;color:#b26f35}
+#shop .shop-product .shop-buy-button{min-height:36px!important;padding:7px 12px!important;border-radius:13px!important;border:2px solid #b88c5a!important;background:linear-gradient(#fff1c7,#edba78)!important;color:#764c2f!important;box-shadow:0 3px 0 #a36b4190!important;font-size:12px!important;white-space:nowrap;width:auto!important}
+#shop .shop-product .shop-buy-button:disabled{opacity:.46;filter:grayscale(.7);box-shadow:none!important;cursor:not-allowed}
+.rpg-section-label{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:2px dashed #dbc090;padding-bottom:8px;color:#764d36;font-size:16px;margin:18px 2px 12px}
+.rpg-section-label small{font-size:10px;color:#98795e;font-weight:700}
+#quests .pioneer-panel{margin:0!important;padding:12px!important;border:2px solid #dcb785!important;border-radius:19px!important;background:linear-gradient(#fffdf7,#fff1df)!important;color:#78583e!important;box-shadow:0 4px 0 #d4ae7a66!important}
+#quests .pioneer-heading{color:#8c5e3e!important;font-weight:950!important}
+#quests .pioneer-task{display:flex;align-items:center;gap:9px;padding:11px!important;margin-top:8px;border:1px solid #e0c59c!important;border-radius:15px!important;background:linear-gradient(#fffdfa,#fff5e8)!important;color:#77543e!important}
+#quests .pioneer-task strong{font-size:12px;color:#75503a!important}
+#quests .pioneer-task .muted{color:#92745c!important;font-size:10px}
+#quests .pioneer-task button{padding:8px!important;min-height:34px!important;border:2px solid #be9b66!important;border-radius:12px!important;background:linear-gradient(#fff2cb,#f1c47f)!important;color:#7c5233!important;box-shadow:0 2px 0 #bb875578!important;font-size:11px!important;width:auto!important;flex-shrink:0}
+#quests .pioneer-state{color:#668d69;font-weight:900;font-size:11px}
+#quests .pioneer-task button:disabled{opacity:.48;box-shadow:none!important}
+.rpg-quest-list{display:grid;gap:11px}
+#quests .quest-item{padding:14px!important;margin:0!important;border:2px solid #dcb888!important;border-radius:19px!important;background:linear-gradient(#fffdf9,#f9f0e3)!important;box-shadow:0 4px 0 #d4aa7360!important}
+.quest-item-header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.quest-item-header>div{display:grid;gap:5px;min-width:0}
+#quests .quest-item strong{color:#755139!important;font-size:14px!important}
+.quest-status{font-size:10px;font-weight:900;color:#997e66}
+.quest-item.ready .quest-status{color:#4d9a75}
+.quest-item.completed .quest-status{color:#6a9b84}
+.quest-reward{padding:6px 9px;background:#fff3d5;border:1px solid #e5c48d;border-radius:999px;color:#a76b33;font-size:11px;font-weight:900;white-space:nowrap}
+.quest-progress-line{display:flex;justify-content:space-between;font-size:11px;color:#896b57;margin:10px 0 5px}
+.quest-progress-line b{color:#765239}
+#quests .quest-progress{height:12px!important;border:2px solid #dbbf99!important;border-radius:999px!important;background:#f1e2cb!important;overflow:hidden;box-shadow:inset 0 2px 2px #bda47f40!important}
+#quests .quest-progress>span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#7bc49f,#b7e3a5)!important}
+#quests .quest-item button{display:block;width:100%!important;margin-top:10px!important;min-height:39px!important;border:2px solid #bf9b69!important;border-radius:14px!important;background:linear-gradient(#fff7da,#f0cb8d)!important;color:#785037!important;box-shadow:0 3px 0 #b3825666!important;font-size:12px;font-weight:900}
+#quests .quest-item.ready button{background:linear-gradient(#efffe8,#9ed8a8)!important;border-color:#8fbd8d!important;color:#426c4c!important}
+#quests .quest-item button:disabled{background:#eee6d8!important;border-color:#d0bfaa!important;box-shadow:none!important;color:#938071!important;opacity:.78}
+.journal-filters{display:flex;overflow-x:auto;gap:7px;padding:0 0 9px;margin-bottom:7px;scrollbar-width:thin}
+#journal .journal-filters button{min-height:37px!important;padding:7px 11px!important;flex:0 0 auto;border:2px solid #d6b783!important;border-radius:999px!important;background:linear-gradient(#fffdfa,#edf6ff)!important;color:#775b44!important;box-shadow:0 2px 0 #cba16a66!important;font-size:11px!important;font-weight:900}
+#journal .journal-filters button[aria-pressed="true"]{background:linear-gradient(#ffedc3,#f3bc7a)!important;border-color:#bc8b50!important;color:#764a2e!important}
+#journalContents>.entry{padding:14px!important;margin:0 0 12px!important;border:2px solid #dcba83!important;border-radius:19px!important;background:linear-gradient(160deg,#fffefa,#faf0e0)!important;box-shadow:0 4px 0 #d1ab7660!important;color:#73533c!important}
+#journalContents>.entry[hidden]{display:none!important}
+#journalContents>.entry>strong{display:block;margin:0 0 8px;padding:0 0 9px;border-bottom:2px solid #e7d2b1;color:#764e37!important;font-size:15px;line-height:1.3}
+#journalContents .journal-row{display:grid;grid-template-columns:35px 1fr auto;gap:9px;align-items:center;padding:9px 7px;border-bottom:1px solid #eadac2;color:#755741}
+#journalContents .journal-row:nth-child(even){background:#fff8edaa;border-radius:10px}
+#journalContents .journal-row span:first-child{font-size:23px}
+#journalContents .journal-row small{font-size:10px;color:#9f7855!important;text-align:right}
+#journalContents h3{font-size:13px;color:#7c5b3f;background:#edf5f0;border-radius:12px;padding:7px 10px;margin:13px 0 4px}
+#journalContents .small,#journalContents p{font-size:11px;line-height:1.6;color:#8b6d58!important}
+#journalContents .journal-row span:nth-child(2){font-size:12px;min-width:0}
+#shop .rpg-return,#quests .rpg-return,#journal .rpg-return{min-height:42px!important;border-radius:16px!important;margin-top:12px!important;font-weight:900!important}
+@media(max-width:380px){#shop,#quests,#journal{padding:10px 9px!important}.rpg-page-head{padding:11px;gap:9px}.rpg-page-emblem{width:50px;height:50px;flex-basis:50px;font-size:27px}.rpg-page-heading h2{font-size:17px!important}.shop-product-icon{width:52px;height:52px;flex-basis:52px;font-size:27px}#shop .shop-product{padding:10px!important;gap:9px!important}.shop-product-bottom{flex-wrap:wrap}}
+
+
+/* v8.8 finishing touches: avoid old purple/global button overrides on interior return */
+#shop .rpg-return,#quests .rpg-return,#journal .rpg-return{background:linear-gradient(180deg,#fffef7,#fee5b8 54%,#efbf81)!important;border:2px solid #cb9961!important;color:#795034!important;text-shadow:none!important;box-shadow:0 4px 0 #b68858aa,0 9px 16px #9a6f4422!important;}
+#quests .rpg-section-label,#journal .rpg-section-label{text-shadow:none!important}#quests .rpg-section-label span{color:#795034!important}#quests .rpg-section-label small{color:#96775e!important}
+#shop .shop-buy-button:focus-visible,#quests .quest-item button:focus-visible,#journal .journal-filters button:focus-visible{outline:3px solid #7bc5f0!important;outline-offset:2px!important}
+
+
+
+/* v8.9 | Mobile usability audit, portrait 320–430px. No gameplay data changes. */
+#mobileHome{display:none!important} /* Existing in-page return actions remain available. */
+#home .menu-grid button::after{display:none!important} /* Retire oversized legacy ring ornaments. */
+#home .menu-grid button{overflow:hidden!important}
+#home .menu-grid button small{overflow-wrap:break-word!important}
+#home .menu-grid button:focus-visible,#gear button:focus-visible,#battle button:focus-visible,
+#shop button:focus-visible,#quests button:focus-visible,#journal button:focus-visible{
+  outline:3px solid #3d9bd2!important;outline-offset:2px!important;
+}
+#titleScreen .hero-cover-art img{object-fit:contain!important;object-position:center!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important}
+@media(max-width:620px){
+  /* Let a short phone scroll the main menu instead of clipping bottom functions. */
+  #home{
+    display:block!important;
+    overflow-y:auto!important;
+    overscroll-behavior-y:contain!important;
+    -webkit-overflow-scrolling:touch;
+    padding:8px 10px calc(22px + env(safe-area-inset-bottom))!important;
+  }
+  #home.hidden{display:none!important}
+  #home .home-menu-stage{height:auto!important;min-height:0!important;overflow:hidden!important;flex:none!important}
+  #home .home-hero-banner{height:clamp(148px,23dvh,218px)!important;min-height:0!important;flex:none!important}
+  #home .home-menu-header{padding:8px 12px 4px!important}
+  #home .home-menu-sub{padding:0 12px 6px!important;font-size:11px!important}
+  #home .home-stats{margin:0 10px 10px!important;padding:6px 8px!important;min-height:44px!important}
+  #home .menu-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:none!important;
+    grid-auto-rows:minmax(72px,auto)!important;
+    height:auto!important;min-height:0!important;
+    flex:none!important;gap:8px!important;
+    padding:0 10px 4px!important;margin:0!important;
+  }
+  #home .menu-grid button{
+    box-sizing:border-box!important;
+    height:auto!important;max-height:none!important;min-height:72px!important;
+    padding:8px 6px 8px 64px!important;
+    align-items:flex-start!important;
+    text-align:left!important;
+    border-radius:18px!important;
+    flex:0 0 auto!important;
+    gap:2px!important;
+  }
+  #home .menu-grid button::before{width:42px!important;height:42px!important;left:9px!important}
+  #home .menu-grid button>span{left:16px!important;width:28px!important;height:28px!important}
+  #home .menu-grid button b{font-size:13px!important;line-height:1.18!important}
+  #home .menu-grid button small{font-size:9px!important;line-height:1.22!important;display:block!important}
+  #home>.bigbtn{min-height:44px!important;margin:10px 0 0!important}
+  /* The canvas is a 480×380 drawing: never stretch that pixel art to a different aspect ratio. */
+  #battle{
+    height:100%!important;min-height:0!important;
+    display:flex!important;flex-direction:column!important;overflow:hidden!important;
+    padding:6px 7px calc(7px + env(safe-area-inset-bottom))!important;
+    gap:5px!important;
+  }
+  #battle.hidden{display:none!important}
+  #battle .scene{
+    flex:1 1 245px!important;min-height:155px!important;height:auto!important;
+    max-height:none!important;margin:0!important;border-radius:19px!important;
+    overflow:hidden!important;
+  }
+  #battle .scene canvas{
+    display:block!important;width:100%!important;height:100%!important;
+    object-fit:contain!important;object-position:center center!important;
+  }
+  #battle .hud{
+    flex:0 1 auto!important;min-height:0!important;max-height:none!important;
+    height:auto!important;overflow-y:auto!important;overflow-x:hidden!important;
+    overscroll-behavior-y:contain;scrollbar-width:thin;
+    margin:0!important;padding:6px 7px 7px!important;
+    border-radius:19px!important;
+  }
+  #battle .weaponbar{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:4px!important;margin:4px 0 5px!important;padding:2px!important;
+  }
+  #battle .weapon{min-height:50px!important;padding:2px!important;gap:1px!important;border-radius:12px!important}
+  #battle .weapon .sym{height:25px!important;line-height:25px!important}
+  #battle .weapon .sym canvas{max-width:26px!important;max-height:26px!important}
+  #battle .weapon .nm{font-size:9px!important;line-height:1.1!important}
+  #battle .cards{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important;margin:4px 0!important}
+  #battle .card{min-height:78px!important;padding:3px 1px 5px!important;border-radius:13px!important;min-width:0!important}
+  #battle .card .art{height:31px!important;font-size:25px!important;margin:0!important}
+  #battle .card .art .skill-equip-icon{width:29px!important;height:29px!important}
+  #battle .card .name{font-size:10px!important;line-height:1.15!important;min-height:20px!important;overflow-wrap:anywhere}
+  #battle .card .skill-ready{font-size:8px!important}
+  #battle .queue{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important;margin:5px 0!important}
+  #battle .nextcard{min-height:34px!important;padding:3px 1px!important;border-radius:11px!important}
+  #battle .combat-insight{
+    margin:5px 0 2px!important;padding:5px 7px!important;
+    font-size:10px!important;line-height:1.3!important;
+    min-height:0!important;max-height:40px!important;
+    white-space:normal!important;overflow:hidden!important;
+    display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:2!important;
+  }
+  #battle .tech{padding:4px 7px!important;margin:4px 0!important;min-height:27px!important;line-height:1.25!important;white-space:normal!important;font-size:10px!important}
+  #battle .compact-actions{margin:4px 0!important}
+  #battle .compact-actions .ctl{min-height:40px!important;padding:5px!important}
+  #battle .message{
+    flex:0 0 auto!important;min-height:36px!important;max-height:44px!important;
+    margin:0!important;padding:6px 9px!important;font-size:10px!important;
+    line-height:1.3!important;overflow:hidden!important;border-radius:13px!important;
+  }
+  #battle .healthline{font-size:11px!important;margin:0 2px 2px!important}
+  #battle .meter{height:10px!important;margin:0 0 4px!important}
+  #battle .apmeter{height:13px!important}
+  #battle .status{font-size:9px!important;margin:3px 0!important;min-height:17px!important}
+  /* Preserve tappable navigation and text on all interior pages. */
+  #shop,#quests,#journal,#profile,#settings,#help,#adventure{
+    overflow-y:auto!important;overscroll-behavior-y:contain!important;
+    padding-bottom:calc(24px + env(safe-area-inset-bottom))!important;
+  }
+  #shop>.bigbtn,#quests>.bigbtn,#journal>.bigbtn,#adventure>.bigbtn,
+  #profile>.bigbtn,#settings>.bigbtn,#help>.bigbtn{min-height:44px!important}
+  #gear .gear-head .backbtn{min-height:42px!important}
+  #gear .gear-filters button{min-height:42px!important}
+  #gear #unequipBtn{min-height:36px!important}
+}
+@media(max-width:620px) and (max-height:780px){
+  /* Avoid nested, 16px-tall inventory panes on compact phones: one consistent page scroll. */
+  #gear{
+    display:block!important;
+    height:auto!important;max-height:none!important;min-height:0!important;
+    overflow-y:auto!important;overflow-x:hidden!important;
+    overscroll-behavior-y:contain!important;
+    -webkit-overflow-scrolling:touch;
+    padding:7px 9px calc(24px + env(safe-area-inset-bottom))!important;
+  }
+  #gear.hidden{display:none!important}
+  #gear .gear-head,#gear .gear-equip-area,#gear .gear-bag-heading,
+  #gear .gear-filters,#gear .gear-extras{margin-bottom:9px!important}
+  #gear .gear-bag{
+    display:grid!important;overflow:visible!important;
+    height:auto!important;max-height:none!important;
+    min-height:118px!important;flex:0 0 auto!important;
+    padding:7px 6px 13px!important;
+  }
+  #gear .gear-equip-area{padding:7px!important}
+  #gear .gear-slot{min-height:86px!important;padding:4px 2px!important}
+  #gear .gear-slot .slot-level{font-size:9px!important;line-height:1.15!important}
+  #gear .gear-paperdoll{min-height:88px!important;padding:5px!important}
+  #gear .gear-paperdoll canvas{height:75px!important;width:auto!important;max-width:110px!important;object-fit:contain!important}
+  #gear .bag-item{min-height:100px!important}
+  #gear .gear-extras{max-height:none!important;overflow:visible!important}
+}
+@media(max-width:360px) and (max-height:700px){
+  #home .home-hero-banner{height:148px!important}
+  #home .menu-grid{grid-auto-rows:minmax(68px,auto)!important}
+  #home .menu-grid button{min-height:68px!important;padding-left:58px!important}
+  #home .menu-grid button::before{left:7px!important;width:39px!important;height:39px!important}
+  #home .menu-grid button>span{left:13px!important}
+  #home .menu-grid button b{font-size:12px!important}
+  #home .menu-grid button small{font-size:8px!important}
+  #battle .scene{min-height:145px!important}
+  #battle .hud{padding:5px!important}
+  #battle .card{min-height:69px!important}
+  #battle .card .art{height:26px!important}
+  #battle .card .art .skill-equip-icon{width:24px!important;height:24px!important}
+  #battle .card .name{font-size:9px!important;min-height:17px!important}
+  #battle .nextcard{min-height:30px!important}
+}
+
+
+/* v8.9 finishing touches */
+#home>.bigbtn{border:2px solid #d8a66d!important;border-radius:18px!important;background:linear-gradient(180deg,#fffdf6 0%,#fff0d4 40%,#e8c087 100%)!important;color:#735037!important;box-shadow:0 4px 0 #b68950,0 8px 12px rgba(153,107,60,.15)!important}
+#gear .gear-selection{color:#765641!important;line-height:1.35!important;padding:2px 3px!important;white-space:normal!important}
+@media(max-width:620px){#gear .gear-slot .slot-level{font-size:10px!important;line-height:1.16!important;overflow-wrap:anywhere!important}}
+
+
+/* v9.0 — battle readability and information hierarchy (visual-only changes). */
+#battle .scene{isolation:isolate}
+/* Enemy status in sky rather than overlapping the ground-level battle toast. */
+#battle .enemylabel{
+  position:absolute!important;top:57px!important;bottom:auto!important;
+  left:auto!important;right:9px!important;width:min(216px,55%)!important;
+  max-width:none!important;min-width:0!important;
+  padding:7px 9px 8px!important;
+  display:flex!important;flex-direction:column!important;gap:4px!important;
+  border:2px solid #e5bd7f!important;border-radius:14px!important;
+  background:linear-gradient(180deg,rgba(255,254,248,.97),rgba(251,233,207,.96))!important;
+  box-shadow:0 3px 0 rgba(132,83,47,.34),0 5px 15px rgba(38,29,47,.22)!important;
+  color:#60442e!important;text-align:left!important;
+  z-index:4!important;backdrop-filter:none!important;
+}
+#battle .enemy-identity{display:flex;align-items:center;justify-content:space-between;gap:5px;min-width:0}
+#battle #enemyName{display:block!important;min-width:0;max-width:100%;font-size:clamp(10px,2.8vw,13px)!important;font-weight:1000!important;color:#6f3e39!important;line-height:1.15!important;text-align:left!important;overflow-wrap:anywhere}
+#battle .enemy-weak{flex:0 0 auto;font-size:9px!important;font-weight:900!important;color:#6e6599!important;background:#f1ecff;border:1px solid #c9b8e8;border-radius:999px;padding:3px 5px;white-space:nowrap}
+#battle .enemy-hp-row{display:flex;align-items:center;justify-content:space-between;gap:5px;font-size:10px;color:#92705b;font-weight:900}
+#battle #enemyHP{position:static!important;display:block!important;white-space:nowrap;font-size:11px!important;font-weight:1000!important;line-height:1.2!important;color:#754836!important;padding:0!important}
+#battle #enemyHP::after{display:none!important;content:none!important}
+#battle .enemy-life-track{position:relative;height:10px;border:1px solid #caa482;border-radius:999px;overflow:hidden;background:#ead2c3;box-shadow:inset 0 2px 3px rgba(125,79,54,.12)}
+#battle .enemy-life-track span{display:block;height:100%;width:100%;border-radius:999px;background:linear-gradient(180deg,#ffa9a1 0%,#f56c76 50%,#d84259 100%);transition:width .22s linear}
+#battle.boss-enraged .enemy-life-track span{background:linear-gradient(180deg,#ffd49d,#f59e66,#d9633a)}
+/* Attack countdown: explicit large seconds, time-pressure and perfect-guard state. */
+#battle .threat{
+  position:absolute!important;top:156px!important;bottom:auto!important;
+  left:auto!important;right:9px!important;width:min(216px,55%)!important;
+  max-width:none!important;min-width:0!important;
+  padding:6px 8px 5px!important;text-align:left!important;
+  border:2px solid #d8b078!important;border-radius:13px!important;
+  background:rgba(255,248,226,.97)!important;
+  box-shadow:0 3px 0 rgba(147,100,52,.24),0 5px 10px rgba(48,35,47,.16)!important;
+  color:#60442e!important;z-index:4!important;backdrop-filter:none!important;
+}
+#battle .threat-info{display:flex;justify-content:space-between;align-items:center;gap:4px;min-width:0}
+#battle #intentLabel{font-weight:900;font-size:10px!important;line-height:1.25!important;min-width:0;overflow-wrap:anywhere;color:#7c5446}
+#battle #threatSeconds{font-weight:1000;font-size:17px!important;color:#a04e36!important;font-variant-numeric:tabular-nums;line-height:1.05;white-space:nowrap}
+#battle .threatbar{height:7px!important;margin-top:4px!important;background:#f0d2c2!important;border:1px solid #dcb093!important;border-radius:99px!important;overflow:hidden!important}
+#battle .threatbar span{background:linear-gradient(90deg,#91d8be,#ffd779,#f16d68)!important;border-radius:99px}
+#battle .threat-tag{display:block;font-weight:900;font-size:9px!important;line-height:1.15;margin:3px 0 0;color:#8b6948!important}
+#battle .threat.is-imminent{border-color:#e6a364!important;background:linear-gradient(180deg,#fff4e7,#ffdbbd)!important;box-shadow:0 3px 0 #d19b69,0 0 0 2px #ffd09c66!important}
+#battle .threat.is-imminent .threat-tag{color:#a94735!important}
+#battle .threat.is-perfect{border-color:#8ecbc6!important;background:linear-gradient(180deg,#e7fff8,#c2f5e5)!important;box-shadow:0 3px 0 #7ac3ac,0 0 0 2px #c9fff0!important}
+#battle .threat.is-perfect #threatSeconds,#battle .threat.is-perfect .threat-tag{color:#287e69!important}
+#battle .threat[data-state=stun]{background:#e1f2ff!important;border-color:#96c4e8!important}
+#battle .threat[data-state=pause]{opacity:.86}
+/* Clear player resource cards, AP recovery distinct from current AP. */
+#battle .vital-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0 0 6px}
+#battle .vital-card{min-width:0;padding:6px 8px 5px;border:1.5px solid #d9bd89;border-radius:13px;background:linear-gradient(180deg,#fffefb 0%,#f9f0df 100%);box-shadow:0 2px 0 #d5b07a33}
+#battle .vital-ap{background:linear-gradient(180deg,#fffefe,#edf8ff)}
+#battle .vital-card .healthline{display:flex!important;align-items:center;justify-content:space-between;gap:5px;margin:0 0 3px!important;min-width:0;font-size:11px!important}
+#battle .vital-card .healthline .vital-title{display:inline-flex;gap:3px;align-items:baseline;font-size:11px!important;font-weight:1000;color:#7cb26f!important;white-space:nowrap}
+#battle .vital-ap .healthline .vital-title{color:#668fc5!important}
+#battle .vital-card .vital-title small{font-size:8px;font-weight:800;color:#6c94b1}
+#battle .vital-card .healthline strong{font-size:11px!important;font-variant-numeric:tabular-nums;font-weight:1000;color:#6d503e!important;white-space:nowrap}
+#battle .vital-card .meter{height:12px!important;margin:0!important;border-radius:999px!important;border:1px solid #d3b285!important;background:#f1ddc3!important;box-shadow:inset 0 1px 2px rgba(137,88,40,.13)!important}
+#battle .vital-card .meter>span{border-radius:999px}
+#battle .vital-hp .hpfill{background:linear-gradient(180deg,#bce49f,#65c77d,#3da86b)!important}
+#battle .vital-ap .apfill{background:linear-gradient(180deg,#9ed9ff,#68b9ee,#4499da)!important}
+#battle .battle-row-title{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:0 2px;margin:2px 0 4px;color:#775236;font-size:10px;font-weight:1000}
+#battle .battle-row-title small{font-size:9px;color:#9e7b60;font-weight:700}
+/* Make AP cost explicit and state labels easy to scan, keep four touch buttons. */
+#battle .card{border-radius:13px!important;overflow:hidden!important}
+#battle .card .cost{position:absolute!important;top:3px!important;right:3px!important;width:auto!important;min-width:35px;height:18px!important;line-height:14px!important;padding:0 3px!important;border:1px solid #d8a16d!important;border-radius:999px!important;font-size:9px!important;font-weight:1000!important;background:linear-gradient(180deg,#fff8d7,#ffdfb5)!important;color:#815032!important;box-shadow:none!important;z-index:3}
+#battle .card .art{justify-content:flex-start!important;padding-left:6px;filter:none!important}
+#battle .card .name{font-weight:1000!important;letter-spacing:0!important;color:#684933!important;line-height:1.1!important}
+#battle .card .skill-ready{display:block!important;white-space:normal!important;max-width:100%!important;font-size:9px!important;font-weight:900!important;line-height:1.15!important;color:#5d8856!important;overflow-wrap:anywhere!important}
+#battle .card.is-ready{background:linear-gradient(180deg,#fffdf7 0%,#e9f8e6 48%,#c0e6b8 100%)!important;border-color:#91bb83!important;box-shadow:0 3px 0 #8cbb8c7a!important}
+#battle .card.ap-short{background:linear-gradient(180deg,#f8fbff,#e3eeff)!important;border-color:#a7c2e7!important;box-shadow:0 3px 0 #a5badd78!important}
+#battle .card.ap-short .skill-ready{color:#527dac!important}
+#battle .card.interval-wait{background:linear-gradient(180deg,#fffdf5,#f8e9cc)!important;border-color:#e1c18a!important}
+#battle .card.interval-wait .skill-ready{color:#96692c!important}
+#battle .card.card-locked:not(.ap-short):not(.interval-wait){background:linear-gradient(180deg,#f8f5f3,#e9e4df)!important;border-color:#d0c1ae!important}
+#battle .card.card-locked:not(.ap-short):not(.interval-wait) .skill-ready{color:#917d70!important}
+#battle .card.dark .name,#battle .card.dark .cost{color:#80654f!important}
+#battle .card:disabled{opacity:.88!important;filter:none!important;cursor:default}
+#battle .card.is-ready:active{transform:translateY(2px)!important}
+/* Other battle information is secondary. */
+#battle .combat-insight{border-color:#e0c28e!important;background:#fff9ed!important;color:#7d5a3e!important}
+#battle .combat-insight.warn{background:#ffedda!important;border-color:#efc18c!important}
+#battle .combat-insight.safe{background:#e2f9ed!important;border-color:#9dd3b8!important}
+#battle .status{color:#80654d!important}
+#battle .message{color:#76543e!important}
+@media(max-width:620px){
+ #battle .enemylabel{top:50px!important;right:6px!important;width:min(178px,55%)!important;gap:3px!important;padding:5px 7px!important;border-radius:12px!important}
+ #battle .enemy-weak{font-size:8px!important;padding:2px 4px}
+ #battle .enemy-hp-row{font-size:9px!important}
+ #battle #enemyHP{font-size:10px!important}
+ #battle .enemy-life-track{height:8px!important}
+ #battle .threat{top:123px!important;right:6px!important;width:min(178px,55%)!important;padding:5px 7px!important;border-radius:12px!important}
+ #battle #intentLabel{font-size:9px!important}
+ #battle #threatSeconds{font-size:16px!important}
+ #battle .threat-tag{font-size:8px!important}
+ #battle .vital-pair{gap:5px;margin:0 0 4px!important}
+ #battle .vital-card{padding:5px 6px 4px;border-radius:11px}
+ #battle .vital-card .healthline{margin:0 0 2px!important}
+ #battle .vital-card .healthline .vital-title{font-size:10px!important}
+ #battle .vital-card .healthline strong{font-size:10px!important}
+ #battle .vital-card .meter{height:9px!important}
+ #battle .battle-row-title{margin:2px 0 3px!important;font-size:9px!important}
+ #battle .battle-row-title small{font-size:8px!important}
+ #battle .card .name{font-size:10px!important;line-height:1.1!important}
+ #battle .card .skill-ready{font-size:8px!important}
+ #battle .card .cost{font-size:8px!important;min-width:32px!important;height:17px!important;line-height:14px!important}
+ #battle .card .art{padding-left:4px}
+}
+@media(max-width:360px){
+ #battle .enemylabel{top:46px!important;width:min(164px,54%)!important}
+ #battle .threat{top:116px!important;width:min(164px,54%)!important}
+ #battle .vital-card{padding:4px!important}
+ #battle .vital-card .healthline strong{font-size:9px!important}
+ #battle .vital-card .vital-title small{font-size:7px!important}
+ #battle .card .name{font-size:9px!important}
+ #battle .card .skill-ready{font-size:8px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #battle .enemy-life-track span{transition:none!important}
+}
+
+
+/* v9.0 final mobile legibility: keep the monster visible on 320px screens. */
+#battle .vital-ap .apmeter::after{display:none!important}
+#battle .toast{
+  left:11%!important;right:11%!important;bottom:12px!important;
+  padding:6px 9px!important;
+  font-size:11px!important;line-height:1.3!important;font-weight:900!important;
+  border:2px solid #dfb982!important;border-radius:13px!important;
+  color:#76503a!important;text-shadow:none!important;
+  background:rgba(255,250,237,.96)!important;
+  box-shadow:0 3px 0 rgba(174,125,73,.3)!important;
+}
+@media(max-width:360px){
+ #battle .enemylabel{top:45px!important;right:5px!important;padding:3px 5px 4px!important;gap:2px!important;border-width:1.5px!important;border-radius:9px!important}
+ #battle #enemyName{font-size:10px!important;line-height:1.05!important}
+ #battle .enemy-weak{font-size:7px!important;padding:2px 3px!important}
+ #battle .enemy-hp-row{font-size:8px!important;line-height:1.1!important}
+ #battle #enemyHP{font-size:9px!important}
+ #battle .enemy-life-track{height:6px!important}
+ #battle .threat{top:97px!important;right:5px!important;padding:3px 5px 4px!important;border-width:1.5px!important;border-radius:9px!important}
+ #battle #intentLabel{font-size:9px!important;line-height:1!important}
+ #battle #threatSeconds{font-size:14px!important}
+ #battle .threatbar{height:5px!important;margin-top:2px!important}
+ #battle .threat-tag{margin-top:2px!important;font-size:8px!important;line-height:1!important}
+ #battle .toast{left:12%!important;right:12%!important;padding:4px 6px!important;font-size:10px!important}
+}
+</style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 勇者與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v9.0</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
 <section id="titleScreen" class="frontscreen hero-cover">
  <div class="hero-cover-art"><img src="title-art.webp" alt="8-bit 像素風封面：左下方金髮皮裝勇者拔劍面對右上方威猛的巨龍，背景是赤月與魔城" decoding="async"></div>
  <div class="hero-cover-actions"><div class="cover-tag">勇者與龍 · 像素冒險</div><button class="bigbtn primary" onclick="beginAdventure()">▶ 開始冒險</button><button class="bigbtn" onclick="showPage('help')">▣ 遊戲說明</button><div id="titleProgress" class="muted"></div></div>
- <div class="legal">非官方玩家製作 · 原創替代圖像 · 本機自動存檔</div>
+ <div class="legal">非官方玩家製作 · 原創替代圖像 · 本機自動存檔 · v9.0</div>
  </section>
-<section id="home" class="screen hidden"><div class="village-hero town-interactive" role="group" aria-label="可點選的主城建築">
- <div class="town-scene-caption">✦ 勇者的城鎮 ✦</div>
- <div class="town-lamppost town-lamppost--left" aria-hidden="true"></div><div class="town-lamppost town-lamppost--right" aria-hidden="true"></div>
- <div id="townHero" class="town-hero" aria-hidden="true"><canvas id="townHeroCanvas" width="20" height="30"></canvas></div>
- <div id="townWalkingHint" class="town-walking-hint" aria-live="polite">勇者正在前往目的地…</div>
- <button type="button" class="town-hotspot town-hotspot--shop" onclick="walkToTownPlace('shop')" aria-label="進入城鎮商店"><span class="hotspot-stamp" aria-hidden="true">◆</span>商店</button>
- <button type="button" class="town-hotspot town-hotspot--forge" onclick="walkToTownPlace('gear')" aria-label="前往鍛造與裝備編成"><span class="hotspot-stamp" aria-hidden="true">✦</span>鍛造</button>
- <button type="button" class="town-hotspot town-hotspot--quests" onclick="walkToTownPlace('quests')" aria-label="查看冒險者任務"><span class="hotspot-stamp" aria-hidden="true">▣</span>任務</button>
- <button type="button" class="town-hotspot town-hotspot--adventure" onclick="walkToTownPlace('adventure')"><span class="hotspot-stamp" aria-hidden="true">⚔</span>出發冒險</button>
-</div><div class="home-banner"><strong>冒險者的城鎮</strong><span id="homeInfo"></span></div><div class="home-stats" id="homeStats"></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><h2>選擇行動</h2><div class="section-subtag">從主城前往功能頁面或直接出發冒險</div><div class="menu-grid"><button onclick="showPage('adventure')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="adventure" aria-hidden="true"></canvas></span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="gear" aria-hidden="true"></canvas></span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="shop" aria-hidden="true"></canvas></span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="quests" aria-hidden="true"></canvas></span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="profile" aria-hidden="true"></canvas></span><b>勇者資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="help" aria-hidden="true"></canvas></span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="journal" aria-hidden="true"></canvas></span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="settings" aria-hidden="true"></canvas></span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
-<section id="journal" class="screen hidden"><h2>📚 冒險圖鑑</h2><p class="muted">查看武器稀有度、18 種怪物討伐紀錄、BOSS 收藏及探索札記。未取得與未討伐的項目將顯示為未知。</p><div id="journalContents"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
+<section id="home" class="screen hidden"><div class="home-menu-stage"><div class="home-hero-banner" role="img" aria-label="冒險者公會主選單主視覺：明亮可愛的冒險者公會廣場，與下方功能按鈕整合為同一個首頁畫面"><img src="home-menu-art.webp" alt="冒險者公會主選單主視覺" decoding="async"><div class="hero-banner-copy"><div class="hero-banner-ribbon">Main Menu</div><strong>冒險者公會大廳</strong><span>整理裝備、挑選任務，從這裡展開新的旅程。</span></div></div><div class="home-menu-header"><strong>主選單</strong><span id="homeInfo"></span></div><div class="home-menu-sub">從公會大廳出發，選擇你的下一步行動。</div><div class="home-stats" id="homeStats"></div><div class="menu-grid"><button onclick="showPage('adventure')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="adventure" aria-hidden="true"></canvas></span><b>冒險</b><small>探索關卡／討伐魔物</small></button><button onclick="showPage('gear')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="gear" aria-hidden="true"></canvas></span><b>裝備</b><small>編成／鍛造</small></button><button onclick="showPage('shop')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="shop" aria-hidden="true"></canvas></span><b>商店</b><small>補給品／新武器</small></button><button onclick="showPage('quests')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="quests" aria-hidden="true"></canvas></span><b>任務</b><small>領取冒險獎勵</small></button><button onclick="showPage('profile')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="profile" aria-hidden="true"></canvas></span><b>勇者資料</b><small>能力與戰績</small></button><button onclick="showPage('help')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="help" aria-hidden="true"></canvas></span><b>說明</b><small>基本操作／戰鬥教學</small></button><button onclick="showPage('journal')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="journal" aria-hidden="true"></canvas></span><b>圖鑑</b><small>武器收藏／探索札記</small></button><button onclick="showPage('settings')"><span><canvas class="menu-pixel-icon" width="16" height="16" data-icon="settings" aria-hidden="true"></canvas></span><b>存檔管理</b><small>手機轉移／備份進度</small></button></div></div><div id="growthHome" class="growth-card"></div><div class="pioneer-panel" id="pioneerHome"></div><button class="bigbtn" onclick="showPage('title')">← 返回標題</button></section>
+<section id="journal" class="screen hidden rpg-interior journal-page">
+ <div class="rpg-page-head journal-head"><div class="rpg-page-emblem">📖</div><div class="rpg-page-heading"><small>ADVENTURE COLLECTION</small><h2>勇者冒險圖鑑</h2><p>收藏武器、記錄魔物與旅途中的每一次發現</p></div></div>
+ <div id="journalSummary" class="rpg-mini-summary" aria-live="polite"></div>
+ <div class="journal-filters" role="group" aria-label="圖鑑分類">
+  <button type="button" data-filter="all" aria-pressed="true" onclick="filterJournal('all')">全部</button>
+  <button type="button" data-filter="equipment" aria-pressed="false" onclick="filterJournal('equipment')">⚔️ 裝備</button>
+  <button type="button" data-filter="monster" aria-pressed="false" onclick="filterJournal('monster')">👾 魔物</button>
+  <button type="button" data-filter="boss" aria-pressed="false" onclick="filterJournal('boss')">🐉 龍族</button>
+  <button type="button" data-filter="journey" aria-pressed="false" onclick="filterJournal('journey')">🧭 旅程</button>
+ </div>
+ <div id="journalContents" class="rpg-journal-contents"></div>
+ <button type="button" class="bigbtn rpg-return" onclick="showPage('home')">← 返回主選單</button>
+ </section>
 <section id="adventure" class="screen hidden"><h2>🗺️ 冒險地圖</h2><div class="section-subtag">選擇據點，挑戰下一段旅程</div><p class="muted">選擇目的地進入六回合連續戰鬥。最後一波將遇到 BOSS。每個地區的探索事件可以選擇金幣或補給，獎勵僅能領取一次。</p><div id="regionMap" class="map-explore-board" role="group" aria-label="冒險區域地圖"></div><p class="map-subtitle">選擇地圖上的據點開始六波挑戰，也可使用下方區域列表。</p><div id="areaList" class="area-list"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
-<section id="shop" class="screen hidden"><h2>🏪 城鎮商店</h2><p id="shopMoney" class="goldtext"></p><div class="shop-list"><div class="entry"><strong>🍖 冒險補給 × 1</strong><p class="muted">裝備補給盾後可施放補給技能，恢復 HP 與 AP。</p><button onclick="purchasePotion()">20 G 購買</button></div><div class="entry"><strong>🎁 裝備寶箱</strong><p class="muted">隨機獲得尚未擁有的武器或盾牌。</p><button onclick="buyWeapon();refreshShop()">80 G 購買</button></div><div class="entry"><strong>🛏️ 旅店休息</strong><p class="muted">恢復 HP 與 AP。</p><button onclick="rest();refreshShop()">30 G 休息</button></div></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
-<section id="quests" class="screen hidden"><h2>📋 冒險者任務</h2><p class="muted">達成條件後可領取一次性金幣獎勵。</p><div class="pioneer-panel" id="pioneerQuests"></div><div id="questList"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
+<section id="shop" class="screen hidden rpg-interior shop-page">
+ <div class="rpg-page-head shop-head"><div class="rpg-page-emblem">🏪</div><div class="rpg-page-heading"><small>ADVENTURER MARKET</small><h2>冒險補給商店</h2><p>為下一趟旅程備齊道具與裝備</p></div></div>
+ <div class="rpg-wallet" id="shopMoney" aria-live="polite"></div>
+ <div class="shop-list">
+  <article class="entry shop-product" data-product="potion"><div class="shop-product-icon">🍖</div><div class="shop-product-detail"><span class="shop-product-tag">冒險必備</span><strong>冒險補給 <small>× 1</small></strong><p>裝備補給盾後可施放補給技能，恢復 HP 與 AP。</p><div class="shop-product-bottom"><span class="shop-price">🪙 20 G</span><button type="button" class="shop-buy-button" onclick="purchasePotion()">購買補給</button></div></div></article>
+  <article class="entry shop-product" data-product="chest"><div class="shop-product-icon">🎁</div><div class="shop-product-detail"><span class="shop-product-tag">驚喜裝備</span><strong>裝備寶箱</strong><p>隨機獲得尚未擁有的武器或盾牌。</p><div class="shop-product-bottom"><span class="shop-price">🪙 80 G</span><button type="button" class="shop-buy-button" onclick="buyWeapon();refreshShop()">開啟寶箱</button></div></div></article>
+  <article class="entry shop-product" data-product="inn"><div class="shop-product-icon">🛏️</div><div class="shop-product-detail"><span class="shop-product-tag">恢復體力</span><strong>旅店休息</strong><p>短暫休息，恢復勇者的 HP 與 AP。</p><div class="shop-product-bottom"><span class="shop-price">🪙 30 G</span><button type="button" class="shop-buy-button" onclick="rest();refreshShop()">前往休息</button></div></div></article>
+ </div>
+ <button type="button" class="bigbtn rpg-return" onclick="showPage('home')">← 返回主選單</button>
+ </section>
+<section id="quests" class="screen hidden rpg-interior quest-page">
+ <div class="rpg-page-head quest-head"><div class="rpg-page-emblem">📜</div><div class="rpg-page-heading"><small>ADVENTURER GUILD</small><h2>冒險任務公會</h2><p>完成挑戰、收集獎勵，持續提升勇者實力</p></div></div>
+ <div id="questSummary" class="rpg-mini-summary" aria-live="polite"></div>
+ <h3 class="rpg-section-label"><span>🌱 拓荒里程碑</span><small>成長篇章</small></h3>
+ <div class="pioneer-panel" id="pioneerQuests"></div>
+ <h3 class="rpg-section-label"><span>🏅 冒險成就</span><small>完成後可領取金幣</small></h3>
+ <div id="questList" class="rpg-quest-list"></div>
+ <button type="button" class="bigbtn rpg-return" onclick="showPage('home')">← 返回主選單</button>
+ </section>
 <section id="profile" class="screen hidden"><h2>🏅 勇者資料</h2><div class="profile-portrait">🛡️<span>⚔️</span></div><div id="profileStats" class="profile-stats"></div><div id="pioneerProfile" class="pioneer-panel"></div><button class="bigbtn" onclick="showPage('home')">← 返回主城</button></section>
 <section id="results" class="screen hidden"><div id="resultTitle" class="result-title"></div><div class="result-treasure">🎁 ✨ 🪙</div><div id="resultDetails" class="entry"></div><div id="bossClearNotice"></div><div id="resultPreview"></div><div id="resultLoot"></div><div id="resultEvent"></div><div id="resultGrowth" class="growth-card"></div><div id="resultMilestones" class="pioneer-panel"></div><button id="resultNext" class="bigbtn primary" onclick="advance()">▶ 下一波</button><button class="bigbtn" onclick="leaveBattle()">⌂ 返回主城</button></section>
-<main id="battle" class="hidden"><section class="scene"><canvas id="field" width="480" height="380" aria-label="像素戰鬥場景"></canvas><div class="overlaytop"><div class="scenehead"><div class="round">回合<br><strong id="round">1 / 6</strong></div><div class="waves" id="waves"></div><button class="ctl pause" onclick="togglePause()" id="pauseBtn" style="pointer-events:auto;min-height:33px;padding:0 10px">Ⅱ</button></div></div><div class="combo" id="combo">0 <small>連擊</small></div><div class="enemylabel"><strong id="enemyName"></strong><div id="enemyHP"></div></div><div class="threat"><span id="intentLabel">敵人攻擊</span> <span id="threatSeconds">--</span><div class="threatbar"><span id="threatFill"></span></div></div><div class="danger" id="danger"></div><div class="toast" id="toast"></div><div id="battleStartGate" class="battle-start-gate hidden" role="group" aria-labelledby="battleStartTitle"><div class="battle-start-panel"><strong id="battleStartTitle">準備出發</strong><p id="battleStartInfo">確認裝備後，點擊開始戰鬥。</p><button type="button" id="beginBattleBtn" onclick="beginBattleRound()">▶ 開始戰鬥</button></div></div><div id="battlePauseGate" class="battle-pause-gate hidden" role="dialog" aria-label="戰鬥暫停" aria-modal="true"><div class="battle-pause-panel"><strong>Ⅱ 戰鬥暫停</strong><p>敵人倒數與 AP 恢復已停止。準備好再繼續。</p><button type="button" id="resumeBattleBtn" onclick="resumeBattle()">▶ 繼續戰鬥</button><button type="button" onclick="retreatToTown()">⌂ 返回主城</button></div></div></section>
-<section class="hud"><div class="healthline"><span style="color:#8afa7d">● HP</span><span id="hpVal">200 / 200</span></div><div class="meter"><span class="hpfill" id="hpBar" style="width:100%"></span></div><div class="healthline"><span style="color:#ffab69">◉ AP</span><span id="apVal">100 / 100  (+8／秒)</span></div><div class="meter apmeter" role="progressbar" aria-label="行動力" aria-valuemin="0" aria-valuemax="100"><span class="apfill" id="apBar" style="width:100%"></span></div><div class="weaponbar" id="weapons"></div><div class="cards" id="cards"></div><div class="queue" id="nextQueue"></div><div class="combat-insight" id="combatInsight" aria-live="polite">留意敵人的攻擊預告。</div><div class="tech"><span>✦ 連技：<b id="chainLabel">等待發動</b></span><span>奇蹟格擋 <b id="guardCount">0</b> 次</span></div><div class="controls compact-actions"><button class="ctl advance" onclick="advance()" id="advanceBtn">➜<br>下一波</button></div><div class="status"><span id="location"></span><span id="ppVal"></span><span id="goldVal"></span></div><div class="meter" style="height:9px"><span class="ppfill" id="ppBar" style="width:0"></span></div></section><div class="message" id="message" aria-live="polite">點選技能卡片發動攻擊。</div></main>
+<main id="battle" class="hidden"><section class="scene"><canvas id="field" width="480" height="380" aria-label="像素戰鬥場景"></canvas><div class="overlaytop"><div class="scenehead"><div class="round">回合<br><strong id="round">1 / 6</strong></div><div class="waves" id="waves"></div><button class="ctl pause" onclick="togglePause()" id="pauseBtn" style="pointer-events:auto;min-height:33px;padding:0 10px">Ⅱ</button></div></div><div class="combo" id="combo">0 <small>連擊</small></div><div class="enemylabel" role="group" aria-label="敵人狀態"><div class="enemy-identity"><strong id="enemyName"></strong><span id="enemyWeak" class="enemy-weak">弱點</span></div><div class="enemy-hp-row"><span>敵方 HP</span><b id="enemyHP">0 / 0</b></div><div class="enemy-life-track" id="enemyLifeTrack" role="progressbar" aria-label="敵方生命值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span id="enemyLifeFill"></span></div></div><div class="threat" data-state="waiting" role="group" aria-label="敵方攻擊倒數"><div class="threat-info"><span id="intentLabel">敵人攻擊</span><strong id="threatSeconds">--</strong></div><div class="threatbar"><span id="threatFill"></span></div><span id="threatTag" class="threat-tag">等待開戰</span></div><div class="danger" id="danger"></div><div class="toast" id="toast"></div><div id="battleStartGate" class="battle-start-gate hidden" role="group" aria-labelledby="battleStartTitle"><div class="battle-start-panel"><strong id="battleStartTitle">準備出發</strong><p id="battleStartInfo">確認裝備後，點擊開始戰鬥。</p><button type="button" id="beginBattleBtn" onclick="beginBattleRound()">▶ 開始戰鬥</button></div></div><div id="battlePauseGate" class="battle-pause-gate hidden" role="dialog" aria-label="戰鬥暫停" aria-modal="true"><div class="battle-pause-panel"><strong>Ⅱ 戰鬥暫停</strong><p>敵人倒數與 AP 恢復已停止。準備好再繼續。</p><button type="button" id="resumeBattleBtn" onclick="resumeBattle()">▶ 繼續戰鬥</button><button type="button" onclick="retreatToTown()">⌂ 返回主城</button></div></div></section>
+<section class="hud"><div class="vital-pair"><div class="vital-card vital-hp"><div class="healthline"><span class="vital-title">♥ HP</span><strong id="hpVal">200 / 200</strong></div><div class="meter" role="progressbar" aria-label="勇者生命值" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="heroHPTrack"><span class="hpfill" id="hpBar" style="width:100%"></span></div></div><div class="vital-card vital-ap"><div class="healthline"><span class="vital-title">✦ AP <small>+8／秒</small></span><strong id="apVal">100 / 100</strong></div><div class="meter apmeter" role="progressbar" aria-label="行動力" aria-valuemin="0" aria-valuemax="100"><span class="apfill" id="apBar" style="width:100%"></span></div></div></div><div class="battle-row-title"><span>⚔ 裝備欄</span><small>點選技能卡即可出招</small></div><div class="weaponbar" id="weapons"></div><div class="cards" id="cards"></div><div class="queue" id="nextQueue"></div><div class="combat-insight" id="combatInsight" aria-live="polite">留意敵人的攻擊預告。</div><div class="tech"><span>✦ 連技：<b id="chainLabel">等待發動</b></span><span>奇蹟格擋 <b id="guardCount">0</b> 次</span></div><div class="controls compact-actions"><button class="ctl advance" onclick="advance()" id="advanceBtn">➜<br>下一波</button></div><div class="status"><span id="location"></span><span id="ppVal"></span><span id="goldVal"></span></div><div class="meter" style="height:9px"><span class="ppfill" id="ppBar" style="width:0"></span></div></section><div class="message" id="message" aria-live="polite">點選技能卡片發動攻擊。</div></main>
 <section id="gear" class="screen hidden gear-screen">
  <div class="gear-head"><button class="backbtn" onclick="showPage('home')">← 主城</button><div><strong>⚔️ 裝備編成</strong><small id="gearMoney"></small></div></div>
  <div class="gear-equip-area"><div class="gear-paperdoll"><canvas id="paperDoll" width="260" height="156" aria-label="目前裝備的勇者像素外觀" role="img"></canvas><div class="paperdoll-details"><strong>勇者外觀</strong><span id="paperDollLoadout">依裝備即時更新</span><small>武器與盾牌外觀隨裝備變更</small></div></div><div class="gear-section-heading"><strong>裝備欄</strong><small>選擇欄位，再點背包裝備</small></div><div id="gearSlots" class="gear-slots" role="group" aria-label="四格裝備欄"></div><div id="gearSelection" class="gear-selection" role="status"></div><button id="unequipBtn" type="button" onclick="unequipSelected()">卸下所選裝備</button></div>
@@ -1591,9 +2372,9 @@ function showGear(){
  $('gearMoney').textContent=`Lv.${s.level} · ${s.gold} G`;
  $('gearSlots').innerHTML=s.equipped.map((equipmentId,slot)=>{
    const w=equipmentId===null?null:ARSENAL[equipmentId];
-   return `<button type="button" class="gear-slot ${gearSelectedSlot===slot?'selected':''}" aria-pressed="${gearSelectedSlot===slot}" onclick="chooseGearSlot(${slot})"><span class="slot-no">${slot+1} 號</span><span class="slot-icon">${w?`<canvas class="equip-pixel-icon" data-equip-id="${equipmentId}" width="64" height="64" aria-label="${w.name}"></canvas>`:'＋'}</span><span class="slot-name">${w?w.name:'空欄位'}</span><span class="slot-level">${w?'+'+(s.forgeLevels[equipmentId]||0)+' · '+(isShield(equipmentId)?'盾牌':'武器')+' · '+attacksPerSecond(equipmentId)+'/秒 · 速度+'+speedBonusText(equipmentId):'點選配置'}</span></button>`;
+   return `<button type="button" class="gear-slot ${gearSelectedSlot===slot?'selected':''}" aria-pressed="${gearSelectedSlot===slot}" onclick="chooseGearSlot(${slot})"><span class="slot-no">${slot+1} 號</span><span class="slot-icon">${w?`<canvas class="equip-pixel-icon" data-equip-id="${equipmentId}" width="64" height="64" aria-label="${w.name}"></canvas>`:'＋'}</span><span class="slot-name">${w?w.name:'空欄位'}</span><span class="slot-level">${w?'+'+(s.forgeLevels[equipmentId]||0)+' · '+attacksPerSecond(equipmentId)+'次/秒':'點選配置'}</span></button>`;
  }).join('');
- $('gearSelection').textContent=item?`第 ${gearSelectedSlot+1} 格：${item.name}。點選背包可替換。`:`第 ${gearSelectedSlot+1} 格尚未裝備，請從背包選擇。`;
+ $('gearSelection').textContent=item?`第 ${gearSelectedSlot+1} 格：${item.name}（${isShield(id)?'盾牌':'武器'}，速度 +${speedBonusText(id)}，間隔 ${(equipmentInterval(id)/1000).toFixed(2)} 秒）。點選背包可替換。`:`第 ${gearSelectedSlot+1} 格尚未裝備，請從背包選擇。`;
  renderPaperDoll();
  $('unequipBtn').disabled=!item;
  const owned=s.owned.filter(n=>ARSENAL[n]&&(gearFilter==='all'||(gearFilter==='shield'?isShield(n):!isShield(n))));
@@ -1635,7 +2416,7 @@ function refreshSkillReadiness(){
   if(btn.dataset.readiness===reason && btn.disabled===unavailable)return;
   btn.dataset.readiness=reason;
   btn.disabled=unavailable;
-  btn.classList.toggle('dark',unavailable);
+  btn.classList.toggle('dark',unavailable);btn.classList.toggle('is-ready',!unavailable);
   btn.classList.toggle('ap-short',reason.startsWith('差 '));
   btn.classList.toggle('card-locked',unavailable&&!reason.startsWith('差 '));
   btn.classList.toggle('interval-wait',reason.startsWith('間隔 '));
@@ -1658,13 +2439,13 @@ function render(){let z=ZONES[s.zone%ZONES.length];
   }
  }
  $('pauseBtn').disabled=ready;
-document.getElementById('battle').classList.toggle('boss-enraged',s.round===6&&enemy?.bossPhase===2&&phase==='battle');$('round').textContent=s.round+' / 6';$('waves').innerHTML=Array.from({length:6},(_,i)=>`<span class="wave ${i<s.round-1?'done':i===s.round-1?'now':''}"></span>`).join('');$('combo').innerHTML=s.combo+' <small>連擊</small>';$('guardCount').textContent=s.guardCount;$('chainLabel').textContent=chainTypes.length?chainTypes.map(x=>TYPES[x].symbol).join(' ➜ '):'三次技能中混合屬性';$('intentLabel').textContent='⚠ '+(enemy.intent?.name||'敵人攻擊');const ci=$('combatInsight');if(ci){ci.textContent='⚠ '+(enemy.intent?.hint||'留意攻擊時機');ci.className='combat-insight '+(enemyClock>enemyAttackAt-700?'warn':enemy.stunned?'safe':'')}$('enemyName').textContent=enemy.name+(s.round===6?(enemy.bossPhase===2?' 🔥第二階段':' 🐉第一階段'):'');$('enemyHP').textContent='HP '+enemy.hp+' / '+enemy.maxHp+'　弱點 '+TYPES[enemy.weak].symbol;$('enemyHP').style.setProperty('--remaining',Math.max(0,100*enemy.hp/enemy.maxHp)+'%');$('hpVal').textContent=s.hp+' / '+s.maxHp;$('hpBar').style.width=(100*s.hp/s.maxHp)+'%';$('apVal').textContent=Math.floor(s.ap)+' / 100  (+8／秒)';setAPGauge(s.ap);$('apBar').parentElement.setAttribute('aria-valuenow',Math.floor(s.ap));$('ppVal').textContent='PP '+s.pp+'/100';$('ppBar').style.width=s.pp+'%';$('goldVal').textContent=s.gold+' G';$('location').textContent=z.name+' ／ 勇者 Lv.'+s.level;$('weapons').innerHTML=s.equipped.map((w,i)=>`<button class="weapon ${i===s.weapon?'active':''}" onclick="selectWeapon(${i})" ${w===null?'disabled':''}><span class="sym">${w===null?'＋':`<canvas class="equip-pixel-icon" data-equip-id="${w}" width="64" height="64" aria-label="${ARSENAL[w].name}"></canvas>`}</span><span class="nm">${w===null?'空欄':ARSENAL[w].name}</span></button>`).join('');
+document.getElementById('battle').classList.toggle('boss-enraged',s.round===6&&enemy?.bossPhase===2&&phase==='battle');$('round').textContent=s.round+' / 6';$('waves').innerHTML=Array.from({length:6},(_,i)=>`<span class="wave ${i<s.round-1?'done':i===s.round-1?'now':''}"></span>`).join('');$('combo').innerHTML=s.combo+' <small>連擊</small>';$('guardCount').textContent=s.guardCount;$('chainLabel').textContent=chainTypes.length?chainTypes.map(x=>TYPES[x].symbol).join(' ➜ '):'三次技能中混合屬性';$('intentLabel').textContent='⚠ '+(enemy.intent?.name||'敵人攻擊');const ci=$('combatInsight');if(ci){ci.textContent='⚠ '+(enemy.intent?.hint||'留意攻擊時機');ci.className='combat-insight '+(enemyClock>enemyAttackAt-700?'warn':enemy.stunned?'safe':'')}$('enemyName').textContent=enemy.name+(s.round===6?(enemy.bossPhase===2?' 🔥第二階段':' 🐉第一階段'):'');$('enemyHP').textContent=enemy.hp+' / '+enemy.maxHp;$('enemyWeak').textContent='弱 '+TYPES[enemy.weak].symbol+' '+TYPES[enemy.weak].label;const enemyHpPercent=Math.max(0,Math.min(100,100*enemy.hp/Math.max(1,enemy.maxHp)));$('enemyLifeFill').style.width=enemyHpPercent+'%';$('enemyLifeTrack').setAttribute('aria-valuenow',Math.round(enemyHpPercent));$('hpVal').textContent=s.hp+' / '+s.maxHp;$('hpBar').style.width=(100*s.hp/s.maxHp)+'%';$('heroHPTrack').setAttribute('aria-valuenow',Math.round(100*s.hp/Math.max(1,s.maxHp)));$('apVal').textContent=Math.floor(s.ap)+' / 100';setAPGauge(s.ap);$('apBar').parentElement.setAttribute('aria-valuenow',Math.floor(s.ap));$('ppVal').textContent='PP '+s.pp+'/100';$('ppBar').style.width=s.pp+'%';$('goldVal').textContent=s.gold+' G';$('location').textContent=z.name+' ／ 勇者 Lv.'+s.level;$('weapons').innerHTML=s.equipped.map((w,i)=>`<button class="weapon ${i===s.weapon?'active':''}" onclick="selectWeapon(${i})" ${w===null?'disabled':''}><span class="sym">${w===null?'＋':`<canvas class="equip-pixel-icon" data-equip-id="${w}" width="64" height="64" aria-label="${ARSENAL[w].name}"></canvas>`}</span><span class="nm">${w===null?'空欄':ARSENAL[w].name}</span></button>`).join('');
 paintEquipmentIcons();
 $('nextQueue').innerHTML=s.equipped.map((id,i)=>{const next=equipmentSkill(id,1-(s.skillCursor[i]||0));return `<div class="nextcard"><span>${next?'下招':'空欄'}</span>${next?next.icon+' '+next.name:'—'}</div>`}).join('');
 $('cards').innerHTML=s.equipped.map((id,i)=>{
  const sk=equipmentSkill(id,s.skillCursor[i]||0);const reason=skillUnavailableReason(sk,id),unavailable=reason!=='可使用';
- return `<button class="card ${isShield(id)?'shield-card':''} ${unavailable?'dark':''} ${reason.startsWith('差 ')?'ap-short':''} ${unavailable&&!reason.startsWith('差 ')?'card-locked':''} ${reason.startsWith('間隔 ')?'interval-wait':''}" onclick="useEquipmentSkill(${i})" ${unavailable?'disabled':''} aria-label="${sk?sk.name+'，消耗 '+sk.cost*10+' AP，'+reason:'空裝備欄'}">
- <span class="cost">${sk?sk.cost:'—'}</span><span class="art">${id!==null?`<canvas class="equip-pixel-icon skill-equip-icon" data-equip-id="${id}" width="64" height="64" aria-hidden="true"></canvas>`:'＋'}</span>
+ return `<button class="card ${isShield(id)?'shield-card':''} ${unavailable?'dark':'is-ready'} ${reason.startsWith('差 ')?'ap-short':''} ${unavailable&&!reason.startsWith('差 ')?'card-locked':''} ${reason.startsWith('間隔 ')?'interval-wait':''}" onclick="useEquipmentSkill(${i})" ${unavailable?'disabled':''} aria-label="${sk?sk.name+'，消耗 '+sk.cost*10+' AP，'+reason:'空裝備欄'}">
+ <span class="cost">${sk?'AP '+sk.cost*10:'—'}</span><span class="art">${id!==null?`<canvas class="equip-pixel-icon skill-equip-icon" data-equip-id="${id}" width="64" height="64" aria-hidden="true"></canvas>`:'＋'}</span>
  <span class="name">${sk?sk.name:'空欄'}</span><span class="skill-ready">${reason}</span></button>`;
 }).join('');
 paintEquipmentIcons();
@@ -2509,8 +3290,8 @@ function draw(ts){let dt=Math.min(50,ts-last);last=ts;if(!paused&&phase==='battl
    setAPGauge(s.ap);
    // Refresh skill availability on the exact frame AP crosses a skill cost.
    if(s.equipped.some((id,i)=>{const sk=equipmentSkill(id,s.skillCursor[i]||0);return sk&&before<sk.cost*10&&s.ap>=sk.cost*10;}))refreshSkillReadiness();
-   if(ts-apUiLast>=160){apUiLast=ts;$('apVal').textContent=Math.floor(s.ap)+' / 100  (+8／秒)';$('apBar').parentElement.setAttribute('aria-valuenow',Math.floor(s.ap));}
- }if(ts-skillUiLast>=120){skillUiLast=ts;refreshSkillReadiness()}if(enemy.stunned){if(ts>stunUntil){enemy.stunned=false;enemyClock=0;refreshSkillReadiness();say('敵人恢復行動！')}}else{enemyClock+=dt;if(enemyClock>=enemyAttackAt)enemyStrike(ts)}}drawBackground(ts);cx.save();if(shake>0){cx.translate(Math.sin(ts*.071)*shake*.38,Math.sin(ts*.097+1.4)*shake*.24);shake*=.83;if(shake<.45)shake=0}drawKnight(ts);drawMonster(ts);drawEnemyTelegraph(ts);drawCombatEffects(ts);drawDefenseFx(ts);drawWeaponFx(ts);drawElementalImpacts(ts);drawBossDefeatEffect(ts);cx.restore();if(flash>0)flash-=dt;for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.0002*dt;p.life-=dt;box(p.x,p.y,p.size,p.size,p.color);if(p.life<=0)particles.splice(i,1)}cx.textAlign='center';cx.font='bold 22px monospace';for(let i=floating.length-1;i>=0;i--){let f=floating[i];f.y-=dt*.045;f.life-=dt;cx.shadowColor='#16091d';cx.shadowBlur=4;cx.fillStyle=f.color;cx.fillText(f.t,f.x,f.y);cx.shadowBlur=0;if(f.life<=0)floating.splice(i,1)}updateEnemyCueText();$('threatSeconds').textContent=phase==='battle'&&!enemy.stunned?(Math.max(0,enemyAttackAt-enemyClock)/1000).toFixed(1)+'s':enemy.stunned?'暈眩':'--';$('threatFill').parentElement.parentElement.classList.toggle('is-imminent',phase==='battle'&&!enemy.stunned&&enemyAttackAt-enemyClock<850);$('threatFill').style.width=phase==='battle'&&!enemy.stunned?Math.min(100,enemyClock/enemyAttackAt*100)+'%':'0%';$('danger').textContent=phase==='cinematic'?'🏆 BOSS 討伐成功！':phase==='won'?'✨ 勝利！':phase==='lost'?'💀 戰敗':paused?'Ⅱ 暫停':phase==='ready'?'等待開始':enemy.stunned?'★ 暈眩 ★':phase==='battle'&&enemyClock>enemyAttackAt-650?'⚠ 防禦！':' ';if(ts>toastUntil)$('toast').classList.remove('show');requestAnimationFrame(draw)}
+   if(ts-apUiLast>=160){apUiLast=ts;$('apVal').textContent=Math.floor(s.ap)+' / 100';$('apBar').parentElement.setAttribute('aria-valuenow',Math.floor(s.ap));}
+ }if(ts-skillUiLast>=120){skillUiLast=ts;refreshSkillReadiness()}if(enemy.stunned){if(ts>stunUntil){enemy.stunned=false;enemyClock=0;refreshSkillReadiness();say('敵人恢復行動！')}}else{enemyClock+=dt;if(enemyClock>=enemyAttackAt)enemyStrike(ts)}}drawBackground(ts);cx.save();if(shake>0){cx.translate(Math.sin(ts*.071)*shake*.38,Math.sin(ts*.097+1.4)*shake*.24);shake*=.83;if(shake<.45)shake=0}drawKnight(ts);drawMonster(ts);drawEnemyTelegraph(ts);drawCombatEffects(ts);drawDefenseFx(ts);drawWeaponFx(ts);drawElementalImpacts(ts);drawBossDefeatEffect(ts);cx.restore();if(flash>0)flash-=dt;for(let i=particles.length-1;i>=0;i--){let p=particles[i];p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=.0002*dt;p.life-=dt;box(p.x,p.y,p.size,p.size,p.color);if(p.life<=0)particles.splice(i,1)}cx.textAlign='center';cx.font='bold 22px monospace';for(let i=floating.length-1;i>=0;i--){let f=floating[i];f.y-=dt*.045;f.life-=dt;cx.shadowColor='#16091d';cx.shadowBlur=4;cx.fillStyle=f.color;cx.fillText(f.t,f.x,f.y);cx.shadowBlur=0;if(f.life<=0)floating.splice(i,1)}updateEnemyCueText();$('threatSeconds').textContent=phase==='battle'&&!enemy.stunned?(Math.max(0,enemyAttackAt-enemyClock)/1000).toFixed(1)+'s':enemy.stunned?'暈眩':'--';const threatBox=$('threatFill').parentElement.parentElement;const remainingMs=enemyAttackAt-enemyClock;const threatActive=phase==='battle'&&!paused&&!enemy.stunned;const perfectWindow=threatActive&&remainingMs>0&&remainingMs<=650;const imminent=threatActive&&remainingMs<1100;const threatState=enemy.stunned?'stun':paused?'pause':phase==='ready'?'waiting':perfectWindow?'perfect':imminent?'warning':threatActive?'preparing':'waiting';if(threatBox.dataset.state!==threatState){threatBox.dataset.state=threatState;const tag=$('threatTag');tag.textContent={stun:'★ 暈眩中',pause:'Ⅱ 暫停',waiting:'等待開戰',perfect:'✦ 精準格擋！',warning:'⚠ 即將命中',preparing:'注意倒數'}[threatState]||'準備戰鬥'}threatBox.classList.toggle('is-imminent',imminent);threatBox.classList.toggle('is-perfect',perfectWindow);$('threatFill').style.width=phase==='battle'&&!enemy.stunned?Math.min(100,enemyClock/enemyAttackAt*100)+'%':'0%';$('danger').textContent=phase==='cinematic'?'🏆 BOSS 討伐成功！':phase==='won'?'✨ 勝利！':phase==='lost'?'💀 戰敗':paused?'Ⅱ 暫停':phase==='ready'?'等待開始':enemy.stunned?'★ 暈眩 ★':phase==='battle'&&enemyClock>enemyAttackAt-650?'⚠ 防禦！':' ';if(ts>toastUntil)$('toast').classList.remove('show');requestAnimationFrame(draw)}
 s.unlockedZone ??= Math.min(s.zone,2);
 // v0.4 navigation: explicit pages; battle timer is frozen off-screen.
 let currentPage='title', lastReward=0, rewardDrop='';
@@ -2541,7 +3322,7 @@ let sceneTransitionBusy=false,sceneTransitionTimer=0;
 const PAGE_LABELS={titleScreen:'標題畫面',home:'主城',adventure:'冒險地圖',shop:'城鎮商店',quests:'任務',profile:'勇者資料',journal:'冒險圖鑑',gear:'裝備編成',settings:'存檔管理',help:'玩法說明',battle:'戰鬥開始',results:'戰鬥結果'};
 function applyPageState(page){
  currentPage=page;paused=page!=='battle';
- $('mobileHome')?.classList.toggle('hidden',['titleScreen','home','battle','results'].includes(page));
+ $('mobileHome')?.classList.add('hidden'); // v8.9: every page has an in-page back route; never cover gameplay or equipment
  PAGES.forEach(id=>$(id).classList.toggle('hidden',id!==page));
  $('topHeader').classList.toggle('hidden',page==='titleScreen'||page==='battle'||page==='results');
  ['home','adventure','gear','help'].forEach(id=>$(id+'Tab')?.classList.toggle('chosen',page===id));
@@ -2551,7 +3332,7 @@ function applyPageState(page){
  if(page==='quests')refreshQuests();
  if(page==='profile')refreshProfile();
  if(page==='gear')showGear();
- if(page==='journal')refreshJournal();
+ if(page==='journal'){refreshJournal();applyJournalFilter();}
  if(page==='settings')$('transferStatus').textContent='';
  if(page==='titleScreen')$('titleProgress').textContent=`Lv.${s.level} ／ 已勝利 ${s.wins} 場 ／ 自動存檔`;
  $('pauseBtn').textContent=paused?'▶':'Ⅱ';
@@ -2653,9 +3434,45 @@ function exploreArea(i){
 }
 function refreshJournal(){const known=s.owned||[];$('journalContents').innerHTML=`<div class="entry"><strong>⚔️ 武器圖鑑 ${known.length}/${ARSENAL.length}</strong><p class="small muted">已收集過的武器會保留在武器背包中。</p>${ARSENAL.map((w,i)=>`<div class="journal-row"><span>${known.includes(i)?w.icon:'❔'}</span><span>${known.includes(i)?w.name+' · '+rarityLabel(i).name:'尚未發現'}</span><small>${known.includes(i)?'攻擊 '+(w.base+(s.forgeLevels[i]||0)*5):'？？？'}</small></div>`).join('')}</div><div class="entry"><strong>🧭 探索札記 ${s.explorationFlags.length}/3</strong>${EXPLORATION.map((e,i)=>`<p class="small">${s.explorationFlags.includes(i)?'✅ '+e.title+'（'+(s.explorationChoices?.[i]==='supply'?'補給優先':s.explorationChoices?.[i]==='gold'?'金幣優先':'已探索')+'）：'+e.story:'🔒 '+ZONES[i].name+'／尚未探索'}</p>`).join('')}</div><div class="entry"><strong>🐉 BOSS 紀念收藏 ${s.bossRelics.length}/3</strong>${RELICS.map((r,i)=>`<p class="small">${s.bossRelics.includes(i)?r.icon+' '+r.name:'🔒 尚未獲得'}</p>`).join('')}</div><div class="entry"><strong>📖 怪物討伐圖鑑 ${Object.keys(s.monsterKills||{}).filter(n=>ZONES.some(z=>z.enemies.includes(n))).length}/18</strong><p class="small muted">擊敗怪物後永久登錄。第二階段 BOSS 討伐也會留存紀錄。</p>${ZONES.map((z,zi)=>`<h3>${AREA_ICONS[zi]} ${z.name}</h3>${z.enemies.map((name,i)=>`<div class="journal-row"><span>${(s.monsterKills?.[name]||0)>0?(i===5?'🐉':'👾'):'❔'}</span><span>${(s.monsterKills?.[name]||0)>0?name:'尚未遭遇'}</span><small>${(s.monsterKills?.[name]||0)>0?'討伐 '+s.monsterKills[name]+' 次'+(i===5&&s.bossSecondPhases.includes(zi)?' · 已突破第二階段':''):'未登錄'}</small></div>`).join('')}`).join('')}</div>` ;$('journalContents').insertAdjacentHTML('beforeend',`<div class="entry"><strong>🧭 旅途奇遇 ${s.roadEvents.length}/6</strong><p class="muted small">每區第二波與第四波首次戰勝後，會出現一次性事件。</p>${s.roadEvents.map(key=>{const [z,r]=key.split(':').map(Number);const e=ROAD_EVENTS[z]?.[r===2?0:1];return e?`<p class="small">✅ ${ZONES[z].name}：${e.title}</p>`:''}).join('')}</div>`);}
 
-function refreshShop(){$('shopMoney').textContent=`目前持有 ${s.gold} G ／ 補給 ${s.potions} 個`}
+
+let journalFilter='all';
+const journalCategoryOrder=['equipment','journey','boss','monster','journey'];
+function filterJournal(category){
+ if(!['all','equipment','monster','boss','journey'].includes(category))category='all';
+ journalFilter=category;applyJournalFilter();
+}
+function applyJournalFilter(){
+ const items=[...document.querySelectorAll('#journalContents > .entry')];
+ items.forEach((panel,i)=>{
+  panel.classList.add('journal-category-panel');
+  panel.dataset.category=journalCategoryOrder[i]||'journey';
+  panel.hidden=journalFilter!=='all'&&panel.dataset.category!==journalFilter;
+ });
+ document.querySelectorAll('.journal-filters button').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.filter===journalFilter)));
+ const unlocked=Object.keys(s.monsterKills||{}).filter(name=>ZONES.some(zone=>zone.enemies.includes(name))&&(s.monsterKills[name]||0)>0).length;
+ const sum=$('journalSummary');if(sum)sum.innerHTML=`<span>⚔️ 已收集 <b>${s.owned.length}/${ARSENAL.length}</b></span><span>👾 已遭遇 <b>${unlocked}/18</b></span><span>🐉 龍族徽章 <b>${s.bossRelics.length}/3</b></span>`;
+}
+
+function refreshShop(){
+ $('shopMoney').innerHTML=`<span><b>🪙 ${s.gold} G</b><small>目前金幣</small></span><span><b>🍖 ${s.potions}</b><small>持有補給</small></span>`;
+ // Only affordably purchasable items are active; purchasing rules remain unchanged.
+ document.querySelectorAll('#shop .shop-product').forEach(card=>{
+  const cost=card.dataset.product==='chest'?80:card.dataset.product==='inn'?30:20;
+  const btn=card.querySelector('.shop-buy-button');if(!btn)return;
+  btn.disabled=s.gold<cost;btn.title=btn.disabled?'金幣不足':'';
+ });
+}
 function purchasePotion(){if(s.gold<20){alert('金幣不足');return}s.gold-=20;s.potions++;save();refreshShop()}
-function refreshQuests(){$('pioneerQuests').innerHTML=pioneerHTML(false);$('questList').innerHTML=TASKS.map((t,i)=>{let v=s[t.key]||0,done=(s.questClaimed||0)&(1<<i);return `<div class="entry"><strong>${done?'✅ ':''}${t.label}</strong><div class="muted">${Math.min(v,t.need)} / ${t.need}　／ 報酬 ${t.reward} G</div><div class="quest-progress"><span style="width:${Math.min(100,v/t.need*100)}%"></span></div><button ${v<t.need||done?'disabled':''} onclick="claimQuest(${i})">${done?'已領取':v>=t.need?'領取獎勵':'尚未達成'}</button></div>`}).join('')}
+function refreshQuests(){
+ $('pioneerQuests').innerHTML=pioneerHTML(false);
+ const claimed=TASKS.filter((t,i)=>(s.questClaimed||0)&(1<<i)).length;
+ const ready=TASKS.filter((t,i)=>!(s.questClaimed&(1<<i))&&(s[t.key]||0)>=t.need).length;
+ $('questSummary').innerHTML=`<span>🏅 任務已完成 <b>${claimed}/${TASKS.length}</b></span><span>✨ 待領取 <b>${ready}</b></span>`;
+ $('questList').innerHTML=TASKS.map((t,i)=>{
+  const v=Math.max(0,Number(s[t.key])||0),done=Boolean((s.questClaimed||0)&(1<<i)),ready=v>=t.need,pct=Math.min(100,Math.floor(v/t.need*100));
+  return `<article class="entry quest-item ${done?'completed':ready?'ready':'in-progress'}"><div class="quest-item-header"><div><span class="quest-status">${done?'✓ 已領取':ready?'★ 可領取':'◌ 進行中'}</span><strong>${t.label}</strong></div><span class="quest-reward">🪙 ${t.reward} G</span></div><div class="quest-progress-line"><span>完成進度</span><b>${Math.min(v,t.need)} / ${t.need}</b></div><div class="quest-progress" role="progressbar" aria-label="${t.label}完成進度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><span style="width:${pct}%"></span></div><button type="button" ${!ready||done?'disabled':''} onclick="claimQuest(${i})">${done?'已領取獎勵':ready?'✨ 領取獎勵':'尚未達成'}</button></article>`;
+ }).join('');
+}
 function claimQuest(i){let t=TASKS[i];if((s[t.key]||0)<t.need||((s.questClaimed||0)&(1<<i)))return;s.questClaimed=(s.questClaimed||0)|(1<<i);s.gold+=t.reward;save();refreshQuests()}
 function refreshProfile(){$('pioneerProfile').innerHTML=pioneerHTML(true);$('profileStats').innerHTML=[['勇者等級',s.level],['冒險區域',ZONES[s.zone].name],['戰鬥勝利',s.wins+' 場'],['奇蹟格擋',s.guardCount+' 次'],['持有武器',s.owned.length+' 把'],['冒險金幣',s.gold+' G'],['BOSS 收藏',s.bossRelics.length+' / 3'],['鍛造礦石',s.materials.ore||0],['發現武器次數',s.rareDrops||0]].map(([a,b])=>`<div><span>${a}</span><strong>${b}</strong></div>`).join('')}
 function leaveBattle(){showPage('home');save()}
