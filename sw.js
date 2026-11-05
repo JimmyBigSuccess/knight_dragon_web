@@ -1,5 +1,5 @@
-const CACHE='hero-dragon-v9.3';
-const FILES=['./','./index.html','./title-art.webp','./home-menu-art.webp','./map-pixel.png','./forge-pixel.png','./town-pixel.png','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
+const CACHE='hero-dragon-v9.4';
+const FILES=['./','./index.html','./title-art.webp','./home-menu-art.webp','./guild-floral.webp','./map-pixel.png','./forge-pixel.png','./town-pixel.png','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 self.addEventListener('install', event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate', event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('hero-dragon-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch', event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;
