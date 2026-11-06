@@ -65,6 +65,12 @@ try{
   await page.evaluate(()=>beginBattleRound());
   assert.equal(await page.evaluate(()=>phase),'battle','Combat begins after confirmation');
   if(width<620){
+    const cardRect=await page.locator('#cards .card').first().boundingBox();
+    assert.ok(cardRect.width>=44 && cardRect.height>=44,`Touch target at least 44×44 at ${width}: ${JSON.stringify(cardRect)}`);
+    await page.locator('#pauseBtn').tap();
+    assert.ok(await page.locator('#battlePauseGate').isVisible(),`Pause accessible on ${width}`);
+    await page.locator('#resumeBattleBtn').tap();
+    assert.equal(await page.evaluate(()=>paused),false,'Resume returns to battle');
     const before=await page.evaluate(()=>({ap:s.ap,cursor:s.skillCursor[0],hp:enemy.hp}));
     await page.locator('#cards .card').first().tap();
     const after=await page.evaluate(()=>({ap:s.ap,cursor:s.skillCursor[0],hp:enemy.hp}));
@@ -101,6 +107,8 @@ try{
     return {sc,hp,attack,monster};
   });
   console.log(`LAYOUT ${width}×${height} ${JSON.stringify(geo)}`);
+  assert.ok(geo.hp.bottom<=geo.monster.top-2,`Boss HP must remain above artwork at ${width}: ${JSON.stringify(geo)}`);
+  assert.ok(geo.attack.top>=geo.monster.bottom+2,`Attack countdown must remain beneath artwork at ${width}: ${JSON.stringify(geo)}`);
   await page.evaluate(()=>{beginBattleRound();win();if(guideActive)closeGuide()});
   assert.ok(await page.locator('#results').isVisible(),'Boss settlement visible');
   assert.ok(await page.locator('#bossClearNotice').isVisible(),'Boss award notice visible');
