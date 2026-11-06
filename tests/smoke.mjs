@@ -77,9 +77,40 @@ try{
   assert.equal(payload.game,'knight-dragon-web');
   assert.equal(payload.state.round,2);
   assert.ok(await page.evaluate((json)=>{try{return validateSave(JSON.parse(json)).round===2}catch{return false}},saved),'Save validates and can restore');
+
+  // Defeat and retry must return the player to a ready-state, not an active timer.
+  await page.evaluate(()=>{showPage('battle',true);phase='lost';s.hp=0;showResult(false)});
+  assert.ok(await page.locator('#results').isVisible(),'Defeat settlement visible');
+  await page.evaluate(()=>advance());
+  assert.equal(await page.evaluate(()=>phase),'ready','Retry enters preparation');
+  assert.equal(await page.evaluate(()=>s.hp===s.maxHp),true,'Retry restores HP');
+  assert.ok(await page.locator('#battleStartGate').isVisible(),'Retry gate visible');
+
+  // Boss first-clear unlocks the next chapter and keeps all reward controls usable.
+  await page.evaluate(()=>{s.round=6;startRound();phase='ready';render();beginBattleRound();win();if(guideActive)closeGuide()});
+  assert.ok(await page.locator('#results').isVisible(),'Boss settlement visible');
+  assert.ok(await page.locator('#bossClearNotice').isVisible(),'Boss award notice visible');
+  assert.ok(await page.evaluate(()=>s.unlockedZone>=1),'Next zone unlocked');
+  await page.evaluate(()=>advance());
+  assert.equal(await page.evaluate(()=>s.zone),1,'After boss, next zone begins');
+  assert.equal(await page.evaluate(()=>phase),'ready','Next zone starts at preparation');
+
+  // Save data should remain usable after a reload, and a fresh game should reset.
+  await page.evaluate(()=>{showPage('home',true);save()});
+  const winsBeforeReload=await page.evaluate(()=>s.wins);
+  await page.reload({waitUntil:'domcontentloaded'});
+  assert.equal(await page.evaluate(()=>s.wins),winsBeforeReload,'Save persists after reload');
+  await page.evaluate(()=>resetGameInstant());
+  assert.equal(await page.evaluate(()=>s.wins),0,'New game resets victories');
+  assert.ok(await page.locator('#titleScreen').isVisible(),'Reset returns to title');
+
+  for(const name of ['home','adventure','shop','quests','gear']){
+   const info=await page.evaluate((id)=>{showPage(id,true);return {scrollWidth:document.documentElement.scrollWidth,innerWidth}},name);
+   assert.ok(info.scrollWidth<=info.innerWidth+4,`No horizontal overflow on ${name} at ${width}: ${JSON.stringify(info)}`);
+  }
   assert.deepEqual(errors,[],`No browser JavaScript errors at ${width}`);
   await context.close();
-  console.log(`PASS mobile/desktop ${width}×${height}: start, layout, AP, combat, result, next wave, save`);
+  console.log(`PASS mobile/desktop ${width}×${height}: start, skills, victory, defeat, boss, save, reset and page layout`);
   checks++;
  }
  console.log(`PASS ${checks} browser viewport smoke runs`);
