@@ -4655,6 +4655,9 @@ function advance(){if(pendingRoadEvent()){renderRoadEvent();return}if(phase==='l
 function enemyStrike(now){
  const intent=enemy.intent||INTENTS[0],guarded=guardUntil>now;
  let damage=guarded?Math.ceil(enemy.attack*intent.mult*.2):Math.ceil(enemy.attack*intent.mult);
+ // Successful early block repays part of the AP spent rotating the shield's two skills.
+ // A perfect guard still cancels the strike entirely and provides its larger +32 AP reward.
+ if(guarded)s.ap=cap(s.ap+12,0,100);
  if(!guarded&&intent.kind==='thorns')damage+=6;s.hp=Math.max(0,s.hp-damage);if(!guarded&&intent.kind==='drain')s.ap=Math.max(0,s.ap-16);if(!guarded&&intent.kind==='crystal')s.ap=Math.max(0,s.ap-22);
  monsterAttackUntil=now+440;monsterAttackKind=intent.kind;heroActionUntil=now+320;heroActionType=guarded?'guard':'hurt';shake=guarded?5:13;flash=330;sparks(170,255,guarded?'#91dafa':'#ff7854',17);
  launchDefenseFx(guarded?'guard':'hurt',intent.kind,now);if(['crystal','thorns','eruption'].includes(intent.kind))launchDefenseFx('boss',intent.kind,now);
