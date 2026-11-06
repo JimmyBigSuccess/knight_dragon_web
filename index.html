@@ -3046,7 +3046,7 @@ let skillVisual={kind:'slash',color:'#f7d378',until:0,started:0}, lastEnemyWarni
 let defenseFx=[];
 function launchDefenseFx(kind,attackKind='normal',at=performance.now()){
  const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
- defenseFx.push({kind,attackKind,start:at,duration:reduced?240:kind==='boss'?670:kind==='perfect'?580:440});
+ defenseFx.push({kind,attackKind,start:at,duration:reduced?240:kind==='boss'?670:kind==='perfect'?580:kind==='guard'?1050:440});
  if(defenseFx.length>7)defenseFx=defenseFx.slice(-7);
 }
 function drawDefenseFx(t){
@@ -3228,8 +3228,11 @@ function guard(){
   const prevented=enemy.intent?.name||'攻擊';planEnemyAttack();
   say('✦ 奇蹟格擋！化解'+prevented+'，回復 AP。');
  }else{
-  guardUntil=now+650;guardCooldown=now+1000;
-  triggerHeroAction('guard',s.equipped[s.weapon],now);spawnWeaponFx('guard',s.equipped[s.weapon],now);launchDefenseFx('guard',enemy.intent?.kind||'normal',now);
+  // v10.7: regular guard lasts longer than the 650ms perfect-guard window.
+  // A slightly early shield (650-1050ms before impact) now genuinely reduces damage.
+  guardUntil=now+1050;guardCooldown=now+1150;
+  triggerHeroAction('guard',s.equipped[s.weapon],now);
+  activeHeroActionDuration=1050;heroActionUntil=guardUntil;spawnWeaponFx('guard',s.equipped[s.weapon],now);launchDefenseFx('guard',enemy.intent?.kind||'normal',now);
   say('架盾防禦！在敵方命中時可減傷，注意防禦冷卻。');
  }
  render();
