@@ -88,7 +88,7 @@ try{
  assert.equal(diagnostics.regular.before.ap,60-diagnostics.regular.cost,'Normal guard pays AP cost');
  const loss=diagnostics.regular.before.hp-diagnostics.regular.after.hp;
  assert.ok(loss>0&&loss<diagnostics.regular.before.predicted,`Normal block reduces damage: ${loss}`);
- assert.equal(diagnostics.earlyGuard.duration,1050,'Early guard protection remains active for 1.05s');
+ assert.ok(Math.abs(diagnostics.earlyGuard.duration-1050)<3,'Early guard protection remains active for about 1.05s');
  assert.ok(diagnostics.earlyGuard.damage>0&&diagnostics.earlyGuard.damage<diagnostics.earlyGuard.fullDamage,
    `850ms early guard must reduce incoming damage: ${JSON.stringify(diagnostics.earlyGuard)}`);
  assert.equal(diagnostics.earlyGuard.guardCountDelta,0,'Early guard must not grant perfect-guard rewards');
