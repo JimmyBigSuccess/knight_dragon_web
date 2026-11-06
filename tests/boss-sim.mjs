@@ -18,9 +18,10 @@ try{
   const originalRandom=Math.random;
   const policies=[
    {label:'starter',weapons:[6,6,6],shield:7,forges:0},
-   {label:'standard',weapons:[0,4,3],shield:7,forges:0},
+   {label:'standard',weapons:[1,4,3],shield:7,forges:0},
    {label:'nonweak',weapons:[2,1,4],shield:7,forges:0},
-   {label:'standard-plus2',weapons:[0,4,3],shield:7,forges:2},
+   {label:'standard-plus2',weapons:[1,4,3],shield:7,forges:2},
+   {label:'standard-no-guard',weapons:[1,4,3],shield:7,forges:0,skipGuard:true},
   ];
   function evaluateScenario(zone,policy,seed){
    // Independent deterministic RNG per scenario, including damage rolls and level-up loot.
@@ -40,12 +41,14 @@ try{
    s.skillCursor=[0,0,0,0];s.weapon=0;
    startRound();phase='ready';showPage('battle',true);beginBattleRound();
    const startHp=s.hp,initialEnemyHp=enemy.maxHp,wasWeak=ARSENAL[weaponId].type===enemy.weak;
+   let phaseTwoReached=false;
    let ticks=0,usedWeapon=0,usedGuard=0,usedBash=0,strikes=0,avoided=0,normalBlocks=0,spentPotions=0,damageDealt=0;
    const tickMs=100,limitMs=120000;
    // The policy chooses one skill at a time, respects game AP/cooldowns, and guards in a readable 500ms window.
    for(let elapsed=tickMs;elapsed<=limitMs;elapsed+=tickMs){
     simulatedNow+=tickMs;
     if(phase!=='battle')break;
+    if(enemy.bossPhase===2)phaseTwoReached=true;
     if(s.ap<100)s.ap=Math.min(100,s.ap+AP_REGEN_PER_SECOND*tickMs/1000);
     if(enemy.stunned){
      if(simulatedNow>stunUntil){enemy.stunned=false;enemyClock=0}
@@ -55,14 +58,14 @@ try{
     const canShield=skillIntervalRemaining(policy.shield,simulatedNow)===0
        && (!shieldSkill||s.ap>=shieldSkill.cost*10);
     // Rotate shield by using its alternative attack outside the perfect-guard window.
-    if(canShield&&shieldSkill?.action==='attack' && remaining>900 && !enemy.stunned){
+    if(!policy.skipGuard && canShield&&shieldSkill?.action==='attack' && remaining>900 && !enemy.stunned){
      const beforeCursor=s.skillCursor[1];
      useEquipmentSkill(1);
      if(s.skillCursor[1]!==beforeCursor)usedBash++;
     }
     // Aim to interrupt an incoming attack during the last 0.5s.
     const guardSkill=equipmentSkill(policy.shield,s.skillCursor[1]||0);
-    if(guardSkill?.action==='guard' && !enemy.stunned
+    if(!policy.skipGuard && guardSkill?.action==='guard' && !enemy.stunned
        && remaining<=500&&remaining>0
        && skillIntervalRemaining(policy.shield,simulatedNow)===0
        && simulatedNow>=guardCooldown && s.ap>=guardSkill.cost*10){
@@ -84,7 +87,8 @@ try{
        && simNowSinceActivation(0)>=110){
       const beforeHp=enemy.hp,beforeCursor=s.skillCursor[0];
       useEquipmentSkill(0);
-      if(beforeCursor!==s.skillCursor[0]){
+      if(enemy.bossPhase===2)phaseTwoReached=true;
+     if(beforeCursor!==s.skillCursor[0]){
        usedWeapon++;
        damageDealt+=Math.max(0,beforeHp-enemy.hp);
       }
@@ -96,7 +100,7 @@ try{
    const result={
      zone,loadout:policy.label,seed,
      weapon:ARSENAL[weaponId].name,weak:wasWeak,
-     victory:phase==='won',defeat:phase==='lost',phase,
+     victory:phase==='won',defeat:phase==='lost',phase,phaseTwoReached,
      seconds:Math.round(ticks*tickMs/100)/10,
      initialEnemyHp,remainingEnemyHp:enemy.hp,
      initialHeroHp:startHp,heroHp:s.hp,
@@ -111,7 +115,7 @@ try{
   const out=[];
   for(let zone=0;zone<3;zone++)
    for(const policy of policies)
-    for(const seed of [11,47,83])
+    for(const seed of [11,47,83,127,251,401,509,701])
      out.push(evaluateScenario(zone,policy,seed));
   Math.random=originalRandom;
   return out;
@@ -127,12 +131,12 @@ try{
  assert.deepEqual(errors,[],'No browser errors during simulated boss fights');
  const lines=[];
  for(let zone=0;zone<3;zone++)
-  for(const loadout of ['starter','standard','nonweak','standard-plus2']){
+  for(const loadout of ['starter','standard','nonweak','standard-plus2','standard-no-guard']){
    const a=report.filter(x=>x.zone===zone&&x.loadout===loadout);
    const avg=k=>Number((a.reduce((sum,x)=>sum+x[k],0)/a.length).toFixed(1));
    lines.push({zone,loadout,win:a.filter(x=>x.victory).length,trials:a.length,
     avgSeconds:avg('seconds'),avgHeroHp:avg('heroHp'),avgAttacks:avg('attacks'),
-    avgGuard:avg('perfectGuards'),avgHits:avg('enemyHits'),avgEnemyHp:avg('remainingEnemyHp')});
+    avgGuard:avg('perfectGuards'),avgHits:avg('enemyHits'),avgEnemyHp:avg('remainingEnemyHp'),phase2:a.filter(x=>x.phaseTwoReached).length});
   }
  console.log('BOSS_SIM '+JSON.stringify(lines));
  console.log('PASS '+report.length+' deterministic browser boss scenarios, AP regen/cooldown policy and combat state bounds');
