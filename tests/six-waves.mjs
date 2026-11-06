@@ -104,10 +104,11 @@ try{
       else if(wave===4&&zone===1)option=1;
       chooseRoadEvent(option);events++;
      }
-     const winHP=s.hp;
+     const carryOver={hp:s.hp,ap:s.ap,potions:s.potions};
      advance();
      if(s.round!==wave+1||phase!=='ready')throw Error('Wave progression failed after '+wave);
-     if(s.hp>Math.max(winHP,s.maxHp))throw Error('Healing overflow after advance');
+     if(s.hp!==carryOver.hp||s.ap!==carryOver.ap||s.potions!==carryOver.potions)
+      throw Error('HP/AP/potion inventory incorrectly reset between waves '+wave+'→'+(wave+1));
     }
    }
    return {zone,policy:policy.label,seed,cleared:rows.length===6&&rows[5].status==='won',
