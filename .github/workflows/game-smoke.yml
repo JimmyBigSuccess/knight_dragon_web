@@ -33,3 +33,4 @@ jobs:
           python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/dragon-server.log 2>&1 &
           sleep 2
           node tests/smoke.mjs --browser
+          node tests/balance.mjs
