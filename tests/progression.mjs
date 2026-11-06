@@ -12,12 +12,17 @@ try{
  await page.waitForFunction(()=>typeof purchaseForestBlade==='function' && typeof refreshShop==='function');
  await page.evaluate(()=>{s.tutorialDone=true;showPage('shop',true);s.gold=500;refreshShop()});
  assert.equal(await page.locator('#shop .shop-product').count(),4,'Shop retains all original products plus one fixed-price weapon');
- const shopDimensions=await page.evaluate(()=>{
-  const shop=document.querySelector('#shop'),last=shop.querySelector('.rpg-return').getBoundingClientRect();
-  return {width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,shopContentHeight:shop.scrollHeight,returnBottom:last.bottom};
- });
- assert.ok(shopDimensions.scrollWidth<=shopDimensions.width+4,'Shop has no horizontal overflow');
- console.log('SHOP_LAYOUT '+JSON.stringify(shopDimensions));
+ for(const viewport of [{width:320,height:640},{width:390,height:844},{width:430,height:932}]){
+  await page.setViewportSize(viewport);
+  const shopDimensions=await page.evaluate(()=>{
+   const shop=document.querySelector('#shop'),last=shop.querySelector('.rpg-return').getBoundingClientRect();
+   return {width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,shopContentHeight:shop.scrollHeight,returnBottom:last.bottom};
+  });
+  assert.ok(shopDimensions.scrollWidth<=shopDimensions.width+4,'Shop has no horizontal overflow');
+  assert.ok(shopDimensions.returnBottom<=shopDimensions.height+4,`Shop exit remains accessible without vertical scrolling at ${viewport.width}: ${JSON.stringify(shopDimensions)}`);
+  console.log('SHOP_LAYOUT '+JSON.stringify(shopDimensions));
+ }
+ await page.setViewportSize({width:390,height:844});
  const offer=page.locator('#shop [data-product="forest-blade"]');
  const btn=offer.locator('button.shop-buy-button');
  assert.ok(await offer.isVisible(),'Forest weapon offer visible in the shop');
