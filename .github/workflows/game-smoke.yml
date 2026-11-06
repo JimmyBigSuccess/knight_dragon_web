@@ -34,3 +34,4 @@ jobs:
           sleep 2
           node tests/smoke.mjs --browser
           node tests/balance.mjs
+          node tests/progression.mjs
