@@ -38,7 +38,7 @@ try{
   const page=await context.newPage();const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base,{waitUntil:'domcontentloaded'});
-  await page.waitForFunction(()=>!!document.querySelector('#field') && document.querySelector('#titleScreen')?.classList.contains('screen'));
+  await page.waitForFunction(()=>!!document.querySelector('#field') && !!document.querySelector('#titleScreen') && !document.querySelector('#titleScreen').classList.contains('hidden'));
   assert.ok(await page.locator('#titleScreen').isVisible(),`Title screen visible at ${width}`);
   await page.evaluate(()=>{s.tutorialDone=true;showPage('home',true)});
   assert.ok(await page.locator('#home').isVisible(),'Home opens');
