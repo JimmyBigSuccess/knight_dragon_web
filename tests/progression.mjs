@@ -35,6 +35,12 @@ try{
   if(guideActive)closeGuide();showPage('shop',true);
  });
  assert.ok(await btn.isEnabled(),'First cave clear unlocks fixed-price fire sword');
+ const unequippedHint=await page.evaluate(()=>{
+  s.zone=1;s.round=6;startRound();phase='ready';showPage('battle',true);render();
+  const copy=$('battleStartInfo').textContent;
+  showPage('shop',true);return copy;
+ });
+ assert.match(unequippedHint,/商店以 120 G 購買火焰劍/,'BOSS preparation explains how to obtain missing fire element');
  assert.match(await offer.innerText(),/120 G/);
  const beforeSale=await page.evaluate(()=>({gold:s.gold,owned:s.owned.slice(),win:s.wins}));
  await btn.click();
@@ -52,6 +58,8 @@ try{
  assert.equal(await page.evaluate(()=>s.equipped[2]),4,'Forest battle retains the fire sword');
  await page.evaluate(()=>{s.round=6;startRound();phase='ready';render()});
  assert.equal(await page.evaluate(()=>enemy.weak),'fire','Forest boss is weak to fire');
+ assert.match(await page.locator('#battleStartInfo').textContent(),/已裝備弱點屬性/,'BOSS preparation confirms elemental equipment');
+ assert.match(await page.locator('#battleStartInfo').textContent(),/提早架盾可減傷/,'BOSS preparation teaches regular block without combat advice overlays');
  await page.evaluate(()=>{showPage('home',true);save()});
  await page.reload({waitUntil:'domcontentloaded'});
  assert.equal(await page.evaluate(()=>s.owned.filter(x=>x===4).length),1,'Reload preserves owned sword without duplication');
