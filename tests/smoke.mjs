@@ -88,6 +88,10 @@ try{
   await page.evaluate(()=>win());
   assert.ok(await page.locator('#results').isVisible(),'Victory results appear');
   assert.match(await page.locator('#resultTitle').textContent(),/勝利/);
+  const resources=await page.locator('#resultDetails .result-resource-summary').textContent();
+  const expectedResources=await page.evaluate(()=>({ap:Math.floor(s.ap),potions:s.potions}));
+  assert.ok(resources.includes('AP '+expectedResources.ap+'/100'),`Victory shows the carried AP at ${width}`);
+  assert.ok(resources.includes('補給 ×'+expectedResources.potions),`Victory shows actual supply inventory at ${width}`);
   await page.evaluate(()=>advance());
   assert.ok(await page.locator('#battleStartGate').isVisible(),'Next wave returns to preparation');
   assert.equal(await page.evaluate(()=>s.round),2,'Wave advances to 2');
