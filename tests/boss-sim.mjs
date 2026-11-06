@@ -22,6 +22,7 @@ try{
    {label:'nonweak',weapons:[2,1,4],shield:7,forges:0},
    {label:'standard-plus2',weapons:[1,4,3],shield:7,forges:2},
    {label:'standard-no-guard',weapons:[1,4,3],shield:7,forges:0,skipGuard:true},
+   {label:'standard-early-guard',weapons:[1,4,3],shield:7,forges:0,earlyGuard:true},
   ];
   function evaluateScenario(zone,policy,seed){
    // Independent deterministic RNG per scenario, including damage rolls and level-up loot.
@@ -66,7 +67,7 @@ try{
     // Aim to interrupt an incoming attack during the last 0.5s.
     const guardSkill=equipmentSkill(policy.shield,s.skillCursor[1]||0);
     if(!policy.skipGuard && guardSkill?.action==='guard' && !enemy.stunned
-       && remaining<=500&&remaining>0
+       && (policy.earlyGuard?(remaining<=950&&remaining>650):(remaining<=500&&remaining>0))
        && skillIntervalRemaining(policy.shield,simulatedNow)===0
        && simulatedNow>=guardCooldown && s.ap>=guardSkill.cost*10){
      const beforeCount=s.guardCount,beforeCursor=s.skillCursor[1];
@@ -131,12 +132,12 @@ try{
  assert.deepEqual(errors,[],'No browser errors during simulated boss fights');
  const lines=[];
  for(let zone=0;zone<3;zone++)
-  for(const loadout of ['starter','standard','nonweak','standard-plus2','standard-no-guard']){
+  for(const loadout of ['starter','standard','nonweak','standard-plus2','standard-no-guard','standard-early-guard']){
    const a=report.filter(x=>x.zone===zone&&x.loadout===loadout);
    const avg=k=>Number((a.reduce((sum,x)=>sum+x[k],0)/a.length).toFixed(1));
    lines.push({zone,loadout,win:a.filter(x=>x.victory).length,trials:a.length,
     avgSeconds:avg('seconds'),avgHeroHp:avg('heroHp'),avgAttacks:avg('attacks'),
-    avgGuard:avg('perfectGuards'),avgHits:avg('enemyHits'),avgEnemyHp:avg('remainingEnemyHp'),phase2:a.filter(x=>x.phaseTwoReached).length});
+    avgGuard:avg('perfectGuards'),avgHits:avg('enemyHits'),avgOrdinaryBlocks:avg('ordinaryBlocks'),avgEnemyHp:avg('remainingEnemyHp'),phase2:a.filter(x=>x.phaseTwoReached).length});
   }
  console.log('BOSS_SIM '+JSON.stringify(lines));
  console.log('PASS '+report.length+' deterministic browser boss scenarios, AP regen/cooldown policy and combat state bounds');
