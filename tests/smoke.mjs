@@ -40,11 +40,19 @@ try{
   await page.goto(base,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>!!document.querySelector('#field') && !!document.querySelector('#titleScreen') && !document.querySelector('#titleScreen').classList.contains('hidden'));
   assert.ok(await page.locator('#titleScreen').isVisible(),`Title screen visible at ${width}`);
+  await page.evaluate(()=>{
+    window.__battlePaints=0;
+    const originalDrawBackground=drawBackground;
+    drawBackground=function(...args){window.__battlePaints++;return originalDrawBackground(...args)};
+  });
+  await page.waitForTimeout(80);
+  assert.equal(await page.evaluate(()=>window.__battlePaints),0,'Hidden battle canvas is not repainted');
   await page.evaluate(()=>{s.tutorialDone=true;showPage('home',true)});
   assert.ok(await page.locator('#home').isVisible(),'Home opens');
   await page.evaluate(()=>showPage('adventure',true));
   assert.equal(await page.locator('.zone-banner').count(),3,'Three adventure zones');
   await page.evaluate(()=>{s.tutorialDone=true;enterArea(0)});
+  await page.waitForFunction(()=>window.__battlePaints>0,{timeout:2000});
   assert.ok(await page.locator('#battleStartGate').isVisible(),'Battle preparation gate');
   assert.equal(await page.locator('#cards .card').count(),4,'Four skill slots');
   assert.equal(await page.locator('#nextQueue .nextcard').count(),4,'Four next skill previews');
