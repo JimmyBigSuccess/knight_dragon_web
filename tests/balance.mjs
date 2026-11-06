@@ -36,7 +36,7 @@ try{
   useEquipmentSkill(1);
   result.perfect={before:beforePerfect,after:{ap:s.ap,guards:s.guardCount,enemyClock,enemyAttackAt,cycle:s.skillCursor[1]}};
   // Normal early block reduces the attack, without becoming a free perfect block.
-  startRound();phase='battle';paused=false;s.ap=60;const guardCost=equipmentSkill(7,0).cost*10;
+  startRound();phase='battle';paused=false;s.ap=60;s.skillCursor[1]=0;const guardCost=equipmentSkill(7,0).cost*10;
   const predicted=Math.ceil(enemy.attack*enemy.intent.mult);
   useEquipmentSkill(1);
   const beforeStrike={hp:s.hp,ap:s.ap,guardUntil,now:performance.now(),predicted};
