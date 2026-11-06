@@ -33,8 +33,8 @@ const base=process.env.GAME_BASE_URL||'http://127.0.0.1:8765/';
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 let checks=0;
 try{
- for(const [width,height] of [[320,640],[390,844],[1280,800]]){
-  const context=await browser.newContext({viewport:{width,height},serviceWorkers:'block'});
+ for(const [width,height] of [[320,640],[360,740],[390,844],[430,932],[1280,800]]){
+  const context=await browser.newContext({viewport:{width,height},serviceWorkers:'block',hasTouch:width<620,isMobile:width<620});
   const page=await context.newPage();const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base,{waitUntil:'domcontentloaded'});
@@ -64,7 +64,13 @@ try{
   }
   await page.evaluate(()=>beginBattleRound());
   assert.equal(await page.evaluate(()=>phase),'battle','Combat begins after confirmation');
-  await page.evaluate(()=>useEquipmentSkill(0));
+  if(width<620){
+    const before=await page.evaluate(()=>({ap:s.ap,cursor:s.skillCursor[0],hp:enemy.hp}));
+    await page.locator('#cards .card').first().tap();
+    const after=await page.evaluate(()=>({ap:s.ap,cursor:s.skillCursor[0],hp:enemy.hp}));
+    assert.ok(after.ap<before.ap,`Touch consumes AP at ${width}`);
+    assert.ok(after.cursor!==before.cursor,`Touch advances the skill cycle at ${width}`);
+  }else await page.evaluate(()=>useEquipmentSkill(0));
   await page.evaluate(()=>win());
   assert.ok(await page.locator('#results').isVisible(),'Victory results appear');
   assert.match(await page.locator('#resultTitle').textContent(),/勝利/);
@@ -87,7 +93,15 @@ try{
   assert.ok(await page.locator('#battleStartGate').isVisible(),'Retry gate visible');
 
   // Boss first-clear unlocks the next chapter and keeps all reward controls usable.
-  await page.evaluate(()=>{s.round=6;startRound();phase='ready';render();beginBattleRound();win();if(guideActive)closeGuide()});
+  await page.evaluate(()=>{s.round=6;startRound();phase='ready';render()});
+  const geo=await page.evaluate(()=>{
+    const box=(sel)=>{const el=document.querySelector(sel),r=el.getBoundingClientRect();return {left:r.left,top:r.top,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};
+    const sc=box('#battle .scene'),hp=box('#battle .enemylabel'),attack=box('#battle .threat');
+    const monster={left:sc.left+sc.width*260/480,right:sc.left+sc.width*445/480,top:sc.top+sc.height*125/380,bottom:sc.top+sc.height*322/380};
+    return {sc,hp,attack,monster};
+  });
+  console.log(`LAYOUT ${width}×${height} ${JSON.stringify(geo)}`);
+  await page.evaluate(()=>{beginBattleRound();win();if(guideActive)closeGuide()});
   assert.ok(await page.locator('#results').isVisible(),'Boss settlement visible');
   assert.ok(await page.locator('#bossClearNotice').isVisible(),'Boss award notice visible');
   assert.ok(await page.evaluate(()=>s.unlockedZone>=1),'Next zone unlocked');
