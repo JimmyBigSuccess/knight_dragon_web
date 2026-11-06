@@ -4625,7 +4625,7 @@ function nextWaveInfo(){
  const nextRound=s.round<6?s.round+1:1;
  const nextZone=s.round<6?s.zone:(s.zone+1)%ZONES.length;
  const area=ZONES[nextZone];
- return {round:nextRound,zone:nextZone,area:area.name,name:area.enemies[nextRound-1],boss:nextRound===6,weak:nextRound===6?'light':area.weak};
+ return {round:nextRound,zone:nextZone,area:area.name,name:area.enemies[nextRound-1],boss:nextRound===6,weak:area.weak};
 }
 function resultPreviewHTML(victory){
  if(!victory)return '<div class="result-preview"><div class="preview-icon">🛡️</div><div><strong>重新整備再挑戰</strong><small>重新挑戰時會先進入準備畫面，點「開始戰鬥」才開始倒數。</small></div></div>';
