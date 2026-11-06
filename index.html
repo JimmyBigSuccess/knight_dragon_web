@@ -4654,7 +4654,7 @@ function win(){if(phase!=='battle'&&phase!=='cinematic')return;phase='won';lastN
 function advance(){if(pendingRoadEvent()){renderRoadEvent();return}if(phase==='lost'){s.hp=s.maxHp;s.ap=100;s.combo=0;startRound();phase='ready';showPage('battle');return}if(phase!=='won')return;if(s.round<6)s.round++;else{s.round=1;s.zone=(s.zone+1)%ZONES.length;s.level++;s.maxHp+=12;s.hp=Math.min(s.maxHp,s.hp+65);s.combo=0;s.ap=100}startRound();phase='ready';enemyClock=0;paused=false;showPage('battle');render();save()}
 function enemyStrike(now){
  const intent=enemy.intent||INTENTS[0],guarded=guardUntil>now;
- let damage=guarded?Math.ceil(enemy.attack*intent.mult*.3):Math.ceil(enemy.attack*intent.mult);
+ let damage=guarded?Math.ceil(enemy.attack*intent.mult*.2):Math.ceil(enemy.attack*intent.mult);
  if(!guarded&&intent.kind==='thorns')damage+=6;s.hp=Math.max(0,s.hp-damage);if(!guarded&&intent.kind==='drain')s.ap=Math.max(0,s.ap-16);if(!guarded&&intent.kind==='crystal')s.ap=Math.max(0,s.ap-22);
  monsterAttackUntil=now+440;monsterAttackKind=intent.kind;heroActionUntil=now+320;heroActionType=guarded?'guard':'hurt';shake=guarded?5:13;flash=330;sparks(170,255,guarded?'#91dafa':'#ff7854',17);
  launchDefenseFx(guarded?'guard':'hurt',intent.kind,now);if(['crystal','thorns','eruption'].includes(intent.kind))launchDefenseFx('boss',intent.kind,now);
