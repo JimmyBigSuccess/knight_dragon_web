@@ -1,4 +1,4 @@
-const CACHE='hero-dragon-v10.6';
+const CACHE='hero-dragon-v10.6.1';
 const FILES=['./','./index.html','./title-art.webp','./home-menu-art.webp','./guild-floral.webp','./menu-buttons.webp','./area-crystal.webp','./area-forest.webp','./area-volcano.webp','./map-pixel.png','./forge-pixel.png','./town-pixel.png','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 self.addEventListener('install', event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate', event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('hero-dragon-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
