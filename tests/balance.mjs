@@ -42,6 +42,19 @@ try{
   const beforeStrike={hp:s.hp,ap:s.ap,guardUntil,now:performance.now(),predicted};
   enemyStrike(performance.now());
   result.regular={before:beforeStrike,after:{hp:s.hp,ap:s.ap,guards:s.guardCount,guardUntil,enemyClock},cost:guardCost};
+  // A shield raised BEFORE the 650ms perfect window must still mitigate at 850ms.
+  startRound();phase='battle';paused=false;s.ap=60;s.skillCursor[1]=0;
+  const earlyNow=performance.now();
+  enemyClock=enemyAttackAt-850;
+  const fullDamage=Math.ceil(enemy.attack*enemy.intent.mult);
+  const initialGuardCount=s.guardCount,initialHeroHp=s.hp;
+  useEquipmentSkill(1);
+  const shieldUntil=guardUntil;
+  enemyStrike(earlyNow+850);
+  result.earlyGuard={
+   duration:shieldUntil-earlyNow,damage:initialHeroHp-s.hp,fullDamage,
+   guardCountDelta:s.guardCount-initialGuardCount
+  };
   // Inspect attack patterns for three chapter bosses and both phases.
   result.bosses=[];
   for(let zone=0;zone<3;zone++){
@@ -74,6 +87,10 @@ try{
  assert.equal(diagnostics.regular.before.ap,60-diagnostics.regular.cost,'Normal guard pays AP cost');
  const loss=diagnostics.regular.before.hp-diagnostics.regular.after.hp;
  assert.ok(loss>0&&loss<diagnostics.regular.before.predicted,`Normal block reduces damage: ${loss}`);
+ assert.equal(diagnostics.earlyGuard.duration,1050,'Early guard protection remains active for 1.05s');
+ assert.ok(diagnostics.earlyGuard.damage>0&&diagnostics.earlyGuard.damage<diagnostics.earlyGuard.fullDamage,
+   `850ms early guard must reduce incoming damage: ${JSON.stringify(diagnostics.earlyGuard)}`);
+ assert.equal(diagnostics.earlyGuard.guardCountDelta,0,'Early guard must not grant perfect-guard rewards');
  for(const b of diagnostics.bosses){
   assert.equal(b.first.weak,b.first.expectedWeak,`Boss ${b.zone+1} should use its chapter elemental weakness`);
   assert.ok(b.first.hp>0&&b.first.attack>0,'Boss health/attack positive');
