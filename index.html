@@ -2813,6 +2813,15 @@ body{
  #shop .shop-product .shop-buy-button{font-size:9px!important;min-height:35px!important}
 }
 
+
+/* v10.7: one-line equipment guidance appears ONLY on the BOSS preparation gate. */
+#battle .battle-start-panel .boss-prep .boss-gear-tip{
+ display:block!important;background:#e5f5e2!important;color:#3a613d!important;
+ border:1px solid #b9d7a9!important;border-radius:8px!important;
+ padding:5px 7px!important;font-size:clamp(10px,2.7vw,12px)!important;
+ font-weight:900!important;line-height:1.35!important;text-shadow:none!important;
+}
+
 </style></head><body><div id="sceneTransition" class="scene-transition hidden" aria-hidden="true"><div class="wipe-panel"></div><div class="wipe-panel mid"></div><div class="wipe-panel late"></div><div id="sceneTransitionLabel" class="scene-transition-label">場景切換</div></div><div class="shell"><header class="heading" id="topHeader"><div><div class="brand">⚔ 勇者與龍</div><div class="sub">非官方／8-bit 冒險致敬原型 v10.6.1</div></div><nav class="nav"><button id="battleTab" class="chosen" onclick="switchTab('battle')">戰鬥</button><button id="gearTab" onclick="switchTab('gear')">裝備</button><button id="helpTab" onclick="switchTab('help')">說明</button></nav></header>
 <section id="titleScreen" class="frontscreen hero-cover">
  <div class="hero-cover-art"><img src="title-art.webp" alt="8-bit 像素風封面：左下方金髮皮裝勇者拔劍面對右上方威猛的巨龍，背景是赤月與魔城" decoding="async"></div>
@@ -3356,8 +3365,19 @@ function render(){let z=ZONES[s.zone%ZONES.length];
  $('battleStartGate').classList.toggle('boss-ready',ready&&s.round===6);
  if(ready){
   if(s.round===6){
+   const hasEquippedWeak=s.equipped.some(id=>id!==null&&ARSENAL[id]?.type===enemy.weak);
+   const ownsWeak=s.owned.some(id=>ARSENAL[id]?.type===enemy.weak);
+   const preparation=hasEquippedWeak
+    ?'✓ 已裝備弱點屬性。提早架盾可減傷，最後 0.65 秒可精準格擋。'
+    :ownsWeak
+     ?'⚔ 已持有弱點武器。可回主城「裝備」頁配置後再挑戰。'
+     :s.zone===1
+      ?'🔥 森林 BOSS 弱火：可在商店以 120 G 購買火焰劍。'
+      :s.zone===2
+       ?'❄ 火山 BOSS 弱水：累積 10 場勝利可在拓荒手札領取戰斧。'
+       :'✦ 洞窟 BOSS 弱光：訓練木劍與長槍均有屬性優勢。';
    $('battleStartTitle').textContent='🐉 BOSS 戰 · '+enemy.name;
-   $('battleStartInfo').innerHTML=`<div class="boss-prep"><span><b>區域</b> ${ZONES[s.zone].name}　·　第 6/6 波</span><span><b>弱點</b> ${TYPES[enemy.weak].symbol}　·　<b>生命</b> ${enemy.maxHp} HP</span><span>⚠ 生命降至一半時，巨龍將進入第二階段。</span><span>建議先確認 AP、裝備技能與盾牌防禦時機。</span></div>準備完成後，再點選開始戰鬥。`;
+   $('battleStartInfo').innerHTML=`<div class="boss-prep"><span><b>區域</b> ${ZONES[s.zone].name}　·　第 6/6 波</span><span><b>弱點</b> ${TYPES[enemy.weak].symbol}　·　<b>生命</b> ${enemy.maxHp} HP</span><span>⚠ 生命降至一半時，巨龍將進入第二階段。</span><span class="boss-gear-tip">${preparation}</span></div>準備完成後，再點選開始戰鬥。`;
   }else{
    $('battleStartTitle').textContent=ZONES[s.zone].name+' · 第 '+s.round+' 波';
    $('battleStartInfo').textContent='對手：'+enemy.name+'　｜　弱點 '+TYPES[enemy.weak].symbol+'。敵人尚未行動，準備好再點擊「開始戰鬥」。';
