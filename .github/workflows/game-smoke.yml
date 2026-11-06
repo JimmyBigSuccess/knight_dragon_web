@@ -1,0 +1,35 @@
+name: Game smoke tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'sw.js'
+      - 'tests/**'
+      - '.github/workflows/game-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static JavaScript and markup checks
+        run: node tests/smoke.mjs
+      - name: Install Chromium test runtime
+        run: |
+          npm install --no-save playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Browser smoke tests (phone and desktop)
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/dragon-server.log 2>&1 &
+          sleep 2
+          node tests/smoke.mjs --browser
