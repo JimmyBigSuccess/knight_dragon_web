@@ -17,7 +17,7 @@ try{
   Object.defineProperty(performance,'now',{configurable:true,value:()=>simulatedNow});
   const originalRandom=Math.random;
   const policies=[
-   {label:'starter',weapons:[6],shield:7,forges:0},
+   {label:'starter',weapons:[6,6,6],shield:7,forges:0},
    {label:'standard',weapons:[0,4,3],shield:7,forges:0},
    {label:'nonweak',weapons:[2,1,4],shield:7,forges:0},
    {label:'standard-plus2',weapons:[0,4,3],shield:7,forges:2},
@@ -38,8 +38,7 @@ try{
    s.forgeLevels=Array(ARSENAL.length).fill(0);
    s.forgeLevels[weaponId]=policy.forges;
    s.skillCursor=[0,0,0,0];s.weapon=0;
-   showPage('battle',true);
-   startRound();phase='ready';render();beginBattleRound();
+   startRound();phase='ready';showPage('battle',true);beginBattleRound();
    const startHp=s.hp,initialEnemyHp=enemy.maxHp,wasWeak=ARSENAL[weaponId].type===enemy.weak;
    let ticks=0,usedWeapon=0,usedGuard=0,usedBash=0,strikes=0,avoided=0,normalBlocks=0,spentPotions=0,damageDealt=0;
    const tickMs=100,limitMs=120000;
