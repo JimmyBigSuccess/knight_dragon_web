@@ -49,10 +49,11 @@ try{
   const fullDamage=Math.ceil(enemy.attack*enemy.intent.mult);
   const initialGuardCount=s.guardCount,initialHeroHp=s.hp;
   useEquipmentSkill(1);
-  const shieldUntil=guardUntil;
+  const shieldUntil=guardUntil,apAfterGuardCost=s.ap;
   enemyStrike(earlyNow+850);
   result.earlyGuard={
    duration:shieldUntil-earlyNow,damage:initialHeroHp-s.hp,fullDamage,
+   apFromBlock:s.ap-apAfterGuardCost,
    guardCountDelta:s.guardCount-initialGuardCount
   };
   // Inspect attack patterns for three chapter bosses and both phases.
@@ -91,6 +92,7 @@ try{
  assert.ok(diagnostics.earlyGuard.damage>0&&diagnostics.earlyGuard.damage<diagnostics.earlyGuard.fullDamage,
    `850ms early guard must reduce incoming damage: ${JSON.stringify(diagnostics.earlyGuard)}`);
  assert.equal(diagnostics.earlyGuard.guardCountDelta,0,'Early guard must not grant perfect-guard rewards');
+ assert.equal(diagnostics.earlyGuard.apFromBlock,12,'Successful ordinary block restores 12 AP without perfect guard');
  for(const b of diagnostics.bosses){
   assert.equal(b.first.weak,b.first.expectedWeak,`Boss ${b.zone+1} should use its chapter elemental weakness`);
   assert.ok(b.first.hp>0&&b.first.attack>0,'Boss health/attack positive');
