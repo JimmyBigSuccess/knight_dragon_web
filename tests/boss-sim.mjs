@@ -129,6 +129,15 @@ try{
   assert.ok(['won','lost','battle'].includes(row.phase),'Known combat phase');
   assert.ok(row.potionsSpent===0,'Baseline policies do not magically consume supplies');
  }
+ assert.ok(report.every(r=>r.phaseTwoReached),'Every test should reach BOSS second phase');
+ for(let zone=0;zone<3;zone++){
+  for(const style of ['standard','standard-early-guard']){
+   const group=report.filter(r=>r.zone===zone&&r.loadout===style);
+   assert.equal(group.length,8,'Eight fixed trials per BOSS strategy');
+   assert.ok(group.filter(r=>r.victory).length>=6,
+    `Prepared loadout should be viable against zone ${zone} with ${style} policy`);
+  }
+ }
  assert.deepEqual(errors,[],'No browser errors during simulated boss fights');
  const lines=[];
  for(let zone=0;zone<3;zone++)
