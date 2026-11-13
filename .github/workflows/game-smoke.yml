@@ -37,3 +37,4 @@ jobs:
           node tests/progression.mjs
           node tests/boss-sim.mjs
           node tests/six-waves.mjs
+          node tests/timing-ui.mjs
