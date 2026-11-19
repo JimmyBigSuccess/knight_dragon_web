@@ -31,28 +31,40 @@ if(!process.argv.includes('--browser'))process.exit(0);
 const {chromium}=await import('playwright');
 const base=process.env.GAME_BASE_URL||'http://127.0.0.1:8765/';
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+const frameStats=page=>page.evaluate(()=>new Promise(resolve=>{
+ requestAnimationFrame(()=>requestAnimationFrame(()=>resolve({...window.__battleFrames})));
+}));
 let checks=0;
 try{
  for(const [width,height] of [[320,640],[360,740],[390,844],[430,932],[1280,800]]){
   const context=await browser.newContext({viewport:{width,height},serviceWorkers:'block',hasTouch:width<620,isMobile:width<620});
   const page=await context.newPage();const errors=[];
   page.on('pageerror',e=>errors.push(e.message));
+  await page.addInitScript(()=>{
+   window.__battleFrames={requests:0,paints:0};
+   const nativeRequest=window.requestAnimationFrame.bind(window);
+   window.requestAnimationFrame=callback=>{
+    if(callback===window.draw)window.__battleFrames.requests++;
+    return nativeRequest(callback);
+   };
+  });
   await page.goto(base,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>!!document.querySelector('#field') && !!document.querySelector('#titleScreen') && !document.querySelector('#titleScreen').classList.contains('hidden'));
   assert.ok(await page.locator('#titleScreen').isVisible(),`Title screen visible at ${width}`);
   await page.evaluate(()=>{
-    window.__battlePaints=0;
     const originalDrawBackground=drawBackground;
-    drawBackground=function(...args){window.__battlePaints++;return originalDrawBackground(...args)};
+    drawBackground=function(...args){window.__battleFrames.paints++;return originalDrawBackground(...args)};
   });
-  await page.waitForTimeout(80);
-  assert.equal(await page.evaluate(()=>window.__battlePaints),0,'Hidden battle canvas is not repainted');
+  const idleFrames={requests:0,paints:0};
+  assert.deepEqual(await frameStats(page),idleFrames,'The title does not schedule or draw battle frames');
   await page.evaluate(()=>{s.tutorialDone=true;showPage('home',true)});
   assert.ok(await page.locator('#home').isVisible(),'Home opens');
+  assert.deepEqual(await frameStats(page),idleFrames,'Home does not schedule or draw battle frames');
   await page.evaluate(()=>showPage('adventure',true));
   assert.equal(await page.locator('.zone-banner').count(),3,'Three adventure zones');
   await page.evaluate(()=>{s.tutorialDone=true;enterArea(0)});
-  await page.waitForFunction(()=>window.__battlePaints>0,{timeout:2000});
+  const readyFrames=await frameStats(page);
+  assert.ok(readyFrames.requests>0&&readyFrames.paints>0,'Entering battle starts rendering');
   assert.ok(await page.locator('#battleStartGate').isVisible(),'Battle preparation gate');
   assert.equal(await page.locator('#cards .card').count(),4,'Four skill slots');
   assert.equal(await page.locator('#nextQueue .nextcard').count(),4,'Four next skill previews');
@@ -72,11 +84,37 @@ try{
   }
   await page.evaluate(()=>beginBattleRound());
   assert.equal(await page.evaluate(()=>phase),'battle','Combat begins after confirmation');
+  if(width===1280){
+   const hidden=await page.evaluate(()=>{
+    Object.defineProperty(document,'hidden',{configurable:true,value:true});
+    document.dispatchEvent(new Event('visibilitychange'));
+    return {frames:{...window.__battleFrames},clock:enemyClock};
+   });
+   assert.deepEqual(await frameStats(page),hidden.frames,'A hidden document stops battle frame requests and painting');
+   assert.ok(await page.locator('#battlePauseGate').isVisible(),'Hiding active battle opens the pause gate');
+   await page.evaluate(()=>{
+    delete document.hidden;
+    document.dispatchEvent(new Event('visibilitychange'));
+   });
+   assert.deepEqual(await frameStats(page),hidden.frames,'Returning to a paused battle does not restart battle rendering');
+   assert.equal(await page.evaluate(()=>enemyClock),hidden.clock,'Returning keeps the enemy clock paused');
+   await page.locator('#resumeBattleBtn').focus();
+   await page.keyboard.press('Enter');
+   assert.equal(await page.evaluate(()=>document.activeElement.id),'pauseBtn','Resuming returns focus to pause control');
+   const resumed=await frameStats(page);
+   assert.ok(resumed.requests>hidden.frames.requests&&resumed.paints>hidden.frames.paints,'Resuming restarts battle rendering');
+   await page.evaluate(()=>{s.ap=99.99;render();apUiLast=performance.now()});
+   await page.waitForFunction(()=>s.ap===100);
+   assert.equal(await page.locator('#apVal').textContent(),'100 / 100','Regenerating to full immediately updates displayed AP');
+   assert.equal(await page.getByRole('progressbar',{name:'行動力'}).getAttribute('aria-valuenow'),'100','Regenerating to full also updates accessible AP');
+  }
   if(width<620){
     const cardRect=await page.locator('#cards .card').first().boundingBox();
     assert.ok(cardRect.width>=44 && cardRect.height>=44,`Touch target at least 44×44 at ${width}: ${JSON.stringify(cardRect)}`);
     await page.locator('#pauseBtn').tap();
     assert.ok(await page.locator('#battlePauseGate').isVisible(),`Pause accessible on ${width}`);
+    const pausedFrames=await page.evaluate(()=>({...window.__battleFrames}));
+    assert.deepEqual(await frameStats(page),pausedFrames,'The battle pause dialog stops frame requests and painting');
     await page.locator('#resumeBattleBtn').tap();
     assert.equal(await page.evaluate(()=>paused),false,'Resume returns to battle');
     const before=await page.evaluate(()=>({ap:s.ap,cursor:s.skillCursor[0],hp:enemy.hp}));
@@ -84,9 +122,24 @@ try{
     const after=await page.evaluate(()=>({ap:s.ap,cursor:s.skillCursor[0],hp:enemy.hp}));
     assert.ok(after.ap<before.ap,`Touch consumes AP at ${width}`);
     assert.ok(after.cursor!==before.cursor,`Touch advances the skill cycle at ${width}`);
-  }else await page.evaluate(()=>useEquipmentSkill(0));
-  await page.evaluate(()=>win());
+  }else{
+   const card=page.locator('#cards .card').first();
+   await card.focus();
+   const initialCursor=await page.evaluate(()=>s.skillCursor[0]);
+   await page.keyboard.press('Enter');
+   const cursorAfterEnter=await page.evaluate(()=>s.skillCursor[0]);
+   assert.notEqual(cursorAfterEnter,initialCursor,'Enter casts a skill and advances its rotation');
+   assert.equal(await card.evaluate(node=>node===document.activeElement),true,'Casting keeps the card focused through cooldown');
+   assert.equal(await card.getAttribute('aria-disabled'),'true','Cooldown is announced while the card has focus');
+   await page.keyboard.press('Enter');
+   assert.equal(await page.evaluate(()=>s.skillCursor[0]),cursorAfterEnter,'A key press on cooldown cannot cast again');
+   await page.waitForFunction(()=>document.activeElement.getAttribute('aria-disabled')==='false');
+   await page.keyboard.press('Space');
+   assert.equal(await page.evaluate(()=>s.skillCursor[0]),initialCursor,'Space casts the next skill once it is ready');
+  }
+  const resultFrames=await page.evaluate(()=>{win();return {...window.__battleFrames}});
   assert.ok(await page.locator('#results').isVisible(),'Victory results appear');
+  assert.deepEqual(await frameStats(page),resultFrames,'Results stop battle frame requests and painting');
   assert.match(await page.locator('#resultTitle').textContent(),/勝利/);
   const resources=await page.locator('#resultDetails .result-resource-summary').textContent();
   const expectedResources=await page.evaluate(()=>({ap:Math.floor(s.ap),potions:s.potions}));
@@ -94,6 +147,8 @@ try{
   assert.ok(resources.includes('補給 ×'+expectedResources.potions),`Victory shows actual supply inventory at ${width}`);
   await page.evaluate(()=>advance());
   assert.ok(await page.locator('#battleStartGate').isVisible(),'Next wave returns to preparation');
+  const nextWaveFrames=await frameStats(page);
+  assert.ok(nextWaveFrames.requests>resultFrames.requests&&nextWaveFrames.paints>resultFrames.paints,'The next wave restarts battle rendering');
   assert.equal(await page.evaluate(()=>s.round),2,'Wave advances to 2');
   await page.evaluate(()=>{showPage('settings',true);exportSave()});
   const saved=await page.locator('#saveTransfer').inputValue();
