@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#172c29">
+<meta name="description" content="圍棋入門學習與 AI 對弈：即時提示、落子分析、棋局復盤。">
+<title>棋友 Go｜圍棋學習與 AI 對弈</title>
+<style>
+:root{--ink:#20312c;--muted:#718078;--paper:#f5f3eb;--panel:#fffefa;--green:#24483d;--green2:#356858;--gold:#d5a94f;--line:#e5e2d7;--shadow:0 12px 34px #23382b12}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Noto Sans TC",sans-serif}
+button,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:10px 14px;background:#edf0e9;color:var(--ink);font-weight:650}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:var(--green);color:white}.subtle{background:transparent;border:1px solid var(--line)}.app{max-width:1180px;margin:auto;padding:22px 20px 44px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:14px;background:var(--green);display:grid;place-items:center;color:#f5d88f;font-size:23px}.brand h1{font-size:20px;margin:0;letter-spacing:.04em}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.topnote{font-size:12px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:18px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.board-panel{padding:18px}.board-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.board-head h2{font-size:16px;margin:0}.meta{font-size:12px;color:var(--muted)}.board-wrap{background:#dfb96f;border-radius:14px;padding:clamp(8px,2vw,18px);max-width:690px;margin:auto;box-shadow:inset 0 0 0 1px #9d753c44}
+canvas{display:block;width:100%;height:auto;touch-action:manipulation;cursor:pointer;border-radius:5px}
+.board-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}.turn{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}.stone{width:13px;height:13px;border-radius:50%;display:inline-block;background:#202522;box-shadow:inset -2px -2px 3px #0006}.stone.white{background:#fff;border:1px solid #aaa;box-shadow:inset -2px -2px 3px #0002}
+.side{display:grid;gap:14px}.side .panel{padding:17px}.section-title{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px;font-size:15px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}.field label{display:block;font-size:11px;color:var(--muted);margin-bottom:5px}.field select{width:100%;border:1px solid var(--line);background:white;border-radius:10px;padding:10px;color:var(--ink)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.actions button{flex:1;min-width:90px}.hint{background:#f2f4ed;border:1px solid #e3e9dd;border-radius:14px;padding:13px}.hint strong{font-size:13px}.hint p{font-size:13px;line-height:1.65;margin:7px 0 0;color:#53635a}.hint .coord{color:var(--green);font-weight:800}.hint.good{background:#edf5ed}.hint.warn{background:#fbf3e5;border-color:#eee0c1}.hint.bad{background:#f8eeee;border-color:#eedada}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#f7f6f0;border-radius:12px;padding:10px}.stat span{display:block;color:var(--muted);font-size:11px}.stat b{display:block;font-size:18px;margin-top:3px}
+.moves{max-height:190px;overflow:auto;font-size:12px}.move-row{display:flex;justify-content:space-between;padding:7px 2px;border-bottom:1px solid #efede5}.move-row:last-child{border:0}.move-row em{font-style:normal;color:var(--muted)}
+.tabs{display:flex;gap:6px;margin-bottom:12px}.tabs button{font-size:12px;padding:8px 11px}.tabs button.active{background:var(--green);color:white}
+.lesson{font-size:13px;line-height:1.75;color:#526158}.lesson b{color:var(--ink)}.lesson ul{padding-left:19px;margin:7px 0}
+footer{text-align:center;color:#879188;font-size:11px;margin-top:20px;line-height:1.7}
+@media(max-width:800px){.app{padding:14px 12px 32px}.layout{grid-template-columns:1fr}.board-panel{padding:12px}.side{grid-template-columns:1fr}.topnote{display:none}}
+@media(min-width:801px){.side{position:sticky;top:14px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">棋</div><div><h1>棋友 Go</h1><p>把每一步，走成進步</p></div></div><div class="topnote">圍棋入門・人機對弈・逐手學習</div></header>
+<main class="layout">
+<section class="panel board-panel">
+ <div class="board-head"><div><h2>對弈棋盤</h2><div class="meta" id="boardMeta">9 路棋盤・你執黑先行</div></div><div class="turn" id="turnLabel"><i class="stone"></i> 輪到你</div></div>
+ <div class="board-wrap"><canvas id="board" width="720" height="720" aria-label="圍棋棋盤"></canvas></div>
+ <div class="board-footer"><span class="meta" id="captured">提子：你 0／電腦 0</span><span class="meta" id="moveCount">第 0 手</span></div>
+ <div class="actions"><button id="undoBtn" class="subtle">↶ 悔棋</button><button id="passBtn" class="subtle">停一手</button><button id="newBtn" class="primary">重新開局</button></div>
+</section>
+<aside class="side">
+ <section class="panel">
+  <h3 class="section-title">對弈設定 <span class="meta">可隨時重新開局</span></h3>
+  <div class="controls">
+   <div class="field"><label for="size">棋盤大小</label><select id="size"><option value="9">9 路（初學推薦）</option><option value="13">13 路</option><option value="19">19 路（標準）</option></select></div>
+   <div class="field"><label for="level">電腦程度</label><select id="level"><option value="1">入門陪練</option><option value="2" selected>初級挑戰</option><option value="3">進階挑戰</option></select></div>
+  </div>
+  <div class="meta" style="margin-top:9px">電腦採用本機策略評分，不需登入或連線。</div>
+ </section>
+ <section class="panel">
+  <h3 class="section-title">落子建議 <span class="meta" id="hintState">等待選點</span></h3>
+  <div class="hint" id="hintBox"><strong>先想一想，再落子</strong><p>點擊棋盤上的交叉點，可查看該位置的初步建議；也可以按「推薦位置」查看電腦建議。</p></div>
+  <div class="actions"><button id="suggestBtn" class="primary">✦ 推薦位置</button><button id="clearHintBtn" class="subtle">清除標記</button></div>
+ </section>
+ <section class="panel">
+  <h3 class="section-title">本局概況</h3>
+  <div class="stats"><div class="stat"><span>手數</span><b id="statMoves">0</b></div><div class="stat"><span>你的提子</span><b id="statCaptures">0</b></div><div class="stat"><span>連續停一手</span><b id="statPass">0</b></div></div>
+ </section>
+ <section class="panel">
+  <div class="tabs"><button class="active" data-tab="history">棋譜</button><button data-tab="lesson">學習小抄</button></div>
+  <div id="historyTab"><div class="moves" id="moveList"><div class="meta">棋局開始後會列出每一步。</div></div></div>
+  <div id="lessonTab" class="lesson" hidden><b>新手先掌握這五件事：</b><ul><li><b>氣：</b>棋子上下左右相鄰的空交叉點。</li><li><b>打吃：</b>一塊棋只剩一口氣，下一手可能被提走。</li><li><b>連接：</b>讓棋子互相支援，增加整塊棋的安全。</li><li><b>做眼：</b>在棋塊內形成眼位，避免整塊被提。</li><li><b>佔角：</b>角部較容易圍出地，開局常先考慮角與邊。</li></ul><b>小提醒：</b>圍棋不是吃子最多就一定贏，棋盤上的地與棋子的生存都很重要。</div>
+ </section>
+</aside>
+</main>
+<footer>棋友 Go・第一版教學引擎<br>目前建議以入門棋形與局部戰術為主；非職業棋力分析，勝負與目數採簡化估算。</footer>
+</div>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id), canvas=$('board'),ctx=canvas.getContext('2d');
+let N=9, board=[], history=[], snapshots=[], captures=[0,0], turn=1, passes=0, ended=false, hintMove=null, selected=null, lastMove=null;
+const dirs=[[1,0],[-1,0],[0,1],[0,-1]];
+const clone=b=>b.map(r=>r.slice());
+function fresh(){N=+$('size').value;board=Array.from({length:N},()=>Array(N).fill(0));history=[];snapshots=[];captures=[0,0];turn=1;passes=0;ended=false;hintMove=null;selected=null;lastMove=null;render();say('先想一想，再落子','點擊棋盤交叉點查看建議，或按「推薦位置」讓電腦示範。','');}
+function inside(x,y){return x>=0&&y>=0&&x<N&&y<N}
+function groupAt(b,x,y){let c=b[y][x];if(!c)return {stones:[],liberties:new Set()};let stack=[[x,y]],seen=new Set([y*N+x]),stones=[],libs=new Set();while(stack.length){let [a,d]=stack.pop();stones.push([a,d]);for(let [dx,dy] of dirs){let nx=a+dx,ny=d+dy;if(!inside(nx,ny))continue;let v=b[ny][nx],k=ny*N+nx;if(v===0)libs.add(k);else if(v===c&&!seen.has(k)){seen.add(k);stack.push([nx,ny]);}}}return {stones,liberties:libs};}
+function playOn(b,x,y,color,previous){if(!inside(x,y)||b[y][x]!==0)return null;let next=clone(b);next[y][x]=color;let taken=0;for(let [dx,dy] of dirs){let nx=x+dx,ny=y+dy;if(inside(nx,ny)&&next[ny][nx]===-color){let g=groupAt(next,nx,ny);if(g.liberties.size===0){for(let [a,d] of g.stones)next[d][a]=0;taken+=g.stones.length;}}}let own=groupAt(next,x,y);if(own.liberties.size===0)return null;if(previous&&sameBoard(next,previous))return null;return {board:next,captured:taken};}
+function sameBoard(a,b){return a.length===b.length&&a.every((r,y)=>r.every((v,x)=>v===b[y][x]));}
+function coord(x,y){return String.fromCharCode(65+x+(x>=8?1:0))+(N-y)}
+function legalMoves(b,color,prev){let out=[];for(let y=0;y<N;y++)for(let x=0;x<N;x++){let p=playOn(b,x,y,color,prev);if(p)out.push({x,y,...p});}return out;}
+function evaluateMove(b,m,color,level){let g=groupAt(m.board,m.x,m.y),score=0;score+=m.captured* (level===1?8:13);score+=Math.min(g.liberties.size,5)*1.8;
+let adjacentOwn=0,adjacentEnemy=0,empty=0,atariThreat=0,connect=0;
+for(let [dx,dy] of dirs){let x=m.x+dx,y=m.y+dy;if(!inside(x,y))continue;let v=m.board[y][x];if(v===color)adjacentOwn++;else if(v===-color){adjacentEnemy++;let eg=groupAt(m.board,x,y);if(eg.liberties.size===1)atariThreat+=4;}else empty++;}
+score+=adjacentOwn*1.6+adjacentEnemy*1.1+atariThreat;
+if(g.liberties.size===1)score-=level===1?2:11;
+if(g.liberties.size===2)score-=3;
+if(adjacentOwn===0&&adjacentEnemy===0)score+=1;
+let edge=Math.min(m.x,m.y,N-1-m.x,N-1-m.y);
+score+= edge===0?1.5:edge===1?2.4:edge===2?1.4:0;
+let center=(N-1)/2,dist=Math.abs(m.x-center)+Math.abs(m.y-center);
+score+=Math.max(0,(N/2-dist))*0.22;
+let near=0;for(let yy=Math.max(0,m.y-2);yy<=Math.min(N-1,m.y+2);yy++)for(let xx=Math.max(0,m.x-2);xx<=Math.min(N-1,m.x+2);xx++)if(m.board[yy][xx]===color)near++;
+score+=Math.min(near,5)*.45;
+if(adjacentEnemy&&g.liberties.size<=2)score-=4;
+return score;}
+function ranked(b,color,prev,level){return legalMoves(b,color,prev).map(m=>({...m,score:evaluateMove(b,m,color,level)})).sort((a,b)=>b.score-a.score);}
+function chooseAI(){let level=+$('level').value,rank=ranked(board,-1,history.length>1?snapshots[snapshots.length-2]:null,level);if(!rank.length)return null;let pool=level===1?rank.slice(0,Math.min(9,rank.length)):level===2?rank.slice(0,Math.min(4,rank.length)):rank.slice(0,Math.min(2,rank.length));pool.sort((a,b)=>b.score-a.score);let pick=level===1?pool[Math.floor(Math.random()*pool.length)]:level===2&&Math.random()<.24?pool[Math.floor(Math.random()*pool.length)]:pool[0];return pick;}
+function explain(m,color){let g=groupAt(m.board,m.x,m.y);if(m.captured)return '這一步提掉對方 '+m.captured+' 子，直接減少對方棋子的活動空間。';if(g.liberties===1)return '這塊棋只剩一口氣，容易被對方打吃；要留意安全。';if(g.liberties.size>=4)return '落子後有 '+g.liberties.size+' 口氣，棋形相對有彈性。';let own=0,enemy=0;for(let [dx,dy] of dirs){let x=m.x+dx,y=m.y+dy;if(inside(x,y)){if(m.board[y][x]===color)own++;if(m.board[y][x]===-color)enemy++;}}if(own)return '這一步靠近己方棋子，有助於連接與互相支援。';if(enemy)return '這一步靠近對方棋子，可能形成接觸戰；先確認自己的氣是否充足。';let edge=Math.min(m.x,m.y,N-1-m.x,N-1-m.y);return edge<=1?'這一步靠近邊角，較容易發展出地盤。':'這一步佔據較開闊的位置，有助於向外發展。';}
+function grade(m,color){let g=groupAt(m.board,m.x,m.y);if(m.captured>0)return ['good','好棋！','成功提子，這是明確的局部收穫。'];if(g.liberties.size===1)return ['bad','需要小心','落子後只剩一口氣，對方可能立即打吃。'];if(g.liberties.size===2)return ['warn','略有風險','棋塊氣數不多，請留意對手的攻擊。'];return ['good','不錯的一手','目前棋塊有一定活動空間。再觀察全盤是否有更急迫的地方。'];}
+function say(title,body,kind,coordText=''){let box=$('hintBox');box.className='hint '+(kind||'');box.innerHTML='<strong>'+title+'</strong><p>'+(coordText?'<span class="coord">'+coordText+'・</span>':'')+body+'</p>';$('hintState').textContent=title;}
+function render(){let W=720,pad=44,step=(W-2*pad)/(N-1);ctx.clearRect(0,0,W,W);ctx.fillStyle='#dfb96f';ctx.fillRect(0,0,W,W);ctx.strokeStyle='#6c512d';ctx.lineWidth=1.5;for(let i=0;i<N;i++){let p=pad+i*step;ctx.beginPath();ctx.moveTo(pad,p);ctx.lineTo(W-pad,p);ctx.stroke();ctx.beginPath();ctx.moveTo(p,pad);ctx.lineTo(p,W-pad);ctx.stroke();}
+let stars=N===9?[2,4,6]:N===13?[3,6,9]:[3,9,15];ctx.fillStyle='#72542e';for(let x of stars)for(let y of stars){ctx.beginPath();ctx.arc(pad+x*step,pad+y*step,3.5,0,Math.PI*2);ctx.fill();}
+for(let y=0;y<N;y++)for(let x=0;x<N;x++){let v=board[y][x];if(!v)continue;let px=pad+x*step,py=pad+y*step;ctx.beginPath();ctx.arc(px+1,py+2,step*.39,0,Math.PI*2);ctx.fillStyle='#0003';ctx.fill();ctx.beginPath();ctx.arc(px,py,step*.37,0,Math.PI*2);let grad=ctx.createRadialGradient(px-step*.12,py-step*.15,step*.03,px,py,step*.38);if(v===1){grad.addColorStop(0,'#555');grad.addColorStop(1,'#111');}else{grad.addColorStop(0,'#fff');grad.addColorStop(1,'#d9d9d9');}ctx.fillStyle=grad;ctx.fill();ctx.strokeStyle=v===1?'#111':'#aaa';ctx.lineWidth=1;ctx.stroke();}
+if(lastMove){let px=pad+lastMove.x*step,py=pad+lastMove.y*step;ctx.strokeStyle=board[lastMove.y][lastMove.x]===1?'#f2d27d':'#9c4b37';ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(px,py,step*.16,0,Math.PI*2);ctx.stroke();}
+if(hintMove){let px=pad+hintMove.x*step,py=pad+hintMove.y*step;ctx.strokeStyle='#277e62';ctx.lineWidth=3;ctx.setLineDash([5,4]);ctx.beginPath();ctx.arc(px,py,step*.46,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#277e62';ctx.font='bold '+Math.max(12,step*.25)+'px sans-serif';ctx.textAlign='center';ctx.fillText('建議',px,py-step*.53);}
+if(selected){let px=pad+selected.x*step,py=pad+selected.y*step;ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(px,py,step*.46,0,Math.PI*2);ctx.stroke();}
+$('boardMeta').textContent=N+' 路棋盤・你執黑先行';$('turnLabel').innerHTML=ended?'本局結束':turn===1?'<i class="stone"></i> 輪到你':'<i class="stone white"></i> 電腦思考中';$('captured').textContent='提子：你 '+captures[0]+'／電腦 '+captures[1];$('moveCount').textContent='第 '+history.length+' 手';$('statMoves').textContent=history.length;$('statCaptures').textContent=captures[0];$('statPass').textContent=passes;$('undoBtn').disabled=history.length===0;}
+function recordMove(x,y,color,result){snapshots.push(clone(board));board=result.board;captures[color===1?0:1]+=result.captured;history.push({x,y,color,captured:result.captured});lastMove={x,y};hintMove=null;selected=null;turn=-color;passes=0;updateMoves();render();if(result.captured) say('成功提子','這一步提掉 '+result.captured+' 子。'+explain({board,x,y,captured:result.captured},color),'good',coord(x,y));else{let [kind,title,body]=grade({board,x,y,captured:0},color);say(color===1?title:'電腦落子',color===1?body:explain({board,x,y,captured:0},color),kind,coord(x,y));}}
+function userMove(x,y){if(turn!==1||ended)return;let prev=history.length?snapshots[snapshots.length-1]:null,res=playOn(board,x,y,1,prev);if(!res){say('這裡目前不能下','可能是該點已有棋子、形成自殺著，或違反簡化的劫規則。','warn',coord(x,y));return;}recordMove(x,y,1,res);if(!ended)setTimeout(aiTurn,260);}
+function aiTurn(){if(turn!==-1||ended)return;let m=chooseAI();if(!m){pass(-1);return;}recordMove(m.x,m.y,-1,{board:m.board,captured:m.captured});if(history.length>=N*N-1){say('棋局接近結束','棋盤已非常擁擠，可以考慮停一手並進行簡易數子。','warn');}}
+function pass(color=turn){if(ended)return;if(color!==turn)return;snapshots.push(clone(board));history.push({pass:true,color});passes++;turn=-turn;lastMove=null;hintMove=null;updateMoves();render();if(passes>=2){ended=true;let score=estimate();say('雙方連續停一手','簡易估算：黑方 '+score.black+'、白方 '+score.white+'（含貼目估算）。可按重新開局再練習。','good');$('turnLabel').textContent='本局結束';return;}if(turn===-1)setTimeout(aiTurn,260);else say('輪到你','雙方都可以停一手；連續停一手代表棋局結束。','');}
+function estimate(){let terr=[0,0];let seen=new Set();for(let y=0;y<N;y++)for(let x=0;x<N;x++){if(board[y][x]!==0||seen.has(y*N+x))continue;let stack=[[x,y]],area=[],border=new Set();seen.add(y*N+x);while(stack.length){let [a,b]=stack.pop();area.push([a,b]);for(let [dx,dy] of dirs){let nx=a+dx,ny=b+dy;if(!inside(nx,ny))continue;let v=board[ny][nx],k=ny*N+nx;if(v===0&&!seen.has(k)){seen.add(k);stack.push([nx,ny]);}else if(v!==0)border.add(v);}}if(border.size===1)terr[[...border][0]===1?0:1]+=area.length;}let black=terr[0]+captures[0],white=terr[1]+captures[1]+(N===19?6.5:5.5);return {black:black.toFixed(1),white:white.toFixed(1)};}
+function updateMoves(){$('moveList').innerHTML=history.length?history.map((m,i)=>'<div class="move-row"><span>'+(i+1)+'. '+(m.color===1?'黑':'白')+' '+(m.pass?'停一手':coord(m.x,m.y))+(m.captured?'（提 '+m.captured+'）':'')+'</span><em>'+(m.color===1?'你':'電腦')+'</em></div>').join(''):'<div class="meta">棋局開始後會列出每一步。</div>';$('moveList').scrollTop=$('moveList').scrollHeight;}
+function undo(){if(!history.length)return;let n=history[history.length-1].color===-1?2:1;while(n--&&history.length){let m=history.pop();board=snapshots.pop();if(!m.pass&&m.captured)captures[m.color===1?0:1]-=m.captured;}turn=1;passes=history.slice().reverse().findIndex(m=>!m.pass);if(passes<0)passes=0;else passes=0;ended=false;lastMove=history.length&&!history[history.length-1].pass?{x:history[history.length-1].x,y:history[history.length-1].y}:null;hintMove=null;updateMoves();render();say('已悔棋','回到你可以重新思考的局面。','');}
+function suggest(){if(ended||turn!==1)return;let rank=ranked(board,1,history.length?snapshots[snapshots.length-1]:null,+$('level').value);if(!rank.length){say('目前沒有合法落點','可以考慮停一手。','warn');return;}let m=rank[0];hintMove={x:m.x,y:m.y};selected=null;render();say('推薦位置：'+coord(m.x,m.y),explain(m,1)+' 這是依局部棋形與簡易策略評分選出的候選點，不代表全盤最優。','good',coord(m.x,m.y));}
+function inspect(x,y){selected={x,y};hintMove=null;render();if(board[y][x]!==0){say('這個位置已有棋子','選擇空交叉點，系統才能分析落子後的棋形。','warn',coord(x,y));return;}let prev=history.length?snapshots[snapshots.length-1]:null,m=playOn(board,x,y,1,prev);if(!m){say('不建議下在這裡','此處可能是自殺著或違反劫規則。','bad',coord(x,y));return;}let item={x,y,...m},g=groupAt(m.board,x,y),[kind,title,body]=grade(item,1);say(title,explain(item,1)+' '+body,kind,coord(x,y));}
+canvas.addEventListener('click',e=>{let r=canvas.getBoundingClientRect(),scale=720/r.width,pad=44,step=(720-88)/(N-1),x=Math.round((e.clientX-r.left)*scale-pad)/step,y=Math.round((e.clientY-r.top)*scale-pad)/step;x=Math.round(x);y=Math.round(y);if(!inside(x,y))return;if(turn===1&&!ended)userMove(x,y);else inspect(x,y);});
+$('newBtn').onclick=fresh;$('size').onchange=fresh;$('level').onchange=()=>{say('難度已更新','新難度會在電腦下一手及推薦分析時套用。','');};$('passBtn').onclick=()=>pass(1);$('undoBtn').onclick=undo;$('suggestBtn').onclick=suggest;$('clearHintBtn').onclick=()=>{hintMove=null;selected=null;render();say('標記已清除','你可以繼續思考，或點選棋盤查看其他位置。','');};
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));$('historyTab').hidden=b.dataset.tab!=='history';$('lessonTab').hidden=b.dataset.tab!=='lesson';});
+fresh();
+})();
+</script>
+</body></html>
